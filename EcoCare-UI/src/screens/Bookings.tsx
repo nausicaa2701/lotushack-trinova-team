@@ -1,9 +1,12 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { MapPin, CheckCircle2, Timer, Zap, Download, BatteryCharging as EvStation, Car, Droplets, Sparkles } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { cn } from '@/src/lib/utils';
 
 export const Bookings = () => {
+  const navigate = useNavigate();
+
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -86,7 +89,7 @@ export const Bookings = () => {
       <section className="space-y-6">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <h2 className="font-headline text-xl font-bold tracking-tight sm:text-2xl">Recent History</h2>
-          <button type="button" className="flex items-center gap-1 text-sm font-bold text-primary hover:underline">
+          <button type="button" disabled title="Planned for post-MVP" className="flex items-center gap-1 text-sm font-bold text-slate-400">
             Download All Receipts
             <Download size={16} />
           </button>
@@ -111,6 +114,7 @@ export const Bookings = () => {
                   time="10:15 AM"
                   type="Wash + EV Charge"
                   cost={42.50}
+                  onRebook={() => navigate('/owner/explore')}
                 />
                 <HistoryRow 
                   icon={Car}
@@ -120,6 +124,7 @@ export const Bookings = () => {
                   time="02:40 PM"
                   type="Express Exterior"
                   cost={18.00}
+                  onRebook={() => navigate('/owner/explore')}
                 />
                 <HistoryRow 
                   icon={Droplets}
@@ -130,13 +135,14 @@ export const Bookings = () => {
                   type="Eco-Friendly Deep Clean"
                   cost={55.00}
                   isEco
+                  onRebook={() => navigate('/owner/explore')}
                 />
               </div>
             </div>
           </div>
         </div>
         <div className="flex justify-center">
-          <button className="px-8 py-3 bg-surface-container-high text-slate-600 rounded-full text-sm font-bold hover:bg-surface-variant transition-colors">
+          <button type="button" disabled title="Planned for post-MVP" className="px-8 py-3 bg-surface-container-low text-slate-400 rounded-full text-sm font-bold">
             View More History
           </button>
         </div>
@@ -179,14 +185,14 @@ export const Bookings = () => {
           </div>
           <p className="text-xl font-bold font-headline leading-tight">Monthly Subscription: Platinum Plus</p>
           <p className="text-xs text-white/80 leading-relaxed">Enjoy unlimited exterior washes and 20% off all fast-charging sessions at partner stations.</p>
-          <button className="bg-white text-primary px-4 py-2 rounded-full text-xs font-bold w-fit">Manage Plan</button>
+          <button type="button" disabled title="Planned for post-MVP" className="bg-white/80 text-slate-400 px-4 py-2 rounded-full text-xs font-bold w-fit">Manage Plan</button>
         </div>
       </section>
     </motion.div>
   );
 };
 
-const HistoryRow = ({ icon: Icon, name, location, date, time, type, cost, isEco }: any) => (
+const HistoryRow = ({ icon: Icon, name, location, date, time, type, cost, isEco, onRebook }: any) => (
   <div className="group grid grid-cols-6 items-center px-4 py-5 transition-colors hover:bg-surface-container-low sm:px-8 sm:py-6">
     <div className="col-span-2 flex items-center gap-4">
       <div className="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-slate-500 group-hover:bg-white transition-colors">
@@ -213,7 +219,7 @@ const HistoryRow = ({ icon: Icon, name, location, date, time, type, cost, isEco 
       ${cost.toFixed(2)}
     </div>
     <div className="text-right">
-      <button className="px-5 py-2 rounded-full border border-outline-variant hover:border-primary hover:text-primary font-bold text-xs transition-all">
+      <button type="button" onClick={onRebook} className="px-5 py-2 rounded-full border border-outline-variant hover:border-primary hover:text-primary font-bold text-xs transition-all">
         Re-book
       </button>
     </div>

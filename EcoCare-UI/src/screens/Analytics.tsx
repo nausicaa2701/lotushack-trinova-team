@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { useNavigate } from 'react-router-dom';
 import { 
   TrendingUp, 
   TrendingDown, 
@@ -16,6 +17,25 @@ import {
 import { cn } from '@/src/lib/utils';
 
 export const Analytics = () => {
+  const navigate = useNavigate();
+
+  const handleExportReport = () => {
+    const report = {
+      generatedAt: new Date().toISOString(),
+      revenue: '$124,850',
+      activeUsers: 8422,
+      avgWashTime: '18.5m',
+      energyUsed: '14.2 MWh',
+    };
+    const blob = new Blob([JSON.stringify(report, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'washnet-admin-report.json';
+    link.click();
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -33,7 +53,7 @@ export const Analytics = () => {
             <option>Last 30 Days</option>
             <option>Year to Date</option>
           </select>
-          <button type="button" className="rounded-xl px-6 py-2 text-sm font-bold text-white shadow-lg shadow-primary/20 power-gradient">
+          <button type="button" onClick={handleExportReport} className="rounded-xl px-6 py-2 text-sm font-bold text-white shadow-lg shadow-primary/20 power-gradient">
             Export Report
           </button>
         </div>
@@ -124,7 +144,7 @@ export const Analytics = () => {
               <LaneStatus lane="03" status="Maintenance" time="2h left" type="Repair" isMaintenance />
               <LaneStatus lane="04" status="Occupied" time="4m left" type="Basic" />
             </div>
-            <button className="w-full mt-6 py-3 rounded-xl bg-surface-container-low text-slate-600 font-bold text-sm hover:bg-surface-container-high transition-colors">
+            <button type="button" onClick={() => navigate('/admin/merchants')} className="w-full mt-6 py-3 rounded-xl bg-surface-container-low text-slate-600 font-bold text-sm hover:bg-surface-container-high transition-colors">
               Manage All Lanes
             </button>
           </div>

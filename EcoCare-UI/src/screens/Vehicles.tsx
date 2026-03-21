@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { useNavigate } from 'react-router-dom';
 import { 
   Zap, 
   Droplets, 
@@ -18,6 +19,8 @@ import {
 import { cn } from '@/src/lib/utils';
 
 export const Vehicles = () => {
+  const navigate = useNavigate();
+
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -154,7 +157,7 @@ export const Vehicles = () => {
                 <MapPin size={14} className="text-slate-500" />
                 <p className="text-xs font-medium">Bayside Professional Wash, SF</p>
               </div>
-              <button className="w-full bg-surface-container-high py-3 rounded-full text-xs font-bold hover:bg-surface-container-highest transition-colors">
+              <button type="button" onClick={() => navigate('/owner/bookings')} className="w-full bg-surface-container-high py-3 rounded-full text-xs font-bold hover:bg-surface-container-highest transition-colors">
                 Reschedule or Cancel
               </button>
             </div>
@@ -183,7 +186,7 @@ const SettingsButton = ({ icon: Icon, title, subtitle, color }: any) => {
   };
 
   return (
-    <button className="w-full flex items-center justify-between p-4 rounded-2xl bg-surface-container-lowest hover:bg-white transition-all group border border-transparent hover:border-outline-variant/20">
+    <button type="button" disabled title="Planned for post-MVP" className="w-full flex items-center justify-between p-4 rounded-2xl bg-surface-container-lowest transition-all group border border-transparent opacity-70">
       <div className="flex items-center gap-4">
         <div className={cn("w-10 h-10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform", colorClasses[color])}>
           <Icon size={20} />

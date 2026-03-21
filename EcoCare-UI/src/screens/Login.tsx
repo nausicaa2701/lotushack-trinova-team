@@ -1,17 +1,33 @@
 import { motion } from 'motion/react';
 import type { FormEvent } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
 import { Password } from 'primereact/password';
 import { Link, useNavigate } from 'react-router-dom';
 import { Clock3, Leaf, Lock, Mail, Zap } from 'lucide-react';
+import { useAuth } from '../auth/AuthContext';
+import { useMockData } from '../hooks/useMockData';
 
 export default function Login() {
   const navigate = useNavigate();
+  const { login } = useAuth();
+  const { data, loading, error } = useMockData();
+  const [selectedUserId, setSelectedUserId] = useState('');
+  const users = data?.users ?? [];
+
+  useEffect(() => {
+    if (!selectedUserId && users.length > 0) {
+      setSelectedUserId(users[0].id);
+    }
+  }, [users, selectedUserId]);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    navigate('/dashboard');
+    const found = users.find((item) => item.id === selectedUserId);
+    if (!found) return;
+    const nextRole = login(found);
+    navigate(`/${nextRole}/dashboard`);
   };
 
   return (
@@ -35,6 +51,26 @@ export default function Login() {
 
           <form className="space-y-5" onSubmit={handleSubmit}>
             <div className="space-y-4">
+              <div className="space-y-1.5">
+                <label className="ml-1 text-sm font-semibold text-on-surface-variant" htmlFor="mock-user">Mock User</label>
+                <select
+                  id="mock-user"
+                  className="w-full rounded-2xl border-none bg-surface-container-highest px-4 py-3.5 text-sm font-semibold text-slate-700 outline-none focus:ring-1 focus:ring-primary"
+                  value={selectedUserId}
+                  onChange={(evt) => setSelectedUserId(evt.target.value)}
+                  disabled={loading || Boolean(error)}
+                >
+                  {loading && <option>Loading users...</option>}
+                  {error && <option>Failed to load users</option>}
+                  {!loading && !error && users.length === 0 && <option>No users found</option>}
+                  {users.map((item) => (
+                    <option key={item.id} value={item.id}>
+                      {item.name} ({item.roles.join(' / ')})
+                    </option>
+                  ))}
+                </select>
+              </div>
+
               <div className="space-y-1.5">
                 <label className="text-sm font-semibold text-on-surface-variant ml-1" htmlFor="email">Email Address</label>
                 <div className="relative">
@@ -69,6 +105,7 @@ export default function Login() {
             <Button 
               label="Login to Dashboard" 
               className="w-full py-4 px-6 power-gradient text-white font-headline font-bold rounded-full hover:opacity-90 active:scale-[0.98] transition-all shadow-lg shadow-primary/20 border-none"
+              disabled={loading || Boolean(error) || users.length === 0}
             />
           </form>
 
@@ -79,7 +116,7 @@ export default function Login() {
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            <button type="button" className="flex items-center justify-center gap-3 py-3 px-4 bg-surface-container-low rounded-full border border-outline-variant/10 hover:bg-surface-container-high transition-colors font-semibold text-sm">
+            <button type="button" disabled title="Social login is planned post-MVP" className="flex items-center justify-center gap-3 py-3 px-4 bg-surface-container-low rounded-full border border-outline-variant/10 text-slate-400 font-semibold text-sm">
               <img 
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3ZqmtS--SZgoAxdj8WtkURIg_XfSJcLu3Mq5YJPGiIs2QCpUbA8kkwVnrWVnrP4BarBlCG5G7EIXabs17PNmbhm3_HabcNEOBCA94hhvgTzNfjAgcPwbz2nUYQHTZhz0p96Q0JV4IajDXbZ7PCr51jTYNkVFTpY2gsk1qKPD82_gu8kSKmMWinwDjrNRTAzDMqySQEl0ngs8vD5ArBfCndrDR4lLcnBgOZL_Lj9V6-sp9Moy2U4GZVtUZXsy-E18Tvupo1dcdG52J" 
                 alt="Google" 
@@ -88,7 +125,7 @@ export default function Login() {
               />
               Google
             </button>
-            <button type="button" className="flex items-center justify-center gap-3 py-3 px-4 bg-on-background text-white rounded-full hover:opacity-90 transition-colors font-semibold text-sm">
+            <button type="button" disabled title="Social login is planned post-MVP" className="flex items-center justify-center gap-3 py-3 px-4 bg-slate-300 text-white rounded-full font-semibold text-sm">
               <i className="pi pi-apple text-xl"></i>
               Apple
             </button>

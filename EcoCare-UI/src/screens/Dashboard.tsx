@@ -1,9 +1,14 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Star, MapPin, ArrowRight, Sparkles, ShieldCheck, Droplets } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { cn } from '@/src/lib/utils';
+import { useMockData } from '../hooks/useMockData';
 
 export const Dashboard = () => {
+  const navigate = useNavigate();
+  const { data, loading } = useMockData();
+
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -24,8 +29,8 @@ export const Dashboard = () => {
           <h2 className="mb-4 font-headline text-3xl font-extrabold leading-tight text-white sm:mb-6 sm:text-4xl md:text-5xl">Find the perfect sustainable shine.</h2>
           <p className="mb-6 max-w-lg font-sans text-base text-slate-300 sm:mb-8 sm:text-lg">Advanced water filtration and eco-friendly formulas for a showroom finish that respects the planet.</p>
           <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
-            <button className="rounded-full px-6 py-3 font-bold text-white shadow-xl shadow-primary/30 transition-transform power-gradient hover:scale-105 sm:px-8 sm:py-4">Book Now</button>
-            <button className="rounded-full border border-white/20 bg-white/10 px-6 py-3 font-bold text-white backdrop-blur-md transition-all hover:bg-white/20 sm:px-8 sm:py-4">View Near Me</button>
+            <button type="button" onClick={() => navigate('/owner/bookings')} className="rounded-full px-6 py-3 font-bold text-white shadow-xl shadow-primary/30 transition-transform power-gradient hover:scale-105 sm:px-8 sm:py-4">Book Now</button>
+            <button type="button" onClick={() => navigate('/owner/explore')} className="rounded-full border border-white/20 bg-white/10 px-6 py-3 font-bold text-white backdrop-blur-md transition-all hover:bg-white/20 sm:px-8 sm:py-4">View Near Me</button>
           </div>
         </div>
       </section>
@@ -37,7 +42,7 @@ export const Dashboard = () => {
             <h3 className="font-headline text-2xl font-extrabold tracking-tight text-on-surface sm:text-3xl">Nearby Stations</h3>
             <p className="mt-1 font-medium text-slate-500">Found 12 premium locations within 5 miles</p>
           </div>
-          <button type="button" className="group flex shrink-0 items-center gap-1 self-start font-bold text-primary sm:self-auto">
+          <button type="button" onClick={() => navigate('/owner/explore')} className="group flex shrink-0 items-center gap-1 self-start font-bold text-primary sm:self-auto">
             See All 
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </button>
@@ -126,7 +131,7 @@ export const Dashboard = () => {
               <h4 className="text-3xl font-extrabold font-headline text-primary leading-tight mb-4">Locate all 34 charge-wash sites.</h4>
               <p className="text-on-secondary-container/80 text-sm font-medium max-w-[180px]">Interactive map with real-time lane occupancy.</p>
             </div>
-            <button className="w-fit flex items-center gap-3 bg-primary text-white px-6 py-3 rounded-full font-bold transition-transform hover:scale-105">
+            <button type="button" onClick={() => navigate('/owner/explore')} className="w-fit flex items-center gap-3 bg-primary text-white px-6 py-3 rounded-full font-bold transition-transform hover:scale-105">
               Open Map
               <MapPin size={18} />
             </button>
@@ -147,6 +152,7 @@ export const Dashboard = () => {
             desc="Hydrophobic polymer coating with a 3-stage orbital polish for a mirror finish that lasts 6 months."
             price={89}
             color="primary"
+            onAdd={() => navigate('/owner/bookings')}
           />
           <ServiceCard 
             icon={ShieldCheck} 
@@ -154,6 +160,7 @@ export const Dashboard = () => {
             desc="Steam sanitation of all surfaces, leather conditioning, and deep extraction of upholstery fibers."
             price={120}
             color="tertiary"
+            onAdd={() => navigate('/owner/bookings')}
           />
           <ServiceCard 
             icon={Droplets} 
@@ -161,14 +168,51 @@ export const Dashboard = () => {
             desc="100% recycled water touchless wash with gentle air dry and wheel brightener included."
             price={25}
             color="secondary"
+            onAdd={() => navigate('/owner/bookings')}
           />
         </div>
+      </section>
+
+      <section className="space-y-4">
+        <div>
+          <h3 className="font-headline text-2xl font-extrabold tracking-tight text-on-surface">Ranking & Slot Reasons</h3>
+          <p className="mt-1 text-slate-500">Phase 2/3 UI: explain why providers and slots are recommended.</p>
+        </div>
+        {loading || !data ? (
+          <div className="rounded-3xl bg-surface-container-low p-6 text-sm text-slate-500">Loading recommendation reasons...</div>
+        ) : (
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+            {data.providers.slice(0, 2).map((provider: any) => {
+              const slotEntry = data.slotRecommendations.find((entry: any) => entry.providerId === provider.id) as any;
+              return (
+                <div key={provider.id} className="rounded-3xl border border-outline-variant/20 bg-surface-container-lowest p-6 shadow-sm">
+                  <p className="font-headline text-xl font-bold">{provider.name}</p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {provider.reasonCodes.map((reason: string) => (
+                      <span key={reason} className="rounded-full bg-primary-container/30 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-primary">
+                        {reason}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="mt-4 space-y-2">
+                    {slotEntry?.slots?.slice(0, 3).map((slot: any) => (
+                      <div key={slot.time} className="flex items-center justify-between rounded-xl bg-surface-container-low px-3 py-2">
+                        <span className="font-bold text-slate-700">{slot.time}</span>
+                        <span className="text-[10px] font-bold uppercase tracking-wide text-tertiary">{slot.reason}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        )}
       </section>
     </motion.div>
   );
 };
 
-const ServiceCard = ({ icon: Icon, title, desc, price, color }: any) => {
+const ServiceCard = ({ icon: Icon, title, desc, price, color, onAdd }: any) => {
   const colorClasses: any = {
     primary: "bg-primary-container/30 text-primary",
     tertiary: "bg-tertiary-container/20 text-tertiary",
@@ -184,7 +228,7 @@ const ServiceCard = ({ icon: Icon, title, desc, price, color }: any) => {
       <p className="text-slate-500 text-sm mb-8 leading-relaxed">{desc}</p>
       <div className="flex items-center justify-between">
         <span className="text-2xl font-extrabold text-on-surface">${price}</span>
-        <button className="bg-surface-container-highest hover:bg-primary hover:text-white text-on-surface px-6 py-2 rounded-full font-bold transition-all text-sm">Add</button>
+        <button type="button" onClick={onAdd} className="bg-surface-container-highest hover:bg-primary hover:text-white text-on-surface px-6 py-2 rounded-full font-bold transition-all text-sm">Add</button>
       </div>
     </div>
   );

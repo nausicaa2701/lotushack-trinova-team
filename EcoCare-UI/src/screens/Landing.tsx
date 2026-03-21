@@ -34,7 +34,7 @@ export default function Landing() {
               <Button 
                 label="Book Your First Wash" 
                 className="power-gradient text-white px-10 py-4 rounded-full font-headline font-bold text-lg hover:opacity-90 transition-all shadow-xl shadow-primary/20 border-none"
-                onClick={() => navigate('/bookings')}
+                onClick={() => navigate('/login')}
               />
               <Link to="/login">
                 <Button
@@ -83,7 +83,7 @@ export default function Landing() {
                 <i className="pi pi-map-marker text-primary text-4xl mb-6"></i>
                 <h3 className="text-2xl font-headline font-bold mb-4">Smart Discovery</h3>
                 <p className="text-on-surface-variant max-w-md mb-6">Dynamic mapping that filters for EV-certified wash bays with integrated charging facilities. Locate, book, and pay in one seamless flow.</p>
-                <Link to="/explore" className="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">
+                <Link to="/login" className="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all">
                   Explore the Map <i className="pi pi-arrow-right"></i>
                 </Link>
               </div>
@@ -205,6 +205,8 @@ export default function Landing() {
               <Button 
                 label="Contact Sales" 
                 className="bg-transparent text-white border border-primary-container/30 px-10 py-4 rounded-full font-headline font-bold text-lg hover:bg-white/10 transition-all"
+                disabled
+                tooltip="Planned for post-MVP"
               />
             </div>
           </div>

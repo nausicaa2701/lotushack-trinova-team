@@ -1,0 +1,137 @@
+{
+  "users": [
+    {
+      "id": "owner-01",
+      "name": "Alex Rivera",
+      "email": "alex@washnet.app",
+      "roles": ["owner", "provider"],
+      "defaultRole": "owner",
+      "vehicle": "Tesla Model S Plaid"
+    },
+    {
+      "id": "owner-02",
+      "name": "Mia Chen",
+      "email": "mia@washnet.app",
+      "roles": ["owner"],
+      "defaultRole": "owner",
+      "vehicle": "Hyundai Ioniq 5"
+    },
+    {
+      "id": "provider-01",
+      "name": "Sora Auto Care",
+      "email": "ops@sorawash.com",
+      "roles": ["provider"],
+      "defaultRole": "provider",
+      "branch": "Downtown Hub"
+    },
+    {
+      "id": "provider-02",
+      "name": "VoltFlow Station",
+      "email": "owner@voltflow.com",
+      "roles": ["provider"],
+      "defaultRole": "provider",
+      "branch": "Marina Point"
+    },
+    {
+      "id": "admin-01",
+      "name": "Nina Park",
+      "email": "admin@washnet.app",
+      "roles": ["admin"],
+      "defaultRole": "admin",
+      "title": "Marketplace Admin"
+    }
+  ],
+  "providers": [
+    {
+      "id": "p-01",
+      "name": "VoltFlow Station",
+      "rating": 4.9,
+      "successfulOrders": 1420,
+      "distanceKm": 1.2,
+      "openNow": true,
+      "evSafe": true,
+      "boosted": true,
+      "reasonCodes": ["nearest_to_you", "available_now"]
+    },
+    {
+      "id": "p-02",
+      "name": "Sora Auto Care",
+      "rating": 4.8,
+      "successfulOrders": 1288,
+      "distanceKm": 2.4,
+      "openNow": true,
+      "evSafe": true,
+      "boosted": false,
+      "reasonCodes": ["top_rated_nearby", "best_time_fit"]
+    },
+    {
+      "id": "p-03",
+      "name": "Eco Gloss Hub",
+      "rating": 4.7,
+      "successfulOrders": 980,
+      "distanceKm": 3.1,
+      "openNow": false,
+      "evSafe": true,
+      "boosted": false,
+      "reasonCodes": ["on_your_route"]
+    }
+  ],
+  "slotRecommendations": [
+    {
+      "providerId": "p-01",
+      "slots": [
+        { "time": "09:30", "reason": "available_now" },
+        { "time": "10:15", "reason": "best_time_fit" },
+        { "time": "11:00", "reason": "on_your_route" }
+      ]
+    },
+    {
+      "providerId": "p-02",
+      "slots": [
+        { "time": "10:00", "reason": "best_time_fit" },
+        { "time": "10:45", "reason": "available_now" },
+        { "time": "11:30", "reason": "top_rated_nearby" }
+      ]
+    }
+  ],
+  "ownerBookings": [
+    { "id": "b-1001", "provider": "VoltFlow Station", "slot": "09:30", "state": "confirmed", "price": 45 },
+    { "id": "b-1002", "provider": "Sora Auto Care", "slot": "13:00", "state": "completed", "price": 39 },
+    { "id": "b-1003", "provider": "Eco Gloss Hub", "slot": "15:30", "state": "cancelled", "price": 30 }
+  ],
+  "providerBookings": [
+    { "id": "pb-01", "owner": "Alex Rivera", "service": "Premium Exterior", "state": "in_progress" },
+    { "id": "pb-02", "owner": "Mia Chen", "service": "Eco Detail", "state": "queued" },
+    { "id": "pb-03", "owner": "Liam Fox", "service": "Quick Wash", "state": "completed" }
+  ],
+  "campaignRequests": [
+    { "id": "c-01", "provider": "VoltFlow Station", "type": "Boosted Listing", "status": "pending" },
+    { "id": "c-02", "provider": "Sora Auto Care", "type": "Popup Banner", "status": "approved" }
+  ],
+  "merchantApprovals": [
+    { "id": "m-01", "merchant": "Green Sparkle", "city": "San Jose", "status": "pending" },
+    { "id": "m-02", "merchant": "Blue Bay Wash", "city": "San Mateo", "status": "pending" }
+  ],
+  "disputes": [
+    { "id": "d-01", "bookingId": "b-1003", "type": "refund_request", "status": "open" },
+    { "id": "d-02", "bookingId": "b-0992", "type": "service_quality", "status": "investigating" }
+  ],
+  "rankingRules": {
+    "distanceWeight": 0.28,
+    "ratingWeight": 0.22,
+    "availabilityWeight": 0.20,
+    "etaWeight": 0.12,
+    "priceWeight": 0.08,
+    "boostWeight": 0.10
+  },
+  "aiRollout": {
+    "rankingModel": { "status": "shadow_mode", "ndcg10": 0.82, "recall10": 0.8 },
+    "slotModel": { "status": "rule_engine_active", "top3HitRate": 0.74, "auc": 0.0 },
+    "fallbackHealthy": true
+  },
+  "forecast": [
+    { "zone": "Downtown", "nextDayDemand": 86 },
+    { "zone": "Marina", "nextDayDemand": 72 },
+    { "zone": "North Bay", "nextDayDemand": 63 }
+  ]
+}

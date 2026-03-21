@@ -1,25 +1,43 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { 
   LayoutDashboard, 
   CalendarDays, 
   Map as MapIcon, 
   Car, 
   BarChart3, 
+  ShieldCheck,
+  Megaphone,
+  AlertTriangle,
+  Bot,
   Settings, 
   HelpCircle, 
   LogOut,
   Droplets
 } from 'lucide-react';
 import { cn } from '@/src/lib/utils';
+import { useAuth, type UserRole } from '../auth/AuthContext';
 
-const navItems = [
-  { icon: LayoutDashboard, label: 'Dashboard', path: '/dashboard' },
-  { icon: CalendarDays, label: 'Bookings', path: '/bookings' },
-  { icon: MapIcon, label: 'Explore', path: '/explore' },
-  { icon: Car, label: 'Vehicles', path: '/vehicles' },
-  { icon: BarChart3, label: 'Analytics', path: '/analytics' },
-];
+const navByRole: Record<UserRole, Array<{ icon: React.ComponentType<{ size?: number; className?: string }>; label: string; path: string }>> = {
+  owner: [
+    { icon: LayoutDashboard, label: 'Dashboard', path: '/owner/dashboard' },
+    { icon: CalendarDays, label: 'Bookings', path: '/owner/bookings' },
+    { icon: MapIcon, label: 'Explore', path: '/owner/explore' },
+    { icon: Car, label: 'Vehicles', path: '/owner/vehicles' },
+  ],
+  provider: [
+    { icon: LayoutDashboard, label: 'Overview', path: '/provider/dashboard' },
+    { icon: CalendarDays, label: 'Booking Ops', path: '/provider/bookings' },
+    { icon: Megaphone, label: 'Campaigns', path: '/provider/campaigns' },
+  ],
+  admin: [
+    { icon: BarChart3, label: 'Dashboard', path: '/admin/dashboard' },
+    { icon: ShieldCheck, label: 'Merchants', path: '/admin/merchants' },
+    { icon: Megaphone, label: 'Campaigns', path: '/admin/campaigns' },
+    { icon: AlertTriangle, label: 'Disputes', path: '/admin/disputes' },
+    { icon: Bot, label: 'AI Rollout', path: '/admin/ai-rollout' },
+  ],
+};
 
 interface SidebarProps {
   open?: boolean;
@@ -27,7 +45,27 @@ interface SidebarProps {
 }
 
 export const Sidebar = ({ open = false, onClose }: SidebarProps) => {
+  const { activeRole, logout } = useAuth();
+  const navigate = useNavigate();
   const linkClose = () => onClose?.();
+  const navItems = navByRole[activeRole ?? 'owner'];
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
+
+  const handleStartAction = () => {
+    if (activeRole === 'provider') {
+      navigate('/provider/bookings');
+      return;
+    }
+    if (activeRole === 'admin') {
+      navigate('/admin/dashboard');
+      return;
+    }
+    navigate('/owner/bookings');
+  };
 
   return (
     <aside
@@ -68,28 +106,32 @@ export const Sidebar = ({ open = false, onClose }: SidebarProps) => {
       <div className="mt-auto space-y-1 border-t border-slate-200/50 pt-4 sm:pt-6">
         <button
           type="button"
+          onClick={handleStartAction}
           className="mb-4 w-full rounded-full py-3.5 font-bold text-white shadow-xl shadow-primary/20 power-gradient transition-transform active:scale-95 sm:mb-6 sm:py-4"
         >
-          Start Wash
+          {activeRole === 'provider' ? 'Open Booking Ops' : activeRole === 'admin' ? 'Open Admin Hub' : 'Start Wash'}
         </button>
-        <NavLink
-          to="/settings"
-          onClick={linkClose}
-          className="flex items-center gap-3 px-4 py-3 font-headline text-sm font-medium text-slate-500 transition-colors hover:text-slate-900"
+        <button
+          type="button"
+          disabled
+          title="Planned for post-MVP"
+          className="flex w-full items-center gap-3 px-4 py-3 text-left font-headline text-sm font-medium text-slate-400 opacity-70"
         >
           <Settings size={20} />
           <span>Settings</span>
-        </NavLink>
-        <NavLink
-          to="/support"
-          onClick={linkClose}
-          className="flex items-center gap-3 px-4 py-3 font-headline text-sm font-medium text-slate-500 transition-colors hover:text-slate-900"
+        </button>
+        <button
+          type="button"
+          disabled
+          title="Planned for post-MVP"
+          className="flex w-full items-center gap-3 px-4 py-3 text-left font-headline text-sm font-medium text-slate-400 opacity-70"
         >
           <HelpCircle size={20} />
           <span>Support</span>
-        </NavLink>
+        </button>
         <button
           type="button"
+          onClick={handleLogout}
           className="flex w-full items-center gap-3 px-4 py-3 font-headline text-sm font-medium text-slate-500 transition-colors hover:text-error"
         >
           <LogOut size={20} />

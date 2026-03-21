@@ -212,4 +212,3 @@ dist/
 build/
 .vite/
 .DS_Store
-.temp/
