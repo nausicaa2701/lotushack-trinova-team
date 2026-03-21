@@ -1,6 +1,17 @@
 import { useEffect, useState } from 'react';
 import { fetchPlatformMockData, type PlatformData } from '../lib/platformMock';
 
+const API_BASE = import.meta.env.VITE_API_BASE_URL ?? '';
+
+async function fetchPlatformDataFromBackend(): Promise<PlatformData> {
+  const response = await fetch(`${API_BASE}/api/platform/bootstrap`);
+  if (!response.ok) {
+    throw new Error('Unable to load platform data from backend');
+  }
+
+  return (await response.json()) as PlatformData;
+}
+
 export function useMockData() {
   const [data, setData] = useState<PlatformData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -11,7 +22,12 @@ export function useMockData() {
     const load = async () => {
       try {
         setLoading(true);
-        const json = await fetchPlatformMockData();
+        let json: PlatformData;
+        try {
+          json = await fetchPlatformDataFromBackend();
+        } catch {
+          json = await fetchPlatformMockData();
+        }
         if (mounted) {
           setData(json);
           setError(null);

@@ -40,7 +40,6 @@ export default function LoginPage() {
                   <i className="pi pi-envelope absolute left-4 top-1/2 -translate-y-1/2 text-outline"></i>
                   <InputText 
                     id="email" 
-                    placeholder="name@company.com" 
                     className="w-full pl-12 pr-4 py-3.5 bg-surface-container-highest border-none rounded-xl focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary transition-all duration-200 outline-none" 
                   />
                 </div>
@@ -56,7 +55,6 @@ export default function LoginPage() {
                   <i className="pi pi-lock absolute left-4 top-1/2 -translate-y-1/2 text-outline"></i>
                   <Password 
                     id="password" 
-                    placeholder="••••••••" 
                     toggleMask 
                     feedback={false}
                     className="w-full [&_.p-password-input]:w-full [&_.p-inputtext]:w-full"
@@ -90,7 +88,7 @@ export default function LoginPage() {
               />
               Google
             </button>
-            <button type="button" className="flex items-center justify-center gap-3 py-3 px-4 bg-on-background text-white rounded-full hover:opacity-90 transition-colors font-semibold text-sm">
+            <button type="button" className="flex items-center justify-center gap-3 py-3 px-4 bg-slate-900 text-white rounded-full hover:opacity-90 transition-colors font-semibold text-sm">
               <i className="pi pi-apple text-xl"></i>
               Apple
             </button>
