@@ -7,6 +7,8 @@ import { Clock3, Leaf, Lock, Mail, Zap } from 'lucide-react';
 import { useAuth } from '../auth/AuthContext';
 import { useMockData } from '../hooks/useMockData';
 
+const API_BASE = import.meta.env.VITE_API_BASE_URL ?? '';
+
 export default function Login() {
   const navigate = useNavigate();
   const { login } = useAuth();
@@ -14,6 +16,8 @@ export default function Login() {
   const [selectedUserId, setSelectedUserId] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
   const users = data?.users ?? [];
 
   useEffect(() => {
@@ -24,10 +28,41 @@ export default function Login() {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setSubmitError(null);
+
     const found = users.find((item) => item.id === selectedUserId);
-    if (!found) return;
-    const nextRole = login(found);
-    navigate(`/${nextRole}/dashboard`);
+    if (!found) {
+      setSubmitError('Please choose a user.');
+      return;
+    }
+
+    const loginEmail = email.trim() || found.email;
+
+    setSubmitting(true);
+    fetch(`${API_BASE}/api/auth/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: loginEmail,
+        password: password || 'demo-password',
+      }),
+    })
+      .then(async (response) => {
+        if (!response.ok) {
+          throw new Error('Login failed');
+        }
+        return response.json() as Promise<{ user: typeof found }>;
+      })
+      .then((result) => {
+        const nextRole = login(result.user);
+        navigate(`/${nextRole}/dashboard`);
+      })
+      .catch(() => {
+        setSubmitError('Unable to login with backend. Check backend service and selected email.');
+      })
+      .finally(() => {
+        setSubmitting(false);
+      });
   };
 
   return (
@@ -104,10 +139,14 @@ export default function Login() {
               </div>
             </div>
 
+            {submitError && (
+              <p className="rounded-xl bg-red-50 px-3 py-2 text-sm font-medium text-red-600">{submitError}</p>
+            )}
+
             <Button 
               label="Login to Dashboard" 
               className="w-full py-4 px-6 power-gradient text-white font-headline font-bold rounded-full hover:opacity-90 active:scale-[0.98] transition-all shadow-lg shadow-primary/20 border-none"
-              disabled={loading || Boolean(error) || users.length === 0}
+              disabled={loading || Boolean(error) || users.length === 0 || submitting}
             />
           </form>
 
