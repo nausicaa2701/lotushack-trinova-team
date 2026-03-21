@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WashNet Pitch Presentation</title>
+    <meta name="description" content="WashNet hackathon pitch presentation: a full-stack AI-assisted sustainable car-care marketplace demo." />
+    <link rel="stylesheet" href="./styles.css" />
+    <base href="/pitch-deck/" />
+  </head>
+  <body>
+    <div class="presentation-shell">
+      <header class="floating-deck-nav">
+        <div class="deck-brand">
+          <div class="deck-mark" aria-hidden="true">
+            <span></span>
+          </div>
+          <div>
+            <p class="deck-kicker">Hackathon pitch deck</p>
+            <h1>WashNet</h1>
+          </div>
+        </div>
+        <div class="deck-status">
+          <span id="section-counter">01 / 12</span>
+          <button id="jump-next" type="button" class="deck-button">Next Slide</button>
+        </div>
+      </header>
+
+      <nav class="slide-rail" aria-label="Presentation navigation">
+        <a href="#hero" data-slide="1" class="slide-dot active"><span>Hero</span></a>
+        <a href="#team" data-slide="2" class="slide-dot"><span>Team</span></a>
+        <a href="#problem" data-slide="3" class="slide-dot"><span>Problem</span></a>
+        <a href="#solution" data-slide="4" class="slide-dot"><span>Solution</span></a>
+        <a href="#architecture" data-slide="5" class="slide-dot"><span>Architecture</span></a>
+        <a href="#ai-layer" data-slide="6" class="slide-dot"><span>AI Layer</span></a>
+        <a href="#reliability" data-slide="7" class="slide-dot"><span>Reliability</span></a>
+        <a href="#innovation" data-slide="8" class="slide-dot"><span>Innovation</span></a>
+        <a href="#impact" data-slide="9" class="slide-dot"><span>Impact</span></a>
+        <a href="#evidence" data-slide="10" class="slide-dot"><span>Evidence</span></a>
+        <a href="#roadmap" data-slide="11" class="slide-dot"><span>Roadmap</span></a>
+        <a href="#thanks" data-slide="12" class="slide-dot"><span>Thanks</span></a>
+      </nav>
+
+      <main>
+        <section id="hero" class="slide slide-hero slide-dark">
+          <div class="section-inner hero-grid">
+            <div class="hero-copy reveal">
+              <p class="section-tag">Full-stack AI-assisted sustainable car-care marketplace demo</p>
+              <h2>WashNet</h2>
+              <p class="hero-lead">
+                Connecting EV and hybrid owners, car wash providers, and platform operators through intelligent
+                discovery, ranking, booking support, and ecosystem growth.
+              </p>
+              <div class="hero-meta">
+                <div>
+                  <span class="meta-label">Presented by</span>
+                  <strong>Trinova Team</strong>
+                </div>
+                <div>
+                  <span class="meta-label">Powered by</span>
+                  <strong>Codex · Prompting with love by Hong Cuc</strong>
+                </div>
+              </div>
+              <div class="hero-actions">
+                <a class="hero-link" href="https://trinova.it.com/" target="_blank" rel="noopener noreferrer">Open live app</a>
+                <a class="hero-link hero-link-muted" href="#architecture">See the stack</a>
+                <a class="hero-link hero-link-muted" href="#evidence">See system proof</a>
+              </div>
+            </div>
+            <div class="hero-poster reveal reveal-delay">
+              <div class="poster-glow"></div>
+              <div class="poster-card">
+                <div class="poster-panel">
+                  <span>Owner</span>
+                  <strong>Nearby + on-route EV-safe wash search</strong>
+                </div>
+                <div class="poster-panel">
+                  <span>Provider</span>
+                  <strong>Visibility, ranking, and booking demand capture</strong>
+                </div>
+                <div class="poster-panel">
+                  <span>Operator</span>
+                  <strong>Forecasting, quality signals, and ecosystem oversight</strong>
+                </div>
+                <div class="poster-footer">
+                  <div class="signal-block">
+                    <span>Real stack</span>
+                    <strong>UI + API + PostgreSQL + Dataset + n8n + Docker</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="team" class="slide slide-light slide-textured">
+          <div class="section-inner">
+            <div class="section-head reveal">
+              <p class="section-tag">YDCC 2025 · Trinova Team</p>
+              <h2>Team</h2>
+            </div>
+            <div class="team-grid">
+              <div class="team-card reveal">
+                <div class="team-avatar"></div>
+                <h3>Trinova Team</h3>
+                <p>Full-stack development, AI integration, and sustainable mobility solutions.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="problem" class="slide slide-dark slide-textured">
+          <div class="section-inner">
+            <div class="section-head reveal">
+              <p class="section-tag">Market Challenge</p>
+              <h2>Problem</h2>
+            </div>
+            <div class="problem-grid">
+              <div class="problem-card reveal">
+                <h3>For EV Owners</h3>
+                <ul>
+                  <li>Hard to find EV-safe car washes</li>
+                  <li>No on-route discovery</li>
+                  <li>Lack of trust in providers</li>
+                </ul>
+              </div>
+              <div class="problem-card reveal">
+                <h3>For Providers</h3>
+                <ul>
+                  <li>Limited visibility to EV customers</li>
+                  <li>No demand forecasting</li>
+                  <li>Difficulty standing out</li>
+                </ul>
+              </div>
+              <div class="problem-card reveal">
+                <h3>For Operators</h3>
+                <ul>
+                  <li>No ecosystem oversight</li>
+                  <li>Manual quality control</li>
+                  <li>Limited growth insights</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="solution" class="slide slide-light">
+          <div class="section-inner">
+            <div class="section-head reveal">
+              <p class="section-tag">Our Solution</p>
+              <h2>WashNet Platform</h2>
+            </div>
+            <div class="solution-grid">
+              <div class="solution-card reveal">
+                <h3>🔍 Smart Discovery</h3>
+                <p>Nearby and on-route search with EV-safe filtering, ranking, and real-time availability.</p>
+              </div>
+              <div class="solution-card reveal">
+                <h3>📅 Seamless Booking</h3>
+                <p>One-click booking with time slot recommendations and confirmation tracking.</p>
+              </div>
+              <div class="solution-card reveal">
+                <h3>🤖 AI-Powered</h3>
+                <p>Demand forecasting, ranking models, and slot recommendations powered by machine learning.</p>
+              </div>
+              <div class="solution-card reveal">
+                <h3>📊 Operator Dashboard</h3>
+                <p>Ecosystem oversight, quality signals, campaign management, and dispute resolution.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="architecture" class="slide slide-dark slide-textured">
+          <div class="section-inner">
+            <div class="section-head reveal">
+              <p class="section-tag">Technical Stack</p>
+              <h2>Architecture</h2>
+            </div>
+            <div class="arch-diagram reveal">
+              <div class="arch-layer">
+                <h4>Frontend</h4>
+                <p>React + TypeScript + Vite + TailwindCSS</p>
+              </div>
+              <div class="arch-layer">
+                <h4>Backend</h4>
+                <p>FastAPI + PostgreSQL + SQLAlchemy</p>
+              </div>
+              <div class="arch-layer">
+                <h4>AI/ML</h4>
+                <p>LightGBM + Demand Forecasting + Ranking Models</p>
+              </div>
+              <div class="arch-layer">
+                <h4>Infrastructure</h4>
+                <p>Docker + n8n + nginx + Let's Encrypt</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="ai-layer" class="slide slide-light">
+          <div class="section-inner">
+            <div class="section-head reveal">
+              <p class="section-tag">Machine Learning</p>
+              <h2>AI Layer</h2>
+            </div>
+            <div class="ai-grid">
+              <div class="ai-card reveal">
+                <h3>Demand Forecasting</h3>
+                <p>Time-series models predict booking demand by zone and time slot.</p>
+              </div>
+              <div class="ai-card reveal">
+                <h3>Ranking Model</h3>
+                <p>LightGBM ranks merchants by relevance, quality, and conversion likelihood.</p>
+              </div>
+              <div class="ai-card reveal">
+                <h3>Slot Recommendations</h3>
+                <p>ML suggests optimal booking times based on demand and provider capacity.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="reliability" class="slide slide-dark slide-textured">
+          <div class="section-inner">
+            <div class="section-head reveal">
+              <p class="section-tag">Production Ready</p>
+              <h2>Reliability</h2>
+            </div>
+            <div class="reliability-grid">
+              <div class="reliability-item reveal">
+                <h3>✅ Error Handling</h3>
+                <p>Graceful degradation, fallback search, and user-friendly error messages.</p>
+              </div>
+              <div class="reliability-item reveal">
+                <h3>✅ Data Validation</h3>
+                <p>Schema validation, type safety, and input sanitization throughout.</p>
+              </div>
+              <div class="reliability-item reveal">
+                <h3>✅ Mobile First</h3>
+                <p>Touch-optimized UI, responsive design, and iOS safe area support.</p>
+              </div>
+              <div class="reliability-item reveal">
+                <h3>✅ Auth & Security</h3>
+                <p>JWT tokens, role-based access, and localStorage safety checks.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="innovation" class="slide slide-light">
+          <div class="section-inner">
+            <div class="section-head reveal">
+              <p class="section-tag">What Makes Us Different</p>
+              <h2>Innovation</h2>
+            </div>
+            <div class="innovation-list">
+              <div class="innovation-item reveal">
+                <h3>🎯 On-Route Search</h3>
+                <p>Find car washes along your route, not just nearby.</p>
+              </div>
+              <div class="innovation-item reveal">
+                <h3>🔋 EV-Safe Filtering</h3>
+                <p>Specialized filters for EV and hybrid vehicle owners.</p>
+              </div>
+              <div class="innovation-item reveal">
+                <h3>🤖 AI Recommendations</h3>
+                <p>ML-powered slot and merchant recommendations.</p>
+              </div>
+              <div class="innovation-item reveal">
+                <h3>📈 Demand Forecasting</h3>
+                <p>Help providers optimize staffing and capacity.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="impact" class="slide slide-dark slide-textured">
+          <div class="section-inner">
+            <div class="section-head reveal">
+              <p class="section-tag">Market & Environment</p>
+              <h2>Impact</h2>
+            </div>
+            <div class="impact-grid">
+              <div class="impact-card reveal">
+                <h3>Market Size</h3>
+                <p class="impact-number">542</p>
+                <p>Merchants in HCMC alone</p>
+              </div>
+              <div class="impact-card reveal">
+                <h3>Users</h3>
+                <p class="impact-number">175+</p>
+                <p>Registered users</p>
+              </div>
+              <div class="impact-card reveal">
+                <h3>Bookings</h3>
+                <p class="impact-number">84+</p>
+                <p>Completed bookings</p>
+              </div>
+              <div class="impact-card reveal">
+                <h3>Water Saved</h3>
+                <p class="impact-number">~150L</p>
+                <p>Per eco wash vs traditional</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="evidence" class="slide slide-light">
+          <div class="section-inner">
+            <div class="section-head reveal">
+              <p class="section-tag">Live System</p>
+              <h2>Evidence</h2>
+            </div>
+            <div class="evidence-list">
+              <div class="evidence-item reveal">
+                <h3>✅ Live App</h3>
+                <p><a href="https://trinova.it.com" target="_blank">https://trinova.it.com</a></p>
+              </div>
+              <div class="evidence-item reveal">
+                <h3>✅ GitHub Repo</h3>
+                <p><a href="https://github.com/nausicaa2701/lotushack-trinova-team" target="_blank">Full source code</a></p>
+              </div>
+              <div class="evidence-item reveal">
+                <h3>✅ Database</h3>
+                <p>542 merchants, 175 users, 84+ bookings</p>
+              </div>
+              <div class="evidence-item reveal">
+                <h3>✅ Mobile App</h3>
+                <p>Touch-optimized, iOS & Android ready</p>
+              </div>
+              <div class="evidence-item reveal">
+                <h3>✅ AI Models</h3>
+                <p>Demand forecasting, ranking, slot recommendations</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="roadmap" class="slide slide-dark slide-textured">
+          <div class="section-inner">
+            <div class="section-head reveal">
+              <p class="section-tag">Future Plans</p>
+              <h2>Roadmap</h2>
+            </div>
+            <div class="roadmap-timeline">
+              <div class="roadmap-item reveal">
+                <h3>Q2 2026</h3>
+                <p>PWA support, offline mode, push notifications</p>
+              </div>
+              <div class="roadmap-item reveal">
+                <h3>Q3 2026</h3>
+                <p>Payment integration, Apple Pay & Google Pay</p>
+              </div>
+              <div class="roadmap-item reveal">
+                <h3>Q4 2026</h3>
+                <p>Multi-city expansion (Hanoi, Da Nang)</p>
+              </div>
+              <div class="roadmap-item reveal">
+                <h3>2027</h3>
+                <p>Full Vietnam coverage, provider mobile app</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="thanks" class="slide slide-light">
+          <div class="section-inner">
+            <div class="section-head reveal">
+              <p class="section-tag">Thank You</p>
+              <h2>Questions?</h2>
+            </div>
+            <div class="thanks-content reveal">
+              <p class="thanks-lead">We're building the future of sustainable car care.</p>
+              <div class="thanks-links">
+                <a class="hero-link" href="https://trinova.it.com" target="_blank">Try the Live App</a>
+                <a class="hero-link hero-link-muted" href="https://github.com/nausicaa2701/lotushack-trinova-team" target="_blank">View Source Code</a>
+              </div>
+              <p class="thanks-footer">Trinova Team · YDCC 2025</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
