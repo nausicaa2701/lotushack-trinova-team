@@ -1,14 +1,12 @@
-version: '3.9'
-
 services:
   db:
     image: postgres:16
     container_name: ecocare-db
     restart: unless-stopped
     environment:
-      POSTGRES_DB: ecocare
-      POSTGRES_USER: ecocare
-      POSTGRES_PASSWORD: ecocare
+      POSTGRES_DB: ${POSTGRES_DB:-ecocare}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres123}
     ports:
       - "5432:5432"
     volumes:
@@ -18,6 +16,8 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      - web
 
   backend:
     build:
@@ -30,15 +30,19 @@ services:
         condition: service_healthy
     environment:
       APP_NAME: EcoCare Backend API
-      APP_ENV: development
+      APP_ENV: production
       API_PREFIX: /api
       POSTGRES_HOST: db
       POSTGRES_PORT: 5432
-      POSTGRES_DB: ecocare
-      POSTGRES_USER: ecocare
-      POSTGRES_PASSWORD: ecocare
-    ports:
-      - "8000:8000"
+      POSTGRES_DB: ${POSTGRES_DB:-ecocare}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres123}
+      VIRTUAL_HOST: api.trinova.it.com
+      VIRTUAL_PORT: 8000
+      LETSENCRYPT_HOST: api.trinova.it.com
+      LETSENCRYPT_EMAIL: trungnguyen.19972707@gmail.com
+    networks:
+      - web
 
   frontend:
     build:
@@ -48,11 +52,20 @@ services:
     restart: unless-stopped
     depends_on:
       backend:
-        condition: service_started
+        condition: service_healthy
     environment:
-      VITE_API_BASE_URL: http://localhost:8000
-    ports:
-      - "3000:3000"
+      VITE_API_BASE_URL: https://api.trinova.it.com
+      VIRTUAL_HOST: trinova.it.com
+      VIRTUAL_PORT: 3000
+      LETSENCRYPT_HOST: trinova.it.com
+      LETSENCRYPT_EMAIL: trungnguyen.19972707@gmail.com
+    env_file:
+      - .env.prod
+    networks:
+      - web
 
 volumes:
   postgres_data:
+networks:
+  web:
+    external: true
