@@ -5,7 +5,7 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from app.api.deps import get_db
-from app.models import AIRollout, Booking, CampaignRequest, Dispute, Merchant, MerchantApproval, RankingRule, User
+from app.models import AIRollout, Booking, CampaignRequest, Dispute, Merchant, MerchantApproval, RankingRule, User, Vehicle
 
 router = APIRouter()
 
@@ -19,9 +19,14 @@ def platform_bootstrap(db: Session = Depends(get_db)):
     users = db.scalars(select(User)).all()
     merchants = db.scalars(select(Merchant)).all()
     bookings = db.scalars(select(Booking)).all()
+    vehicles = db.scalars(select(Vehicle)).all()
     campaign_requests = db.scalars(select(CampaignRequest)).all()
     merchant_approvals = db.scalars(select(MerchantApproval)).all()
     disputes = db.scalars(select(Dispute)).all()
+
+    owner_primary_vehicle: dict[str, Vehicle] = {}
+    for vehicle in vehicles:
+        owner_primary_vehicle.setdefault(vehicle.owner_id, vehicle)
 
     ranking = db.get(RankingRule, 1)
     ai_rollout = db.get(AIRollout, 1)
@@ -57,13 +62,39 @@ def platform_bootstrap(db: Session = Depends(get_db)):
             }
             for merchant in merchants
         ],
-        "vehicles": [],
+        "vehicles": [
+            {
+                "id": vehicle.id,
+                "ownerId": vehicle.owner_id,
+                "make": vehicle.make,
+                "model": vehicle.model,
+                "trim": vehicle.trim,
+                "year": vehicle.year,
+                "color": vehicle.color,
+                "plateNumber": vehicle.plate_number,
+                "status": vehicle.status,
+                "mileageMiles": vehicle.mileage_miles,
+                "batteryHealthPct": vehicle.battery_health_pct,
+                "nextServiceDue": vehicle.next_service_due,
+                "nextServiceLabel": vehicle.next_service_label,
+                "lastWashLabel": vehicle.last_wash_label,
+                "imageUrl": vehicle.image_url,
+                "waterSavedLiters": vehicle.water_saved_liters,
+                "co2OffsetKg": vehicle.co2_offset_kg,
+                "loyaltyPoints": vehicle.loyalty_points,
+                "rewardsProgressPct": vehicle.rewards_progress_pct,
+                "subscription": vehicle.subscription,
+                "rangeKm": vehicle.range_km,
+                "upcomingWash": vehicle.upcoming_wash_json,
+            }
+            for vehicle in vehicles
+        ],
         "slotRecommendations": [],
         "ownerBookings": [
             {
                 "id": booking.id,
-                "vehicleId": f"v-{booking.owner_id}",
-                "plateNumber": "N/A",
+                "vehicleId": owner_primary_vehicle[booking.owner_id].id if booking.owner_id in owner_primary_vehicle else f"v-{booking.owner_id}",
+                "plateNumber": owner_primary_vehicle[booking.owner_id].plate_number if booking.owner_id in owner_primary_vehicle else "N/A",
                 "provider": booking.provider,
                 "slot": booking.slot,
                 "state": booking.state,

@@ -48,6 +48,33 @@ class Booking(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime, nullable=False, default=datetime.utcnow)
 
 
+class Vehicle(Base):
+    __tablename__ = "vehicles"
+
+    id: Mapped[str] = mapped_column(String(64), primary_key=True)
+    owner_id: Mapped[str] = mapped_column(ForeignKey("users.id"), nullable=False)
+    make: Mapped[str] = mapped_column(String(64), nullable=False)
+    model: Mapped[str] = mapped_column(String(64), nullable=False)
+    trim: Mapped[str] = mapped_column(String(64), nullable=False)
+    year: Mapped[int] = mapped_column(Integer, nullable=False)
+    color: Mapped[str] = mapped_column(String(64), nullable=False)
+    plate_number: Mapped[str] = mapped_column(String(32), nullable=False)
+    status: Mapped[str] = mapped_column(String(32), nullable=False)
+    mileage_miles: Mapped[int] = mapped_column(Integer, nullable=False)
+    battery_health_pct: Mapped[int] = mapped_column(Integer, nullable=False)
+    next_service_due: Mapped[str] = mapped_column(String(32), nullable=False)
+    next_service_label: Mapped[str] = mapped_column(String(64), nullable=False)
+    last_wash_label: Mapped[str] = mapped_column(String(64), nullable=False)
+    image_url: Mapped[str] = mapped_column(Text, nullable=False)
+    water_saved_liters: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+    co2_offset_kg: Mapped[float] = mapped_column(Float, nullable=False, default=0)
+    loyalty_points: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+    rewards_progress_pct: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+    subscription: Mapped[str] = mapped_column(String(64), nullable=False)
+    range_km: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    upcoming_wash_json: Mapped[dict | None] = mapped_column(JSON, nullable=True)
+
+
 class CampaignRequest(Base):
     __tablename__ = "campaign_requests"
 

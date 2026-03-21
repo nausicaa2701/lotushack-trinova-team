@@ -19,6 +19,7 @@ from app.models import (
     RankingRule,
     SearchLog,
     User,
+    Vehicle,
 )
 
 DOCKER_MOCK_ROOT = Path("/mock")
@@ -138,6 +139,37 @@ def run() -> None:
                     is_ev_safe=item["isEvSafe"],
                     open_now=item["openNow"],
                     service_types=item["serviceTypes"],
+                )
+            )
+        db.commit()
+
+        platform_data = load_json("platform-data.json")
+        vehicles = platform_data.get("vehicles", [])
+        for item in vehicles:
+            db.merge(
+                Vehicle(
+                    id=item["id"],
+                    owner_id=item["ownerId"],
+                    make=item["make"],
+                    model=item["model"],
+                    trim=item["trim"],
+                    year=item["year"],
+                    color=item["color"],
+                    plate_number=item["plateNumber"],
+                    status=item["status"],
+                    mileage_miles=item["mileageMiles"],
+                    battery_health_pct=item["batteryHealthPct"],
+                    next_service_due=item["nextServiceDue"],
+                    next_service_label=item["nextServiceLabel"],
+                    last_wash_label=item["lastWashLabel"],
+                    image_url=item["imageUrl"],
+                    water_saved_liters=item["waterSavedLiters"],
+                    co2_offset_kg=item["co2OffsetKg"],
+                    loyalty_points=item["loyaltyPoints"],
+                    rewards_progress_pct=item["rewardsProgressPct"],
+                    subscription=item["subscription"],
+                    range_km=item.get("rangeKm"),
+                    upcoming_wash_json=item.get("upcomingWash"),
                 )
             )
         db.commit()

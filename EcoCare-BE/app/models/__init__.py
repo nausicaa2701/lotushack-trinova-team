@@ -9,6 +9,7 @@ from app.models.entities import (
     RankingRule,
     SearchLog,
     User,
+    Vehicle,
 )
 
 __all__ = [
@@ -22,4 +23,5 @@ __all__ = [
     "RankingRule",
     "SearchLog",
     "User",
+    "Vehicle",
 ]
