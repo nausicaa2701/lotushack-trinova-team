@@ -1,0 +1,299 @@
+{
+  "name": "eSKYCorp - All Charging Stations (66 locations)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 6
+            }
+          ]
+        }
+      },
+      "id": "schedule",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        320
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "webhook",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.2,
+      "position": [
+        0,
+        560
+      ],
+      "webhookId": "export-esky-all-stations"
+    },
+    {
+      "parameters": {
+        "url": "https://eskycorp.vn/wp-json/custom/v1/map-data",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "fetch-api",
+      "name": "Fetch Map Data API",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        240,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $input.first().json;\nconst locations = data.locations || [];\n\nreturn locations.map((loc, index) => ({\n  json: {\n    index: index + 1,\n    title: loc.title || 'N/A',\n    address: loc.address || 'N/A',\n    province: loc.province_city || 'N/A',\n    district: loc.district || 'N/A',\n    stations: loc.stations || 'N/A',\n    traffic: loc.traffic || 'N/A',\n    status: loc.status === 1 ? 'Đang hoạt động' : 'Đang triển khai',\n    station_types: (loc.station_types || []).join(', '),\n    latitude: loc.position?.lat || 0,\n    longitude: loc.position?.lng || 0,\n    google_maps: loc.gmap || '',\n    crawl_date: new Date().toISOString(),\n    source: 'eSKYCorp Map API'\n  }\n}));"
+      },
+      "id": "format-data",
+      "name": "Format Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        480,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1A2sGdCu944eq2Ly9y4A7i0Rd8Q1eBVx7JYSh1UovG7g",
+          "mode": "list",
+          "cachedResultName": "Location car wash",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1A2sGdCu944eq2Ly9y4A7i0Rd8Q1eBVx7JYSh1UovG7g/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1934889084,
+          "mode": "list",
+          "cachedResultName": "TPHCM_ChargeStation",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1A2sGdCu944eq2Ly9y4A7i0Rd8Q1eBVx7JYSh1UovG7g/edit#gid=1934889084"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Index": "={{ $json.index }}",
+            "Title": "={{ $json.title }}",
+            "Address": "={{ $json.address }}",
+            "Province": "={{ $json.province }}",
+            "District": "={{ $json.district }}",
+            "Stations": "={{ $json.stations }}",
+            "Traffic": "={{ $json.traffic }}",
+            "Status": "={{ $json.status }}",
+            "Station Types": "={{ $json.station_types }}",
+            "Latitude": "={{ $json.latitude }}",
+            "Longitude": "={{ $json.longitude }}",
+            "Google Maps": "={{ $json.google_maps }}",
+            "Crawl Date": "={{ $json.crawl_date }}",
+            "Source": "={{ $json.source }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Index",
+              "displayName": "Index",
+              "type": "number"
+            },
+            {
+              "id": "Title",
+              "displayName": "Title",
+              "type": "string"
+            },
+            {
+              "id": "Address",
+              "displayName": "Address",
+              "type": "string"
+            },
+            {
+              "id": "Province",
+              "displayName": "Province",
+              "type": "string"
+            },
+            {
+              "id": "District",
+              "displayName": "District",
+              "type": "string"
+            },
+            {
+              "id": "Stations",
+              "displayName": "Stations",
+              "type": "string"
+            },
+            {
+              "id": "Traffic",
+              "displayName": "Traffic",
+              "type": "string"
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "type": "string"
+            },
+            {
+              "id": "Station Types",
+              "displayName": "Station Types",
+              "type": "string"
+            },
+            {
+              "id": "Latitude",
+              "displayName": "Latitude",
+              "type": "number"
+            },
+            {
+              "id": "Longitude",
+              "displayName": "Longitude",
+              "type": "number"
+            },
+            {
+              "id": "Google Maps",
+              "displayName": "Google Maps",
+              "type": "string"
+            },
+            {
+              "id": "Crawl Date",
+              "displayName": "Crawl Date",
+              "type": "string"
+            },
+            {
+              "id": "Source",
+              "displayName": "Source",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "save-sheets",
+      "name": "Save to Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        720,
+        320
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "5xYJoyRNHqbba9Ob",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ {\n  success: true,\n  message: '✅ Exported ' + $input.first().json.length + ' eSKY charging stations',\n  count: $input.first().json.length,\n  provinces: [...new Set($input.first().json.map(s => s.province))].length + ' provinces',\n  active: $input.first().json.filter(s => s.status === 'Đang hoạt động').length + ' active',\n  timestamp: new Date().toISOString()\n} }}",
+        "options": {}
+      },
+      "id": "respond",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        960,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## 🛴 eSKYCorp - ALL Charging Stations\n\n### Official API:\nhttps://eskycorp.vn/wp-json/custom/v1/map-data\n\n### Data exported (66 stations):\n- Title, Address, Province, District\n- Stations (AC/DC, power kW)\n- Traffic (s/year)\n- Status (Active/In Progress)\n- GPS Coordinates\n- Google Maps Link\n\n### Webhook:\nPOST https://n8n.trungtero.com/webhook/export-esky-all-stations\n\n### Setup:\n1. Create Google Sheet with columns\n2. Update workflow with Sheet ID\n3. Activate & test!",
+        "height": 640,
+        "width": 768
+      },
+      "id": "note",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -208,
+        160
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Fetch Map Data API",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Fetch Map Data API",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Map Data API": {
+      "main": [
+        [
+          {
+            "node": "Format Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Data": {
+      "main": [
+        [
+          {
+            "node": "Save to Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save to Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
+  },
+  "versionId": "9d7d10dc-35ab-4a69-b988-133474ac8641",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "2a7bd8ec0984c6e620eda1666673bf3476ee8c440c4559daced33b2dc44de307"
+  },
+  "id": "1MbmURbgS4AUiKRp",
+  "tags": []
+}

@@ -1,0 +1,339 @@
+{
+  "name": "Google Maps Crawler - Car Wash HCMC (SerpAPI) - Review",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "bbb6eb41-af8c-4614-b83f-7c0fa9e9910d",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        192
+      ],
+      "id": "2bdd764e-b372-4316-84f8-4d974a3ad110",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "content": "## Google Maps Reviews Crawler (SerpAPI -> Google Sheets)\n\n### Purpose\nCollect Google Maps reviews for selected car wash locations and save normalized review rows to Google Sheets.\n\n### Flow\n1. Trigger manually or by schedule\n2. Read location rows from sheet TPHCM\n3. Filter rows (currently: rating = 5 AND district = quan 1)\n4. Loop each location and call SerpAPI google_maps_reviews by place_id\n5. Parse Reviews flattens nested JSON into one row per review\n6. Append or update into sheet TPHCM_Reviews using review_id as key\n\n### Output fields\n- place: place_id, place_name, place_address, place_rating, place_type\n- reviewer: reviewer_name, reviewer_id, local_guide, review_count, photo_count\n- review: rating, review_text, translated_text, date, likes, images_json, link\n- crawl metadata: crawl_date, crawl_timestamp\n\n### Notes\n- Dedup/upsert key: review_id\n- If no translated text exists, review_text_translated is empty\n- Parse node supports multiple incoming items and array payloads",
+        "height": 560,
+        "width": 820
+      },
+      "id": "c86545e0-b6a3-4d59-a5f2-7f3417bd38ad",
+      "name": "Workflow Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        304,
+        368
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1A2sGdCu944eq2Ly9y4A7i0Rd8Q1eBVx7JYSh1UovG7g",
+          "mode": "list",
+          "cachedResultName": "Location car wash",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1A2sGdCu944eq2Ly9y4A7i0Rd8Q1eBVx7JYSh1UovG7g/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "TPHCM",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1A2sGdCu944eq2Ly9y4A7i0Rd8Q1eBVx7JYSh1UovG7g/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        256,
+        80
+      ],
+      "id": "1ffc7356-aeb5-46d5-9ed7-9ffd99d3e784",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "5xYJoyRNHqbba9Ob",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "d6cec601-09a7-4477-a9c9-1f872ca7cbfa",
+              "leftValue": "={{ $json.rating }}",
+              "rightValue": 5,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "2ef1c5d0-0e4a-4438-bff4-8eee385cec92",
+              "leftValue": "={{ $json.district }}",
+              "rightValue": "quan 1",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.3,
+      "position": [
+        464,
+        80
+      ],
+      "id": "3cc8a461-374b-4561-a288-798b4f221a54",
+      "name": "Filter"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        672,
+        80
+      ],
+      "id": "1ee2364f-df4d-475f-8209-d210fbd1796c",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "operation": "google_maps_reviews",
+        "place_id": "={{ $json.record_key }}",
+        "additionalFields": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-serpapi.serpApi",
+      "typeVersion": 1,
+      "position": [
+        896,
+        224
+      ],
+      "id": "8a8d24a5-cde3-4690-98b6-5cab7930146d",
+      "name": "Google_maps_reviews search",
+      "credentials": {
+        "serpApi": {
+          "id": "XjQ6Kcm1yae6RsDF",
+          "name": "SerpApi account (nguyenhieutrung.07)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Collect all incoming node items, then normalize to an array of place responses.\nconst inputItems = $input.all();\nconst allResponses = [];\n\nfor (const item of inputItems) {\n  const payload = item.json;\n  if (Array.isArray(payload)) {\n    allResponses.push(...payload);\n  } else if (payload && typeof payload === 'object') {\n    allResponses.push(payload);\n  }\n}\n\nconst allReviews = [];\nconst crawlTimestamp = new Date().toISOString();\nconst crawlDate = crawlTimestamp.split('T')[0];\n\nallResponses.forEach((response) => {\n  const placeInfo = response.place_info || {};\n  const placeId = response.search_parameters?.place_id || placeInfo.place_id || '';\n  const placeName = placeInfo.title || '';\n  const placeAddress = placeInfo.address || '';\n  const placeRating = Number(placeInfo.rating || 0);\n  const placeType = placeInfo.type || '';\n\n  const reviews = Array.isArray(response.reviews) ? response.reviews : [];\n\n  reviews.forEach((review, index) => {\n    const user = review.user || {};\n    const extractedSnippet = review.extracted_snippet || {};\n    const images = Array.isArray(review.images) ? review.images : [];\n    const reviewId = review.review_id || `${placeId}_rev_${index}_${Date.now()}`;\n\n    allReviews.push({\n      review_id: reviewId,\n      record_key: placeId,\n      place_id: placeId,\n      place_name: placeName,\n      place_address: placeAddress,\n      place_rating: placeRating,\n      place_type: placeType,\n      reviewer_name: user.name || 'Anonymous',\n      reviewer_id: user.contributor_id || '',\n      reviewer_is_local_guide: user.local_guide === true ? 'Yes' : 'No',\n      reviewer_review_count: Number(user.reviews || 0),\n      reviewer_photo_count: Number(user.photos || 0),\n      rating: Number(review.rating || 0),\n      review_text: (extractedSnippet.original || review.snippet || '').substring(0, 5000),\n      review_text_translated: (extractedSnippet.translated || '').substring(0, 5000),\n      review_date: review.iso_date || review.date || '',\n      review_position: Number(review.position || 0),\n      likes: Number(review.likes || 0),\n      images_count: images.length,\n      images_json: images.length ? JSON.stringify(images) : '',\n      review_link: review.link || '',\n      source: review.source || 'Google',\n      crawl_date: crawlDate,\n      crawl_timestamp: crawlTimestamp\n    });\n  });\n});\n\nreturn allReviews;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1088,
+        80
+      ],
+      "id": "008c3cd9-382b-4359-8da4-e4fd0fd6b157",
+      "name": "Parse Reviews"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1A2sGdCu944eq2Ly9y4A7i0Rd8Q1eBVx7JYSh1UovG7g",
+          "mode": "list",
+          "cachedResultName": "Location car wash",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1A2sGdCu944eq2Ly9y4A7i0Rd8Q1eBVx7JYSh1UovG7g/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 2075657404,
+          "mode": "list",
+          "cachedResultName": "TPHCM_Reviews",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1A2sGdCu944eq2Ly9y4A7i0Rd8Q1eBVx7JYSh1UovG7g/edit#gid=2075657404"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "review_id": "={{ $json.review_id }}",
+            "record_key": "={{ $json.record_key }}",
+            "place_id": "={{ $json.place_id }}",
+            "place_name": "={{ $json.place_name }}",
+            "place_address": "={{ $json.place_address }}",
+            "place_rating": "={{ $json.place_rating }}",
+            "place_type": "={{ $json.place_type }}",
+            "reviewer_name": "={{ $json.reviewer_name }}",
+            "reviewer_id": "={{ $json.reviewer_id }}",
+            "reviewer_is_local_guide": "={{ $json.reviewer_is_local_guide }}",
+            "reviewer_review_count": "={{ $json.reviewer_review_count }}",
+            "reviewer_photo_count": "={{ $json.reviewer_photo_count }}",
+            "rating": "={{ $json.rating }}",
+            "review_text": "={{ $json.review_text }}",
+            "review_text_translated": "={{ $json.review_text_translated }}",
+            "review_date": "={{ $json.review_date }}",
+            "review_position": "={{ $json.review_position }}",
+            "likes": "={{ $json.likes }}",
+            "images_count": "={{ $json.images_count }}",
+            "images_json": "={{ $json.images_json }}",
+            "review_link": "={{ $json.review_link }}",
+            "source": "={{ $json.source }}",
+            "crawl_date": "={{ $json.crawl_date }}",
+            "crawl_timestamp": "={{ $json.crawl_timestamp }}"
+          },
+          "matchingColumns": [
+            "review_id"
+          ],
+          "schema": [],
+          "attemptToConvertTypes": true,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1296,
+        80
+      ],
+      "id": "bb4c78e6-469d-446b-a283-7fa2e45ba8dd",
+      "name": "Append or update row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "5xYJoyRNHqbba9Ob",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Filter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Parse Reviews",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Google_maps_reviews search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google_maps_reviews search": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Reviews": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "7020d856-32e4-4ede-a86a-c7d2e4f358ba",
+  "meta": {
+    "instanceId": "2a7bd8ec0984c6e620eda1666673bf3476ee8c440c4559daced33b2dc44de307"
+  },
+  "id": "cc2DpSA6C6GrDLNU",
+  "tags": []
+}

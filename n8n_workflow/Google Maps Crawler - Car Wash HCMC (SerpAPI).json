@@ -1,0 +1,648 @@
+{
+  "name": "Google Maps Crawler - Car Wash HCMC (SerpAPI)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "id": "808ca1ce-6add-42e4-9a03-3dfbf717a916",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        752,
+        1072
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const districts = [\n  'quan 1', 'quan 3', 'quan 4', 'quan 5', 'quan 6', 'quan 7', 'quan 8',\n  'quan 10', 'quan 11', 'quan 12', 'binh thanh', 'tan binh', 'tan phu',\n  'phu nhuan', 'go vap', 'thu duc', 'binh tan', 'nha be', 'hoc mon', 'cu chi'\n];\n\nconst maxPages = 3;\nconst includeRawJson = false;\nconst includeMetaJson = false;\n\nconst rows = [];\nfor (const district of districts) {\n  const query = ('rua xe oto ' + district + ' ho chi minh').replace(/\\s+/g, ' ').trim();\n  for (let i = 0; i < maxPages; i += 1) {\n    rows.push({\n      json: {\n        district,\n        query,\n        start: i * 20,\n        page: i + 1,\n        max_pages: maxPages,\n        include_raw_json: includeRawJson,\n        include_meta_json: includeMetaJson\n      }\n    });\n  }\n}\n\nreturn rows;"
+      },
+      "id": "3d2212ec-a4df-434e-b56e-dbd4c9717c74",
+      "name": "Build Search Pages",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        976,
+        976
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst out = [];\nconst seen = new Set();\nconst slugCache = new Map();\nconst crawledAt = new Date().toISOString();\n\nconst districtRegex = /(quan\\s*\\d+|thu duc|binh thanh|tan binh|tan phu|phu nhuan|go vap|binh tan|nha be|hoc mon|cu chi)/i;\n\nconst slug = (text) => {\n  const source = String(text || '');\n  if (slugCache.has(source)) return slugCache.get(source);\n\n  const value = source\n    .toLowerCase()\n    .normalize('NFD')\n    .replace(/[\\u0300-\\u036f]/g, '')\n    .replace(/[^a-z0-9]+/g, '_')\n    .replace(/^_+|_+$/g, '') || 'na';\n\n  slugCache.set(source, value);\n  return value;\n};\n\nfor (let i = 0; i < items.length; i += 1) {\n  const payload = items[i].json || {};\n  const results = payload.local_results;\n  if (!Array.isArray(results) || results.length === 0) continue;\n\n  const includeRawJson = payload.include_raw_json === true;\n  const includeMetaJson = payload.include_meta_json === true;\n\n  const metadata = payload.search_metadata || {};\n  const params = payload.search_parameters || {};\n  const info = payload.search_information || {};\n  const query = info.query_displayed || params.q || '';\n\n  const normalizedQuery = query.toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g, '');\n  const districtMatch = normalizedQuery.match(districtRegex);\n  const district = districtMatch ? districtMatch[0].trim() : 'toan_thanh_pho';\n  const districtKey = slug(district);\n  const pageStart = Number(params.start || 0);\n\n  for (let index = 0; index < results.length; index += 1) {\n    const place = results[index] || {};\n    const placeId = place.place_id || '';\n    const title = place.title || 'N/A';\n    const address = place.address || 'N/A';\n    const absolutePosition = pageStart + index + 1;\n\n    const fallbackIdentity = slug(title) + '_' + slug(address) + '_' + districtKey;\n    const recordKey = placeId || fallbackIdentity;\n\n    if (seen.has(recordKey)) continue;\n    seen.add(recordKey);\n\n    const coords = place.gps_coordinates || {};\n    const operatingHours = place.operating_hours || {};\n    const serviceOptions = place.service_options || {};\n\n    const fridayPair = Object.entries(operatingHours).find(([k]) => {\n      const key = slug(k);\n      return key.includes('thu_sau') || key.includes('friday');\n    });\n    const fridayHours = fridayPair ? fridayPair[1] : 'N/A';\n\n    let onSite = null;\n    for (const [k, v] of Object.entries(serviceOptions)) {\n      const key = slug(k);\n      if (key.includes('tai_cho') || key.includes('on_site')) { onSite = v; break; }\n    }\n\n    out.push({\n      json: {\n        record_key: recordKey,\n        district,\n        page_start: pageStart,\n        page_position: Number(place.position || index + 1),\n        position: absolutePosition,\n        title,\n        type: place.type || 'N/A',\n        type_id: place.type_id || '',\n        type_ids: (place.type_ids || []).join(', '),\n        types: (place.types || []).join(', '),\n\n        address,\n        phone: place.phone ? (\"'\" + place.phone) : 'N/A',\n        website: place.website || 'N/A',\n        latitude: coords.latitude ?? null,\n        longitude: coords.longitude ?? null,\n\n        rating: Number(place.rating || 0),\n        reviews: Number(place.reviews || 0),\n        price: place.price || 'N/A',\n\n        open_state: place.open_state || 'N/A',\n        hours: place.hours || place.open_state || 'N/A',\n        friday_hours: fridayHours,\n\n        place_id: placeId,\n        provider_id: place.provider_id || '',\n        data_id: place.data_id || '',\n        data_cid: place.data_cid || '',\n        place_link: place.place_id_search || '',\n        reviews_link: place.reviews_link || '',\n        photos_link: place.photos_link || '',\n        thumbnail: place.thumbnail || '',\n        serpapi_thumbnail: place.serpapi_thumbnail || '',\n\n        unclaimed_listing: Boolean(place.unclaimed_listing),\n        service_options_on_site: onSite,\n\n        query,\n        local_results_state: info.local_results_state || '',\n        search_id: metadata.id || '',\n        google_maps_url: metadata.google_maps_url || '',\n        json_endpoint: metadata.json_endpoint || '',\n        hl: params.hl || '',\n        gl: params.gl || '',\n\n        operating_hours_json: includeMetaJson ? JSON.stringify(operatingHours) : '',\n        service_options_json: includeMetaJson ? JSON.stringify(serviceOptions) : '',\n        raw_place_json: includeRawJson ? JSON.stringify(place) : '',\n\n        crawl_date: crawledAt\n      }\n    });\n  }\n}\n\nreturn out;"
+      },
+      "id": "85617596-c865-4482-9445-4ecc30b1ee58",
+      "name": "Parse Results",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1424,
+        976
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1A2sGdCu944eq2Ly9y4A7i0Rd8Q1eBVx7JYSh1UovG7g",
+          "mode": "list",
+          "cachedResultName": "Location car wash",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1A2sGdCu944eq2Ly9y4A7i0Rd8Q1eBVx7JYSh1UovG7g/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "TPHCM",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1A2sGdCu944eq2Ly9y4A7i0Rd8Q1eBVx7JYSh1UovG7g/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "record_key"
+          ],
+          "schema": [
+            {
+              "id": "position",
+              "displayName": "position",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "title",
+              "displayName": "title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "type",
+              "displayName": "type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "type_id",
+              "displayName": "type_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "type_ids",
+              "displayName": "type_ids",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "types",
+              "displayName": "types",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "address",
+              "displayName": "address",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "phone",
+              "displayName": "phone",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "website",
+              "displayName": "website",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "latitude",
+              "displayName": "latitude",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "longitude",
+              "displayName": "longitude",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "rating",
+              "displayName": "rating",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "reviews",
+              "displayName": "reviews",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "price",
+              "displayName": "price",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "open_state",
+              "displayName": "open_state",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "hours",
+              "displayName": "hours",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "friday_hours",
+              "displayName": "friday_hours",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "place_id",
+              "displayName": "place_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "provider_id",
+              "displayName": "provider_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "data_id",
+              "displayName": "data_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "data_cid",
+              "displayName": "data_cid",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "place_link",
+              "displayName": "place_link",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "reviews_link",
+              "displayName": "reviews_link",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "photos_link",
+              "displayName": "photos_link",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "thumbnail",
+              "displayName": "thumbnail",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "serpapi_thumbnail",
+              "displayName": "serpapi_thumbnail",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "unclaimed_listing",
+              "displayName": "unclaimed_listing",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "service_options_on_site",
+              "displayName": "service_options_on_site",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "query",
+              "displayName": "query",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "local_results_state",
+              "displayName": "local_results_state",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "search_id",
+              "displayName": "search_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "google_maps_url",
+              "displayName": "google_maps_url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "json_endpoint",
+              "displayName": "json_endpoint",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "hl",
+              "displayName": "hl",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "gl",
+              "displayName": "gl",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "operating_hours_json",
+              "displayName": "operating_hours_json",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "service_options_json",
+              "displayName": "service_options_json",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "raw_place_json",
+              "displayName": "raw_place_json",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "crawl_date",
+              "displayName": "crawl_date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "record_key",
+              "displayName": "record_key",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "district",
+              "displayName": "district",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "page_start",
+              "displayName": "page_start",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "page_position",
+              "displayName": "page_position",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "643e363f-5458-46ec-8847-9c8c23a905b2",
+      "name": "Save to Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        1648,
+        976
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "5xYJoyRNHqbba9Ob",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Google Maps Crawler (SerpAPI)\n\n### What it does:\n1. Searches Google Maps via SerpAPI\n2. Extracts: Name, Address, Phone, Rating, Reviews, Hours, GPS\n3. Saves to Google Sheets\n4. Runs daily at 9 AM automatically\n\n### Setup:\n1. Get SerpAPI key: https://serpapi.com/\n2. Replace YOUR_SERPAPI_KEY in workflow\n3. Create Google Sheet and update ID\n4. Activate!\n\n### Pricing:\n- Free: 100 searches/month\n- Hobby: $50/month (5,000 searches)\n- Much cheaper than Google Maps API!",
+        "height": 512,
+        "width": 768
+      },
+      "id": "d0926274-5de7-426c-b37c-b498bbcac930",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        544,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "google_maps",
+        "q": "={{ $json.query || 'rua xe oto ho chi minh' }}",
+        "ll": "=",
+        "additionalFields": {
+          "hl": "vi",
+          "gl": "vn",
+          "start": "={{ $json.start || 0 }}"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-serpapi.serpApi",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        976
+      ],
+      "id": "1c787066-d96c-4257-a20d-41e47226d7c4",
+      "name": "Google_maps search",
+      "credentials": {
+        "serpApi": {
+          "id": "XjQ6Kcm1yae6RsDF",
+          "name": "SerpApi account (nguyenhieutrung.07)"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        752,
+        880
+      ],
+      "id": "b43acd1a-8ceb-4bcc-858b-3b46826d7e97",
+      "name": "When clicking Execute workflow"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Build Search Pages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Search Pages": {
+      "main": [
+        [
+          {
+            "node": "Google_maps search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Results": {
+      "main": [
+        [
+          {
+            "node": "Save to Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google_maps search": {
+      "main": [
+        [
+          {
+            "node": "Parse Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking Execute workflow": {
+      "main": [
+        [
+          {
+            "node": "Build Search Pages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "cf8d9668-08d0-4864-8d15-933dbfd4e1a4",
+  "meta": {
+    "instanceId": "2a7bd8ec0984c6e620eda1666673bf3476ee8c440c4559daced33b2dc44de307"
+  },
+  "id": "MfLOmUCBv9kNUIuc",
+  "tags": []
+}
