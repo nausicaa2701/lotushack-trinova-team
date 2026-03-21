@@ -40,6 +40,13 @@ export default defineConfig(({mode}) => {
         'localhost',
         '127.0.0.1',
       ],
+      // When VITE_API_BASE_URL is unset, `/api/*` resolves on the dev server; forward to FastAPI (default :8000).
+      proxy: {
+        '/api': {
+          target: 'http://127.0.0.1:8000',
+          changeOrigin: true,
+        },
+      },
     },
   };
 });

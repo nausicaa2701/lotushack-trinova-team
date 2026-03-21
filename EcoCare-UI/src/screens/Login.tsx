@@ -7,8 +7,7 @@ import { Clock3, Leaf, Lock, Mail, Zap } from 'lucide-react';
 import { useAuth, type UserRole } from '../auth/AuthContext';
 import { useMockData } from '../hooks/useMockData';
 import type { PlatformUser } from '../lib/platformMock';
-
-const API_BASE = import.meta.env.VITE_API_BASE_URL ?? '';
+import { getApiBase } from '../lib/apiClient';
 
 function mapRemoteUserToAuth(
   raw: { id: string; name: string; email: string; roles: string[]; defaultRole?: string },
@@ -59,7 +58,7 @@ export default function Login() {
     const loginEmail = email.trim() || found.email;
 
     setSubmitting(true);
-    fetch(`${API_BASE}/api/auth/login`, {
+    fetch(`${getApiBase()}/api/auth/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

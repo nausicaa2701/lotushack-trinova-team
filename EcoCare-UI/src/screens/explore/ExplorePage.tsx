@@ -14,11 +14,12 @@ import { createOwnerBooking } from '../../lib/ownerBookingsApi';
 import { filterMerchantsByQuery } from '../../lib/platformMock';
 import type { ExploreFilters, LatLng, Merchant, SearchMode } from './types';
 
+/** Empty serviceTypes = any service (matches API: no extra filter). */
 const initialFilters: ExploreFilters = {
   openNow: true,
   evSafe: true,
   minRating: 4,
-  serviceTypes: ['ceramic'],
+  serviceTypes: [],
   radiusKm: 5,
   maxDetourKm: 2,
 };

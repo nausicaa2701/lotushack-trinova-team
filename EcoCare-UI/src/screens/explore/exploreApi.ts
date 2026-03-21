@@ -2,6 +2,23 @@ import type { ExploreFilters, LatLng, Merchant, RoutePreviewResponse, SearchMode
 import { apiFetch, parseHttpErrorMessage } from '../../lib/apiClient';
 import { fetchPlatformMockData, filterMerchantsByQuery, mapProviderToMerchant } from '../../lib/platformMock';
 
+/** Map FastAPI / AIServing search rows to UI `Merchant` (handles extra fields from AI responses). */
+export function normalizeSearchMerchant(raw: Record<string, unknown>): Merchant {
+  return {
+    merchantId: String(raw.merchantId ?? ''),
+    name: String(raw.name ?? ''),
+    lat: Number(raw.lat ?? 0),
+    lng: Number(raw.lng ?? 0),
+    rating: Number(raw.rating ?? 0),
+    successfulOrders: Number(raw.successfulOrders ?? 0),
+    priceFrom: Number(raw.priceFrom ?? 0),
+    distanceFromRouteKm: raw.distanceFromRouteKm != null ? Number(raw.distanceFromRouteKm) : undefined,
+    detourMin: raw.detourMin != null ? Number(raw.detourMin) : undefined,
+    availableNow: Boolean(raw.availableNow),
+    reasonTags: Array.isArray(raw.reasonTags) ? (raw.reasonTags as unknown[]).map(String) : [],
+  };
+}
+
 async function postJson<T>(path: string, payload: unknown, userId?: string | null): Promise<T> {
   const response = await apiFetch(path, {
     method: 'POST',
@@ -23,7 +40,7 @@ export async function routePreview(origin: LatLng, destination: LatLng): Promise
 }
 
 export async function nearbySearch(location: LatLng, filters: ExploreFilters): Promise<Merchant[]> {
-  const result = await postJson<{ results: Merchant[] }>('/api/search/nearby', {
+  const result = await postJson<{ results: Record<string, unknown>[] }>('/api/search/nearby', {
     location,
     radiusKm: filters.radiusKm,
     filters: {
@@ -33,11 +50,11 @@ export async function nearbySearch(location: LatLng, filters: ExploreFilters): P
       serviceTypes: filters.serviceTypes,
     },
   });
-  return result.results;
+  return (result.results ?? []).map((row) => normalizeSearchMerchant(row));
 }
 
 export async function onRouteSearch(origin: LatLng, destination: LatLng, filters: ExploreFilters, polyline?: string): Promise<Merchant[]> {
-  const result = await postJson<{ results: Merchant[] }>('/api/search/on-route', {
+  const result = await postJson<{ results: Record<string, unknown>[] }>('/api/search/on-route', {
     origin,
     destination,
     polyline: polyline ?? '',
@@ -49,7 +66,7 @@ export async function onRouteSearch(origin: LatLng, destination: LatLng, filters
       serviceTypes: filters.serviceTypes,
     },
   });
-  return result.results;
+  return (result.results ?? []).map((row) => normalizeSearchMerchant(row));
 }
 
 export async function fallbackSearch(mode: SearchMode, query = ''): Promise<Merchant[]> {

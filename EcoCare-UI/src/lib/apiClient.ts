@@ -1,6 +1,12 @@
-/** HTTP client for the configured API base URL. */
+/** HTTP client for the configured API base URL (origin only; paths in this app already include `/api/...`). */
 export function getApiBase(): string {
-  return import.meta.env.VITE_API_BASE_URL ?? '';
+  let base = import.meta.env.VITE_API_BASE_URL ?? '';
+  base = base.trim().replace(/\/+$/, '');
+  // Avoid double `/api` when env is set to `http://host:8000/api` and paths are `/api/search/...`.
+  if (base.endsWith('/api')) {
+    base = base.slice(0, -4);
+  }
+  return base;
 }
 
 export interface ApiFetchOptions extends RequestInit {

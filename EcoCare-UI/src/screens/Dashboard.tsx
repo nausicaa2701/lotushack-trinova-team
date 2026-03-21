@@ -206,7 +206,6 @@ export const Dashboard = () => {
       <section className="space-y-4">
         <div>
           <h3 className="font-headline text-2xl font-extrabold tracking-tight text-on-surface">Ranking & Slot Reasons</h3>
-          <p className="mt-1 text-slate-500">Phase 2/3 UI: explain why providers and slots are recommended.</p>
         </div>
         {loading || !data ? (
           <div className="rounded-3xl bg-surface-container-low p-6 text-sm text-slate-500">Loading recommendation reasons...</div>

@@ -24,6 +24,18 @@ def _to_float(value: float | Decimal) -> float:
     return float(value)
 
 
+def _service_types_match(merchant: Merchant, service_types: list[str]) -> bool:
+    """Allow partial matches so FE tags like 'ceramic' match DB values like 'ceramic coating'."""
+    if not service_types:
+        return True
+    lowered = [str(s).lower() for s in merchant.service_types]
+    for req in service_types:
+        rl = str(req).lower()
+        if not any(rl in m or m in rl for m in lowered):
+            return False
+    return True
+
+
 def _match_filters(merchant: Merchant, min_rating: float, open_now: bool, ev_safe: bool, service_types: list[str]) -> bool:
     if merchant.rating < min_rating:
         return False
@@ -31,7 +43,7 @@ def _match_filters(merchant: Merchant, min_rating: float, open_now: bool, ev_saf
         return False
     if ev_safe and not merchant.is_ev_safe:
         return False
-    if service_types and not any(service in merchant.service_types for service in service_types):
+    if not _service_types_match(merchant, service_types):
         return False
     return True
 
