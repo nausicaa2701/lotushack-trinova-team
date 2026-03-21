@@ -1,4 +1,5 @@
 import json
+import random
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -30,6 +31,79 @@ def load_json(filename: str):
         return json.load(f)
 
 
+def seed_random_users(db, count: int = 100) -> None:
+    first_names = [
+        "Liam",
+        "Noah",
+        "Oliver",
+        "Elijah",
+        "James",
+        "William",
+        "Benjamin",
+        "Lucas",
+        "Henry",
+        "Alexander",
+        "Olivia",
+        "Emma",
+        "Ava",
+        "Sophia",
+        "Isabella",
+        "Mia",
+        "Charlotte",
+        "Amelia",
+        "Harper",
+        "Evelyn",
+    ]
+    last_names = [
+        "Nguyen",
+        "Tran",
+        "Le",
+        "Pham",
+        "Hoang",
+        "Huynh",
+        "Vo",
+        "Dang",
+        "Bui",
+        "Do",
+        "Carter",
+        "Rivera",
+        "Kim",
+        "Park",
+        "Smith",
+        "Johnson",
+        "Brown",
+        "Davis",
+        "Wilson",
+        "Moore",
+    ]
+    roles_pool = [
+        (["owner"], "owner"),
+        (["provider"], "provider"),
+        (["owner", "provider"], "owner"),
+    ]
+
+    rng = random.Random(20260321)
+    for i in range(1, count + 1):
+        first = rng.choice(first_names)
+        last = rng.choice(last_names)
+        roles, default_role = rng.choice(roles_pool)
+
+        user_id = f"seed-user-{i:03d}"
+        email = f"{first.lower()}.{last.lower()}.{i:03d}@seed.ecocare.local"
+
+        db.merge(
+            User(
+                id=user_id,
+                name=f"{first} {last}",
+                email=email,
+                roles=roles,
+                default_role=default_role,
+            )
+        )
+
+    db.commit()
+
+
 def run() -> None:
     db = SessionLocal()
     try:
@@ -45,6 +119,8 @@ def run() -> None:
                 )
             )
         db.commit()
+
+        seed_random_users(db, count=100)
 
         merchants = load_json("merchants.json")["merchants"]
         for item in merchants:
