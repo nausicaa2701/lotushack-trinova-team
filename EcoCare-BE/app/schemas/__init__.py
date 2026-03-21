@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import Any, Literal
 
-from pydantic import BaseModel, ConfigDict, EmailStr, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class LatLng(BaseModel):
@@ -68,7 +68,7 @@ class NearbySearchResponse(BaseModel):
 
 
 class LoginRequest(BaseModel):
-    email: EmailStr
+    email: str
     password: str
 
 
@@ -77,7 +77,7 @@ class UserOut(BaseModel):
 
     id: str
     name: str
-    email: EmailStr
+    email: str
     roles: list[str]
     default_role: str = Field(alias="defaultRole")
 

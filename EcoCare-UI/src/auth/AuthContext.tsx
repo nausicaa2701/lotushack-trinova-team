@@ -38,22 +38,26 @@ function readStoredUser(): AuthUser | null {
   }
 }
 
+function resolveRoleForUser(nextUser: AuthUser): UserRole {
+  const fallback = nextUser.defaultRole ?? nextUser.roles[0];
+  try {
+    const prefs = JSON.parse(localStorage.getItem(STORAGE_ROLE_KEY) ?? '{}') as Record<string, UserRole>;
+    const previous = prefs[nextUser.id];
+    if (previous && nextUser.roles.includes(previous)) {
+      return previous;
+    }
+  } catch {
+    // ignore preference parsing issues
+  }
+  return fallback;
+}
+
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<AuthUser | null>(readStoredUser);
-  const [activeRole, setActiveRole] = useState<UserRole | null>(null);
+  const [activeRole, setActiveRole] = useState<UserRole | null>(() => (user ? resolveRoleForUser(user) : null));
 
   const resolveInitialRole = (nextUser: AuthUser): UserRole => {
-    const fallback = nextUser.defaultRole ?? nextUser.roles[0];
-    try {
-      const prefs = JSON.parse(localStorage.getItem(STORAGE_ROLE_KEY) ?? '{}') as Record<string, UserRole>;
-      const previous = prefs[nextUser.id];
-      if (previous && nextUser.roles.includes(previous)) {
-        return previous;
-      }
-    } catch {
-      // ignore preference parsing issues
-    }
-    return fallback;
+    return resolveRoleForUser(nextUser);
   };
 
   const persistRolePreference = (userId: string, role: UserRole) => {
