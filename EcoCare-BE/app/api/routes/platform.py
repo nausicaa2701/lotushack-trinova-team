@@ -42,7 +42,7 @@ def platform_bootstrap(db: Session = Depends(get_db)):
             }
             for user in users
         ],
-        "providers": [
+        "merchants": [
             {
                 "id": merchant.merchant_id,
                 "name": merchant.name,

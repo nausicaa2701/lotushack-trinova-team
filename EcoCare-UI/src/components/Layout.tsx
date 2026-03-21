@@ -5,14 +5,23 @@ import { TopBar } from './TopBar';
 
 export const Layout: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    // Detect mobile on mount and resize
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     setSidebarOpen(false);
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen min-h-dvh bg-surface overflow-x-hidden">
+    <div className="min-h-screen min-h-dvh bg-surface overflow-x-hidden pb-20 lg:pb-0">
       <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       {sidebarOpen && (
         <button

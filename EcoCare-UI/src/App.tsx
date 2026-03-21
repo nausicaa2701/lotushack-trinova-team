@@ -29,10 +29,15 @@ import "primereact/resources/themes/lara-light-blue/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 
+// Mobile Styles
+import { MobileBottomNav } from './components/MobileBottomNav';
+import './styles/mobile.css';
+
 export default function App() {
   return (
     <AuthProvider>
       <Router>
+        <div className="pb-20 lg:pb-0">
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/login" element={<Login />} />
@@ -152,6 +157,8 @@ export default function App() {
           <Route path="/analytics" element={<Navigate to="/admin/dashboard" replace />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
+        <MobileBottomNav />
+        </div>
       </Router>
     </AuthProvider>
   );

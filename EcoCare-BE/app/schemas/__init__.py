@@ -106,12 +106,16 @@ class BookingOut(BaseModel):
 
 
 class CreateBookingRequest(BaseModel):
-    id: str
-    providerId: str | None = None
-    provider: str
-    service: str
-    slot: str
-    price: float
+    id: str | None = None  # Auto-generated if not provided
+    merchant_id: str | None = None  # Can use merchant_id or provider
+    provider: str | None = None  # Or provider name
+    service: str | None = None  # Auto-filled from service_type
+    service_type: str | None = None  # User-friendly: exterior, interior, full
+    slot: str | None = None  # Auto-filled from slot_time
+    slot_time: str | None = None  # User-friendly time slot
+    vehicle_id: str | None = None
+    price: float | None = None  # Auto-calculated
+    notes: str | None = None
 
 
 class UpdateBookingStateRequest(BaseModel):

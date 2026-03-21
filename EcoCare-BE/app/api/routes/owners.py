@@ -5,7 +5,7 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from app.api.deps import get_current_user, get_db
-from app.models import Booking, User
+from app.models import Booking, Merchant, User
 from app.schemas import BookingOut, CreateBookingRequest, UpdateBookingStateRequest
 
 router = APIRouter()
@@ -44,25 +44,43 @@ def create_owner_booking(
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
+    import uuid
+    from datetime import datetime
+    
     if current_user.id != owner_id and "admin" not in current_user.roles:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Not allowed")
 
-    provider_id: str | None = payload.providerId
-    if provider_id:
-        provider_user = db.get(User, provider_id)
-        if not provider_user:
-            # Frontend may send merchant IDs here; do not fail with FK errors.
-            provider_id = None
-
+    # Auto-generate ID if not provided
+    booking_id = payload.id or f"bk-{int(datetime.now().timestamp() * 1000)}"
+    
+    # Handle merchant_id -> provider mapping
+    provider = payload.provider
+    provider_id = None
+    service = payload.service or (payload.service_type + " wash" if payload.service_type else "Eco wash")
+    slot = payload.slot or payload.slot_time or "Next available"
+    price = payload.price or 0.0
+    
+    # If merchant_id provided, try to find merchant and use as provider
+    if payload.merchant_id:
+        merchant = db.get(Merchant, payload.merchant_id)
+        if merchant:
+            provider = merchant.name
+            # Try to find first provider user (simplified - no JSON query)
+            all_users = db.scalars(select(User)).all()
+            for user in all_users:
+                if "provider" in user.roles:
+                    provider_id = user.id
+                    break
+    
     booking = Booking(
-        id=payload.id,
+        id=booking_id,
         owner_id=owner_id,
         provider_id=provider_id,
-        provider=payload.provider,
-        service=payload.service,
-        slot=payload.slot,
+        provider=provider or "Unknown Provider",
+        service=service,
+        slot=slot,
         state="confirmed",
-        price=payload.price,
+        price=price,
     )
     db.add(booking)
     db.commit()

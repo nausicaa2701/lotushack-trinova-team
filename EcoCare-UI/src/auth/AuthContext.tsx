@@ -32,10 +32,18 @@ const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 
 function readStoredUser(): AuthUser | null {
   try {
+    // Check if localStorage is available (may be restricted in some mobile browsers)
+    if (typeof localStorage === 'undefined') return null;
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return null;
-    return JSON.parse(raw) as AuthUser;
-  } catch {
+    const user = JSON.parse(raw) as AuthUser;
+    // Validate user has required fields
+    if (!user.id || !user.roles || !Array.isArray(user.roles)) {
+      return null;
+    }
+    return user;
+  } catch (e) {
+    console.warn('AuthContext: Failed to read stored user', e);
     return null;
   }
 }
@@ -64,11 +72,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const persistRolePreference = (userId: string, role: UserRole) => {
     try {
+      if (typeof localStorage === 'undefined') return;
       const prefs = JSON.parse(localStorage.getItem(STORAGE_ROLE_KEY) ?? '{}') as Record<string, UserRole>;
       prefs[userId] = role;
       localStorage.setItem(STORAGE_ROLE_KEY, JSON.stringify(prefs));
-    } catch {
-      // no-op
+    } catch (e) {
+      console.warn('AuthContext: Failed to persist role preference', e);
     }
   };
 
@@ -77,7 +86,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setUser(nextUser);
     setActiveRole(nextRole);
     persistRolePreference(nextUser.id, nextRole);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(nextUser));
+    try {
+      if (typeof localStorage !== 'undefined') {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(nextUser));
+      }
+    } catch (e) {
+      console.warn('AuthContext: Failed to persist user to localStorage', e);
+    }
     return nextRole;
   };
 
@@ -90,7 +105,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const logout = () => {
     setUser(null);
     setActiveRole(null);
-    localStorage.removeItem(STORAGE_KEY);
+    try {
+      if (typeof localStorage !== 'undefined') {
+        localStorage.removeItem(STORAGE_KEY);
+      }
+    } catch (e) {
+      console.warn('AuthContext: Failed to clear localStorage', e);
+    }
   };
 
   React.useEffect(() => {
@@ -98,6 +119,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     if (!activeRole || !user.roles.includes(activeRole)) {
       const nextRole = resolveInitialRole(user);
       setActiveRole(nextRole);
+      persistRolePreference(user.id, nextRole);
       persistRolePreference(user.id, nextRole);
     }
   }, [user, activeRole]);
