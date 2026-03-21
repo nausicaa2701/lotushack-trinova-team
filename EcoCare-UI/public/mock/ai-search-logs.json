@@ -1,0 +1,48 @@
+{
+  "schema": {
+    "requiredFields": [
+      "id",
+      "user_id_anonymized",
+      "mode",
+      "origin_lat",
+      "origin_lng",
+      "destination_lat",
+      "destination_lng",
+      "route_polyline",
+      "filters_json",
+      "shown_merchants_json",
+      "clicked_merchant_id",
+      "booked_merchant_id",
+      "merchant_rank_position",
+      "detour_minutes",
+      "created_at"
+    ]
+  },
+  "events": [
+    {
+      "id": "log-001",
+      "user_id_anonymized": "anon_u_1001",
+      "mode": "on-route",
+      "origin_lat": 10.776,
+      "origin_lng": 106.7,
+      "destination_lat": 10.801,
+      "destination_lng": 106.66,
+      "route_polyline": "encoded_polyline_mock",
+      "filters_json": {
+        "openNow": true,
+        "evSafe": true,
+        "minRating": 4,
+        "serviceTypes": ["ceramic", "interior"]
+      },
+      "shown_merchants_json": [
+        { "merchantId": "m_001", "rank": 1 },
+        { "merchantId": "m_003", "rank": 2 }
+      ],
+      "clicked_merchant_id": "m_001",
+      "booked_merchant_id": "m_001",
+      "merchant_rank_position": 1,
+      "detour_minutes": 4,
+      "created_at": "2026-03-21T10:30:00Z"
+    }
+  ]
+}

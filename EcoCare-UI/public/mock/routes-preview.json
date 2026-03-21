@@ -1,0 +1,19 @@
+{
+  "requestSamples": [
+    {
+      "origin": { "lat": 10.776, "lng": 106.7 },
+      "destination": { "lat": 10.801, "lng": 106.66 }
+    }
+  ],
+  "response": {
+    "distanceKm": 8.4,
+    "durationMin": 24,
+    "polyline": "encoded_polyline_mock",
+    "bounds": {
+      "north": 10.81,
+      "south": 10.75,
+      "east": 106.71,
+      "west": 106.65
+    }
+  }
+}

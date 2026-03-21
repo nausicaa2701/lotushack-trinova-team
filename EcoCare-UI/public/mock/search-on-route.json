@@ -1,0 +1,42 @@
+{
+  "requestSample": {
+    "origin": { "lat": 10.776, "lng": 106.7 },
+    "destination": { "lat": 10.801, "lng": 106.66 },
+    "polyline": "encoded_polyline_mock",
+    "maxDetourKm": 2,
+    "filters": {
+      "openNow": true,
+      "evSafe": true,
+      "minRating": 4,
+      "serviceTypes": ["ceramic", "interior"]
+    }
+  },
+  "results": [
+    {
+      "merchantId": "m_001",
+      "name": "EcoGloss Elite",
+      "lat": 10.785,
+      "lng": 106.684,
+      "rating": 4.9,
+      "successfulOrders": 1240,
+      "priceFrom": 45,
+      "distanceFromRouteKm": 0.8,
+      "detourMin": 4,
+      "availableNow": true,
+      "reasonTags": ["On Route", "Top Rated", "Available Now"]
+    },
+    {
+      "merchantId": "m_003",
+      "name": "Sora Auto Care",
+      "lat": 10.792,
+      "lng": 106.671,
+      "rating": 4.7,
+      "successfulOrders": 860,
+      "priceFrom": 30,
+      "distanceFromRouteKm": 1.4,
+      "detourMin": 7,
+      "availableNow": false,
+      "reasonTags": ["On Route", "Price Fit"]
+    }
+  ]
+}

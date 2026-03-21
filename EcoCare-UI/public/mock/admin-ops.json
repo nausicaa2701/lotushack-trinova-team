@@ -1,0 +1,27 @@
+{
+  "merchantApprovals": [
+    { "id": "m-01", "merchant": "Green Sparkle", "city": "San Jose", "status": "pending" },
+    { "id": "m-02", "merchant": "Blue Bay Wash", "city": "San Mateo", "status": "pending" }
+  ],
+  "campaignModeration": [
+    { "id": "c-01", "provider": "VoltFlow Station", "type": "Boosted Listing", "status": "pending" },
+    { "id": "c-02", "provider": "Sora Auto Care", "type": "Popup Banner", "status": "approved" }
+  ],
+  "disputes": [
+    { "id": "d-01", "bookingId": "b-1003", "type": "refund_request", "status": "open" },
+    { "id": "d-02", "bookingId": "b-0992", "type": "service_quality", "status": "investigating" }
+  ],
+  "rankingRules": {
+    "routeMatchWeight": 0.3,
+    "distanceDetourWeight": 0.25,
+    "ratingWeight": 0.15,
+    "successfulOrderWeight": 0.1,
+    "slotAvailabilityWeight": 0.1,
+    "priceFitWeight": 0.1
+  },
+  "aiRollout": {
+    "rankingModel": { "status": "shadow_mode", "ndcg10": 0.82, "recall10": 0.8 },
+    "slotModel": { "status": "rule_engine_active", "top3HitRate": 0.74, "auc": 0.0 },
+    "fallbackHealthy": true
+  }
+}

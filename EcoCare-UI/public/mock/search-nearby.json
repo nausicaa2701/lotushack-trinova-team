@@ -1,0 +1,40 @@
+{
+  "requestSample": {
+    "location": { "lat": 10.776, "lng": 106.7 },
+    "radiusKm": 5,
+    "filters": {
+      "openNow": true,
+      "evSafe": true,
+      "minRating": 4,
+      "serviceTypes": ["ceramic"]
+    }
+  },
+  "results": [
+    {
+      "merchantId": "m_001",
+      "name": "EcoGloss Elite",
+      "lat": 10.785,
+      "lng": 106.684,
+      "rating": 4.9,
+      "successfulOrders": 1240,
+      "priceFrom": 45,
+      "distanceFromRouteKm": 0.8,
+      "detourMin": 4,
+      "availableNow": true,
+      "reasonTags": ["Near You", "Top Rated", "Available Now"]
+    },
+    {
+      "merchantId": "m_002",
+      "name": "VoltFlow Station",
+      "lat": 10.779,
+      "lng": 106.692,
+      "rating": 4.8,
+      "successfulOrders": 980,
+      "priceFrom": 39,
+      "distanceFromRouteKm": 1.2,
+      "detourMin": 6,
+      "availableNow": true,
+      "reasonTags": ["Near You", "Available Now"]
+    }
+  ]
+}

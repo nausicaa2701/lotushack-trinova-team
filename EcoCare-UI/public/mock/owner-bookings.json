@@ -1,0 +1,32 @@
+{
+  "bookings": [
+    {
+      "id": "b-1001",
+      "ownerId": "owner-01",
+      "provider": "VoltFlow Station",
+      "service": "Premium Exterior",
+      "slot": "09:30",
+      "state": "confirmed",
+      "price": 45
+    },
+    {
+      "id": "b-1002",
+      "ownerId": "owner-01",
+      "provider": "Sora Auto Care",
+      "service": "Eco Detail",
+      "slot": "13:00",
+      "state": "completed",
+      "price": 39
+    },
+    {
+      "id": "b-1003",
+      "ownerId": "owner-02",
+      "provider": "Eco Gloss Hub",
+      "service": "Express Wash",
+      "slot": "15:30",
+      "state": "cancelled",
+      "price": 30
+    }
+  ],
+  "states": ["pending", "confirmed", "in_progress", "completed", "cancelled", "no_show"]
+}

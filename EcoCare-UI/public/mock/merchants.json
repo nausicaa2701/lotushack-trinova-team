@@ -1,0 +1,46 @@
+{
+  "merchants": [
+    {
+      "merchantId": "m_001",
+      "name": "EcoGloss Elite",
+      "address": "1422 Marina Blvd, San Francisco",
+      "lat": 37.8062,
+      "lng": -122.4371,
+      "rating": 4.9,
+      "reviewCount": 1240,
+      "successfulOrders": 1420,
+      "priceFrom": 45,
+      "isEvSafe": true,
+      "openNow": true,
+      "serviceTypes": ["ceramic", "interior", "express"]
+    },
+    {
+      "merchantId": "m_002",
+      "name": "VoltFlow Station",
+      "address": "820 Mission St, San Francisco",
+      "lat": 37.7837,
+      "lng": -122.4072,
+      "rating": 4.8,
+      "reviewCount": 980,
+      "successfulOrders": 1288,
+      "priceFrom": 39,
+      "isEvSafe": true,
+      "openNow": true,
+      "serviceTypes": ["eco", "interior", "detailing"]
+    },
+    {
+      "merchantId": "m_003",
+      "name": "Sora Auto Care",
+      "address": "410 King St, San Francisco",
+      "lat": 37.7782,
+      "lng": -122.3899,
+      "rating": 4.7,
+      "reviewCount": 860,
+      "successfulOrders": 980,
+      "priceFrom": 30,
+      "isEvSafe": true,
+      "openNow": false,
+      "serviceTypes": ["express", "eco"]
+    }
+  ]
+}

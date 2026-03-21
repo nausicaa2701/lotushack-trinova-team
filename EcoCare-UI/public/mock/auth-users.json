@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": "owner-01",
+      "name": "Alex Rivera",
+      "email": "alex@washnet.app",
+      "roles": ["owner", "provider"],
+      "defaultRole": "owner",
+      "vehicle": "Tesla Model S Plaid"
+    },
+    {
+      "id": "owner-02",
+      "name": "Mia Chen",
+      "email": "mia@washnet.app",
+      "roles": ["owner"],
+      "defaultRole": "owner",
+      "vehicle": "Hyundai Ioniq 5"
+    },
+    {
+      "id": "provider-01",
+      "name": "Sora Auto Care",
+      "email": "ops@sorawash.com",
+      "roles": ["provider"],
+      "defaultRole": "provider",
+      "branch": "Downtown Hub"
+    },
+    {
+      "id": "provider-02",
+      "name": "VoltFlow Station",
+      "email": "owner@voltflow.com",
+      "roles": ["provider"],
+      "defaultRole": "provider",
+      "branch": "Marina Point"
+    },
+    {
+      "id": "admin-01",
+      "name": "Nina Park",
+      "email": "admin@washnet.app",
+      "roles": ["admin"],
+      "defaultRole": "admin",
+      "title": "Marketplace Admin"
+    }
+  ]
+}
