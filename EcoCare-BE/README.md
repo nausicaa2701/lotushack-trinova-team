@@ -1,373 +1,250 @@
-# EcoCare-BE
+# EcoCare Backend API
 
-## Overview
+FastAPI service for the **EcoCare** marketplace: auth, platform bootstrap, merchant search, slot recommendations, demand forecasting, and owner/provider/admin operations backed by **PostgreSQL**. Optional **AI/ranking artifacts** are read from the shared [`Dataset/`](../Dataset/) tree when present.
 
-EcoCare-BE is a FastAPI backend for authentication, platform bootstrap data, merchant discovery, slot recommendation, and AI-assisted forecast services.
+> **Monorepo:** This folder is `EcoCare-BE/`. The companion web app lives in [`EcoCare-UI/`](../EcoCare-UI/). Root [`docker-compose.yml`](../docker-compose.yml) runs **db + backend + frontend** together.
 
-It serves two types of data:
+---
 
-- Application data stored in PostgreSQL
-- AI/recommendation artifacts loaded from `Dataset/ProcessedData`
+## Table of contents
 
-## Tech Stack
+- [Features](#features)
+- [Tech stack](#tech-stack)
+- [Project layout](#project-layout)
+- [Prerequisites](#prerequisites)
+- [Quick start (local)](#quick-start-local)
+- [Run with Docker (full stack)](#run-with-docker-full-stack)
+- [Configuration](#configuration)
+- [Database & seeding](#database--seeding)
+- [API & documentation](#api--documentation)
+- [Authentication](#authentication)
+- [Dataset & AI artifacts](#dataset--ai-artifacts)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
 
-- FastAPI
-- SQLAlchemy 2
-- PostgreSQL
-- Pydantic v2
-- Uvicorn
+---
 
-## Project Structure
+## Features
 
-- `app/main.py`: FastAPI app entrypoint and CORS setup
-- `app/api/router.py`: top-level API router registration
-- `app/api/routes`: feature routes (`auth`, `search`, `slots`, `platform`, `forecast`, etc.)
-- `app/models`: SQLAlchemy models
-- `app/schemas`: request and response schemas
-- `app/services/ai_serving.py`: AI artifact loading and recommendation logic
-- `scripts/seed_from_mock.py`: database seeding from frontend mock JSON
+- REST API under configurable prefix (default **`/api`**)
+- SQLAlchemy 2.x models with PostgreSQL
+- Search (nearby / on-route), route preview, merchant detail
+- Slot recommendation and zone forecast when ML artifacts are available
+- Admin: merchant approvals, campaigns, disputes, ranking weights, AI rollout flags
+- Search event logging for analytics / ML pipelines
 
-## Environment Variables
+---
 
-Reference file: `.env.example`
+## Tech stack
 
-```dotenv
-APP_NAME=EcoCare Backend API
-APP_ENV=development
-API_PREFIX=/api
-POSTGRES_HOST=localhost
-POSTGRES_PORT=5432
-POSTGRES_DB=ecocare
-POSTGRES_USER=ecocare
-POSTGRES_PASSWORD=ecocare
-DATABASE_URL=
+| Layer | Technology |
+|--------|------------|
+| Runtime | Python 3.11+ (recommended) |
+| Framework | [FastAPI](https://fastapi.tiangolo.com/) |
+| ORM | SQLAlchemy 2 |
+| DB | PostgreSQL 16 |
+| Server | Uvicorn |
+| Validation | Pydantic v2 |
+
+---
+
+## Project layout
+
+```text
+EcoCare-BE/
+├── app/
+│   ├── main.py              # App entry, CORS, router mount
+│   ├── api/
+│   │   ├── router.py        # Registers all route modules
+│   │   └── routes/          # auth, search, merchants, slots, …
+│   ├── core/                # config, database
+│   ├── models/              # SQLAlchemy entities
+│   ├── schemas/             # Pydantic request/response models
+│   └── services/
+│       └── ai_serving.py    # Artifact-backed ranking/slots/forecast
+├── scripts/
+│   └── seed_from_mock.py    # Seed DB from EcoCare-UI mock JSON
+├── requirements.txt
+├── docker-compose.yml       # PostgreSQL only (dev helper)
+└── .env.example
 ```
 
-AI artifact paths are configured through settings defaults:
+---
 
-- `processed_data_dir=../Dataset/ProcessedData`
-- `processed_models_dir=../Dataset/ProcessedData/models`
+## Prerequisites
 
-## Run Locally Without Docker
+- **PostgreSQL** running and reachable (local or Docker)
+- **Python 3.11+** and `pip` (or your preferred env manager)
+- For AI features: **`Dataset/ProcessedData`** checked out next to this backend (see [Dataset & AI artifacts](#dataset--ai-artifacts))
 
-Create and activate a Python environment, then install dependencies:
+---
+
+## Quick start (local)
+
+### 1. Start PostgreSQL
+
+From **this directory** (`EcoCare-BE/`):
 
 ```bash
+docker compose up -d
+```
+
+This uses `EcoCare-BE/docker-compose.yml` (Postgres on port **5432**).
+
+Or use the repo root stack (see below) which names the DB service `db`.
+
+### 2. Install dependencies
+
+```bash
+cd EcoCare-BE
+python -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-Start the API from `EcoCare-BE`:
+### 3. Configure environment
+
+```bash
+cp .env.example .env
+# Edit .env: set POSTGRES_* or DATABASE_URL to match your database
+```
+
+### 4. Run the API
 
 ```bash
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-## Run With Docker Compose
+### 5. Verify
 
-From the repository root:
+- Health: [http://localhost:8000/health](http://localhost:8000/health)
+- Interactive docs: [http://localhost:8000/docs](http://localhost:8000/docs)
+
+---
+
+## Run with Docker (full stack)
+
+From the **repository root** (parent of `EcoCare-BE/`):
 
 ```bash
 docker compose up --build -d
 ```
 
-This starts:
+Services:
 
-- PostgreSQL
-- FastAPI backend
-- React frontend
+| Service | Port | Notes |
+|---------|------|--------|
+| PostgreSQL (`db`) | 5432 | DB `ecocare`, user/password `ecocare` |
+| Backend (`backend`) | 8000 | API |
+| Frontend (`frontend`) | 3000 | Vite app; `VITE_API_BASE_URL` points at backend |
 
-## Database Seeding
-
-Seed the database from the repository root after containers are running:
+Seed the database **after** the stack is up (with Python deps available):
 
 ```bash
 docker compose exec backend python scripts/seed_from_mock.py
 ```
 
-The seed process loads:
-
-- auth users
-- 100 generated synthetic users
-- merchants
-- owner/provider/admin operational data
-- search logs
-- vehicles from `EcoCare-UI/public/mock/platform-data.json`
-
-## Core API Areas
-
-Registered API groups:
-
-- `/api/auth`
-- `/api/routes`
-- `/api/search`
-- `/api/merchants`
-- `/api/slots`
-- `/api/forecast`
-- `/api/platform`
-- `/api/owners`
-- `/api/providers`
-- `/api/admin`
+---
 
-## Frequently Used Endpoints
+## Configuration
 
-- `GET /health`
-- `POST /api/auth/login`
-- `GET /api/auth/me`
-- `GET /api/platform/bootstrap`
-- `POST /api/routes/preview`
-- `POST /api/search/nearby`
-- `POST /api/search/on-route`
-- `POST /api/search/logs`
-- `POST /api/slots/recommend`
+Environment variables are loaded from **`.env`** (see [`.env.example`](./.env.example)).
 
-## Notes On Slot Recommendations
+| Variable | Description |
+|----------|-------------|
+| `APP_NAME` | Application title (OpenAPI) |
+| `APP_ENV` | e.g. `development`, `production` |
+| `API_PREFIX` | URL prefix for all routes (default `/api`) |
+| `POSTGRES_HOST`, `POSTGRES_PORT`, `POSTGRES_DB`, `POSTGRES_USER`, `POSTGRES_PASSWORD` | PostgreSQL connection |
+| `DATABASE_URL` | If set, overrides the composed URL (e.g. `postgresql+psycopg://user:pass@host:5432/dbname`) |
+| `PROCESSED_DATA_DIR` | Relative to `EcoCare-BE/` — default `../Dataset/ProcessedData` |
+| `PROCESSED_MODELS_DIR` | Default `../Dataset/ProcessedData/models` |
 
-Slot recommendation uses AI-serving artifacts from `Dataset/ProcessedData`.
+Paths resolve from the backend package root so the repo’s **`Dataset/`** folder can be read for ranking/slot/forecast artifacts.
 
-In Docker mode, the backend image must include the `Dataset` folder so `/api/slots/recommend` and forecast services can read artifact files such as:
+---
 
-- `merchant_ranking_features.csv`
-- `slot_events.csv`
-- `demand_forecast_predictions.csv`
+## Database & seeding
 
-If a frontend mock merchant ID does not exist in the artifact merchant index, the API falls back to safe default slot recommendations instead of failing.
+- Tables are created on startup (`Base.metadata.create_all`) for development convenience.
+- **Seed script:** `scripts/seed_from_mock.py` loads JSON from [`EcoCare-UI/public/mock/`](../EcoCare-UI/public/mock/) (users, merchants, vehicles, bookings, admin/provider ops, search logs, etc.).
 
-## Health and Validation
+Bulk loading from **`Dataset/`** CSVs is documented separately:
 
-Useful URLs:
+- [`../Dataset/POSTGRES_MAPPING.md`](../Dataset/POSTGRES_MAPPING.md)
 
-- Health: `http://localhost:8000/health`
-- OpenAPI docs: `http://localhost:8000/docs`
+---
 
-Quick validation example:
+## API & documentation
 
-```powershell
-Invoke-RestMethod -Method Get -Uri "http://localhost:8000/health"
-```
+All routes are mounted under **`API_PREFIX`** (default **`/api`**).
 
-## Current Auth Behavior
+| Area | Prefix |
+|------|--------|
+| Auth | `/api/auth` |
+| Routes | `/api/routes` |
+| Search | `/api/search` |
+| Merchants | `/api/merchants` |
+| Slots | `/api/slots` |
+| Forecast | `/api/forecast` |
+| Platform | `/api/platform` |
+| Owners | `/api/owners` |
+| Providers | `/api/providers` |
+| Admin | `/api/admin` |
 
-- Login is email-based for the current demo flow
-- Token format is placeholder/demo format
-- Some seeded users use local-domain emails such as `@seed.ecocare.local`
-- Session persistence is handled on the frontend side
-			"detourMin": 4,
-			"availableNow": true,
-			"reasonTags": ["On Route", "Top Rated", "Available Now"]
-		}
-	]
-}
-```
+**Interactive OpenAPI:** `GET /docs` (Swagger UI) and `GET /redoc` when the server is running.
 
-### POST `/api/search/logs`
+---
 
-- Purpose: record AI ranking/training events (best effort from FE).
+## Authentication
 
-Request (minimum fields from mock schema):
-
-```json
-{
-	"id": "log-001",
-	"user_id_anonymized": "anon_u_1001",
-	"mode": "on-route",
-	"origin_lat": 10.776,
-	"origin_lng": 106.7,
-	"destination_lat": 10.801,
-	"destination_lng": 106.66,
-	"route_polyline": "encoded_polyline_mock",
-	"filters_json": { "openNow": true, "evSafe": true, "minRating": 4, "serviceTypes": ["ceramic"] },
-	"shown_merchants_json": [{ "merchantId": "m_001", "rank": 1 }],
-	"clicked_merchant_id": "m_001",
-	"booked_merchant_id": "m_001",
-	"merchant_rank_position": 1,
-	"detour_minutes": 4,
-	"created_at": "2026-03-21T10:30:00Z"
-}
-```
-
-Response:
-
-```json
-{
-	"accepted": true
-}
-```
-
-## 3.3 Owner APIs
-
-### GET `/api/owners/{ownerId}/bookings`
-
-- Returns booking history for owner.
-
-### POST `/api/owners/{ownerId}/bookings`
-
-- Create booking.
-
-### PATCH `/api/owners/{ownerId}/bookings/{bookingId}`
-
-- Update booking state (`cancelled`, reschedule slot, etc.).
-
-Allowed states:
-
-`pending`, `confirmed`, `in_progress`, `completed`, `cancelled`, `no_show`
-
-## 3.4 Provider APIs
-
-### GET `/api/providers/{providerId}/bookings`
-
-- Returns provider queue (queued, in_progress, completed).
-
-### PATCH `/api/providers/{providerId}/bookings/{bookingId}`
-
-- Update provider-side booking state.
-
-### GET `/api/providers/{providerId}/campaign-requests`
-
-- List provider campaign submissions.
-
-### POST `/api/providers/{providerId}/campaign-requests`
-
-- Submit campaign request.
-
-### GET `/api/providers/{providerId}/ratings`
-
-- Returns summary metrics:
-	- `avgRating`
-	- `reviewCount`
-	- `successfulOrders`
-
-## 3.5 Admin APIs
-
-### GET `/api/admin/merchant-approvals`
-
-- List pending merchant approvals.
-
-### PATCH `/api/admin/merchant-approvals/{id}`
-
-- Approve/reject merchant.
-
-### GET `/api/admin/campaign-moderation`
-
-- List campaign moderation queue.
-
-### PATCH `/api/admin/campaign-moderation/{id}`
-
-- Moderate campaign status.
-
-### GET `/api/admin/disputes`
-
-- List disputes.
-
-### PATCH `/api/admin/disputes/{id}`
-
-- Update dispute workflow state.
-
-### GET `/api/admin/ranking-rules`
-
-- Fetch ranking weights configuration.
-
-### PUT `/api/admin/ranking-rules`
-
-- Update ranking weights.
-
-### GET `/api/admin/ai-rollout`
-
-- Fetch AI rollout health status/metrics.
-
-### PATCH `/api/admin/ai-rollout`
-
-- Toggle model rollout modes (`shadow_mode`, fallback flags, etc.).
-
-## 4) Suggested Folder Structure (BE)
-
-```text
-EcoCare-BE/
-	app/
-		api/
-			routes/
-		core/
-		models/
-		schemas/
-	scripts/
-	openapi.yaml
-	requirements.txt
-	docker-compose.yml
-```
-
-## 5) MVP Delivery Order
-
-1. Auth (`/auth/login`, `/auth/me`)
-2. Explore APIs (`/routes/preview`, `/search/nearby`, `/search/on-route`)
-3. Owner booking APIs
-4. Provider operations APIs
-5. Admin operations APIs
-6. AI logging endpoint and analytics pipeline
-
-## 6) Notes for FE-BE Compatibility
-
-- Keep exact field names used in mock files to avoid FE mapping churn.
-- Preserve current raw responses for:
-	- `POST /api/routes/preview`
-	- `POST /api/search/nearby`
-	- `POST /api/search/on-route`
-	- `POST /api/search/logs`
-- IDs should remain consistent across resources (`merchantId`, booking IDs, user IDs).
-
-## 7) Implementation Status
-
-- FastAPI app scaffolded at `app/main.py`.
-- PostgreSQL integration via SQLAlchemy configured at `app/core/database.py`.
-- API routers created for auth, routes, search, owners, providers, and admin.
-- OpenAPI starter file exists at `openapi.yaml`.
-- Seeder script created at `scripts/seed_from_mock.py`.
-
-## 8) Run Backend (Python + PostgreSQL)
-
-### Step 1: Start PostgreSQL
-
-```bash
-docker compose up -d postgres
-```
-
-### Step 2: Setup Python environment and install dependencies
-
-```bash
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-### Step 3: Configure environment
-
-Create `.env` from `.env.example`.
-
-### Step 4: Start API server
-
-```bash
-uvicorn app.main:app --reload --port 8000
-```
-
-### Step 5: Seed database from FE mock files
-
-Run this in another terminal while server dependencies are installed:
-
-```bash
-python scripts/seed_from_mock.py
-```
-
-## 9) Auth Behavior in Current Starter
-
-- Protected APIs expect request header: `X-User-Id`.
-- Test IDs from mock users:
-	- `owner-01`
-	- `owner-02`
-	- `provider-01`
-	- `provider-02`
-	- `admin-01`
-
-Example:
+- **Login:** `POST /api/auth/login` (demo/demo-style flow; see OpenAPI for body).
+- **Protected routes:** the API uses header **`X-User-Id`** with a user id that exists in the `users` table (see seed data). Example:
 
 ```http
-GET /api/auth/me
-X-User-Id: admin-01
+GET /api/owners/owner-02/bookings
+X-User-Id: owner-02
 ```
+
+Demo IDs from mock seed include: `owner-01`, `owner-02`, `provider-01`, `provider-02`, `admin-01`.
+
+---
+
+## Dataset & AI artifacts
+
+Ranking, slot, and forecast endpoints may load Parquet/CSV/model files from:
+
+- `Dataset/ProcessedData/`
+- `Dataset/ProcessedData/models/`
+
+If artifacts are missing or a merchant id is unknown to the index, the service falls back to **database-backed search** or **safe default** slot suggestions where implemented.
+
+Ensure the **`Dataset/`** directory is available at the paths implied by `PROCESSED_DATA_DIR` (e.g. clone the full monorepo, not only `EcoCare-BE/`).
+
+---
+
+## Troubleshooting
+
+| Issue | What to check |
+|--------|----------------|
+| DB connection errors | `POSTGRES_*` / `DATABASE_URL`, firewall, Postgres running |
+| Empty search / slot results | Filters too strict; merchant ids FE vs DB; artifacts path |
+| CORS from browser | `app/main.py` `allow_origins` includes your frontend origin |
+| `/api/...` 404 from frontend | Frontend base URL must be **origin only** — request paths already include `/api` (see EcoCare-UI `getApiBase()`) |
+
+---
+
+## Contributing
+
+1. Open an issue for larger changes.
+2. Use a virtual environment; keep `requirements.txt` reproducible.
+3. Run a quick smoke test: `uvicorn app.main:app` and hit `/health` and `/docs`.
+4. Follow existing patterns in `app/api/routes/` and `app/schemas/`.
+
+Add or update tests when you introduce new behavior (test layout may evolve in this repo).
+
+---
+
+## License
+
+This component follows the **license of the parent repository**. If none is present yet, add a `LICENSE` file at the repo root.
