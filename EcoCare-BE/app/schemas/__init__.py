@@ -93,7 +93,7 @@ class SwitchRoleRequest(BaseModel):
 
 
 class BookingOut(BaseModel):
-    model_config = ConfigDict(from_attributes=True)
+    model_config = ConfigDict(from_attributes=True, populate_by_name=True)
 
     id: str
     owner_id: str = Field(alias="ownerId")

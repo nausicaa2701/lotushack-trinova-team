@@ -47,10 +47,17 @@ def create_owner_booking(
     if current_user.id != owner_id and "admin" not in current_user.roles:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Not allowed")
 
+    provider_id: str | None = payload.providerId
+    if provider_id:
+        provider_user = db.get(User, provider_id)
+        if not provider_user:
+            # Frontend may send merchant IDs here; do not fail with FK errors.
+            provider_id = None
+
     booking = Booking(
         id=payload.id,
         owner_id=owner_id,
-        provider_id=payload.providerId,
+        provider_id=provider_id,
         provider=payload.provider,
         service=payload.service,
         slot=payload.slot,
