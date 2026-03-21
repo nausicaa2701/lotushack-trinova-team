@@ -212,3 +212,7 @@ dist/
 build/
 .vite/
 .DS_Store
+
+# Keep frontend source helpers in version control.
+!EcoCare-UI/src/lib/
+!EcoCare-UI/src/lib/**
