@@ -30,6 +30,51 @@ This epic focuses on **car wash only**, with AI centered on:
 - time slot recommendation
 - optional demand forecasting
 
+### 1.1 Current implementation snapshot (this repository)
+
+The sections below remain the **product / architecture target**. This subsection records **what exists today** in `lotushack-trinova-team` so planning stays aligned with code.
+
+**Monorepo layout (actual paths)**
+
+| Area | Location | Notes |
+|------|----------|--------|
+| Frontend | `EcoCare-UI/` | Product UI brand **WashNet**; folder name legacy **EcoCare-UI**. |
+| Backend API | `EcoCare-BE/` | **FastAPI** + SQLAlchemy + PostgreSQL (not NestJS). |
+| Datasets & artifacts | `Dataset/ProcessedData/` | Cleaned merchants, interaction CSVs, training data, `models/*.pkl` / `*.txt`, eval CSVs. |
+| Preprocessing / ML scripts | `EcoCare-BE/DataPreprocessing/` | Phased pipelines (e.g. cleaning, retrieval, ranking/slot/demand training). |
+| Phase reports | `.prompt/reports/` | Markdown reports per pipeline phase. |
+| Container orchestration | `docker-compose.yml` (repo root) | `db` (Postgres 16), `backend` (:8000), `frontend` (:3000); `VITE_API_BASE_URL` points at backend. |
+| n8n | `n8n_workflow/*.json` | **Exported workflows only**; not wired into `docker-compose` for booking/reminder automation yet. |
+
+**Frontend (`EcoCare-UI`) — implemented**
+
+- Stack: **Vite, React, TypeScript, PrimeReact, Tailwind**; **React Router**; **Leaflet** (react-leaflet) for map explore; **lucide-react** icons; mock data under `public/mock/*.json` and aggregate `platform-data.json`.
+- Single app shell with **nested routes** and **role-based screens**: owner (`/owner/*`), provider (`/provider/*`), admin (`/admin/*`); public **Landing** and **Login**.
+- **Auth**: `AuthContext` + `ProtectedRoute`; client-side role guards; **Login** may call `POST {API}/api/auth/login` and merge with mock user list when API is available.
+- **Explore**: nearby / on-route search UI with filters; API base from `VITE_API_BASE_URL` with mock fallback.
+- **Global search / location**: TopBar search (incl. voice UI with placeholder transcription), browser geolocation handling.
+- **Not fully aligned with epic “recommended FE libs”**: TanStack Query, Zustand, React Hook Form, Zod are **not** adopted as the default stack-wide pattern yet.
+
+**Backend (`EcoCare-BE`) — implemented**
+
+- **FastAPI** app: `GET /health`, API under configurable prefix (e.g. `/api`).
+- **Database**: PostgreSQL; SQLAlchemy models in `app/models/`; `create_all` on startup (no Alembic called out in epic doc).
+- **Auth**: `POST /api/auth/login` returns opaque `token_*` / `refresh_*` strings; `GET /api/auth/me` and role switch; **`get_current_user` uses `X-User-Id` header** (not JWT Bearer) — differs from epic’s JWT-first security story.
+- **Domains (routers)**: `auth`, `routes` (preview), `search`, `merchants`, `slots`, `forecast`, `platform`, `owners`, `providers`, `admin`.
+- **Search**: Haversine / in-process geo filtering (not PostGIS in DB).
+- **AI serving**: `app/services/ai_serving.py` loads **offline artifacts** from `Dataset/ProcessedData/models/` where available, with **rule / DB fallback** on failure.
+- **Seed**: `scripts/seed_from_mock.py` loads JSON from `EcoCare-UI/public/mock` (or `/mock` in container).
+
+**Data / AI pipeline — implemented (offline)**
+
+- Raw → processed: e.g. `merchant_master.csv`, `merchant_clean.csv`, retrieval/ranking/slot/demand CSVs and model files under `Dataset/ProcessedData/`.
+- Phases in code: e.g. `phase2_cleaning.py`, retrieval/ranking/slot/demand scripts — see `EcoCare-BE/DataPreprocessing/`.
+
+**Gaps vs this epic (honest delta)**
+
+- **Not implemented or partial**: payment, production-grade JWT + RBAC on every route, PostGIS, Redis/BullMQ workers, n8n-driven notifications, full booking state machine + notifications end-to-end, separate `apps/owner-web` style repos.
+- **Ahead of “no ML first” for demos**: ranking/slot/demand **artifacts and training scripts** exist; product integration and online metrics still catch up.
+
 ---
 
 ## 2. Product Goals
@@ -334,21 +379,29 @@ The system must:
 
 ## 9. Tech Stack
 
+> **Note:** Subsections below list **epic target** first; **Implemented in this repo** bullets reflect `EcoCare-UI` / `EcoCare-BE` as of the snapshot in §1.1.
+
 ## 9.1 Frontend
-**Mandatory Stack**
+**Mandatory Stack (epic)**
 - Vite
 - React
 - TypeScript
 - PrimeReact
 - Tailwind CSS
 
-**Recommended Supporting Libraries**
-- React Router
+**Implemented in this repo**
+- Vite + React + TypeScript + PrimeReact + Tailwind
+- React Router (nested routes, `Layout` + `Outlet`)
+- Leaflet via react-leaflet (map explore)
+- lucide-react icons; motion (animations) where used
+- Mock JSON under `public/mock/`; `VITE_API_BASE_URL` for API calls
+
+**Recommended Supporting Libraries (epic — optional / not default yet)**
 - TanStack Query
 - Zustand
 - React Hook Form
 - Zod
-- Leaflet or Google Maps SDK
+- Leaflet or Google Maps SDK *(Leaflet in use)*
 - Chart.js or ECharts
 
 ### FE Requirements
@@ -366,7 +419,7 @@ The system must:
 ---
 
 ## 9.2 Backend
-**Recommended Stack**
+**Recommended Stack (epic — reference architecture)**
 - Node.js
 - NestJS
 - TypeScript
@@ -377,6 +430,14 @@ The system must:
 - JWT auth
 - REST API
 - PostGIS for geospatial queries
+
+**Implemented in this repo**
+- **Python 3.12** + **FastAPI** + **Uvicorn**
+- **PostgreSQL 16** (Docker service `db`; SQLAlchemy 2.x ORM)
+- **REST** under `/api` (see `app/api/router.py`)
+- **Geospatial**: application-level Haversine / route helpers in `app/core/geo.py` — **not** PostGIS types in the database
+- **Auth**: email login endpoint; protected routes often use **`X-User-Id`** header — **not** full JWT validation as in epic §8
+- **Redis / BullMQ**: **not** present in root `docker-compose.yml`
 
 ### BE Requirements
 - modular domain-based services
@@ -404,7 +465,7 @@ The system must:
 ---
 
 ## 9.3 AI / Data
-**Recommended Stack**
+**Recommended Stack (epic)**
 - Python
 - FastAPI
 - pandas
@@ -412,6 +473,11 @@ The system must:
 - scikit-learn
 - LightGBM and/or XGBoost
 - Prophet for optional forecasting
+
+**Implemented in this repo**
+- **FastAPI** serves ranking / slot / forecast **inference** paths; training is **offline** in `EcoCare-BE/DataPreprocessing/` (pandas / ML libs per scripts).
+- **Artifacts**: e.g. `Dataset/ProcessedData/models/` (LightGBM `.txt` / `.pkl`, eval CSVs); feature dictionaries and training CSVs alongside.
+- **Input data**: `Dataset/RawData/`, `Dataset/ProcessedData/` (merchant tables, search/impression/click/booking/slot event CSVs where generated).
 
 ### AI Requirements
 - start with rule-based baseline
@@ -422,8 +488,11 @@ The system must:
 ---
 
 ## 9.4 Workflow Automation
-**Recommended Stack**
+**Recommended Stack (epic)**
 - n8n
+
+**Implemented in this repo**
+- **n8n**: workflow JSON exports under `n8n_workflow/` (e.g. crawlers); **no** n8n service in `docker-compose.yml` and **no** hard dependency from FastAPI for notifications yet.
 
 ### n8n Responsibilities
 - booking notifications
@@ -515,6 +584,11 @@ The system must:
 - manually verified merchant data
 - internal booking and review logs
 - geocoding and map enrichment
+
+### Current repository outputs (reference)
+- Processed merchant tables and features: `Dataset/ProcessedData/` (e.g. `merchant_master.csv`, `merchant_clean.csv`, `merchant_geo_ready.csv`, review aggregates).
+- Cleaning / feature pipelines: `EcoCare-BE/DataPreprocessing/` (e.g. `phase2_cleaning.py` and later phases).
+- Quality sign-off: see phase markdown reports under `.prompt/reports/` (not all epic §15 thresholds may be met yet).
 
 ### Quality Rules
 - latitude/longitude valid for >= 95% of records
@@ -739,14 +813,14 @@ Forecast booking/search demand by zone and hour/day.
 - responsive shell layouts for 3 roles
 - auth flow and route guards
 - shared design tokens and components
+- **Implemented:** single `EcoCare-UI` app with owner/provider/admin route groups (not three separate `apps/*` packages).
 
 ### BE Deliverables
-- NestJS bootstrap
-- auth and RBAC
-- merchant, booking, review, campaign modules
-- PostGIS setup
-- event logging schema
-- notification hooks
+- **Implemented:** FastAPI bootstrap (`EcoCare-BE/app/main.py`), PostgreSQL + SQLAlchemy models, modular API routers (auth, search, merchants, slots, forecast, admin, …), `SearchLog` and related entities for AI-relevant logging.
+- **Epic reference (not chosen for this repo):** NestJS bootstrap.
+- **Partial vs epic:** RBAC as **header-based user context** (`X-User-Id`), not full JWT on all routes; **PostGIS not used** — geo in application code.
+- **Not in default compose:** Redis, BullMQ, dedicated notification worker.
+- **notification hooks:** defer to future integration (e.g. n8n or worker service).
 
 ### AI/Data Deliverables
 - merchant dataset schema
@@ -776,6 +850,7 @@ Forecast booking/search demand by zone and hour/day.
 - provider dashboard with bookings and ratings
 - admin dashboard with merchant approval and booking overview
 - responsive booking flow
+- **Implemented (partial vs full payment):** explore map, role dashboards, mock-backed flows; **payment** and **production booking** may still be incomplete — verify against latest `EcoCare-UI` screens and `EcoCare-BE` booking APIs.
 
 ### BE Deliverables
 - nearby search endpoint
@@ -991,33 +1066,21 @@ AI work is considered complete for a phase when:
 
 ## 19. Suggested Directory / Ownership Structure
 
-### Frontend Apps
+### Epic-style split (reference — multi-app monorepo)
 - apps/owner-web
 - apps/provider-portal
 - apps/admin-portal
+- packages/ui, packages/hooks, packages/types, packages/api-client
+- services/api, services/worker, services/notification
+- services/ai-recommendation, ai-ranking, ai-slot, ai-forecast-optional
+- data/contracts, data/pipelines, data/validation, data/features
 
-### Shared FE Packages
-- packages/ui
-- packages/hooks
-- packages/types
-- packages/api-client
-
-### Backend Services
-- services/api
-- services/worker
-- services/notification
-
-### AI Services
-- services/ai-recommendation
-- services/ai-ranking
-- services/ai-slot
-- services/ai-forecast-optional
-
-### Data
-- data/contracts
-- data/pipelines
-- data/validation
-- data/features
+### Current repository (this project)
+- **Frontend (single app, multi-role routes):** `EcoCare-UI/`
+- **Backend API:** `EcoCare-BE/` (`app/` = API, models, services; `scripts/` = seed; `DataPreprocessing/` = offline ML/data)
+- **Datasets & model artifacts:** `Dataset/RawData/`, `Dataset/ProcessedData/` (including `models/`)
+- **Infra:** `docker-compose.yml`, `Dockerfile.backend`, `Dockerfile.frontend`
+- **Optional automation exports:** `n8n_workflow/`
 
 ---
 
@@ -1065,3 +1128,4 @@ This epic is considered successfully delivered when:
 - Keep FE production-structured from day one.
 - Every AI endpoint must have a deterministic fallback.
 - Every phase must end with metric verification and documented pass/fail result.
+- **When editing this epic:** reconcile claims with **§1.1 Current implementation snapshot** and the actual paths under `EcoCare-UI`, `EcoCare-BE`, and `Dataset/`.

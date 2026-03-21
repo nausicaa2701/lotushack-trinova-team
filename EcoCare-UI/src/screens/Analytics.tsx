@@ -15,9 +15,25 @@ import {
   Droplets
 } from 'lucide-react';
 import { cn } from '@/src/lib/utils';
+import { fetchForecastSummary } from '../lib/forecastApi';
 
 export const Analytics = () => {
   const navigate = useNavigate();
+  const [forecastSummary, setForecastSummary] = React.useState<Record<string, unknown> | null>(null);
+
+  React.useEffect(() => {
+    let cancelled = false;
+    fetchForecastSummary()
+      .then((s) => {
+        if (!cancelled) setForecastSummary(s);
+      })
+      .catch(() => {
+        if (!cancelled) setForecastSummary(null);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const handleExportReport = () => {
     const report = {
@@ -58,6 +74,39 @@ export const Analytics = () => {
           </button>
         </div>
       </header>
+
+      {forecastSummary && Object.keys(forecastSummary).length > 0 ? (
+        <section className="rounded-3xl border border-outline-variant/20 bg-surface-container-lowest p-5 shadow-sm sm:p-6">
+          <h3 className="font-headline text-lg font-bold text-on-surface">Demand forecast (summary)</h3>
+          <p className="mt-1 text-sm text-slate-500">Zone-level demand signals from the forecasting service.</p>
+          <dl className="mt-4 grid grid-cols-1 gap-3 text-sm sm:grid-cols-3">
+            {typeof forecastSummary.forecastStats === 'object' && forecastSummary.forecastStats != null ? (
+              <>
+                <div>
+                  <dt className="text-xs font-bold uppercase tracking-wide text-slate-400">Rows</dt>
+                  <dd className="font-headline text-xl font-extrabold">
+                    {String((forecastSummary.forecastStats as { rowCount?: number }).rowCount ?? '—')}
+                  </dd>
+                </div>
+                <div>
+                  <dt className="text-xs font-bold uppercase tracking-wide text-slate-400">Avg demand</dt>
+                  <dd className="font-headline text-xl font-extrabold">
+                    {Number((forecastSummary.forecastStats as { avgPredictedDemand?: number }).avgPredictedDemand ?? 0).toFixed(2)}
+                  </dd>
+                </div>
+                <div>
+                  <dt className="text-xs font-bold uppercase tracking-wide text-slate-400">Zones tracked</dt>
+                  <dd className="font-headline text-xl font-extrabold">
+                    {Array.isArray(forecastSummary.topZones) ? forecastSummary.topZones.length : '—'}
+                  </dd>
+                </div>
+              </>
+            ) : (
+              <p className="text-sm text-slate-500">Forecast data is loading or unavailable.</p>
+            )}
+          </dl>
+        </section>
+      ) : null}
 
       {/* KPI Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

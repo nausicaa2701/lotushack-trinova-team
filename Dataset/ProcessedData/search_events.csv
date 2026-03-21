@@ -1,0 +1,21 @@
+search_event_id,query_id,user_id,session_id,event_ts,search_mode,query_index,query_source,query_context,origin_latitude,origin_longitude,destination_latitude,destination_longitude,radius_km,max_corridor_km,require_open_now,min_rating
+search_evt_0001,nearby_q_001,user_001,session_001_01,2026-03-22T09:00:00+00:00,nearby,1,synthetic_nearby_seeded,nearby around binh tan,10.76099,106.6245,,,2.5,,1.0,4.0
+search_evt_0002,nearby_q_002,user_002,session_002_01,2026-03-22T09:07:00+00:00,nearby,2,synthetic_nearby_seeded,nearby around binh thanh,10.886123,106.723432,,,3.5,,1.0,3.5
+search_evt_0003,nearby_q_003,user_003,session_003_01,2026-03-22T09:14:00+00:00,nearby,3,synthetic_nearby_seeded,nearby around go vap,10.83617,106.6754,,,5.0,,,4.2
+search_evt_0004,nearby_q_004,user_004,session_004_01,2026-03-22T09:21:00+00:00,nearby,4,synthetic_nearby_seeded,nearby around hoc mon,10.875964,106.605772,,,4.0,,,3.0
+search_evt_0005,nearby_q_005,user_005,session_005_01,2026-03-22T09:28:00+00:00,nearby,5,synthetic_nearby_seeded,nearby around quan 1,10.760819,106.673015,,,6.0,,1.0,3.5
+search_evt_0006,nearby_q_006,user_006,session_006_01,2026-03-22T09:35:00+00:00,nearby,6,synthetic_nearby_seeded,nearby around quan 10,10.754102,106.661625,,,5.5,,,4.0
+search_evt_0007,nearby_q_007,user_007,session_007_01,2026-03-22T09:42:00+00:00,nearby,7,synthetic_nearby_seeded,nearby around quan 12,10.872388,106.62638,,,4.5,,0.0,2.5
+search_evt_0008,nearby_q_008,user_008,session_008_01,2026-03-22T09:49:00+00:00,nearby,8,synthetic_nearby_seeded,nearby around quan 6,10.742612,106.61891,,,3.0,,1.0,4.0
+search_evt_0009,nearby_q_009,user_009,session_009_01,2026-03-22T09:56:00+00:00,nearby,9,synthetic_nearby_seeded,nearby around quan 7,10.724139,106.733567,,,7.0,,,3.8
+search_evt_0010,nearby_q_010,user_001,session_001_02,2026-03-22T10:03:00+00:00,nearby,10,synthetic_nearby_seeded,nearby around tan binh,10.741652,106.619857,,,5.0,,1.0,3.2
+search_evt_0011,nearby_q_011,user_002,session_002_02,2026-03-22T10:10:00+00:00,nearby,11,synthetic_nearby_seeded,nearby around tan phu,10.817712,106.617325,,,3.5,,,4.5
+search_evt_0012,nearby_q_012,user_003,session_003_02,2026-03-22T10:17:00+00:00,nearby,12,synthetic_nearby_seeded,nearby around thu duc,10.80028,106.642254,,,6.5,,1.0,3.0
+search_evt_0013,route_q_001,user_004,session_004_02,2026-03-22T10:24:00+00:00,on_route,13,synthetic_route_seeded,route quan 1 -> thu duc,10.789991,106.673794,10.822314,106.752755,,2.5,1.0,4.0
+search_evt_0014,route_q_002,user_005,session_005_02,2026-03-22T10:31:00+00:00,on_route,14,synthetic_route_seeded,route tan binh -> quan 7,10.78959,106.629864,10.738414,106.714594,,3.0,,3.5
+search_evt_0015,route_q_003,user_006,session_006_02,2026-03-22T10:38:00+00:00,on_route,15,synthetic_route_seeded,route go vap -> binh tan,10.834999,106.665737,10.764593,106.611561,,2.8,1.0,3.8
+search_evt_0016,route_q_004,user_007,session_007_02,2026-03-22T10:45:00+00:00,on_route,16,synthetic_route_seeded,route phu nhuan -> quan 12,10.7997,106.678819,10.862145,106.640951,,2.5,,3.0
+search_evt_0017,route_q_005,user_008,session_008_02,2026-03-22T10:52:00+00:00,on_route,17,synthetic_route_seeded,route quan 6 -> binh thanh,10.745376,106.635802,10.811779,106.707457,,3.5,1.0,4.2
+search_evt_0018,route_q_006,user_009,session_009_02,2026-03-22T10:59:00+00:00,on_route,18,synthetic_route_seeded,route hoc mon -> tan phu,10.874572,106.599455,10.794589,106.626964,,3.0,,3.2
+search_evt_0019,route_q_007,user_001,session_001_03,2026-03-22T11:06:00+00:00,on_route,19,synthetic_route_seeded,route quan 3 -> nha be,10.790134,106.671095,10.851494,106.971454,,4.0,1.0,3.5
+search_evt_0020,route_q_008,user_002,session_002_03,2026-03-22T11:13:00+00:00,on_route,20,synthetic_route_seeded,route quan 8 -> thu duc,10.741283,106.657831,10.822314,106.752755,,3.5,,4.0

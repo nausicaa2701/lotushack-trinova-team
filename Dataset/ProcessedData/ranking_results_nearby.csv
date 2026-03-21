@@ -1,0 +1,342 @@
+query_id,merchant_id,merchant_name,distance_km,base_rank_score,final_rank_score,rank_position,reason_tags
+nearby_q_001,ChIJkaXsi8ovdTERV9vqRTJPqNQ,Storedetailing,0.7702169038104405,0.664757,0.669397,1,very_close|popular|trusted|open_now|detailing|car_supported
+nearby_q_001,ChIJR49LHcItdTERIiTJj8DLsa0,XE ĐẸP DETAILING - ĐỘ XE Ô TÔ - ĐỖ XE 24/24 - RỬA XE,1.2176262123088961,0.748584,0.657623,2,very_close|high_rating|popular|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_001,ChIJCQmWVNMvdTERNLWPf_PE3WE,An Khang Detailing - Xưởng chăm xe vui vẻ,2.304096355657788,0.704536,0.482167,3,close|high_rating|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_001,ChIJW4knxqEvdTERhuMXJ4-RYL8,"Tiệm rửa xe, sửa xe, bảo dưỡng xe 2 bánh - TN Detailing-Motorcycle wash",2.4934433410860506,0.72066,0.463154,4,close|high_rating|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_002,ChIJh8yyigPYdDERalJPyL7NpNc,Tiệm Rửa Xe Thành,0.7816441933509384,0.545864,0.61041,1,very_close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_002,ChIJkYfDXsUndTEREk9eYE2TDi8,Rửa Xe Takashi,2.193895039684231,0.571936,0.482292,2,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_003,ChIJL3GiFugpdTER3DjuORNSeRI,Cứu Hộ Xe Máy - Sửa Xe Máy Tại Nhà 24h Minh Thành Motor,4.763645532458589,0.662592,0.444767,1,high_rating|trusted|open_now|service_rich|fast_lane|car_supported
+nearby_q_004,ChIJ660DJwArdTERaswe-O5w_A4,Tiệm rửa xe ôtô xe máy,2.0731899257630753,0.570864,0.51967,1,close|high_rating|open_now|service_rich|exterior_wash|car_supported
+nearby_q_004,ChIJwyhdiEsqdTERh06rOjUU_B0,"Tiệm rửa xe, vá lốp ôtô & xe máy Số 1",3.850938763234091,0.646936,0.427224,2,close|high_rating|open_now|service_rich|exterior_wash|car_supported
+nearby_q_004,ChIJU0GMXwApdTER0nAk4v8nxsw,"Rửa Xe 39 - Ôtô, Xe máy",3.1360635933749106,0.470864,0.376669,3,close|high_rating|service_rich|exterior_wash|car_supported
+nearby_q_004,ChIJvxjCZQArdTERbx0gfTlKUB8,Tiệm Rửa Xe ÔTÔ & Xe Máy Dũng Hoàng,3.6143413653849112,0.370864,0.284819,4,close|high_rating|service_rich|exterior_wash|car_supported
+nearby_q_005,ChIJ92uFsuYudTERvyQu9b8g8Ws,Rửa Xe Hiếu,0.4812372625189077,0.641598,0.737853,1,very_close|popular|trusted|open_now|exterior_wash
+nearby_q_005,ChIJ9Vs22kovdTERow6znv_rO8k,Sửa - rửa xe HOÀNG THƯƠNG,1.2543125584189394,0.645889,0.694868,2,very_close|high_rating|trusted|open_now|exterior_wash|motorbike_supported
+nearby_q_005,ChIJLXbu5dIvdTER7g8ZL14rluM,Ánh Dương Detailing,2.5683267467592237,0.728758,0.669909,3,close|high_rating|popular|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_005,ChIJh49VXwQvdTERteVbwQETYQM,Dịch Vụ Rửa Xe 109,1.3728631199615284,0.674013,0.662949,4,very_close|high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJ35wD6AIvdTERcdM5ZxvwoYA,Dịch Vụ Rửa Xe A Thuận,0.7818643057096196,0.613364,0.657965,5,very_close|high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJv7ct6zMvdTERf-RfP3cNIyk,Rửa Xe 170,3.475580608615524,0.811,0.642258,6,close|high_rating|popular|trusted|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJ1YVX-igvdTERaJMz766nH6U,Tiệm Rửa Xe 39,2.3917900725846204,0.718153,0.641988,7,close|popular|trusted|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJy7RnTAAvdTERuHa74kwoWG0,"Bãi Giữ Xe, Rửa Xe Ôtô 635 Nguyễn Trãi",1.1811527050480053,0.585205,0.640643,8,very_close|high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJMfw2TQAvdTER1SLfRI5lVQM,Rửa xe Ô tô - Xe máy 49 Thành Thái,1.5385885793260696,0.605513,0.630781,9,close|high_rating|open_now|service_rich|exterior_wash|car_supported
+nearby_q_005,ChIJzw1c3nMvdTERQ-_es7qw718,RỬA XE CẦU NÂNG-THAY NHỚT HƯNG PHÁT 24h/7-CHĂM SÓC XE AUTO CAR,3.148227327684627,0.725006,0.629105,10,close|high_rating|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_005,ChIJBRwQhiEvdTER3nNM1IQr4AU,Rửa xe 100B,1.456427638795412,0.635013,0.628074,11,very_close|high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJcUA7eZcvdTERegYfkM6PQMg,"Rửa xe, Thay nhớt Trí 48",1.8812569641864085,0.6158,0.628015,12,close|open_now|service_rich|exterior_wash|car_supported
+nearby_q_005,ChIJeUtNRwAvdTEReYPFG0EmXTA,Rửa xe oto xe máy SBS,3.491787772961323,0.781404,0.622919,13,close|high_rating|trusted|open_now|service_rich|exterior_wash|car_supported
+nearby_q_005,ChIJaS06HOMpdTERYF3alhmcRWg,2N Detailing Car,2.8322742941263206,0.681017,0.621909,14,close|high_rating|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_005,ChIJZXS7KtkudTERR1DL-aT9xH8,Rửa xe Kỳ Hòa,1.5523743806159829,0.641368,0.621214,15,close|popular|trusted|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJCQmWVNMvdTERNLWPf_PE3WE,An Khang Detailing - Xưởng chăm xe vui vẻ,3.2001570694399497,0.704536,0.618064,16,close|high_rating|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_005,ChIJB4-7VVcvdTERFGf8fzD2VKk,Rửa Xe Mai Tuấn,2.375546747696322,0.620572,0.614534,17,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJV2CDWUsvdTERoCmtcUrUmaE,AUTOLINK VN Car Care Center,3.7492982074304457,0.738314,0.608778,18,close|high_rating|popular|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_005,ChIJN7tXj9ovdTERaHPUt88VtVs,Rửa xe Phong Phú,2.2788584643015426,0.597205,0.60411,19,close|open_now|exterior_wash
+nearby_q_005,ChIJSa9fcfIudTERW2NFs6Jbxcg,Tiệm Rửa Xe Minh Đức,1.7863076330568046,0.570572,0.598906,20,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJQasFZlQudTERUnY-pRaF33E,Rua Xe 63,2.013932775981216,0.568379,0.586424,21,close|high_rating|trusted|open_now|exterior_wash
+nearby_q_005,ChIJKbcy81UudTERkpGdL9UcyRE,Wash & Oil - Trung Tâm Đầu Nhớt Và Rửa Xe Chuyên Nghiệp,1.567174867380864,0.520864,0.584656,22,close|high_rating|open_now|exterior_wash
+nearby_q_005,ChIJx7Jetc4udTERaURpkyVmgdg,Tiệm Rửa Xe Dân Trí,3.0777537651609026,0.669455,0.559761,23,close|high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJM7P_4-wudTERQ9H4dubIkvs,Dịch Vụ Rửa Xe 140,2.0530265471192144,0.522228,0.554888,24,close|high_rating|open_now|exterior_wash
+nearby_q_005,ChIJ8wSxnnIvdTER4tuq_TmGSO8,Tiệm Rửa Xe F1,3.179723418204989,0.595864,0.55309,25,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJGfU0Z-ovdTERc2ehGxgW5Os,Tiệm Sửa Xe Rửa Xe Máy 528,3.7492510494236524,0.644308,0.551386,26,close|high_rating|trusted|open_now|exterior_wash|motorbike_supported
+nearby_q_005,ChIJEfV43q4vdTERoRbWxB-ctVM,Rửa xe tự động JetX,3.7006267610287047,0.694069,0.545434,27,close|trusted|open_now|service_rich|exterior_wash|fast_lane
+nearby_q_005,ChIJ6yzjcqAvdTERcvVFrDNFz_M,RỬA XE 148,3.7723657538189683,0.632128,0.545107,28,close|high_rating|trusted|open_now|exterior_wash
+nearby_q_005,ChIJM1rb4cMldTERJN3k_5HfeXk,Q7 Auto Center - Rửa xe - Chăm sóc ô tô - Phụ kiện ô tô,3.2548739725166467,0.595745,0.538605,29,close|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJR49LHcItdTERIiTJj8DLsa0,XE ĐẸP DETAILING - ĐỘ XE Ô TÔ - ĐỖ XE 24/24 - RỬA XE,4.964709370155881,0.748584,0.538483,30,high_rating|popular|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_005,ChIJDbbGtm0vdTERVHUBjRDwqJ8,Trung Tâm Chăm Sóc Xe Minh Phát,3.6599355726801033,0.631455,0.5383,31,close|open_now|service_rich|exterior_wash|detailing
+nearby_q_005,ChIJE15xZR8pdTERjhHTMKfts8c,Trung tâm chăm sóc xe Phước Thắng,4.469833497763022,0.694856,0.537702,32,high_rating|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_005,ChIJqyScx6gvdTERn7780zpzSEs,Rửa xe Trọng Hữu,4.2229304095758105,0.665363,0.535911,33,high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJXYD4TbsvdTERiUCTTjugBFw,Dịch Vụ Rửa Xe Ô Tô Quang Thiên,4.135378358171265,0.651955,0.533066,34,high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJAxwRPmwvdTERJPonxNY8yCU,VinaWash Phú Nhuận,4.299563366662894,0.718807,0.532669,35,popular|trusted|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJkSQ5sOsvdTERcNDqTNVgDCY,Rửa xe 79 Lý Thường Kiệt,3.254672683833322,0.58616,0.532381,36,close|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJnYEfIYcvdTERyn-385Cj0go,"Thanh An Autocare - Vỏ Lốp, Cứu Hộ Ô Tô Chăm Sóc Xe Quận 7",5.799662479603447,0.849357,0.531732,37,high_rating|popular|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_005,ChIJ6fxG6kIvdTER-Zg9XHB3_pw,Rửa Xe Bảo Long,4.156330626509394,0.64164,0.529669,38,high_rating|trusted|open_now|exterior_wash
+nearby_q_005,ChIJA7wsYakvdTERbeVCCoCEQaU,Rửa xe A Bảy,2.3060483362339093,0.521796,0.529143,39,close|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJpUp2VXAvdTER-hp9STrxCRM,Rửa Xe 116,4.020558667830599,0.625013,0.526,40,high_rating|trusted|open_now|exterior_wash
+nearby_q_005,ChIJW4knxqEvdTERhuMXJ4-RYL8,"Tiệm rửa xe, sửa xe, bảo dưỡng xe 2 bánh - TN Detailing-Motorcycle wash",4.9199470710752395,0.72066,0.52524,41,high_rating|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_005,ChIJxa8x3tEodTERlTMK1pUYjO4,Rửa Xe 192 - Phú Nhuận,4.312677791514464,0.710547,0.523446,42,popular|trusted|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJHU8nWgAvdTERICXUCipASJs,Dịch vụ rửa xe cộng đồng Chung Cư Lò Gốm,4.15091679163247,0.628932,0.517952,43,high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJe6mdgWYvdTERBPBrRWm4bRg,Rửa xe Khiêm Khải,2.578229338187992,0.518572,0.51271,44,close|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJm15DTZMudTERfdLD0CoKvkk,Tiệm Rửa Xe Tuấn,2.257568730590907,0.483444,0.512326,45,close|open_now|exterior_wash
+nearby_q_005,ChIJZaU-GN8odTERlgCuwcK_Qt4,Rửa Xe Bi,5.289179000159151,0.713417,0.504977,46,high_rating|popular|trusted|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJLUc60dYodTERVRhGesrzQM8,"Vòi rửa xe, máy bơm rửa xe",4.278670200847242,0.616728,0.502559,47,high_rating|open_now|exterior_wash|motorbike_supported
+nearby_q_005,ChIJz-Ha0L0udTERtKlii4wCgYY,Rửa Xe 427,3.2086355792588965,0.545864,0.501404,48,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJL2T8BY4udTERc2PfFI1z8OI,Tiệm Rửa Xe 130B Xóm Đất,2.913258076960901,0.529091,0.500782,49,close|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJTaV9egApdTERWHqpwsaIPBA,Tèo rửa xe thay nhớt,4.1989855568161625,0.598444,0.499077,50,high_rating|open_now|exterior_wash
+nearby_q_005,ChIJm1O96dIudTERcD1jU6rlpNI,Tiệm Rửa Xe 67,3.2714502629397675,0.547228,0.496314,51,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJ8fZM-OwvdTER_f1tQEM9__I,Rửa xe Ô Tô - Xe Máy Kiết Lân,4.774794368120675,0.656308,0.494062,52,high_rating|open_now|service_rich|exterior_wash|car_supported
+nearby_q_005,ChIJBe0M-o8udTERv_YNVumFqGw,2A Rửa xe Chuyên Nghiệp,3.3785939818229145,0.545864,0.491489,53,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJ1ZUpBBEpdTERVTiWZz1qDEM,DIAMOND DETAILING - Chăm sóc xe chuyên nghiệp Tân Bình,5.545578595073394,0.718683,0.490452,54,high_rating|popular|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_005,ChIJgwxC60spdTER3x4ANrltVxE,40 phan tây hồ,4.813781976245173,0.637592,0.484918,55,high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJd1yMf7YvdTERJDoGEVtrQy0,RỬA XE CHĂM SÓC XE Ô TÔ CHUYÊN NGHIỆP - LUX AUTO DETAILING,4.340667452843362,0.612205,0.484524,56,open_now|service_rich|exterior_wash|detailing
+nearby_q_005,ChIJV85ZmMwtdTERpyNN1B1pnN0,Bờm Auto - Thuê xe tự lái & rửa xe,5.476844064213781,0.693348,0.482515,57,high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJk40j8kIudTERxtnQif0wKqg,Dịch Vụ Rửa Xe 16,3.504734012959424,0.593068,0.482072,58,close|high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJOaLdHtUudTERUEZfCm_bDLs,Rửa Xe Tiến Đạt 2,3.141971202560976,0.550944,0.475736,59,close|trusted|open_now|exterior_wash
+nearby_q_005,ChIJwYnMSAAtdTERnVEwCXlMctE,Rửa xe máy - ô tô,5.140998830823956,0.658572,0.475716,60,high_rating|open_now|service_rich|exterior_wash|car_supported
+nearby_q_005,ChIJcdWx_y8vdTERmWnQ3Z1fsHI,Rửa Xe 20,3.502710665574265,0.533177,0.475134,61,close|high_rating|open_now|exterior_wash
+nearby_q_005,ChIJVRABlWgudTER_alEeJRJeOA,Phát Rửa Xe - Sửa Xe,3.82211543520619,0.558068,0.473558,62,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJdxjE8JMpdTERnAUyvPtxWuo,Car and motorcycle detailing,4.12214866024325,0.595864,0.473115,63,high_rating|open_now|service_rich|exterior_wash|detailing
+nearby_q_005,ChIJk3FpIa0vdTERpKPbusrwXtU,Rửa xe Bảo Đạt,3.6738132137763575,0.542296,0.471857,64,close|high_rating|open_now|exterior_wash
+nearby_q_005,ChIJQ2Sr_mQudTERND7syqFzzcA,TIỆM RỬA XE BÌNH TIÊN,3.899397103811824,0.558068,0.46905,65,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJ4125gUwpdTERrnzAA-z9GJs,TIỆM RỬA XE THAY NHỚT 25,4.689124371840553,0.602932,0.466556,66,high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJv0s95ZMudTER6sXb07AgUZg,Tiệm Rửa Xe Hòa,2.807458308825561,0.455864,0.462306,67,close|open_now|exterior_wash
+nearby_q_005,ChIJSUcHOncvdTERA8WKVaoaJLs,Rửa Xe 37,4.1863568418704835,0.566728,0.457944,68,high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJ43d1wJ4vdTERu3jbn2HEmZ4,Rửa xe Dũng,4.06596754844089,0.555856,0.456261,69,high_rating|trusted|open_now|exterior_wash
+nearby_q_005,ChIJnW6iKs4odTERV38FHz8ZxEs,Công Ty Cổ Phần Vietwash,4.451120814523989,0.5778,0.455607,70,open_now|exterior_wash|car_supported
+nearby_q_005,ChIJIYuOTg4pdTERRp8sLayExvI,Máy Rửa Xe Cao Áp - Công Ty Sơn Tùng Lâm,4.312729875588245,0.566728,0.450572,71,high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJM5mkDZgudTERa_PHXXgHoII,Rửa xe Hoàng Quân,3.786543163711711,0.565308,0.44671,72,close|trusted|open_now|exterior_wash
+nearby_q_005,ChIJb1SyKw8vdTERs2Yk2qoCtz8,Rửa xe Thành Trung,4.97868094963807,0.585444,0.443595,73,high_rating|open_now|exterior_wash
+nearby_q_005,ChIJPQcH7HctdTERjGPXTmOGnFI,Green Wash Auto - Chăm sóc & Nâng cấp Oto,5.439561302204445,0.631092,0.443414,74,high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJ7RD6mUQpdTERda6cUV17nPc,Rửa xe máy,5.5441319712283645,0.652753,0.440702,75,open_now|service_rich|exterior_wash|car_supported
+nearby_q_005,ChIJmWMY5WQpdTERo53lf4hICZA,Rửa xe ô tô tự động JetX - Xô Viết Nghệ Tĩnh,5.798409283726498,0.662592,0.439982,76,high_rating|trusted|open_now|service_rich|exterior_wash|fast_lane
+nearby_q_005,ChIJfV9rpNgtdTERuPdxlY4OJfU,Rửa Xe Bọt Tuyết - Thay Nhớt,5.6833167660921164,0.648541,0.439006,77,high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJJf-tgPktdTERnMlZk454dfQ,Tiệm rửa xe 7talon - CN01,5.2315541132770225,0.595572,0.435433,78,high_rating|open_now|exterior_wash
+nearby_q_005,ChIJu2tmmpspdTERCK-1gOJhBL4,Rửa xe Đình An,5.466379438293967,0.618379,0.435031,79,high_rating|trusted|open_now|exterior_wash
+nearby_q_005,ChIJJ7nc98AodTER-eUOFyYSut0,RỬA XE MINH ĐỨC( MINH ĐỨC WASH),5.932535735578043,0.656513,0.431968,80,high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJ9zaRTX4udTERBr7JULUfLd8,707 Zone - Rửa Xe 707,4.679977643003493,0.566436,0.431183,81,high_rating|trusted|open_now|exterior_wash
+nearby_q_005,ChIJt4iAA9QpdTERYuimTqEKPUg,D superwash,5.418518233295767,0.608068,0.430434,82,high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJeREh3fwpdTEREu1cZPxtdPc,"GodiCar Care Center - Spa Xe Oto, Xe Máy, Rửa Xe, Thay Nhớt, Dịch Vụ Trông Giữ Xe 24/24",5.022072315154911,0.611592,0.427768,83,high_rating|open_now|service_rich|exterior_wash|detailing
+nearby_q_005,ChIJuTqPJXQpdTERyZA9HLklfaY,Rửa xe,4.846332535405384,0.578932,0.427386,84,high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJX0Z3P5YvdTERE6aj5EboTX4,Rửa Xe Hoàng Thái 286/6,4.568890431001749,0.561013,0.426514,85,high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJ7UShNJwvdTER4KFEs3wRjA8,Rửa xe máy 79 Bọt tuyết Villa Hào,4.872196984206066,0.59366,0.425525,86,open_now|service_rich|exterior_wash|car_supported
+nearby_q_005,ChIJpxll1HMvdTERs9PaZvJhiSQ,Tiệm Rửa Xe T & T,3.645171079667404,0.528068,0.423879,87,close|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJcS_VSGIvdTERHwe7ppb-zVI,Rửa xe Nam,3.9720369816992025,0.503091,0.41902,88,close|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJ19PwuJ0udTERUBh9phz0coc,Rửa Xe Trung Bảo,4.590974854342287,0.556492,0.418429,89,open_now|exterior_wash|car_supported
+nearby_q_005,ChIJl89HdFctdTERqKyEp2Nh9KA,Thiên Wash Super Car Q6,5.558928269555216,0.608936,0.41741,90,high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJebUewawodTERkj5o7Llokso,Rửa xe Cô Vân,5.619367756803026,0.620053,0.416491,91,popular|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJ2fDrVDkpdTERT7jVOFeYn2Q,Rửa xe bubblesWash,5.1157152835113004,0.568572,0.41469,92,open_now|exterior_wash|car_supported
+nearby_q_005,ChIJFdc1fQAvdTERJrNhc4N_YrA,Rửa xe chuyên nghiệp NAOTA MUOI DO with T,4.477197948784351,0.534001,0.410433,93,open_now|exterior_wash|car_supported
+nearby_q_005,ChIJzxq5an8udTER_donYV9xq2o,Tiệm Rửa Xe Chí Hoàng,4.946401388129353,0.545864,0.400034,94,high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJBVGXtx4pdTERLe9VRcHr_Ao,Rửa xe hơi,4.324151895056181,0.501728,0.399906,95,open_now|exterior_wash|car_supported
+nearby_q_005,ChIJ2yMrw_8pdTER0DH_CbI0avI,Tiêm rửa xe phương thảo,4.994710249983643,0.554296,0.397304,96,high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJa-KQDNYpdTERi9r--Kt8tik,Rửa xe 22,5.893939874492068,0.602932,0.396275,97,high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJgQoKzTItdTERm747HBvuHis,Tiệm rửa xe thay nhớt dọn vệ sinh nội thất ôtô xe máy 287,5.830796775253157,0.628932,0.394959,98,high_rating|open_now|service_rich|exterior_wash|interior_cleaning
+nearby_q_005,ChIJvc8fqo0ldTERYst7zDyC8MQ,RỬA XE MINH NHỰT,5.89351954108003,0.595864,0.394785,99,high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJFXXccH8pdTERiiAE5msivWA,Rửa xe oto xe máy Lê Sơn,5.961729560755674,0.63514,0.394354,100,high_rating|trusted|open_now|service_rich|exterior_wash|car_supported
+nearby_q_005,ChIJ_ePVDgApdTERic0nX2iwDUg,Rửa Xe 111,5.156695259593201,0.545864,0.387767,101,high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJGcObtsEvdTERtjKymIh1lkI,Rửa Xe Đức,5.2213871836337775,0.545864,0.383993,102,high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJO8ghhXgudTER-_-GpmlNkdQ,Dịch Vụ Rửa Xe Thanh Sơn,5.187780470325747,0.602017,0.382005,103,trusted|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJhfQaIaopdTER2ELJYK5oEic,Rửa xe 54,5.654851970313309,0.570541,0.380666,104,open_now|exterior_wash|car_supported
+nearby_q_005,ChIJoR3SkCwsdTER0lqlQ5kQF3c,Dịch Vụ Rửa Xe Mạnh Khang,5.628452652273642,0.578436,0.378355,105,high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJocSD1MAodTERy3XameV2IcM,Rửa Xe Bi,5.659914475645141,0.634868,0.376608,106,popular|trusted|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJC8RJnIwvdTER83b1UlHd4Xs,Rửa xe Vườn Lài,5.381149731710936,0.545864,0.374674,107,high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJZTTHJQAtdTER30VeV0vaZtA,Rửa xe-thay nhớt Đức Minh,5.2249596990348595,0.520864,0.371285,108,high_rating|open_now|exterior_wash
+nearby_q_005,ChIJa0Ioe3kvdTERneUe8H-ItFc,Rửa xe bọt tuyết 34,5.590505087191095,0.558068,0.370402,109,high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJA3oXRKAvdTERP0Cd8Ub6Jhk,RỬA XE TÂN AN HUY (SWS),5.648986682677285,0.57114,0.370097,110,high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJvczLLHMudTERpJO_6uVwAaw,Bãi Giữ Xe Ô Tô - Rửa Xe 2574 Bình An,5.382365592526161,0.539932,0.366117,111,high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJ_-SKGKoudTERHDEBvqz3CPU,Rửa Xe - Thay Nhớt Thuạn Lợi,5.541458291361313,0.545864,0.365322,112,high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJ0YbuMNYtdTERyPPybjYDyGQ,Tiệm Rửa Xe Gia Huy,5.320771883869948,0.525568,0.361136,113,high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJLeRnKbUpdTERnp0hBlwn0es,TIỆM RỬA XE HỒNG PHÚC,5.9029626712598535,0.567296,0.354323,114,high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJK6JHgKsodTERm6UGeCKw7so,Rửa Xe - Thay Nhớt Tấn Phong,5.922732886438091,0.547228,0.341655,115,high_rating|open_now|exterior_wash|car_supported
+nearby_q_005,ChIJPYTJFgAtdTERRSbUlwIzepw,Rửa xe ong bắp cầy,5.779143620987219,0.520864,0.338957,116,high_rating|open_now|exterior_wash
+nearby_q_007,ChIJL48FotcpdTEREQrDaq63f5Q,Nội thất ôtô Sài Thành,1.0517602130688422,0.370864,0.519271,1,very_close|high_rating|service_rich|exterior_wash|interior_cleaning
+nearby_q_007,ChIJndqxqskrdTERUv8TK3yNMA0,Rửa xe Thương Đoàn,2.882432412468754,0.332228,0.362959,2,close|exterior_wash|car_supported
+nearby_q_007,ChIJvxjCZQArdTERbx0gfTlKUB8,Tiệm Rửa Xe ÔTÔ & Xe Máy Dũng Hoàng,3.1062361316716003,0.370864,0.359478,3,close|high_rating|service_rich|exterior_wash|car_supported
+nearby_q_008,ChIJgQoKzTItdTERm747HBvuHis,Tiệm rửa xe thay nhớt dọn vệ sinh nội thất ôtô xe máy 287,0.4200945812036013,0.628932,0.686077,1,very_close|high_rating|open_now|service_rich|exterior_wash|interior_cleaning
+nearby_q_009,ChIJM_K8-IAvdTERWPZHJr-V6bM,Vietnam Car Care,1.019439794635052,0.760528,0.790197,1,very_close|high_rating|popular|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_009,ChIJnYEfIYcvdTERyn-385Cj0go,"Thanh An Autocare - Vỏ Lốp, Cứu Hộ Ô Tô Chăm Sóc Xe Quận 7",2.0781348643808233,0.849357,0.766139,2,close|high_rating|popular|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_009,ChIJ-whsrHoldTERpgRPmx2F6OY,Bro Detailing,1.016637315997782,0.712021,0.757236,3,very_close|high_rating|popular|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_009,ChIJb5Uen0QldTERBdvoB9UKu_s,BTWO Detailing - Dịch vụ chăm sóc xe,0.9615439458059569,0.688364,0.7446,4,very_close|high_rating|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_009,ChIJV2CDWUsvdTERoCmtcUrUmaE,AUTOLINK VN Car Care Center,4.101468999681773,0.738314,0.622414,5,high_rating|popular|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_009,ChIJzw1c3nMvdTERQ-_es7qw718,RỬA XE CẦU NÂNG-THAY NHỚT HƯNG PHÁT 24h/7-CHĂM SÓC XE AUTO CAR,4.62518653961134,0.725006,0.581492,6,high_rating|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_009,ChIJDbbGtm0vdTERVHUBjRDwqJ8,Trung Tâm Chăm Sóc Xe Minh Phát,4.111495198300696,0.631455,0.546221,7,open_now|service_rich|exterior_wash|detailing
+nearby_q_009,ChIJaS06HOMpdTERYF3alhmcRWg,2N Detailing Car,6.1595111314601265,0.681017,0.47915,8,high_rating|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_010,ChIJp3zNbKItdTERosSqSZP7VAU,"Bãi Rửa Xe Máy, Xe Ô Tô Hoàng Vũ",1.3629483237696667,0.758053,0.711381,1,very_close|high_rating|popular|trusted|open_now|service_rich|exterior_wash|car_supported
+nearby_q_010,ChIJW4knxqEvdTERhuMXJ4-RYL8,"Tiệm rửa xe, sửa xe, bảo dưỡng xe 2 bánh - TN Detailing-Motorcycle wash",1.4604285365287692,0.72066,0.710007,2,very_close|high_rating|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_010,ChIJgQoKzTItdTERm747HBvuHis,Tiệm rửa xe thay nhớt dọn vệ sinh nội thất ôtô xe máy 287,0.39901356490545453,0.628932,0.707157,3,very_close|high_rating|open_now|service_rich|exterior_wash|interior_cleaning
+nearby_q_010,ChIJFff3FBMtdTERZbeRtTMhAvs,Rửa Xe Ô Tô - Xe Máy 24/24 Comeco,0.34259422423238567,0.524072,0.636626,4,very_close|open_now|service_rich|exterior_wash|car_supported
+nearby_q_010,ChIJdT26-jUsdTERdPzNGSL0gjM,Trung Tâm Rửa - Giữ Xe Oto - Xe Máy 68,2.1528644106786667,0.636569,0.607417,5,close|trusted|open_now|car_supported|motorbike_supported
+nearby_q_010,ChIJGfU0Z-ovdTERc2ehGxgW5Os,Tiệm Sửa Xe Rửa Xe Máy 528,2.4747537998127163,0.644308,0.596859,6,close|high_rating|trusted|open_now|exterior_wash|motorbike_supported
+nearby_q_010,ChIJwYnMSAAtdTERnVEwCXlMctE,Rửa xe máy - ô tô,3.005832900297288,0.658572,0.565199,7,close|high_rating|open_now|service_rich|exterior_wash|car_supported
+nearby_q_010,ChIJoT-HspgtdTERBcoGqMrCpq0,"Bãi Rửa Xe (xe máy,ôtô,xe tải)",4.7267495729117925,0.591092,0.39235,8,open_now|service_rich|exterior_wash|car_supported
+nearby_q_011,ChIJ0ajBbwArdTERR-yB5ICf2Rw,RS Car Detail | Chăm sóc xe có tâm,0.9157416064432418,0.641728,0.673074,1,very_close|high_rating|open_now|service_rich|exterior_wash|detailing
+nearby_q_011,ChIJF18FEjLXdDER2esvX8ZJRtg,VinaWash - Tân Phú,1.7027752706189518,0.799411,0.669496,2,close|high_rating|popular|trusted|open_now|exterior_wash|car_supported
+nearby_q_011,ChIJaWwZs_8rdTERZRVK4X5LewY,Trung Tâm Nâng Cấp & Phụ Kiện Ô Tô - VICARE AUTO,1.6158574394986354,0.730245,0.656887,3,close|high_rating|trusted|open_now|service_rich|exterior_wash|interior_cleaning
+nearby_q_011,ChIJ9xOW4RErdTERn0I4o_CR9J0,Tổng Kho Thiết Bị Rửa Xe Hồ Chí Minh - Miền Nam,1.3836065329642424,0.705308,0.641731,4,very_close|high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_011,ChIJg_HsuhsrdTERiEPArN9ppyk,Tư Vấn Mở Tiệm Rửa Xe Ô Tô Xe Máy TEARU,1.339418007383296,0.701137,0.636587,5,very_close|high_rating|trusted|open_now|service_rich|exterior_wash|car_supported
+nearby_q_011,ChIJT53MetordTERYUcGsCKCEdw,GRAGE - RỬA XE HOÀNG BÁCH OIL DEPOT,0.9809781394827997,0.573444,0.60842,6,very_close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_011,ChIJgSi0jeArdTERVfVaVYFHD1I,Tiệm Rửa Xe 33,0.995123647606797,0.558068,0.597002,7,very_close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_011,ChIJgTH9XeQrdTERgB-2deLVAZc,Rửa Xe Hà Anh,1.2502919656768057,0.596819,0.592841,8,very_close|high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_011,ChIJJaJF2-UrdTERHMb_1brVrU8,Gara Phú Thịnh Auto,1.9976148159749096,0.675213,0.588895,9,close|high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_011,ChIJT_0lGQArdTERaQb3NJy4Io8,Trung tâm chăm sóc rửa xe Anh Em,1.782426954004288,0.628932,0.581846,10,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_011,ChIJZcCZ49MrdTERqM8yPq0EMxs,Rửa xe 326,1.9594628260983489,0.649001,0.575657,11,close|high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_011,ChIJsUb44OErdTERLZRoEGZHttc,Rửa xe tự động Tiến Bộ,1.4922884640731897,0.570864,0.551845,12,very_close|high_rating|open_now|service_rich|exterior_wash|fast_lane
+nearby_q_011,ChIJlyvZpuQrdTERgPYy_5tbByM,Tiệm Rửa Xe - Thay Nhớt Ô Tô,1.5134981549594715,0.558068,0.545165,13,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_011,ChIJoSAZrJErdTERxuO2wsJ14fI,Tiệm rửa xe máy Phước,1.7893340524974568,0.603932,0.543655,14,close|high_rating|open_now|service_rich|exterior_wash|car_supported
+nearby_q_011,ChIJuebhunwpdTER11Ktb4AyQSg,"Trung tâm chăm sóc, đồ chơi xe hơi Since 1985 Auto",2.695944889555038,0.658455,0.509702,15,close|high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_011,ChIJTWkqpMArdTER-wxvgnjxLIo,Tiệm Rửa Xe Minh Thuần,1.3055601065506857,0.447228,0.506592,16,very_close|high_rating|exterior_wash|car_supported
+nearby_q_011,ChIJaRNnpqUpdTERc_-eo8TslVY,Prime Shine Detailing - Rửa Xe Ô Tô Tân Bình- Giữ Xe 24/24,3.189837816902068,0.708081,0.488063,17,close|high_rating|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_011,ChIJ7ccfhX0rdTERPu1BlnIPX1U,Rửa xe ô tô xe máy Anh Hạ,2.7018041862971485,0.620864,0.480894,18,close|high_rating|open_now|service_rich|exterior_wash|car_supported
+nearby_q_011,ChIJbeOvk1cpdTERJuxjZlCAdHg,Tiệm Rửa Xe Bảo Minh,2.205321036831556,0.558068,0.475982,19,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_011,ChIJsWLDPNIrdTERTFyKf-ULxM4,Rửa Xe Máy - Ô tô,2.2593471581328637,0.565944,0.468083,20,close|high_rating|open_now|service_rich|exterior_wash|car_supported
+nearby_q_011,ChIJ6cG9LpordTER2-KaPOsMb7U,Hệ Thống Rửa Xe Siêu Nhân Xanh,2.860954741938639,0.616728,0.466053,21,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_011,ChIJgfiozZcrdTERgrpi6nzaZUw,Tiệm Rửa Xe Lợi,2.281011676223107,0.545864,0.460473,22,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_011,ChIJZcUIDgApdTERdA46njrocSk,bãi giữ xe Tiến Dương,2.5060586689673645,0.558068,0.445909,23,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_011,ChIJ85Fp_6otdTERGmUNEVAXaBs,Rưa xe Nhựt Linh,3.0144979878767337,0.595864,0.437124,24,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_011,ChIJK7D8m28pdTEREKgyK6aySo8,Auto Care 68 - Chăm Sóc Xe Hơi Quận 12,3.330960636167038,0.721274,0.436148,25,close|high_rating|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_011,ChIJwyhdiEsqdTERh06rOjUU_B0,"Tiệm rửa xe, vá lốp ôtô & xe máy Số 1",3.285176126710367,0.646936,0.435664,26,close|high_rating|open_now|service_rich|exterior_wash|car_supported
+nearby_q_011,ChIJ-yHgeYordTER4s81OrdG11M,Rửa Xe 247,3.1556514544348278,0.615932,0.434523,27,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_011,ChIJg3q4BHMpdTERTvfOjDMAfnw,Trung tâm Chăm sóc xe chuyên nghiệp Minh Huy,3.4911097267616085,0.741238,0.433893,28,close|high_rating|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_011,ChIJmR_HbS8rdTERW_MPC6TllGQ,Rửa xe,2.56033143107754,0.545864,0.432541,29,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_011,ChIJuY52JmcpdTERhgDnRu-RC2s,Tiệm Rửa Xe Út,2.0345546747224965,0.440944,0.428063,30,close|high_rating|exterior_wash|car_supported
+nearby_q_011,ChIJSyNDlccrdTERWfWofzGKPOc,Hoàng tấn rửa xe,3.1331298064282276,0.595864,0.425261,31,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_011,ChIJKXdY1iwrdTER2OyuGxR9dWI,Rửa xe Nam Vi,2.8992065042034936,0.573444,0.416597,32,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_011,ChIJLeRnKbUpdTERnp0hBlwn0es,TIỆM RỬA XE HỒNG PHÚC,2.905704787131373,0.567296,0.408092,33,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_011,ChIJ97n0EyErdTERKXa0j4I8VG8,Rửa xe Tin Tin,2.315789560181484,0.447228,0.405569,34,close|high_rating|exterior_wash|car_supported
+nearby_q_011,ChIJ10xYpLIrdTERfmLaNoCswF4,Tiệm Rửa Xe 527,3.315556340319356,0.612001,0.400047,35,close|high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_011,ChIJa0Ioe3kvdTERneUe8H-ItFc,Rửa xe bọt tuyết 34,3.418002452255465,0.558068,0.354714,36,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_011,ChIJvxjCZQArdTERbx0gfTlKUB8,Tiệm Rửa Xe ÔTÔ & Xe Máy Dũng Hoàng,3.115216500327322,0.370864,0.289552,37,close|high_rating|service_rich|exterior_wash|car_supported
+nearby_q_011,ChIJzcBUKSUpdTERVr4l5CEefjo,Dịch vụ rửa xe Bo,3.0791440168922026,0.345864,0.28066,38,close|high_rating|exterior_wash|car_supported
+nearby_q_012,ChIJaRNnpqUpdTERc_-eo8TslVY,Prime Shine Detailing - Rửa Xe Ô Tô Tân Bình- Giữ Xe 24/24,1.1287576827741128,0.708081,0.746267,1,very_close|high_rating|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_012,ChIJ7RD6mUQpdTERda6cUV17nPc,Rửa xe máy,0.49275935595757625,0.652753,0.737577,2,very_close|open_now|service_rich|exterior_wash|car_supported
+nearby_q_012,ChIJ1ZUpBBEpdTERVTiWZz1qDEM,DIAMOND DETAILING - Chăm sóc xe chuyên nghiệp Tân Bình,1.633554810890475,0.718683,0.725984,3,close|high_rating|popular|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_012,ChIJF18FEjLXdDER2esvX8ZJRtg,VinaWash - Tân Phú,2.1410755970111706,0.799411,0.724484,4,close|high_rating|popular|trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJ8fZM-OwvdTER_f1tQEM9__I,Rửa xe Ô Tô - Xe Máy Kiết Lân,1.2759383778293043,0.656308,0.703888,5,very_close|high_rating|open_now|service_rich|exterior_wash|car_supported
+nearby_q_012,ChIJ4125gUwpdTERrnzAA-z9GJs,TIỆM RỬA XE THAY NHỚT 25,0.8387097054021913,0.602932,0.694927,6,very_close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJE15xZR8pdTERjhHTMKfts8c,Trung tâm chăm sóc xe Phước Thắng,2.1086125243380587,0.694856,0.684902,7,close|high_rating|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_012,ChIJqyScx6gvdTERn7780zpzSEs,Rửa xe Trọng Hữu,2.141990802647063,0.665363,0.666911,8,close|high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJZcCZ49MrdTERqM8yPq0EMxs,Rửa xe 326,2.05592883084879,0.649001,0.660899,9,close|high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJd1yMf7YvdTERJDoGEVtrQy0,RỬA XE CHĂM SÓC XE Ô TÔ CHUYÊN NGHIỆP - LUX AUTO DETAILING,1.4326478781436816,0.612205,0.660587,10,very_close|open_now|service_rich|exterior_wash|detailing
+nearby_q_012,ChIJaWwZs_8rdTERZRVK4X5LewY,Trung Tâm Nâng Cấp & Phụ Kiện Ô Tô - VICARE AUTO,3.1199636635888974,0.730245,0.650475,11,close|high_rating|trusted|open_now|service_rich|exterior_wash|interior_cleaning
+nearby_q_012,ChIJJaJF2-UrdTERHMb_1brVrU8,Gara Phú Thịnh Auto,2.6312728252786104,0.675213,0.646972,12,close|high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJLeRnKbUpdTERnp0hBlwn0es,TIỆM RỬA XE HỒNG PHÚC,1.0525907781767119,0.567296,0.641985,13,very_close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJR49LHcItdTERIiTJj8DLsa0,XE ĐẸP DETAILING - ĐỘ XE Ô TÔ - ĐỖ XE 24/24 - RỬA XE,3.5627445179136683,0.748584,0.636251,14,close|high_rating|popular|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_012,ChIJ0ajBbwArdTERR-yB5ICf2Rw,RS Car Detail | Chăm sóc xe có tâm,2.443484433631362,0.641728,0.633076,15,close|high_rating|open_now|service_rich|exterior_wash|detailing
+nearby_q_012,ChIJbeOvk1cpdTERJuxjZlCAdHg,Tiệm Rửa Xe Bảo Minh,1.2828353467104454,0.558068,0.627439,16,very_close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJoSAZrJErdTERxuO2wsJ14fI,Tiệm rửa xe máy Phước,1.8072131735449706,0.603932,0.625277,17,close|high_rating|open_now|service_rich|exterior_wash|car_supported
+nearby_q_012,ChIJlZpef4grdTER7hfoHz9oAQM,Dịch Vụ Rửa Xe Tự Động Tiên Tiến,1.934912703179877,0.593572,0.621419,18,close|open_now|service_rich|exterior_wash|fast_lane
+nearby_q_012,ChIJ5WuTUBgrdTERtF8COGP7HMk,Shitek Auto Detailing Tân Phú,2.6351138948516257,0.630308,0.610701,19,close|high_rating|open_now|service_rich|exterior_wash|detailing
+nearby_q_012,ChIJuTqPJXQpdTERyZA9HLklfaY,Rửa xe,1.846441283046049,0.578932,0.610665,20,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJa0Ioe3kvdTERneUe8H-ItFc,Rửa xe bọt tuyết 34,1.603474808829288,0.558068,0.610173,21,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJx7Jetc4udTERaURpkyVmgdg,Tiệm Rửa Xe Dân Trí,2.4979262638867183,0.669455,0.604792,22,close|high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJsUb44OErdTERLZRoEGZHttc,Rửa xe tự động Tiến Bộ,1.8554813663057876,0.570864,0.601164,23,close|high_rating|open_now|service_rich|exterior_wash|fast_lane
+nearby_q_012,ChIJkSQ5sOsvdTERcNDqTNVgDCY,Rửa xe 79 Lý Thường Kiệt,2.2764772591170974,0.58616,0.599657,24,close|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJZaU-GN8odTERlgCuwcK_Qt4,Rửa Xe Bi,4.0603867417416115,0.713417,0.594876,25,high_rating|popular|trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJC8RJnIwvdTER83b1UlHd4Xs,Rửa xe Vườn Lài,1.7425544864168008,0.545864,0.594744,26,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJgTH9XeQrdTERgB-2deLVAZc,Rửa Xe Hà Anh,2.3835583969667242,0.596819,0.589525,27,close|high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJ_-SKGKoudTERHDEBvqz3CPU,Rửa Xe - Thay Nhớt Thuạn Lợi,1.8697421540520207,0.545864,0.587896,28,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJsWLDPNIrdTERTFyKf-ULxM4,Rửa Xe Máy - Ô tô,2.03962069232157,0.565944,0.584192,29,close|high_rating|open_now|service_rich|exterior_wash|car_supported
+nearby_q_012,ChIJBVGXtx4pdTERLe9VRcHr_Ao,Rửa xe hơi,1.2761925256315578,0.501728,0.58343,30,very_close|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJlyvZpuQrdTERgPYy_5tbByM,Tiệm Rửa Xe - Thay Nhớt Ô Tô,2.1841694402408245,0.558068,0.578905,31,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJPQ8m-2EpdTERZKS8WSDmA08,Vá Vỏ Lưu Động - Rửa Xe ô tô Quận Tân Bình - Phượng Lân,3.4691234545557825,0.69339,0.578599,32,close|trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJz1mTmFIpdTERjiD69zHhYcU,Rửa Xe 91-93,0.7404043430945959,0.449932,0.57772,33,very_close|open_now|exterior_wash
+nearby_q_012,ChIJuebhunwpdTER11Ktb4AyQSg,"Trung tâm chăm sóc, đồ chơi xe hơi Since 1985 Auto",3.8343408367432312,0.658455,0.572832,34,close|high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJmR_HbS8rdTERW_MPC6TllGQ,Rửa xe,2.2169948888782596,0.545864,0.569197,35,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJgSi0jeArdTERVfVaVYFHD1I,Tiệm Rửa Xe 33,2.375752283939407,0.558068,0.568589,36,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJfXakHRkpdTER1n5X5stG_RM,Tiệm Rửa Xe Duy,3.3206830358123764,0.608068,0.567708,37,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJFXXccH8pdTERiiAE5msivWA,Rửa xe oto xe máy Lê Sơn,3.3237231803815868,0.63514,0.563152,38,close|high_rating|trusted|open_now|service_rich|exterior_wash|car_supported
+nearby_q_012,ChIJwYnMSAAtdTERnVEwCXlMctE,Rửa xe máy - ô tô,3.9920342586476383,0.658572,0.560651,39,close|high_rating|open_now|service_rich|exterior_wash|car_supported
+nearby_q_012,ChIJX6NdyzEpdTERJfHT9Uw_bMU,Rửa xe Nguyễn Thái Bình,1.3070648090553172,0.473389,0.560156,40,very_close|open_now|exterior_wash
+nearby_q_012,ChIJyYragc0pdTERJZUvuZwEEEc,SG Auto Detailing,4.5461867174619615,0.704536,0.559945,41,high_rating|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_012,ChIJT_0lGQArdTERaQb3NJy4Io8,Trung tâm chăm sóc rửa xe Anh Em,4.070469621000951,0.628932,0.540909,42,high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJV85ZmMwtdTERpyNN1B1pnN0,Bờm Auto - Thuê xe tự lái & rửa xe,4.8739614821190695,0.693348,0.539554,43,high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJv7ct6zMvdTERf-RfP3cNIyk,Rửa Xe 170,5.731919009765114,0.811,0.536358,44,high_rating|popular|trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJ9Vs22kovdTERow6znv_rO8k,Sửa - rửa xe HOÀNG THƯƠNG,4.311327552341029,0.645889,0.535888,45,high_rating|trusted|open_now|exterior_wash|motorbike_supported
+nearby_q_012,ChIJt4iAA9QpdTERYuimTqEKPUg,D superwash,3.9757170653130176,0.608068,0.532437,46,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJ1YVX-igvdTERaJMz766nH6U,Tiệm Rửa Xe 39,4.636504229415693,0.718153,0.531851,47,popular|trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJ71DAuAEsdTERTkng6PCOjp8,RỬA XE CƯỜNG,2.0061310551750733,0.49314,0.531599,48,close|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJm1O96dIudTERcD1jU6rlpNI,Tiệm Rửa Xe 67,2.89318860723533,0.547228,0.531361,49,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJCQmWVNMvdTERNLWPf_PE3WE,An Khang Detailing - Xưởng chăm xe vui vẻ,5.114765492757162,0.704536,0.52933,50,high_rating|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_012,ChIJexLMReMrdTERBdtmTTwDRAA,Tiệm Rửa Xe Bọt Tuyết - Thay Nhớt Khánh Nhân,2.03431983288751,0.480864,0.529034,51,close|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJeUtNRwAvdTEReYPFG0EmXTA,Rửa xe oto xe máy SBS,5.543912058238868,0.781404,0.528088,52,high_rating|trusted|open_now|service_rich|exterior_wash|car_supported
+nearby_q_012,ChIJ9xOW4RErdTERn0I4o_CR9J0,Tổng Kho Thiết Bị Rửa Xe Hồ Chí Minh - Miền Nam,4.6872004481527,0.705308,0.527704,53,high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJVXwIZgApdTER5YaO1M_iXx0,RỬA XE MÁY 297,4.164041867430463,0.618308,0.525874,54,high_rating|open_now|exterior_wash|motorbike_supported
+nearby_q_012,ChIJTaV9egApdTERWHqpwsaIPBA,Tèo rửa xe thay nhớt,4.058856899688519,0.598444,0.525464,55,high_rating|open_now|exterior_wash
+nearby_q_012,ChIJg3q4BHMpdTERTvfOjDMAfnw,Trung tâm Chăm sóc xe chuyên nghiệp Minh Huy,4.8012328678590634,0.741238,0.524476,56,high_rating|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_012,ChIJT53MetordTERYUcGsCKCEdw,GRAGE - RỬA XE HOÀNG BÁCH OIL DEPOT,3.3885632896772395,0.573444,0.524057,57,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJsVkt-KstdTERJRNTjAS1Kng,Rửa Xe Bình Long,3.2623140851366994,0.564072,0.522444,58,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJg_HsuhsrdTERiEPArN9ppyk,Tư Vấn Mở Tiệm Rửa Xe Ô Tô Xe Máy TEARU,4.643091483718847,0.701137,0.520516,59,high_rating|trusted|open_now|service_rich|exterior_wash|car_supported
+nearby_q_012,ChIJz-Ha0L0udTERtKlii4wCgYY,Rửa Xe 427,3.139802743174278,0.545864,0.519508,60,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJE_yWQ6MudTERPyxFeTTaMm0,Rửa xe Hiệp Toàn,5.1665247870378606,0.737924,0.519259,61,high_rating|popular|trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJz4WbAOUpdTERs9rK7CsKajA,Quang Trung Auto,4.348541554101681,0.626389,0.518884,62,high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJ85Fp_6otdTERGmUNEVAXaBs,Rưa xe Nhựt Linh,4.113559785317028,0.595864,0.517075,63,high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJ6yzjcqAvdTERcvVFrDNFz_M,RỬA XE 148,4.625353243207097,0.632128,0.516104,64,high_rating|trusted|open_now|exterior_wash
+nearby_q_012,ChIJD8_xMecrdTERbto7m7NZdcg,Tiệm Rửa Xe Bảo Hoàng,2.5633983704003263,0.501728,0.514119,65,close|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJLUc60dYodTERVRhGesrzQM8,"Vòi rửa xe, máy bơm rửa xe",4.436826929882504,0.616728,0.513242,66,high_rating|open_now|exterior_wash|motorbike_supported
+nearby_q_012,ChIJAxwRPmwvdTERJPonxNY8yCU,VinaWash Phú Nhuận,5.026567108864068,0.718807,0.512816,67,popular|trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJeREh3fwpdTEREu1cZPxtdPc,"GodiCar Care Center - Spa Xe Oto, Xe Máy, Rửa Xe, Thay Nhớt, Dịch Vụ Trông Giữ Xe 24/24",3.890579870675427,0.611592,0.511229,68,close|high_rating|open_now|service_rich|exterior_wash|detailing
+nearby_q_012,ChIJPZmXbh8rdTERGxpIuP3LKdg,Rửa xe ô tô xe máy,3.448691835062,0.57416,0.509038,69,close|open_now|service_rich|exterior_wash|car_supported
+nearby_q_012,ChIJxa8x3tEodTERlTMK1pUYjO4,Rửa Xe 192 - Phú Nhuận,4.996129570104445,0.710547,0.505996,70,popular|trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJMfw2TQAvdTER1SLfRI5lVQM,Rửa xe Ô tô - Xe máy 49 Thành Thái,3.9915595480837234,0.605513,0.505602,71,close|high_rating|open_now|service_rich|exterior_wash|car_supported
+nearby_q_012,ChIJZcUIDgApdTERdA46njrocSk,bãi giữ xe Tiến Dương,3.554717436528053,0.558068,0.505107,72,close|high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJgwxC60spdTER3x4ANrltVxE,40 phan tây hồ,4.862210137938674,0.637592,0.503911,73,high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJSxP8MwYtdTERSJoQpDIRBDM,RỬA XE CƯỜNG THỊNH,4.700807745658315,0.623444,0.503398,74,high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJdxjE8JMpdTERnAUyvPtxWuo,Car and motorcycle detailing,4.018753665611362,0.595864,0.49718,75,high_rating|open_now|service_rich|exterior_wash|detailing
+nearby_q_012,ChIJ92uFsuYudTERvyQu9b8g8Ws,Rửa Xe Hiếu,5.045397399490522,0.641598,0.49425,76,popular|trusted|open_now|exterior_wash
+nearby_q_012,ChIJTWxEfyUrdTERK5FoRgrpB2U,ADTEDEK Detailing | Dịch Vụ Rửa & Chăm Sóc Xe,4.678532033126051,0.620177,0.492538,77,open_now|service_rich|exterior_wash|detailing
+nearby_q_012,ChIJv6G-7lUpdTERQgfBIeAeSk4,Rửa xe 77,5.16837027346686,0.653238,0.492207,78,high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJK7D8m28pdTEREKgyK6aySo8,Auto Care 68 - Chăm Sóc Xe Hơi Quận 12,5.1665361350841845,0.721274,0.491046,79,high_rating|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_012,ChIJM5mkDZgudTERa_PHXXgHoII,Rửa xe Hoàng Quân,3.365536259106554,0.565308,0.486371,80,close|trusted|open_now|exterior_wash
+nearby_q_012,ChIJjysE6x0pdTERwqN6DiGix8w,Dịch Vụ Rửa Xe 5 Sao,4.149328628037017,0.569308,0.484167,81,high_rating|trusted|open_now|exterior_wash
+nearby_q_012,ChIJGfU0Z-ovdTERc2ehGxgW5Os,Tiệm Sửa Xe Rửa Xe Máy 528,5.364790836369673,0.644308,0.481219,82,high_rating|trusted|open_now|exterior_wash|motorbike_supported
+nearby_q_012,ChIJ38H8RSYtdTERwnKFSQ6DmEk,Rửa Xe Chuyên Nghiệp 409,4.785011276474639,0.605876,0.478952,83,open_now|exterior_wash|car_supported
+nearby_q_012,ChIJZXS7KtkudTERR1DL-aT9xH8,Rửa xe Kỳ Hòa,4.364898604138648,0.641368,0.476737,84,popular|trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJO-rw2AcpdTERr0SQMgVXXwQ,Anh Thắng Service - Trung Tâm Chăm Sóc Xe Hơi Chuyên Nghiệp,5.694852387222287,0.677524,0.476665,85,high_rating|trusted|open_now|service_rich|exterior_wash|detailing
+nearby_q_012,ChIJbbjeA9spdTER80lmGQK94QU,"🔧 Sửa Xe Tay Ga – Làm Nồi Tay Ga – Rửa Xe Moto Uy Tín Tại số 88 Nguyễn khuyến, Quận Bình Thạnh, TP.HCM",6.4061428343945614,0.723738,0.473058,86,high_rating|trusted|open_now|service_rich|exterior_wash|car_supported
+nearby_q_012,ChIJ8U3PEYcpdTERG1wm9NrHBgw,BÃI GIỮ XE & RỬA XE OTO 24/7,5.26998260614717,0.623444,0.47275,87,high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJ2yMrw_8pdTER0DH_CbI0avI,Tiêm rửa xe phương thảo,4.156745045389811,0.554296,0.464838,88,high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJOaLdHtUudTERUEZfCm_bDLs,Rửa Xe Tiến Đạt 2,3.640200723657982,0.550944,0.463007,89,close|trusted|open_now|exterior_wash
+nearby_q_012,ChIJcS_VSGIvdTERHwe7ppb-zVI,Rửa xe Nam,3.4921959478674767,0.503091,0.462681,90,close|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJiQcQmLQpdTERy68EeEtxhQs,Trung Tâm Chăm Sóc Xe 133,3.8123993918397905,0.537569,0.461021,91,close|open_now|service_rich|exterior_wash|detailing
+nearby_q_012,ChIJ19PwuJ0udTERUBh9phz0coc,Rửa Xe Trung Bảo,4.188160403209065,0.556492,0.460719,92,open_now|exterior_wash|car_supported
+nearby_q_012,ChIJKXdY1iwrdTER2OyuGxR9dWI,Rửa xe Nam Vi,4.637229460081481,0.573444,0.456821,93,high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJoXZmyu4rdTERbuUsj31vz1c,Tiệm Rửa Xe Tân Bình,3.3770512570726305,0.480864,0.456733,94,close|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJuc2eU-8rdTERRAGZtIvziVo,Cầu Nâng 1 Trụ Rửa Xe Ô Tô TAGORE,4.680842150239947,0.611137,0.455983,95,trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJa-KQDNYpdTERi9r--Kt8tik,Rửa xe 22,5.311384024852108,0.602932,0.454091,96,high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJ7ccfhX0rdTERPu1BlnIPX1U,Rửa xe ô tô xe máy Anh Hạ,5.546067188759177,0.620864,0.45244,97,high_rating|open_now|service_rich|exterior_wash|car_supported
+nearby_q_012,ChIJSyNDlccrdTERWfWofzGKPOc,Hoàng tấn rửa xe,5.343025164296342,0.595864,0.450873,98,high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJd2IusuArdTERDRvWXfWkKcc,Tiệm Rửa Xe 82,2.570264105961036,0.415864,0.450175,99,close|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJBe0M-o8udTERv_YNVumFqGw,2A Rửa xe Chuyên Nghiệp,4.4336177268037416,0.545864,0.449841,100,high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJJ7nc98AodTER-eUOFyYSut0,RỬA XE MINH ĐỨC( MINH ĐỨC WASH),6.12959039153912,0.656513,0.447977,101,high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJFdc1fQAvdTERJrNhc4N_YrA,Rửa xe chuyên nghiệp NAOTA MUOI DO with T,4.1980653942617,0.534001,0.445553,102,open_now|exterior_wash|car_supported
+nearby_q_012,ChIJjf7EygApdTERQ0oAZlnGutw,Dịch Vụ Rửa Xe Tuấn,4.768643394473611,0.566728,0.445375,103,high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJnW6iKs4odTERV38FHz8ZxEs,Công Ty Cổ Phần Vietwash,5.01922869046798,0.5778,0.444989,104,open_now|exterior_wash|car_supported
+nearby_q_012,ChIJ2fDrVDkpdTERT7jVOFeYn2Q,Rửa xe bubblesWash,5.006524290772309,0.568572,0.443525,105,open_now|exterior_wash|car_supported
+nearby_q_012,ChIJicio1KcpdTER027N-u4NYuc,Rửa Xe Thay Nhớt Lộc,4.771091317546486,0.563205,0.438325,106,high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJSa9fcfIudTERW2NFs6Jbxcg,Tiệm Rửa Xe Minh Đức,4.928941989323908,0.570572,0.437703,107,high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJM7P_4-wudTERQ9H4dubIkvs,Dịch Vụ Rửa Xe 140,4.458842529562594,0.522228,0.434557,108,high_rating|open_now|exterior_wash
+nearby_q_012,ChIJIYuOTg4pdTERRp8sLayExvI,Máy Rửa Xe Cao Áp - Công Ty Sơn Tùng Lâm,4.9925410098794885,0.566728,0.433319,109,high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJv3cmeqgpdTER44dSE4M9Gbs,Dịch Vụ Rửa Xe Nghệ Thuật,4.758244904558319,0.545864,0.432361,110,high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJJSEXFPwpdTERL6qFysNI0Y0,Rửa Xe Bọt Tuyết Duy Hiếu,4.86891747715701,0.558637,0.430856,111,high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJBRwQhiEvdTER3nNM1IQr4AU,Rửa xe 100B,5.251863906167502,0.635013,0.43024,112,high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJHU8nWgAvdTERICXUCipASJs,Dịch vụ rửa xe cộng đồng Chung Cư Lò Gốm,6.139397696188592,0.628932,0.429505,113,high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJ_ePVDgApdTERic0nX2iwDUg,Rửa Xe 111,4.828577285056973,0.545864,0.428574,114,high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJUeoLG9IpdTERlD_pYZAakF0,Rửa Xe Thằng Bờm,5.065707388182361,0.57589,0.427629,115,open_now|exterior_wash|car_supported
+nearby_q_012,ChIJ-yHgeYordTER4s81OrdG11M,Rửa Xe 247,6.015493752510588,0.615932,0.426177,116,high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJEfV43q4vdTERoRbWxB-ctVM,Rửa xe tự động JetX,6.2465937352736995,0.694069,0.424949,117,trusted|open_now|service_rich|exterior_wash|fast_lane
+nearby_q_012,ChIJL2T8BY4udTERc2PfFI1z8OI,Tiệm Rửa Xe 130B Xóm Đất,4.637070975982164,0.529091,0.421034,118,open_now|exterior_wash|car_supported
+nearby_q_012,ChIJ6cG9LpordTER2-KaPOsMb7U,Hệ Thống Rửa Xe Siêu Nhân Xanh,6.196284985915756,0.616728,0.418502,119,high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJm15DTZMudTERfdLD0CoKvkk,Tiệm Rửa Xe Tuấn,4.203818404375782,0.483444,0.417659,120,open_now|exterior_wash
+nearby_q_012,ChIJ8ejDhhYsdTER38GORUgRfBs,Quán rửa xe Mười 305/11,4.335457127890288,0.503091,0.417275,121,open_now|exterior_wash|car_supported
+nearby_q_012,ChIJPQcH7HctdTERjGPXTmOGnFI,Green Wash Auto - Chăm sóc & Nâng cấp Oto,6.441014268710141,0.631092,0.413898,122,high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJv-X3SpcudTEROvT_nBGLfUs,Tiệm Rửa Xe 260,3.891034381564979,0.462944,0.412001,123,close|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJAwIAypQpdTEROE4gFnnYQ-M,Rửa Xe Thằng Bờm 2 (294 Nguyễn Thái Sơn),5.2640371566308986,0.567864,0.411729,124,open_now|exterior_wash|car_supported
+nearby_q_012,ChIJA5UVkV0pdTERqEQlYq83cjE,Chăm Sóc Xe Oto 362,5.383192392025904,0.570864,0.41121,125,high_rating|open_now|service_rich|exterior_wash|detailing
+nearby_q_012,ChIJuVM5vFkpdTERKkgdaRrik7c,Gara Rửa Xe Ô Tô CARBI,4.662929092443104,0.513932,0.409008,126,open_now|exterior_wash|car_supported
+nearby_q_012,ChIJv0s95ZMudTER6sXb07AgUZg,Tiệm Rửa Xe Hòa,4.072771963152697,0.455864,0.406771,127,open_now|exterior_wash
+nearby_q_012,ChIJgfiozZcrdTERgrpi6nzaZUw,Tiệm Rửa Xe Lợi,5.286600582472643,0.545864,0.403911,128,high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJxV9RcVModTERRrogNkgVv6E,Tiệm Rửa Xe Tí Nị,5.994176782665158,0.610253,0.403847,129,high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJCTQOeB0vdTERFoN_cRNv9QA,Rửa Xe Huy Hoàng,5.820808365844557,0.627876,0.403178,130,trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJA7QSL_kodTERp-zkuoE7Eec,Giữ Xe Ôtô Rửa Xe Ôtô - Xe Máy,5.56155189355294,0.570864,0.401606,131,high_rating|open_now|service_rich|exterior_wash|car_supported
+nearby_q_012,ChIJy7RnTAAvdTERuHa74kwoWG0,"Bãi Giữ Xe, Rửa Xe Ôtô 635 Nguyễn Trãi",5.753125950151925,0.585205,0.399759,132,high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJhfQaIaopdTER2ELJYK5oEic,Rửa xe 54,5.834563613429975,0.570541,0.396364,133,open_now|exterior_wash|car_supported
+nearby_q_012,ChIJZTTHJQAtdTER30VeV0vaZtA,Rửa xe-thay nhớt Đức Minh,5.264605344577927,0.520864,0.392595,134,high_rating|open_now|exterior_wash
+nearby_q_012,ChIJoR3SkCwsdTER0lqlQ5kQF3c,Dịch Vụ Rửa Xe Mạnh Khang,5.834989659489465,0.578436,0.392489,135,high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJhaM33pgpdTERFUK5gtpsAB8,Tý Rửa Xe,4.744142139383645,0.493068,0.391061,136,open_now|exterior_wash|car_supported
+nearby_q_012,ChIJJbmfLo8pdTERoAEm9vXAuW8,Rửa Xe 16,5.544349103750343,0.545864,0.390032,137,high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJ10xYpLIrdTERfmLaNoCswF4,Tiệm Rửa Xe 527,6.389280205586107,0.612001,0.387565,138,high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJvYcOjuQodTER-rZvU9XLEfQ,Tiệm Rửa XeTrung Tín,5.008928660555771,0.559205,0.385518,139,trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJdx9agLApdTERe4xVTT63wng,Tiệm Rửa Xe Mạnh Tường,5.890344408384801,0.566728,0.384976,140,high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJ9zaRTX4udTERBr7JULUfLd8,707 Zone - Rửa Xe 707,5.986793585671073,0.566436,0.381815,141,high_rating|trusted|open_now|exterior_wash
+nearby_q_012,ChIJocSD1MAodTERy3XameV2IcM,Rửa Xe Bi,6.041493407086538,0.634868,0.381458,142,popular|trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJl5SjuawpdTERla2HXrd15Uo,Tiệm Rửa Xe & sửa xe 62 GN SCOOTER,5.768537683001668,0.539296,0.378049,143,open_now|exterior_wash|car_supported
+nearby_q_012,ChIJd_9VbR8vdTEROPUOjqft6Mc,Rửa xe Hoàng,5.528116404532968,0.572172,0.365998,144,trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJ35wD6AIvdTERcdM5ZxvwoYA,Dịch Vụ Rửa Xe A Thuận,6.291538573313028,0.613364,0.364799,145,high_rating|trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJ2Rcm-8gpdTERcJ2VC0tDbq4,Ô tô Tấn Tới Q12,6.296419143523012,0.566728,0.36311,146,high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJ8SzGl2spdTERykzQQPfiebQ,MINH VŨ - RỬA XE BÌNH THẠNH,5.12706603084444,0.482228,0.361075,147,open_now|exterior_wash|car_supported
+nearby_q_012,ChIJzxq5an8udTER_donYV9xq2o,Tiệm Rửa Xe Chí Hoàng,6.235152453008852,0.545864,0.352835,148,high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJ_ePva-IudTER3hqpNrbWafM,hethongchamsocxe.com,5.599971509676105,0.510376,0.350069,149,open_now|exterior_wash|car_supported
+nearby_q_012,ChIJAbCPoksqdTERvid1a9rOs9c,Rửa Xe 29,6.411480940694801,0.554296,0.343429,150,high_rating|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJ939LseMudTERpPKl4NCFgvs,Rửa Xe 33,5.465932640805576,0.469796,0.329343,151,open_now|exterior_wash|car_supported
+nearby_q_012,ChIJpwpSMJ8pdTERB-V-jQTgYcM,Tiệm rửa xe bình dân,6.25608645575941,0.56078,0.318617,152,trusted|open_now|exterior_wash|car_supported
+nearby_q_012,ChIJQxnzt3opdTERxCi-X6Y46v4,RỬA XE 3H,5.677267718581593,0.456228,0.311449,153,open_now|exterior_wash|car_supported
+nearby_q_012,ChIJha2t3ekodTEReIYG_s_iMBg,Rửa Xe Thanh Vân,6.280074977175493,0.504455,0.311138,154,open_now|exterior_wash|car_supported
+nearby_q_012,ChIJg80AdX4pdTERC6nJbmzm1Yg,Rửa xe Bình Triệu Hoá Dầu,5.825577416952882,0.436728,0.288463,155,open_now|exterior_wash|car_supported
+nearby_q_012,ChIJAd9frigpdTERpugpDXEMxuY,Chỗ Rửa Xe,6.220702043501284,0.415864,0.253613,156,open_now|exterior_wash|car_supported

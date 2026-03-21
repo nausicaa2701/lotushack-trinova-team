@@ -1,0 +1,13 @@
+query_id,user_latitude,user_longitude,radius_km,require_open_now,min_rating,anchor_district,service_exterior_wash,service_interior_cleaning,service_detailing,service_ceramic,service_ev_safe,service_fast_lane,service_car_supported,service_motorbike_supported
+nearby_q_001,10.76099,106.6245,2.5,1,4.0,binh tan,False,False,True,False,False,False,False,False
+nearby_q_002,10.886123,106.723432,3.5,1,3.5,binh thanh,False,False,False,False,False,False,True,False
+nearby_q_003,10.83617,106.6754,5.0,,4.2,go vap,False,False,False,False,False,True,False,False
+nearby_q_004,10.875964,106.605772,4.0,,3.0,hoc mon,False,False,False,False,False,False,False,True
+nearby_q_005,10.760819,106.673015,6.0,1,3.5,quan 1,True,False,False,False,False,False,False,False
+nearby_q_006,10.754102,106.661625,5.5,,4.0,quan 10,False,False,False,False,True,False,False,False
+nearby_q_007,10.872388,106.62638,4.5,0,2.5,quan 12,False,False,False,False,False,False,True,False
+nearby_q_008,10.742612,106.61891,3.0,1,4.0,quan 6,False,True,False,False,False,False,False,False
+nearby_q_009,10.724139,106.733567,7.0,,3.8,quan 7,False,False,True,False,False,False,False,False
+nearby_q_010,10.741652,106.619857,5.0,1,3.2,tan binh,False,False,False,False,False,False,False,True
+nearby_q_011,10.817712,106.617325,3.5,,4.5,tan phu,False,False,False,False,False,False,True,False
+nearby_q_012,10.80028,106.642254,6.5,1,3.0,thu duc,True,False,False,False,False,False,False,False

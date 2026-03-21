@@ -172,7 +172,7 @@ function scorePlateMatch(query: string, plate: string) {
 export async function fetchPlatformMockData(): Promise<PlatformData> {
   const response = await fetch(PLATFORM_MOCK_PATH);
   if (!response.ok) {
-    throw new Error('Unable to load mock data');
+    throw new Error('Unable to load local catalog');
   }
 
   return (await response.json()) as PlatformData;

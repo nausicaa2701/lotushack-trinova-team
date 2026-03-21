@@ -15,6 +15,7 @@ from app.schemas import (
     SearchLogRequest,
     SearchResultMerchant,
 )
+from app.services import AIServingRepository, ArtifactUnavailableError, get_ai_serving_repository
 
 router = APIRouter()
 
@@ -59,8 +60,7 @@ def _merchant_result(merchant: Merchant, distance_km: float, reason_context: str
     )
 
 
-@router.post("/nearby", response_model=NearbySearchResponse)
-def nearby_search(payload: NearbySearchRequest, db: Session = Depends(get_db)):
+def _db_nearby_search(payload: NearbySearchRequest, db: Session) -> NearbySearchResponse:
     merchants = db.scalars(select(Merchant)).all()
     results: list[SearchResultMerchant] = []
 
@@ -84,8 +84,7 @@ def nearby_search(payload: NearbySearchRequest, db: Session = Depends(get_db)):
     return NearbySearchResponse(results=results)
 
 
-@router.post("/on-route", response_model=NearbySearchResponse)
-def on_route_search(payload: OnRouteSearchRequest, db: Session = Depends(get_db)):
+def _db_on_route_search(payload: OnRouteSearchRequest, db: Session) -> NearbySearchResponse:
     merchants = db.scalars(select(Merchant)).all()
     results: list[SearchResultMerchant] = []
 
@@ -110,6 +109,44 @@ def on_route_search(payload: OnRouteSearchRequest, db: Session = Depends(get_db)
 
     results.sort(key=lambda x: (x.distanceFromRouteKm, -x.rating, x.priceFrom))
     return NearbySearchResponse(results=results)
+
+
+@router.post("/nearby", response_model=NearbySearchResponse)
+def nearby_search(
+    payload: NearbySearchRequest,
+    db: Session = Depends(get_db),
+    repo: AIServingRepository = Depends(get_ai_serving_repository),
+):
+    try:
+        results = repo.search_nearby(
+            latitude=payload.location.lat,
+            longitude=payload.location.lng,
+            radius_km=payload.radiusKm,
+            filters=payload.filters.model_dump(),
+        )
+        return NearbySearchResponse(results=results)
+    except ArtifactUnavailableError:
+        return _db_nearby_search(payload, db)
+
+
+@router.post("/on-route", response_model=NearbySearchResponse)
+def on_route_search(
+    payload: OnRouteSearchRequest,
+    db: Session = Depends(get_db),
+    repo: AIServingRepository = Depends(get_ai_serving_repository),
+):
+    try:
+        results = repo.search_on_route(
+            origin_lat=payload.origin.lat,
+            origin_lng=payload.origin.lng,
+            destination_lat=payload.destination.lat,
+            destination_lng=payload.destination.lng,
+            max_corridor_km=payload.maxDetourKm,
+            filters=payload.filters.model_dump(),
+        )
+        return NearbySearchResponse(results=results)
+    except ArtifactUnavailableError:
+        return _db_on_route_search(payload, db)
 
 
 @router.post("/logs")

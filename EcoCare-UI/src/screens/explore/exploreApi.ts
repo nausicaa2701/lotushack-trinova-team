@@ -1,17 +1,18 @@
 import type { ExploreFilters, LatLng, Merchant, RoutePreviewResponse, SearchMode } from './types';
+import { apiFetch, parseHttpErrorMessage } from '../../lib/apiClient';
 import { fetchPlatformMockData, filterMerchantsByQuery, mapProviderToMerchant } from '../../lib/platformMock';
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL ?? '';
-
-async function postJson<T>(path: string, payload: unknown): Promise<T> {
-  const response = await fetch(`${API_BASE}${path}`, {
+async function postJson<T>(path: string, payload: unknown, userId?: string | null): Promise<T> {
+  const response = await apiFetch(path, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload),
+    userId: userId ?? null,
   });
 
   if (!response.ok) {
-    throw new Error(`API ${path} failed`);
+    const text = await response.text();
+    throw new Error(parseHttpErrorMessage(text));
   }
 
   return response.json() as Promise<T>;
@@ -58,16 +59,19 @@ export async function fallbackSearch(mode: SearchMode, query = ''): Promise<Merc
   return query ? filterMerchantsByQuery(scoped, query) : scoped;
 }
 
-export async function logSearchEvent(payload: Record<string, unknown>) {
+export async function logSearchEvent(payload: Record<string, unknown>, options?: { userId?: string | null }) {
   try {
     const mode = payload.mode as 'nearby' | 'on-route';
     const origin = (payload.origin as { lat?: number; lng?: number } | undefined) ?? {};
     const destination = (payload.destination as { lat?: number; lng?: number } | null | undefined) ?? null;
     const shownMerchants = (payload.shownMerchants as Array<{ merchantId?: string; rank?: number }> | undefined) ?? [];
+    const anon = options?.userId ? `user-${options.userId}` : 'web-anon';
 
-    await postJson('/api/search/logs', {
+    await postJson(
+      '/api/search/logs',
+      {
       id: `search-log-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
-      user_id_anonymized: 'web-anon',
+      user_id_anonymized: anon,
       mode,
       origin_lat: Number(origin.lat ?? 0),
       origin_lng: Number(origin.lng ?? 0),
@@ -84,7 +88,9 @@ export async function logSearchEvent(payload: Record<string, unknown>) {
       merchant_rank_position: null,
       detour_minutes: null,
       created_at: new Date().toISOString(),
-    });
+    },
+      null
+    );
   } catch {
     // best-effort logging for AI training readiness
   }

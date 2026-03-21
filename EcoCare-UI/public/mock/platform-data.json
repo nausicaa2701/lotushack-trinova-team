@@ -7,7 +7,8 @@
       "roles": ["owner", "provider"],
       "defaultRole": "owner",
       "vehicle": "Tesla Model 3 Long Range",
-      "vehiclePlate": "51K-248.81"
+      "vehiclePlate": "51K-248.81",
+      "providerAccountId": "provider-02"
     },
     {
       "id": "owner-02",

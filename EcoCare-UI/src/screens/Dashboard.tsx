@@ -4,10 +4,40 @@ import { Star, MapPin, ArrowRight, Sparkles, ShieldCheck, Droplets } from 'lucid
 import { useNavigate } from 'react-router-dom';
 import { cn } from '@/src/lib/utils';
 import { useMockData } from '../hooks/useMockData';
+import { fetchSlotRecommendations } from '../lib/slotsApi';
 
 export const Dashboard = () => {
   const navigate = useNavigate();
   const { data, loading } = useMockData();
+  const [apiSlotsByProvider, setApiSlotsByProvider] = React.useState<
+    Record<string, Array<{ time: string; reason: string }>>
+  >({});
+
+  React.useEffect(() => {
+    if (!data?.providers?.length) return;
+    let cancelled = false;
+    const top = data.providers.slice(0, 2);
+    void Promise.all(
+      top.map(async (p: { id: string }) => {
+        try {
+          const r = await fetchSlotRecommendations(p.id, { searchMode: 'nearby' });
+          return [p.id, r.slots] as const;
+        } catch {
+          return [p.id, null] as const;
+        }
+      })
+    ).then((rows) => {
+      if (cancelled) return;
+      const next: Record<string, Array<{ time: string; reason: string }>> = {};
+      for (const [id, slots] of rows) {
+        if (slots?.length) next[id] = slots;
+      }
+      setApiSlotsByProvider(next);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [data]);
 
   return (
     <motion.div 
@@ -184,6 +214,7 @@ export const Dashboard = () => {
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
             {data.providers.slice(0, 2).map((provider: any) => {
               const slotEntry = data.slotRecommendations.find((entry: any) => entry.providerId === provider.id) as any;
+              const slotsForUi = apiSlotsByProvider[provider.id] ?? slotEntry?.slots ?? [];
               return (
                 <div key={provider.id} className="rounded-3xl border border-outline-variant/20 bg-surface-container-lowest p-6 shadow-sm">
                   <p className="font-headline text-xl font-bold">{provider.name}</p>
@@ -195,7 +226,7 @@ export const Dashboard = () => {
                     ))}
                   </div>
                   <div className="mt-4 space-y-2">
-                    {slotEntry?.slots?.slice(0, 3).map((slot: any) => (
+                    {slotsForUi.slice(0, 3).map((slot: any) => (
                       <div key={slot.time} className="flex items-center justify-between rounded-xl bg-surface-container-low px-3 py-2">
                         <span className="font-bold text-slate-700">{slot.time}</span>
                         <span className="text-[10px] font-bold uppercase tracking-wide text-tertiary">{slot.reason}</span>

@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import date, datetime
 from typing import Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field
@@ -220,3 +220,23 @@ class UpdateAIRolloutRequest(BaseModel):
     rankingModelStatus: str | None = None
     slotModelStatus: str | None = None
     fallbackHealthy: bool | None = None
+
+
+class SlotRecommendationRequest(BaseModel):
+    merchantId: str
+    searchTimestamp: datetime | None = None
+    preferredDate: date | None = None
+    preferredPeriod: str | None = None
+    searchMode: str | None = None
+
+
+class SlotRecommendationItem(BaseModel):
+    slotId: str
+    slotTime: str
+    score: float
+    reason: str
+
+
+class SlotRecommendationResponse(BaseModel):
+    merchantId: str
+    slots: list[SlotRecommendationItem]

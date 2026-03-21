@@ -6,7 +6,8 @@
       "email": "alex@washnet.app",
       "roles": ["owner", "provider"],
       "defaultRole": "owner",
-      "vehicle": "Tesla Model S Plaid"
+      "vehicle": "Tesla Model S Plaid",
+      "providerAccountId": "provider-02"
     },
     {
       "id": "owner-02",

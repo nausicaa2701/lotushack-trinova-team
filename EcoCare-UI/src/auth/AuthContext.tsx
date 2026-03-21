@@ -8,6 +8,8 @@ export interface AuthUser {
   email: string;
   roles: UserRole[];
   defaultRole?: UserRole;
+  /** When the same person has owner + provider roles, this selects the provider profile for provider-only flows. */
+  providerAccountId?: string;
   vehicle?: string;
   vehiclePlate?: string;
   branch?: string;

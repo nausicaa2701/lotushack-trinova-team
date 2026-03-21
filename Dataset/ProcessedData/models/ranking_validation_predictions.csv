@@ -1,0 +1,1205 @@
+query_id,merchant_id,merchant_name,relevance_label,rank_position,final_rank_score_filled,ml_prediction_score,baseline_prediction_score,ml_rank_position,baseline_rank_position
+nearby_q_002,ChIJh8yyigPYdDERalJPyL7NpNc,Tiệm Rửa Xe Thành,1,1.0,0.61041,2.276804370997871,0.61041,1,1
+nearby_q_002,ChIJkYfDXsUndTEREk9eYE2TDi8,Rửa Xe Takashi,2,2.0,0.482292,0.8074132869779924,0.482292,2,2
+nearby_q_002,ChIJkaXsi8ovdTERV9vqRTJPqNQ,Storedetailing,0,,0.0,-6.411708841869883,0.0,3,3
+nearby_q_002,ChIJR49LHcItdTERIiTJj8DLsa0,XE ĐẸP DETAILING - ĐỘ XE Ô TÔ - ĐỖ XE 24/24 - RỬA XE,0,,0.0,-6.411708841869883,0.0,4,4
+nearby_q_002,ChIJCQmWVNMvdTERNLWPf_PE3WE,An Khang Detailing - Xưởng chăm xe vui vẻ,0,,0.0,-6.411708841869883,0.0,5,5
+nearby_q_002,ChIJW4knxqEvdTERhuMXJ4-RYL8,"Tiệm rửa xe, sửa xe, bảo dưỡng xe 2 bánh - TN Detailing-Motorcycle wash",0,,0.0,-6.411708841869883,0.0,6,6
+nearby_q_002,ChIJL3GiFugpdTER3DjuORNSeRI,Cứu Hộ Xe Máy - Sửa Xe Máy Tại Nhà 24h Minh Thành Motor,0,,0.0,-6.411708841869883,0.0,7,7
+nearby_q_002,ChIJ660DJwArdTERaswe-O5w_A4,Tiệm rửa xe ôtô xe máy,0,,0.0,-6.411708841869883,0.0,8,8
+nearby_q_002,ChIJwyhdiEsqdTERh06rOjUU_B0,"Tiệm rửa xe, vá lốp ôtô & xe máy Số 1",0,,0.0,-6.411708841869883,0.0,9,9
+nearby_q_002,ChIJU0GMXwApdTER0nAk4v8nxsw,"Rửa Xe 39 - Ôtô, Xe máy",0,,0.0,-6.411708841869883,0.0,10,10
+nearby_q_002,ChIJvxjCZQArdTERbx0gfTlKUB8,Tiệm Rửa Xe ÔTÔ & Xe Máy Dũng Hoàng,0,,0.0,-6.411708841869883,0.0,11,11
+nearby_q_002,ChIJ92uFsuYudTERvyQu9b8g8Ws,Rửa Xe Hiếu,0,,0.0,-6.411708841869883,0.0,12,12
+nearby_q_002,ChIJ9Vs22kovdTERow6znv_rO8k,Sửa - rửa xe HOÀNG THƯƠNG,0,,0.0,-6.411708841869883,0.0,13,13
+nearby_q_002,ChIJLXbu5dIvdTER7g8ZL14rluM,Ánh Dương Detailing,0,,0.0,-6.411708841869883,0.0,14,14
+nearby_q_002,ChIJh49VXwQvdTERteVbwQETYQM,Dịch Vụ Rửa Xe 109,0,,0.0,-6.411708841869883,0.0,15,15
+nearby_q_002,ChIJ35wD6AIvdTERcdM5ZxvwoYA,Dịch Vụ Rửa Xe A Thuận,0,,0.0,-6.411708841869883,0.0,16,16
+nearby_q_002,ChIJv7ct6zMvdTERf-RfP3cNIyk,Rửa Xe 170,0,,0.0,-6.411708841869883,0.0,17,17
+nearby_q_002,ChIJ1YVX-igvdTERaJMz766nH6U,Tiệm Rửa Xe 39,0,,0.0,-6.411708841869883,0.0,18,18
+nearby_q_002,ChIJy7RnTAAvdTERuHa74kwoWG0,"Bãi Giữ Xe, Rửa Xe Ôtô 635 Nguyễn Trãi",0,,0.0,-6.411708841869883,0.0,19,19
+nearby_q_002,ChIJMfw2TQAvdTER1SLfRI5lVQM,Rửa xe Ô tô - Xe máy 49 Thành Thái,0,,0.0,-6.411708841869883,0.0,20,20
+nearby_q_002,ChIJzw1c3nMvdTERQ-_es7qw718,RỬA XE CẦU NÂNG-THAY NHỚT HƯNG PHÁT 24h/7-CHĂM SÓC XE AUTO CAR,0,,0.0,-6.411708841869883,0.0,21,21
+nearby_q_002,ChIJBRwQhiEvdTER3nNM1IQr4AU,Rửa xe 100B,0,,0.0,-6.411708841869883,0.0,22,22
+nearby_q_002,ChIJcUA7eZcvdTERegYfkM6PQMg,"Rửa xe, Thay nhớt Trí 48",0,,0.0,-6.411708841869883,0.0,23,23
+nearby_q_002,ChIJeUtNRwAvdTEReYPFG0EmXTA,Rửa xe oto xe máy SBS,0,,0.0,-6.411708841869883,0.0,24,24
+nearby_q_002,ChIJaS06HOMpdTERYF3alhmcRWg,2N Detailing Car,0,,0.0,-6.411708841869883,0.0,25,25
+nearby_q_002,ChIJZXS7KtkudTERR1DL-aT9xH8,Rửa xe Kỳ Hòa,0,,0.0,-6.411708841869883,0.0,26,26
+nearby_q_002,ChIJB4-7VVcvdTERFGf8fzD2VKk,Rửa Xe Mai Tuấn,0,,0.0,-6.411708841869883,0.0,27,27
+nearby_q_002,ChIJV2CDWUsvdTERoCmtcUrUmaE,AUTOLINK VN Car Care Center,0,,0.0,-6.411708841869883,0.0,28,28
+nearby_q_002,ChIJN7tXj9ovdTERaHPUt88VtVs,Rửa xe Phong Phú,0,,0.0,-6.411708841869883,0.0,29,29
+nearby_q_002,ChIJSa9fcfIudTERW2NFs6Jbxcg,Tiệm Rửa Xe Minh Đức,0,,0.0,-6.411708841869883,0.0,30,30
+nearby_q_002,ChIJQasFZlQudTERUnY-pRaF33E,Rua Xe 63,0,,0.0,-6.411708841869883,0.0,31,31
+nearby_q_002,ChIJKbcy81UudTERkpGdL9UcyRE,Wash & Oil - Trung Tâm Đầu Nhớt Và Rửa Xe Chuyên Nghiệp,0,,0.0,-6.411708841869883,0.0,32,32
+nearby_q_002,ChIJx7Jetc4udTERaURpkyVmgdg,Tiệm Rửa Xe Dân Trí,0,,0.0,-6.411708841869883,0.0,33,33
+nearby_q_002,ChIJM7P_4-wudTERQ9H4dubIkvs,Dịch Vụ Rửa Xe 140,0,,0.0,-6.411708841869883,0.0,34,34
+nearby_q_002,ChIJ8wSxnnIvdTER4tuq_TmGSO8,Tiệm Rửa Xe F1,0,,0.0,-6.411708841869883,0.0,35,35
+nearby_q_002,ChIJGfU0Z-ovdTERc2ehGxgW5Os,Tiệm Sửa Xe Rửa Xe Máy 528,0,,0.0,-6.411708841869883,0.0,36,36
+nearby_q_002,ChIJEfV43q4vdTERoRbWxB-ctVM,Rửa xe tự động JetX,0,,0.0,-6.411708841869883,0.0,37,37
+nearby_q_002,ChIJ6yzjcqAvdTERcvVFrDNFz_M,RỬA XE 148,0,,0.0,-6.411708841869883,0.0,38,38
+nearby_q_002,ChIJM1rb4cMldTERJN3k_5HfeXk,Q7 Auto Center - Rửa xe - Chăm sóc ô tô - Phụ kiện ô tô,0,,0.0,-6.411708841869883,0.0,39,39
+nearby_q_002,ChIJDbbGtm0vdTERVHUBjRDwqJ8,Trung Tâm Chăm Sóc Xe Minh Phát,0,,0.0,-6.411708841869883,0.0,40,40
+nearby_q_002,ChIJE15xZR8pdTERjhHTMKfts8c,Trung tâm chăm sóc xe Phước Thắng,0,,0.0,-6.411708841869883,0.0,41,41
+nearby_q_002,ChIJqyScx6gvdTERn7780zpzSEs,Rửa xe Trọng Hữu,0,,0.0,-6.411708841869883,0.0,42,42
+nearby_q_002,ChIJXYD4TbsvdTERiUCTTjugBFw,Dịch Vụ Rửa Xe Ô Tô Quang Thiên,0,,0.0,-6.411708841869883,0.0,43,43
+nearby_q_002,ChIJAxwRPmwvdTERJPonxNY8yCU,VinaWash Phú Nhuận,0,,0.0,-6.411708841869883,0.0,44,44
+nearby_q_002,ChIJkSQ5sOsvdTERcNDqTNVgDCY,Rửa xe 79 Lý Thường Kiệt,0,,0.0,-6.411708841869883,0.0,45,45
+nearby_q_002,ChIJnYEfIYcvdTERyn-385Cj0go,"Thanh An Autocare - Vỏ Lốp, Cứu Hộ Ô Tô Chăm Sóc Xe Quận 7",0,,0.0,-6.411708841869883,0.0,46,46
+nearby_q_002,ChIJ6fxG6kIvdTER-Zg9XHB3_pw,Rửa Xe Bảo Long,0,,0.0,-6.411708841869883,0.0,47,47
+nearby_q_002,ChIJA7wsYakvdTERbeVCCoCEQaU,Rửa xe A Bảy,0,,0.0,-6.411708841869883,0.0,48,48
+nearby_q_002,ChIJpUp2VXAvdTER-hp9STrxCRM,Rửa Xe 116,0,,0.0,-6.411708841869883,0.0,49,49
+nearby_q_002,ChIJxa8x3tEodTERlTMK1pUYjO4,Rửa Xe 192 - Phú Nhuận,0,,0.0,-6.411708841869883,0.0,50,50
+nearby_q_002,ChIJHU8nWgAvdTERICXUCipASJs,Dịch vụ rửa xe cộng đồng Chung Cư Lò Gốm,0,,0.0,-6.411708841869883,0.0,51,51
+nearby_q_002,ChIJe6mdgWYvdTERBPBrRWm4bRg,Rửa xe Khiêm Khải,0,,0.0,-6.411708841869883,0.0,52,52
+nearby_q_002,ChIJm15DTZMudTERfdLD0CoKvkk,Tiệm Rửa Xe Tuấn,0,,0.0,-6.411708841869883,0.0,53,53
+nearby_q_002,ChIJZaU-GN8odTERlgCuwcK_Qt4,Rửa Xe Bi,0,,0.0,-6.411708841869883,0.0,54,54
+nearby_q_002,ChIJLUc60dYodTERVRhGesrzQM8,"Vòi rửa xe, máy bơm rửa xe",0,,0.0,-6.411708841869883,0.0,55,55
+nearby_q_002,ChIJz-Ha0L0udTERtKlii4wCgYY,Rửa Xe 427,0,,0.0,-6.411708841869883,0.0,56,56
+nearby_q_002,ChIJL2T8BY4udTERc2PfFI1z8OI,Tiệm Rửa Xe 130B Xóm Đất,0,,0.0,-6.411708841869883,0.0,57,57
+nearby_q_002,ChIJTaV9egApdTERWHqpwsaIPBA,Tèo rửa xe thay nhớt,0,,0.0,-6.411708841869883,0.0,58,58
+nearby_q_002,ChIJm1O96dIudTERcD1jU6rlpNI,Tiệm Rửa Xe 67,0,,0.0,-6.411708841869883,0.0,59,59
+nearby_q_002,ChIJ8fZM-OwvdTER_f1tQEM9__I,Rửa xe Ô Tô - Xe Máy Kiết Lân,0,,0.0,-6.411708841869883,0.0,60,60
+nearby_q_002,ChIJBe0M-o8udTERv_YNVumFqGw,2A Rửa xe Chuyên Nghiệp,0,,0.0,-6.411708841869883,0.0,61,61
+nearby_q_002,ChIJ1ZUpBBEpdTERVTiWZz1qDEM,DIAMOND DETAILING - Chăm sóc xe chuyên nghiệp Tân Bình,0,,0.0,-6.411708841869883,0.0,62,62
+nearby_q_002,ChIJgwxC60spdTER3x4ANrltVxE,40 phan tây hồ,0,,0.0,-6.411708841869883,0.0,63,63
+nearby_q_002,ChIJd1yMf7YvdTERJDoGEVtrQy0,RỬA XE CHĂM SÓC XE Ô TÔ CHUYÊN NGHIỆP - LUX AUTO DETAILING,0,,0.0,-6.411708841869883,0.0,64,64
+nearby_q_002,ChIJV85ZmMwtdTERpyNN1B1pnN0,Bờm Auto - Thuê xe tự lái & rửa xe,0,,0.0,-6.411708841869883,0.0,65,65
+nearby_q_002,ChIJk40j8kIudTERxtnQif0wKqg,Dịch Vụ Rửa Xe 16,0,,0.0,-6.411708841869883,0.0,66,66
+nearby_q_002,ChIJOaLdHtUudTERUEZfCm_bDLs,Rửa Xe Tiến Đạt 2,0,,0.0,-6.411708841869883,0.0,67,67
+nearby_q_002,ChIJwYnMSAAtdTERnVEwCXlMctE,Rửa xe máy - ô tô,0,,0.0,-6.411708841869883,0.0,68,68
+nearby_q_002,ChIJcdWx_y8vdTERmWnQ3Z1fsHI,Rửa Xe 20,0,,0.0,-6.411708841869883,0.0,69,69
+nearby_q_002,ChIJVRABlWgudTER_alEeJRJeOA,Phát Rửa Xe - Sửa Xe,0,,0.0,-6.411708841869883,0.0,70,70
+nearby_q_002,ChIJdxjE8JMpdTERnAUyvPtxWuo,Car and motorcycle detailing,0,,0.0,-6.411708841869883,0.0,71,71
+nearby_q_002,ChIJk3FpIa0vdTERpKPbusrwXtU,Rửa xe Bảo Đạt,0,,0.0,-6.411708841869883,0.0,72,72
+nearby_q_002,ChIJQ2Sr_mQudTERND7syqFzzcA,TIỆM RỬA XE BÌNH TIÊN,0,,0.0,-6.411708841869883,0.0,73,73
+nearby_q_002,ChIJ4125gUwpdTERrnzAA-z9GJs,TIỆM RỬA XE THAY NHỚT 25,0,,0.0,-6.411708841869883,0.0,74,74
+nearby_q_002,ChIJv0s95ZMudTER6sXb07AgUZg,Tiệm Rửa Xe Hòa,0,,0.0,-6.411708841869883,0.0,75,75
+nearby_q_002,ChIJSUcHOncvdTERA8WKVaoaJLs,Rửa Xe 37,0,,0.0,-6.411708841869883,0.0,76,76
+nearby_q_002,ChIJ43d1wJ4vdTERu3jbn2HEmZ4,Rửa xe Dũng,0,,0.0,-6.411708841869883,0.0,77,77
+nearby_q_002,ChIJnW6iKs4odTERV38FHz8ZxEs,Công Ty Cổ Phần Vietwash,0,,0.0,-6.411708841869883,0.0,78,78
+nearby_q_002,ChIJIYuOTg4pdTERRp8sLayExvI,Máy Rửa Xe Cao Áp - Công Ty Sơn Tùng Lâm,0,,0.0,-6.411708841869883,0.0,79,79
+nearby_q_002,ChIJM5mkDZgudTERa_PHXXgHoII,Rửa xe Hoàng Quân,0,,0.0,-6.411708841869883,0.0,80,80
+nearby_q_002,ChIJb1SyKw8vdTERs2Yk2qoCtz8,Rửa xe Thành Trung,0,,0.0,-6.411708841869883,0.0,81,81
+nearby_q_002,ChIJPQcH7HctdTERjGPXTmOGnFI,Green Wash Auto - Chăm sóc & Nâng cấp Oto,0,,0.0,-6.411708841869883,0.0,82,82
+nearby_q_002,ChIJ7RD6mUQpdTERda6cUV17nPc,Rửa xe máy,0,,0.0,-6.411708841869883,0.0,83,83
+nearby_q_002,ChIJmWMY5WQpdTERo53lf4hICZA,Rửa xe ô tô tự động JetX - Xô Viết Nghệ Tĩnh,0,,0.0,-6.411708841869883,0.0,84,84
+nearby_q_002,ChIJfV9rpNgtdTERuPdxlY4OJfU,Rửa Xe Bọt Tuyết - Thay Nhớt,0,,0.0,-6.411708841869883,0.0,85,85
+nearby_q_002,ChIJJf-tgPktdTERnMlZk454dfQ,Tiệm rửa xe 7talon - CN01,0,,0.0,-6.411708841869883,0.0,86,86
+nearby_q_002,ChIJu2tmmpspdTERCK-1gOJhBL4,Rửa xe Đình An,0,,0.0,-6.411708841869883,0.0,87,87
+nearby_q_002,ChIJJ7nc98AodTER-eUOFyYSut0,RỬA XE MINH ĐỨC( MINH ĐỨC WASH),0,,0.0,-6.411708841869883,0.0,88,88
+nearby_q_002,ChIJ9zaRTX4udTERBr7JULUfLd8,707 Zone - Rửa Xe 707,0,,0.0,-6.411708841869883,0.0,89,89
+nearby_q_002,ChIJt4iAA9QpdTERYuimTqEKPUg,D superwash,0,,0.0,-6.411708841869883,0.0,90,90
+nearby_q_002,ChIJeREh3fwpdTEREu1cZPxtdPc,"GodiCar Care Center - Spa Xe Oto, Xe Máy, Rửa Xe, Thay Nhớt, Dịch Vụ Trông Giữ Xe 24/24",0,,0.0,-6.411708841869883,0.0,91,91
+nearby_q_002,ChIJuTqPJXQpdTERyZA9HLklfaY,Rửa xe,0,,0.0,-6.411708841869883,0.0,92,92
+nearby_q_002,ChIJX0Z3P5YvdTERE6aj5EboTX4,Rửa Xe Hoàng Thái 286/6,0,,0.0,-6.411708841869883,0.0,93,93
+nearby_q_002,ChIJ7UShNJwvdTER4KFEs3wRjA8,Rửa xe máy 79 Bọt tuyết Villa Hào,0,,0.0,-6.411708841869883,0.0,94,94
+nearby_q_002,ChIJpxll1HMvdTERs9PaZvJhiSQ,Tiệm Rửa Xe T & T,0,,0.0,-6.411708841869883,0.0,95,95
+nearby_q_002,ChIJcS_VSGIvdTERHwe7ppb-zVI,Rửa xe Nam,0,,0.0,-6.411708841869883,0.0,96,96
+nearby_q_002,ChIJ19PwuJ0udTERUBh9phz0coc,Rửa Xe Trung Bảo,0,,0.0,-6.411708841869883,0.0,97,97
+nearby_q_002,ChIJl89HdFctdTERqKyEp2Nh9KA,Thiên Wash Super Car Q6,0,,0.0,-6.411708841869883,0.0,98,98
+nearby_q_002,ChIJebUewawodTERkj5o7Llokso,Rửa xe Cô Vân,0,,0.0,-6.411708841869883,0.0,99,99
+nearby_q_002,ChIJ2fDrVDkpdTERT7jVOFeYn2Q,Rửa xe bubblesWash,0,,0.0,-6.411708841869883,0.0,100,100
+nearby_q_002,ChIJFdc1fQAvdTERJrNhc4N_YrA,Rửa xe chuyên nghiệp NAOTA MUOI DO with T,0,,0.0,-6.411708841869883,0.0,101,101
+nearby_q_002,ChIJzxq5an8udTER_donYV9xq2o,Tiệm Rửa Xe Chí Hoàng,0,,0.0,-6.411708841869883,0.0,102,102
+nearby_q_002,ChIJBVGXtx4pdTERLe9VRcHr_Ao,Rửa xe hơi,0,,0.0,-6.411708841869883,0.0,103,103
+nearby_q_002,ChIJ2yMrw_8pdTER0DH_CbI0avI,Tiêm rửa xe phương thảo,0,,0.0,-6.411708841869883,0.0,104,104
+nearby_q_002,ChIJa-KQDNYpdTERi9r--Kt8tik,Rửa xe 22,0,,0.0,-6.411708841869883,0.0,105,105
+nearby_q_002,ChIJgQoKzTItdTERm747HBvuHis,Tiệm rửa xe thay nhớt dọn vệ sinh nội thất ôtô xe máy 287,0,,0.0,-6.411708841869883,0.0,106,106
+nearby_q_002,ChIJvc8fqo0ldTERYst7zDyC8MQ,RỬA XE MINH NHỰT,0,,0.0,-6.411708841869883,0.0,107,107
+nearby_q_002,ChIJFXXccH8pdTERiiAE5msivWA,Rửa xe oto xe máy Lê Sơn,0,,0.0,-6.411708841869883,0.0,108,108
+nearby_q_002,ChIJ_ePVDgApdTERic0nX2iwDUg,Rửa Xe 111,0,,0.0,-6.411708841869883,0.0,109,109
+nearby_q_002,ChIJGcObtsEvdTERtjKymIh1lkI,Rửa Xe Đức,0,,0.0,-6.411708841869883,0.0,110,110
+nearby_q_002,ChIJO8ghhXgudTER-_-GpmlNkdQ,Dịch Vụ Rửa Xe Thanh Sơn,0,,0.0,-6.411708841869883,0.0,111,111
+nearby_q_002,ChIJhfQaIaopdTER2ELJYK5oEic,Rửa xe 54,0,,0.0,-6.411708841869883,0.0,112,112
+nearby_q_002,ChIJoR3SkCwsdTER0lqlQ5kQF3c,Dịch Vụ Rửa Xe Mạnh Khang,0,,0.0,-6.411708841869883,0.0,113,113
+nearby_q_002,ChIJocSD1MAodTERy3XameV2IcM,Rửa Xe Bi,0,,0.0,-6.411708841869883,0.0,114,114
+nearby_q_002,ChIJC8RJnIwvdTER83b1UlHd4Xs,Rửa xe Vườn Lài,0,,0.0,-6.411708841869883,0.0,115,115
+nearby_q_002,ChIJZTTHJQAtdTER30VeV0vaZtA,Rửa xe-thay nhớt Đức Minh,0,,0.0,-6.411708841869883,0.0,116,116
+nearby_q_002,ChIJa0Ioe3kvdTERneUe8H-ItFc,Rửa xe bọt tuyết 34,0,,0.0,-6.411708841869883,0.0,117,117
+nearby_q_002,ChIJA3oXRKAvdTERP0Cd8Ub6Jhk,RỬA XE TÂN AN HUY (SWS),0,,0.0,-6.411708841869883,0.0,118,118
+nearby_q_002,ChIJvczLLHMudTERpJO_6uVwAaw,Bãi Giữ Xe Ô Tô - Rửa Xe 2574 Bình An,0,,0.0,-6.411708841869883,0.0,119,119
+nearby_q_002,ChIJ_-SKGKoudTERHDEBvqz3CPU,Rửa Xe - Thay Nhớt Thuạn Lợi,0,,0.0,-6.411708841869883,0.0,120,120
+nearby_q_002,ChIJ0YbuMNYtdTERyPPybjYDyGQ,Tiệm Rửa Xe Gia Huy,0,,0.0,-6.411708841869883,0.0,121,121
+nearby_q_002,ChIJLeRnKbUpdTERnp0hBlwn0es,TIỆM RỬA XE HỒNG PHÚC,0,,0.0,-6.411708841869883,0.0,122,122
+nearby_q_002,ChIJK6JHgKsodTERm6UGeCKw7so,Rửa Xe - Thay Nhớt Tấn Phong,0,,0.0,-6.411708841869883,0.0,123,123
+nearby_q_002,ChIJPYTJFgAtdTERRSbUlwIzepw,Rửa xe ong bắp cầy,0,,0.0,-6.411708841869883,0.0,124,124
+nearby_q_002,ChIJL48FotcpdTEREQrDaq63f5Q,Nội thất ôtô Sài Thành,0,,0.0,-6.411708841869883,0.0,125,125
+nearby_q_002,ChIJndqxqskrdTERUv8TK3yNMA0,Rửa xe Thương Đoàn,0,,0.0,-6.411708841869883,0.0,126,126
+nearby_q_002,ChIJM_K8-IAvdTERWPZHJr-V6bM,Vietnam Car Care,0,,0.0,-6.411708841869883,0.0,127,127
+nearby_q_002,ChIJ-whsrHoldTERpgRPmx2F6OY,Bro Detailing,0,,0.0,-6.411708841869883,0.0,128,128
+nearby_q_002,ChIJb5Uen0QldTERBdvoB9UKu_s,BTWO Detailing - Dịch vụ chăm sóc xe,0,,0.0,-6.411708841869883,0.0,129,129
+nearby_q_002,ChIJp3zNbKItdTERosSqSZP7VAU,"Bãi Rửa Xe Máy, Xe Ô Tô Hoàng Vũ",0,,0.0,-6.411708841869883,0.0,130,130
+nearby_q_002,ChIJFff3FBMtdTERZbeRtTMhAvs,Rửa Xe Ô Tô - Xe Máy 24/24 Comeco,0,,0.0,-6.411708841869883,0.0,131,131
+nearby_q_002,ChIJdT26-jUsdTERdPzNGSL0gjM,Trung Tâm Rửa - Giữ Xe Oto - Xe Máy 68,0,,0.0,-6.411708841869883,0.0,132,132
+nearby_q_002,ChIJoT-HspgtdTERBcoGqMrCpq0,"Bãi Rửa Xe (xe máy,ôtô,xe tải)",0,,0.0,-6.411708841869883,0.0,133,133
+nearby_q_002,ChIJ0ajBbwArdTERR-yB5ICf2Rw,RS Car Detail | Chăm sóc xe có tâm,0,,0.0,-6.411708841869883,0.0,134,134
+nearby_q_002,ChIJF18FEjLXdDER2esvX8ZJRtg,VinaWash - Tân Phú,0,,0.0,-6.411708841869883,0.0,135,135
+nearby_q_002,ChIJaWwZs_8rdTERZRVK4X5LewY,Trung Tâm Nâng Cấp & Phụ Kiện Ô Tô - VICARE AUTO,0,,0.0,-6.411708841869883,0.0,136,136
+nearby_q_002,ChIJ9xOW4RErdTERn0I4o_CR9J0,Tổng Kho Thiết Bị Rửa Xe Hồ Chí Minh - Miền Nam,0,,0.0,-6.411708841869883,0.0,137,137
+nearby_q_002,ChIJg_HsuhsrdTERiEPArN9ppyk,Tư Vấn Mở Tiệm Rửa Xe Ô Tô Xe Máy TEARU,0,,0.0,-6.411708841869883,0.0,138,138
+nearby_q_002,ChIJT53MetordTERYUcGsCKCEdw,GRAGE - RỬA XE HOÀNG BÁCH OIL DEPOT,0,,0.0,-6.411708841869883,0.0,139,139
+nearby_q_002,ChIJgSi0jeArdTERVfVaVYFHD1I,Tiệm Rửa Xe 33,0,,0.0,-6.411708841869883,0.0,140,140
+nearby_q_002,ChIJgTH9XeQrdTERgB-2deLVAZc,Rửa Xe Hà Anh,0,,0.0,-6.411708841869883,0.0,141,141
+nearby_q_002,ChIJJaJF2-UrdTERHMb_1brVrU8,Gara Phú Thịnh Auto,0,,0.0,-6.411708841869883,0.0,142,142
+nearby_q_002,ChIJT_0lGQArdTERaQb3NJy4Io8,Trung tâm chăm sóc rửa xe Anh Em,0,,0.0,-6.411708841869883,0.0,143,143
+nearby_q_002,ChIJZcCZ49MrdTERqM8yPq0EMxs,Rửa xe 326,0,,0.0,-6.411708841869883,0.0,144,144
+nearby_q_002,ChIJsUb44OErdTERLZRoEGZHttc,Rửa xe tự động Tiến Bộ,0,,0.0,-6.411708841869883,0.0,145,145
+nearby_q_002,ChIJlyvZpuQrdTERgPYy_5tbByM,Tiệm Rửa Xe - Thay Nhớt Ô Tô,0,,0.0,-6.411708841869883,0.0,146,146
+nearby_q_002,ChIJoSAZrJErdTERxuO2wsJ14fI,Tiệm rửa xe máy Phước,0,,0.0,-6.411708841869883,0.0,147,147
+nearby_q_002,ChIJuebhunwpdTER11Ktb4AyQSg,"Trung tâm chăm sóc, đồ chơi xe hơi Since 1985 Auto",0,,0.0,-6.411708841869883,0.0,148,148
+nearby_q_002,ChIJTWkqpMArdTER-wxvgnjxLIo,Tiệm Rửa Xe Minh Thuần,0,,0.0,-6.411708841869883,0.0,149,149
+nearby_q_002,ChIJaRNnpqUpdTERc_-eo8TslVY,Prime Shine Detailing - Rửa Xe Ô Tô Tân Bình- Giữ Xe 24/24,0,,0.0,-6.411708841869883,0.0,150,150
+nearby_q_002,ChIJ7ccfhX0rdTERPu1BlnIPX1U,Rửa xe ô tô xe máy Anh Hạ,0,,0.0,-6.411708841869883,0.0,151,151
+nearby_q_002,ChIJbeOvk1cpdTERJuxjZlCAdHg,Tiệm Rửa Xe Bảo Minh,0,,0.0,-6.411708841869883,0.0,152,152
+nearby_q_002,ChIJsWLDPNIrdTERTFyKf-ULxM4,Rửa Xe Máy - Ô tô,0,,0.0,-6.411708841869883,0.0,153,153
+nearby_q_002,ChIJ6cG9LpordTER2-KaPOsMb7U,Hệ Thống Rửa Xe Siêu Nhân Xanh,0,,0.0,-6.411708841869883,0.0,154,154
+nearby_q_002,ChIJgfiozZcrdTERgrpi6nzaZUw,Tiệm Rửa Xe Lợi,0,,0.0,-6.411708841869883,0.0,155,155
+nearby_q_002,ChIJZcUIDgApdTERdA46njrocSk,bãi giữ xe Tiến Dương,0,,0.0,-6.411708841869883,0.0,156,156
+nearby_q_002,ChIJ85Fp_6otdTERGmUNEVAXaBs,Rưa xe Nhựt Linh,0,,0.0,-6.411708841869883,0.0,157,157
+nearby_q_002,ChIJK7D8m28pdTEREKgyK6aySo8,Auto Care 68 - Chăm Sóc Xe Hơi Quận 12,0,,0.0,-6.411708841869883,0.0,158,158
+nearby_q_002,ChIJ-yHgeYordTER4s81OrdG11M,Rửa Xe 247,0,,0.0,-6.411708841869883,0.0,159,159
+nearby_q_002,ChIJg3q4BHMpdTERTvfOjDMAfnw,Trung tâm Chăm sóc xe chuyên nghiệp Minh Huy,0,,0.0,-6.411708841869883,0.0,160,160
+nearby_q_002,ChIJmR_HbS8rdTERW_MPC6TllGQ,Rửa xe,0,,0.0,-6.411708841869883,0.0,161,161
+nearby_q_002,ChIJuY52JmcpdTERhgDnRu-RC2s,Tiệm Rửa Xe Út,0,,0.0,-6.411708841869883,0.0,162,162
+nearby_q_002,ChIJSyNDlccrdTERWfWofzGKPOc,Hoàng tấn rửa xe,0,,0.0,-6.411708841869883,0.0,163,163
+nearby_q_002,ChIJKXdY1iwrdTER2OyuGxR9dWI,Rửa xe Nam Vi,0,,0.0,-6.411708841869883,0.0,164,164
+nearby_q_002,ChIJ97n0EyErdTERKXa0j4I8VG8,Rửa xe Tin Tin,0,,0.0,-6.411708841869883,0.0,165,165
+nearby_q_002,ChIJ10xYpLIrdTERfmLaNoCswF4,Tiệm Rửa Xe 527,0,,0.0,-6.411708841869883,0.0,166,166
+nearby_q_002,ChIJzcBUKSUpdTERVr4l5CEefjo,Dịch vụ rửa xe Bo,0,,0.0,-6.411708841869883,0.0,167,167
+nearby_q_002,ChIJlZpef4grdTER7hfoHz9oAQM,Dịch Vụ Rửa Xe Tự Động Tiên Tiến,0,,0.0,-6.411708841869883,0.0,168,168
+nearby_q_002,ChIJ5WuTUBgrdTERtF8COGP7HMk,Shitek Auto Detailing Tân Phú,0,,0.0,-6.411708841869883,0.0,169,169
+nearby_q_002,ChIJPQ8m-2EpdTERZKS8WSDmA08,Vá Vỏ Lưu Động - Rửa Xe ô tô Quận Tân Bình - Phượng Lân,0,,0.0,-6.411708841869883,0.0,170,170
+nearby_q_002,ChIJz1mTmFIpdTERjiD69zHhYcU,Rửa Xe 91-93,0,,0.0,-6.411708841869883,0.0,171,171
+nearby_q_002,ChIJfXakHRkpdTER1n5X5stG_RM,Tiệm Rửa Xe Duy,0,,0.0,-6.411708841869883,0.0,172,172
+nearby_q_002,ChIJX6NdyzEpdTERJfHT9Uw_bMU,Rửa xe Nguyễn Thái Bình,0,,0.0,-6.411708841869883,0.0,173,173
+nearby_q_002,ChIJyYragc0pdTERJZUvuZwEEEc,SG Auto Detailing,0,,0.0,-6.411708841869883,0.0,174,174
+nearby_q_002,ChIJ71DAuAEsdTERTkng6PCOjp8,RỬA XE CƯỜNG,0,,0.0,-6.411708841869883,0.0,175,175
+nearby_q_002,ChIJexLMReMrdTERBdtmTTwDRAA,Tiệm Rửa Xe Bọt Tuyết - Thay Nhớt Khánh Nhân,0,,0.0,-6.411708841869883,0.0,176,176
+nearby_q_002,ChIJVXwIZgApdTER5YaO1M_iXx0,RỬA XE MÁY 297,0,,0.0,-6.411708841869883,0.0,177,177
+nearby_q_002,ChIJsVkt-KstdTERJRNTjAS1Kng,Rửa Xe Bình Long,0,,0.0,-6.411708841869883,0.0,178,178
+nearby_q_002,ChIJE_yWQ6MudTERPyxFeTTaMm0,Rửa xe Hiệp Toàn,0,,0.0,-6.411708841869883,0.0,179,179
+nearby_q_002,ChIJz4WbAOUpdTERs9rK7CsKajA,Quang Trung Auto,0,,0.0,-6.411708841869883,0.0,180,180
+nearby_q_002,ChIJD8_xMecrdTERbto7m7NZdcg,Tiệm Rửa Xe Bảo Hoàng,0,,0.0,-6.411708841869883,0.0,181,181
+nearby_q_002,ChIJPZmXbh8rdTERGxpIuP3LKdg,Rửa xe ô tô xe máy,0,,0.0,-6.411708841869883,0.0,182,182
+nearby_q_002,ChIJSxP8MwYtdTERSJoQpDIRBDM,RỬA XE CƯỜNG THỊNH,0,,0.0,-6.411708841869883,0.0,183,183
+nearby_q_002,ChIJTWxEfyUrdTERK5FoRgrpB2U,ADTEDEK Detailing | Dịch Vụ Rửa & Chăm Sóc Xe,0,,0.0,-6.411708841869883,0.0,184,184
+nearby_q_002,ChIJv6G-7lUpdTERQgfBIeAeSk4,Rửa xe 77,0,,0.0,-6.411708841869883,0.0,185,185
+nearby_q_002,ChIJjysE6x0pdTERwqN6DiGix8w,Dịch Vụ Rửa Xe 5 Sao,0,,0.0,-6.411708841869883,0.0,186,186
+nearby_q_002,ChIJ38H8RSYtdTERwnKFSQ6DmEk,Rửa Xe Chuyên Nghiệp 409,0,,0.0,-6.411708841869883,0.0,187,187
+nearby_q_002,ChIJO-rw2AcpdTERr0SQMgVXXwQ,Anh Thắng Service - Trung Tâm Chăm Sóc Xe Hơi Chuyên Nghiệp,0,,0.0,-6.411708841869883,0.0,188,188
+nearby_q_002,ChIJbbjeA9spdTER80lmGQK94QU,"🔧 Sửa Xe Tay Ga – Làm Nồi Tay Ga – Rửa Xe Moto Uy Tín Tại số 88 Nguyễn khuyến, Quận Bình Thạnh, TP.HCM",0,,0.0,-6.411708841869883,0.0,189,189
+nearby_q_002,ChIJ8U3PEYcpdTERG1wm9NrHBgw,BÃI GIỮ XE & RỬA XE OTO 24/7,0,,0.0,-6.411708841869883,0.0,190,190
+nearby_q_002,ChIJiQcQmLQpdTERy68EeEtxhQs,Trung Tâm Chăm Sóc Xe 133,0,,0.0,-6.411708841869883,0.0,191,191
+nearby_q_002,ChIJoXZmyu4rdTERbuUsj31vz1c,Tiệm Rửa Xe Tân Bình,0,,0.0,-6.411708841869883,0.0,192,192
+nearby_q_002,ChIJuc2eU-8rdTERRAGZtIvziVo,Cầu Nâng 1 Trụ Rửa Xe Ô Tô TAGORE,0,,0.0,-6.411708841869883,0.0,193,193
+nearby_q_002,ChIJd2IusuArdTERDRvWXfWkKcc,Tiệm Rửa Xe 82,0,,0.0,-6.411708841869883,0.0,194,194
+nearby_q_002,ChIJjf7EygApdTERQ0oAZlnGutw,Dịch Vụ Rửa Xe Tuấn,0,,0.0,-6.411708841869883,0.0,195,195
+nearby_q_002,ChIJicio1KcpdTER027N-u4NYuc,Rửa Xe Thay Nhớt Lộc,0,,0.0,-6.411708841869883,0.0,196,196
+nearby_q_002,ChIJv3cmeqgpdTER44dSE4M9Gbs,Dịch Vụ Rửa Xe Nghệ Thuật,0,,0.0,-6.411708841869883,0.0,197,197
+nearby_q_002,ChIJJSEXFPwpdTERL6qFysNI0Y0,Rửa Xe Bọt Tuyết Duy Hiếu,0,,0.0,-6.411708841869883,0.0,198,198
+nearby_q_002,ChIJUeoLG9IpdTERlD_pYZAakF0,Rửa Xe Thằng Bờm,0,,0.0,-6.411708841869883,0.0,199,199
+nearby_q_002,ChIJ8ejDhhYsdTER38GORUgRfBs,Quán rửa xe Mười 305/11,0,,0.0,-6.411708841869883,0.0,200,200
+nearby_q_002,ChIJv-X3SpcudTEROvT_nBGLfUs,Tiệm Rửa Xe 260,0,,0.0,-6.411708841869883,0.0,201,201
+nearby_q_002,ChIJAwIAypQpdTEROE4gFnnYQ-M,Rửa Xe Thằng Bờm 2 (294 Nguyễn Thái Sơn),0,,0.0,-6.411708841869883,0.0,202,202
+nearby_q_002,ChIJA5UVkV0pdTERqEQlYq83cjE,Chăm Sóc Xe Oto 362,0,,0.0,-6.411708841869883,0.0,203,203
+nearby_q_002,ChIJuVM5vFkpdTERKkgdaRrik7c,Gara Rửa Xe Ô Tô CARBI,0,,0.0,-6.411708841869883,0.0,204,204
+nearby_q_002,ChIJxV9RcVModTERRrogNkgVv6E,Tiệm Rửa Xe Tí Nị,0,,0.0,-6.411708841869883,0.0,205,205
+nearby_q_002,ChIJCTQOeB0vdTERFoN_cRNv9QA,Rửa Xe Huy Hoàng,0,,0.0,-6.411708841869883,0.0,206,206
+nearby_q_002,ChIJA7QSL_kodTERp-zkuoE7Eec,Giữ Xe Ôtô Rửa Xe Ôtô - Xe Máy,0,,0.0,-6.411708841869883,0.0,207,207
+nearby_q_002,ChIJhaM33pgpdTERFUK5gtpsAB8,Tý Rửa Xe,0,,0.0,-6.411708841869883,0.0,208,208
+nearby_q_002,ChIJJbmfLo8pdTERoAEm9vXAuW8,Rửa Xe 16,0,,0.0,-6.411708841869883,0.0,209,209
+nearby_q_002,ChIJvYcOjuQodTER-rZvU9XLEfQ,Tiệm Rửa XeTrung Tín,0,,0.0,-6.411708841869883,0.0,210,210
+nearby_q_002,ChIJdx9agLApdTERe4xVTT63wng,Tiệm Rửa Xe Mạnh Tường,0,,0.0,-6.411708841869883,0.0,211,211
+nearby_q_002,ChIJl5SjuawpdTERla2HXrd15Uo,Tiệm Rửa Xe & sửa xe 62 GN SCOOTER,0,,0.0,-6.411708841869883,0.0,212,212
+nearby_q_002,ChIJd_9VbR8vdTEROPUOjqft6Mc,Rửa xe Hoàng,0,,0.0,-6.411708841869883,0.0,213,213
+nearby_q_002,ChIJ2Rcm-8gpdTERcJ2VC0tDbq4,Ô tô Tấn Tới Q12,0,,0.0,-6.411708841869883,0.0,214,214
+nearby_q_002,ChIJ8SzGl2spdTERykzQQPfiebQ,MINH VŨ - RỬA XE BÌNH THẠNH,0,,0.0,-6.411708841869883,0.0,215,215
+nearby_q_002,ChIJ_ePva-IudTER3hqpNrbWafM,hethongchamsocxe.com,0,,0.0,-6.411708841869883,0.0,216,216
+nearby_q_002,ChIJAbCPoksqdTERvid1a9rOs9c,Rửa Xe 29,0,,0.0,-6.411708841869883,0.0,217,217
+nearby_q_002,ChIJ939LseMudTERpPKl4NCFgvs,Rửa Xe 33,0,,0.0,-6.411708841869883,0.0,218,218
+nearby_q_002,ChIJpwpSMJ8pdTERB-V-jQTgYcM,Tiệm rửa xe bình dân,0,,0.0,-6.411708841869883,0.0,219,219
+nearby_q_002,ChIJQxnzt3opdTERxCi-X6Y46v4,RỬA XE 3H,0,,0.0,-6.411708841869883,0.0,220,220
+nearby_q_002,ChIJha2t3ekodTEReIYG_s_iMBg,Rửa Xe Thanh Vân,0,,0.0,-6.411708841869883,0.0,221,221
+nearby_q_002,ChIJg80AdX4pdTERC6nJbmzm1Yg,Rửa xe Bình Triệu Hoá Dầu,0,,0.0,-6.411708841869883,0.0,222,222
+nearby_q_002,ChIJAd9frigpdTERpugpDXEMxuY,Chỗ Rửa Xe,0,,0.0,-6.411708841869883,0.0,223,223
+nearby_q_002,ChIJjZf3whUpdTERMvKAcT01n24,Cứu Hộ Xe Máy Tận Nơi - Minh Thành Motor,0,,0.0,-6.411708841869883,0.0,224,224
+nearby_q_002,ChIJa6iwecMvdTERsw1L3diejoA,"Sửa Xe, Cứu Hộ Xe Máy 24h - Minh Thành Motor",0,,0.0,-6.411708841869883,0.0,225,225
+nearby_q_002,ChIJtWbT9ecpdTERrtjuFdkeYPk,Bãi giữ xe ô tô Phú Nhuận,0,,0.0,-6.411708841869883,0.0,226,226
+nearby_q_002,ChIJk8NbU04pdTERq7ObcOY9c20,AKauto - Trung tâm chăm sóc & phụ kiện ô tô cao cấp,0,,0.0,-6.411708841869883,0.0,227,227
+nearby_q_002,ChIJ4TQNDSgndTERorwB5PIlsgg,VinaWash quận 9,0,,0.0,-6.411708841869883,0.0,228,228
+nearby_q_002,ChIJF1Qrl6cpdTERCXUfcS9g9NU,Rửa xe - Thay nhớt oto & xe máy,0,,0.0,-6.411708841869883,0.0,229,229
+nearby_q_002,ChIJZ1Hh4q0ndTER4eNwjGtjkJI,Tiệm Rửa Xe Việt,0,,0.0,-6.411708841869883,0.0,230,230
+nearby_q_002,ChIJI0jt1dQndTER-lWzmX3cff4,RỬA XE KHÔNG CHẠM,0,,0.0,-6.411708841869883,0.0,231,231
+nearby_q_002,ChIJmSZaf50vdTERibmZUmPQII8,Dịch Vụ Rửa Xe Huỳnh Sơn,0,,0.0,-6.411708841869883,0.0,232,232
+nearby_q_002,ChIJrxEhyIIvdTERpzjfV1HdYl8,Rửa Xe 21,0,,0.0,-6.411708841869883,0.0,233,233
+nearby_q_002,ChIJ0TqeIy0vdTERr_niNpsSS30,Rửa xe bọt tuyết PHẠM NGUYỄN,0,,0.0,-6.411708841869883,0.0,234,234
+nearby_q_002,ChIJ6XOOLpgvdTER9Zpy6y1jLbk,Dịch Vụ Rửa Xe 490,0,,0.0,-6.411708841869883,0.0,235,235
+nearby_q_002,ChIJQ6N5AO8udTERQ5hugngZmpE,Rửa Xe Văn Minh,0,,0.0,-6.411708841869883,0.0,236,236
+nearby_q_002,ChIJb6J3gXIvdTEROpw7m7E5HAE,Rửa Xe Dũng Phuộc,0,,0.0,-6.411708841869883,0.0,237,237
+nearby_q_002,ChIJkymt7dAudTERO7uajjNhIp4,Tiệm Rửa Xe Hùng,0,,0.0,-6.411708841869883,0.0,238,238
+nearby_q_002,ChIJocY7RBwsdTERRio-1BfS-60,Tiệm Rửa Xe Hoàng Uyên,0,,0.0,-6.411708841869883,0.0,239,239
+nearby_q_002,ChIJ6XVg57IvdTERzGUbWVVPQe0,Rua xe,0,,0.0,-6.411708841869883,0.0,240,240
+nearby_q_002,ChIJ37xIXCEvdTERBKA_XiotlJU,Rửa xe 103,0,,0.0,-6.411708841869883,0.0,241,241
+nearby_q_002,ChIJ_zTRdwAvdTER2eye_1Z6Db8,Rửa xe ô tô Trung Sơn,0,,0.0,-6.411708841869883,0.0,242,242
+nearby_q_002,ChIJLQDJI4MtdTER4cu80KJiWs4,"RỬA XE VÁ VỎ Ô TÔ, MOTO HUY TIẾN",0,,0.0,-6.411708841869883,0.0,243,243
+nearby_q_002,ChIJY8lsYOMrdTERMK1y_tV4cFc,Rửa xe Tý,0,,0.0,-6.411708841869883,0.0,244,244
+nearby_q_002,ChIJxaezAYIpdTERtKblomS9oMY,Rửa xe TrungUyen,0,,0.0,-6.411708841869883,0.0,245,245
+nearby_q_002,ChIJv7nemWYudTERASBX3GEc6Ts,Tiệm Rửa Xe 415,0,,0.0,-6.411708841869883,0.0,246,246
+nearby_q_002,ChIJaTNhOAAtdTERJAmFIrkm7Yk,Rửa Xe Bình Tân,0,,0.0,-6.411708841869883,0.0,247,247
+nearby_q_002,ChIJSc-2EWYpdTER86cfOB3XWws,Rửa xe máy,0,,0.0,-6.411708841869883,0.0,248,248
+nearby_q_002,ChIJeeGSwGUldTERc4yetbjW1Yk,Út Bình,0,,0.0,-6.411708841869883,0.0,249,249
+nearby_q_002,ChIJb_7JcNsldTERmRmUDwzGT9Y,Phước Tiến,0,,0.0,-6.411708841869883,0.0,250,250
+nearby_q_002,ChIJv7oKVWsvdTERKZXHvxDUeY4,Rửa Xe Văn Tí,0,,0.0,-6.411708841869883,0.0,251,251
+nearby_q_002,ChIJ00mjs4MudTERmzCqQnJyhY0,Car Wash 39,0,,0.0,-6.411708841869883,0.0,252,252
+nearby_q_002,ChIJ9a8bXo0vdTERXkEy5CO80R0,Chăm Xế Yêu - Rửa Xe Ô Tô,0,,0.0,-6.411708841869883,0.0,253,253
+nearby_q_002,ChIJz_m-GaIpdTERR4SUTNP30bA,Hệ Thống Sửa Xe Thông Minh,0,,0.0,-6.411708841869883,0.0,254,254
+nearby_q_002,ChIJEyPLQQApdTERpueJSPV2ToQ,SỬA XE GÒ VẤP,0,,0.0,-6.411708841869883,0.0,255,255
+nearby_q_002,ChIJhZmyTOEpdTERMHPFgKi-Um4,Sài Gòn Độ Xe Quận Gò Vấp,0,,0.0,-6.411708841869883,0.0,256,256
+nearby_q_002,ChIJX4vZDwApdTERo2QWWfyGHig,"Giữ Xe - Rửa Xe ÔTô, Trạm Sạc xe máy Điện, CaFe võng",0,,0.0,-6.411708841869883,0.0,257,257
+nearby_q_002,ChIJIQa8_2AodTERgYE5Dk16wKM,Trung Tâm Chăm Sóc Xe & Phụ Kiện Ôtô 4Car Workshop,0,,0.0,-6.411708841869883,0.0,258,258
+nearby_q_002,ChIJg4abnhErdTERq9xfcfvb11U,"Bãi giữ xe, rửa xe, trạm sạc điện Vinfast Phong Khanh",0,,0.0,-6.411708841869883,0.0,259,259
+nearby_q_002,ChIJy9M7QJUrdTERvTZsqYv0tBw,Rửa Xe Ngày Và Đêm U G,0,,0.0,-6.411708841869883,0.0,260,260
+nearby_q_002,ChIJq13uK6srdTERcKOBUF343aQ,Rửa Xe Gia Bảo,0,,0.0,-6.411708841869883,0.0,261,261
+nearby_q_002,ChIJI8kaYxIrdTERXYuIND-_3ic,Rửa Xe OTO Thắng-Tiến,0,,0.0,-6.411708841869883,0.0,262,262
+nearby_q_002,ChIJrfXCEZQrdTER5h7XQ-RQ4VA,Rửa Xe Nguyễn - Sơn,0,,0.0,-6.411708841869883,0.0,263,263
+nearby_q_002,ChIJkdLNs_srdTERQF25_xnbgJ0,Ngọc Sang Auto - Đồ Chơi Xe Hơi Tân Phú,0,,0.0,-6.411708841869883,0.0,264,264
+nearby_q_002,ChIJgwl_xBUrdTER3un7g5zC5cY,Cho thuê xe tự lái và có tài Hóc Môn,0,,0.0,-6.411708841869883,0.0,265,265
+nearby_q_002,ChIJw-9kyAgqdTERA0bZazcMx1o,Tiệm Rửa Xe Phú Quý,0,,0.0,-6.411708841869883,0.0,266,266
+nearby_q_002,ChIJbaNRdtnVdDERmhzyYcznyZo,Rửa Xe Hoàng Gia Việt,0,,0.0,-6.411708841869883,0.0,267,267
+nearby_q_002,ChIJyxtU8vfVdDERw-9qLa1MK8M,Tiệm Rửa Xe Thay Nhớt Hoàng Quân,0,,0.0,-6.411708841869883,0.0,268,268
+nearby_q_002,ChIJbZCluZDXdDER8jX1ufWzReU,"Rửa xe , chăm sóc xe VERA CAR CARE 2",0,,0.0,-6.411708841869883,0.0,269,269
+nearby_q_002,ChIJlSkmTjwrdTERdX5Kgq_CYKA,Rửa xe gia đình,0,,0.0,-6.411708841869883,0.0,270,270
+nearby_q_002,ChIJEWSSaQArdTER_6KocSIDZcs,Bãi Xe Rửa Xe Thành Cường,0,,0.0,-6.411708841869883,0.0,271,271
+nearby_q_002,ChIJ8cgcDQArdTERJKCORLEdiKk,Cầm đồ 253 & Giữ xe và rửa xe oto 24/24,0,,0.0,-6.411708841869883,0.0,272,272
+nearby_q_002,ChIJY_PppkgrdTERa_QtKO4qXgI,Bãi Giữ Xe - Rửa Xe Ô Tô 24/24 Gia Khang,0,,0.0,-6.411708841869883,0.0,273,273
+nearby_q_002,ChIJTYZFewDVdDERzcNshupbMXU,Tiệm sửa xe,0,,0.0,-6.411708841869883,0.0,274,274
+nearby_q_002,ChIJV2MBXPXVdDERrqBqk44dkt8,Garage Thuận Phát,0,,0.0,-6.411708841869883,0.0,275,275
+nearby_q_002,ChIJlW1eDPYpdTERQ05dcDLl6Uk,Trung Tâm Rửa & Chăm Sóc Xe Minh Dũng,0,,0.0,-6.411708841869883,0.0,276,276
+nearby_q_002,ChIJXSiFtJzVdDER2nLn6TYMnhc,Tiệm Rửa Xe Thái,0,,0.0,-6.411708841869883,0.0,277,277
+nearby_q_002,ChIJ9VaAAITVdDER31gtQy0qecw,Rửa Xe Boss,0,,0.0,-6.411708841869883,0.0,278,278
+nearby_q_002,ChIJQ1JvToPVdDER_eirCvuzVzA,Tiệm Rửa Xe Đức Hanh 888,0,,0.0,-6.411708841869883,0.0,279,279
+nearby_q_002,ChIJv3xb5istdTERLeEj_viEUDI,Rửa / Sửa Xe Ô Tô Gia Hào,0,,0.0,-6.411708841869883,0.0,280,280
+nearby_q_002,ChIJL1E_ZgApdTEROZWFCBEC05w,Rửa Xe Top 179,0,,0.0,-6.411708841869883,0.0,281,281
+nearby_q_002,ChIJob1-EQApdTERdNwTTxpM6tM,Rửa Xe Hữu Cảnh,0,,0.0,-6.411708841869883,0.0,282,282
+nearby_q_002,ChIJ9721s2s7dTERy0AnDBTSPRQ,Rửa xe 24h CAR-E,0,,0.0,-6.411708841869883,0.0,283,283
+nearby_q_002,ChIJoVKHv6ModTERuxDTu-wcay4,Rửa Xe 25D2,0,,0.0,-6.411708841869883,0.0,284,284
+nearby_q_002,ChIJiRHBAL0ndTERyve46wj343I,Rửa xe Bonbon Cao Đức Lân,0,,0.0,-6.411708841869883,0.0,285,285
+nearby_q_002,ChIJjUNOLo8pdTERylrlbw56UCY,Rửa xe 96,0,,0.0,-6.411708841869883,0.0,286,286
+nearby_q_002,ChIJzbcyLpEldTERaRG4SdE_Mz4,Rửa Xe Ô Tô - Bảo Dưỡng Xe Ô Tô Hoàng Thắng,0,,0.0,-6.411708841869883,0.0,287,287
+nearby_q_002,ChIJtX6NL1gpdTEREZ1knBMsOHQ,Tiệm Rửa Xe Văn Cường 27 Thanh Đa,0,,0.0,-6.411708841869883,0.0,288,288
+nearby_q_002,ChIJZQgWYgApdTERgDpsiiyGZHg,"Sửa xe, Vá Xe, Rửa xe Mạnh",0,,0.0,-6.411708841869883,0.0,289,289
+nearby_q_002,ChIJhekM2bcodTERGR_beHWznpM,Dịch Vụ Rửa Xe 49,0,,0.0,-6.411708841869883,0.0,290,290
+nearby_q_002,ChIJo7yvbeUpdTERTA_IPqSu_GQ,Rửa xe Bình Cao,0,,0.0,-6.411708841869883,0.0,291,291
+nearby_q_002,ChIJweYdIwAndTERUvTFA_n2MKg,Trung tâm Rửa xe ô tô - xe máy HCT,0,,0.0,-6.411708841869883,0.0,292,292
+nearby_q_002,ChIJ_2Nbe2MudTERBx8gpkmsanI,Dịch Vụ Rửa Xe 174,0,,0.0,-6.411708841869883,0.0,293,293
+nearby_q_002,ChIJb3kdn2IudTERX4OxCTaYy9k,Tiệm Rửa Xe 56,0,,0.0,-6.411708841869883,0.0,294,294
+nearby_q_002,ChIJB1pXPyAndTERd3m8Z-peLgY,Rửa xe Thủ Đức PKW,0,,0.0,-6.411708841869883,0.0,295,295
+nearby_q_002,ChIJw6raw9AodTER6m40CnmHSzc,Tiệm Rửa Xe Kim Long,0,,0.0,-6.411708841869883,0.0,296,296
+nearby_q_002,ChIJfQFiEXsudTERRTcUWWsMtwo,Văn Thân Rửa Xe - Thay Nhớt Chuyên Nghiệp,0,,0.0,-6.411708841869883,0.0,297,297
+nearby_q_002,ChIJs0DDBnoudTERgUbdUcRpgqc,Tiệm Rửa Xe Triều Dân,0,,0.0,-6.411708841869883,0.0,298,298
+nearby_q_002,ChIJs3qKUzYndTERtZLKKGlAA5w,Trung Tâm Chăm Sóc & Rửa Xe Ôtô Kakawa,0,,0.0,-6.411708841869883,0.0,299,299
+nearby_q_002,ChIJ5VRWHZwvdTERo5va1R_RLVo,Rửa Xe Sạch,0,,0.0,-6.411708841869883,0.0,300,300
+nearby_q_002,ChIJpbaCFXgudTERcsNR4Pae4Mk,Tiệm Rửa Xe Anh Huy,0,,0.0,-6.411708841869883,0.0,301,301
+nearby_q_011,ChIJ0ajBbwArdTERR-yB5ICf2Rw,RS Car Detail | Chăm sóc xe có tâm,1,1.0,0.673074,3.0975556978365297,0.673074,1,1
+nearby_q_011,ChIJ9xOW4RErdTERn0I4o_CR9J0,Tổng Kho Thiết Bị Rửa Xe Hồ Chí Minh - Miền Nam,3,4.0,0.641731,2.688909025556929,0.641731,2,4
+nearby_q_011,ChIJgSi0jeArdTERVfVaVYFHD1I,Tiệm Rửa Xe 33,1,7.0,0.597002,2.5777839788108317,0.597002,3,7
+nearby_q_011,ChIJaWwZs_8rdTERZRVK4X5LewY,Trung Tâm Nâng Cấp & Phụ Kiện Ô Tô - VICARE AUTO,2,3.0,0.656887,2.5283716010369663,0.656887,4,3
+nearby_q_011,ChIJT53MetordTERYUcGsCKCEdw,GRAGE - RỬA XE HOÀNG BÁCH OIL DEPOT,1,6.0,0.60842,2.2638125424015723,0.60842,5,6
+nearby_q_011,ChIJF18FEjLXdDER2esvX8ZJRtg,VinaWash - Tân Phú,1,2.0,0.669496,2.2496984517267835,0.669496,6,2
+nearby_q_011,ChIJgTH9XeQrdTERgB-2deLVAZc,Rửa Xe Hà Anh,2,8.0,0.592841,2.1433332917944616,0.592841,7,8
+nearby_q_011,ChIJsUb44OErdTERLZRoEGZHttc,Rửa xe tự động Tiến Bộ,2,12.0,0.551845,2.0907676152096446,0.551845,8,12
+nearby_q_011,ChIJg_HsuhsrdTERiEPArN9ppyk,Tư Vấn Mở Tiệm Rửa Xe Ô Tô Xe Máy TEARU,1,5.0,0.636587,2.03819290136098,0.636587,9,5
+nearby_q_011,ChIJlyvZpuQrdTERgPYy_5tbByM,Tiệm Rửa Xe - Thay Nhớt Ô Tô,2,13.0,0.545165,1.8691505990575172,0.545165,10,13
+nearby_q_011,ChIJzcBUKSUpdTERVr4l5CEefjo,Dịch vụ rửa xe Bo,1,38.0,0.28066,1.5561871474656939,0.28066,11,38
+nearby_q_011,ChIJoSAZrJErdTERxuO2wsJ14fI,Tiệm rửa xe máy Phước,1,14.0,0.543655,1.5269524089716002,0.543655,12,14
+nearby_q_011,ChIJT_0lGQArdTERaQb3NJy4Io8,Trung tâm chăm sóc rửa xe Anh Em,1,10.0,0.581846,1.272891485571637,0.581846,13,10
+nearby_q_011,ChIJa0Ioe3kvdTERneUe8H-ItFc,Rửa xe bọt tuyết 34,1,36.0,0.354714,1.0832896456300642,0.354714,14,36
+nearby_q_011,ChIJZcCZ49MrdTERqM8yPq0EMxs,Rửa xe 326,1,11.0,0.575657,0.8657333095958392,0.575657,15,11
+nearby_q_011,ChIJJaJF2-UrdTERHMb_1brVrU8,Gara Phú Thịnh Auto,1,9.0,0.588895,0.7673603799176255,0.588895,16,9
+nearby_q_011,ChIJvxjCZQArdTERbx0gfTlKUB8,Tiệm Rửa Xe ÔTÔ & Xe Máy Dũng Hoàng,2,37.0,0.289552,0.4855815237786241,0.289552,17,37
+nearby_q_011,ChIJTWkqpMArdTER-wxvgnjxLIo,Tiệm Rửa Xe Minh Thuần,1,16.0,0.506592,0.4821283111052775,0.506592,18,16
+nearby_q_011,ChIJwyhdiEsqdTERh06rOjUU_B0,"Tiệm rửa xe, vá lốp ôtô & xe máy Số 1",1,26.0,0.435664,0.39529940431992977,0.435664,19,26
+nearby_q_011,ChIJKXdY1iwrdTER2OyuGxR9dWI,Rửa xe Nam Vi,1,32.0,0.416597,0.33934219131899906,0.416597,20,32
+nearby_q_011,ChIJaRNnpqUpdTERc_-eo8TslVY,Prime Shine Detailing - Rửa Xe Ô Tô Tân Bình- Giữ Xe 24/24,1,17.0,0.488063,0.25244576710840155,0.488063,21,17
+nearby_q_011,ChIJmR_HbS8rdTERW_MPC6TllGQ,Rửa xe,1,29.0,0.432541,0.23221500410640222,0.432541,22,29
+nearby_q_011,ChIJuY52JmcpdTERhgDnRu-RC2s,Tiệm Rửa Xe Út,1,30.0,0.428063,0.0656465163635359,0.428063,23,30
+nearby_q_011,ChIJLeRnKbUpdTERnp0hBlwn0es,TIỆM RỬA XE HỒNG PHÚC,1,33.0,0.408092,0.018852292055389363,0.408092,24,33
+nearby_q_011,ChIJsWLDPNIrdTERTFyKf-ULxM4,Rửa Xe Máy - Ô tô,2,20.0,0.468083,-0.02479800133364589,0.468083,25,20
+nearby_q_011,ChIJSyNDlccrdTERWfWofzGKPOc,Hoàng tấn rửa xe,1,31.0,0.425261,-0.08267486985512223,0.425261,26,31
+nearby_q_011,ChIJZcUIDgApdTERdA46njrocSk,bãi giữ xe Tiến Dương,1,23.0,0.445909,-0.13693227824743887,0.445909,27,23
+nearby_q_011,ChIJbeOvk1cpdTERJuxjZlCAdHg,Tiệm Rửa Xe Bảo Minh,1,19.0,0.475982,-0.1652259772586076,0.475982,28,19
+nearby_q_011,ChIJ97n0EyErdTERKXa0j4I8VG8,Rửa xe Tin Tin,1,34.0,0.405569,-0.17721337445178056,0.405569,29,34
+nearby_q_011,ChIJ85Fp_6otdTERGmUNEVAXaBs,Rưa xe Nhựt Linh,1,24.0,0.437124,-0.22571626550104906,0.437124,30,24
+nearby_q_011,ChIJ-yHgeYordTER4s81OrdG11M,Rửa Xe 247,1,27.0,0.434523,-0.27159622182097587,0.434523,31,27
+nearby_q_011,ChIJgfiozZcrdTERgrpi6nzaZUw,Tiệm Rửa Xe Lợi,2,22.0,0.460473,-0.3592640482945732,0.460473,32,22
+nearby_q_011,ChIJK7D8m28pdTEREKgyK6aySo8,Auto Care 68 - Chăm Sóc Xe Hơi Quận 12,1,25.0,0.436148,-0.4105341156295576,0.436148,33,25
+nearby_q_011,ChIJ10xYpLIrdTERfmLaNoCswF4,Tiệm Rửa Xe 527,1,35.0,0.400047,-0.43401291956481974,0.400047,34,35
+nearby_q_011,ChIJg3q4BHMpdTERTvfOjDMAfnw,Trung tâm Chăm sóc xe chuyên nghiệp Minh Huy,1,28.0,0.433893,-0.43613563102979197,0.433893,35,28
+nearby_q_011,ChIJuebhunwpdTER11Ktb4AyQSg,"Trung tâm chăm sóc, đồ chơi xe hơi Since 1985 Auto",1,15.0,0.509702,-0.5498679828625144,0.509702,36,15
+nearby_q_011,ChIJ7ccfhX0rdTERPu1BlnIPX1U,Rửa xe ô tô xe máy Anh Hạ,1,18.0,0.480894,-0.5542113241321001,0.480894,37,18
+nearby_q_011,ChIJ6cG9LpordTER2-KaPOsMb7U,Hệ Thống Rửa Xe Siêu Nhân Xanh,2,21.0,0.466053,-0.8930858713681734,0.466053,38,21
+nearby_q_011,ChIJkaXsi8ovdTERV9vqRTJPqNQ,Storedetailing,0,,0.0,-6.411708841869883,0.0,39,39
+nearby_q_011,ChIJR49LHcItdTERIiTJj8DLsa0,XE ĐẸP DETAILING - ĐỘ XE Ô TÔ - ĐỖ XE 24/24 - RỬA XE,0,,0.0,-6.411708841869883,0.0,40,40
+nearby_q_011,ChIJCQmWVNMvdTERNLWPf_PE3WE,An Khang Detailing - Xưởng chăm xe vui vẻ,0,,0.0,-6.411708841869883,0.0,41,41
+nearby_q_011,ChIJW4knxqEvdTERhuMXJ4-RYL8,"Tiệm rửa xe, sửa xe, bảo dưỡng xe 2 bánh - TN Detailing-Motorcycle wash",0,,0.0,-6.411708841869883,0.0,42,42
+nearby_q_011,ChIJh8yyigPYdDERalJPyL7NpNc,Tiệm Rửa Xe Thành,0,,0.0,-6.411708841869883,0.0,43,43
+nearby_q_011,ChIJkYfDXsUndTEREk9eYE2TDi8,Rửa Xe Takashi,0,,0.0,-6.411708841869883,0.0,44,44
+nearby_q_011,ChIJL3GiFugpdTER3DjuORNSeRI,Cứu Hộ Xe Máy - Sửa Xe Máy Tại Nhà 24h Minh Thành Motor,0,,0.0,-6.411708841869883,0.0,45,45
+nearby_q_011,ChIJ660DJwArdTERaswe-O5w_A4,Tiệm rửa xe ôtô xe máy,0,,0.0,-6.411708841869883,0.0,46,46
+nearby_q_011,ChIJU0GMXwApdTER0nAk4v8nxsw,"Rửa Xe 39 - Ôtô, Xe máy",0,,0.0,-6.411708841869883,0.0,47,47
+nearby_q_011,ChIJ92uFsuYudTERvyQu9b8g8Ws,Rửa Xe Hiếu,0,,0.0,-6.411708841869883,0.0,48,48
+nearby_q_011,ChIJ9Vs22kovdTERow6znv_rO8k,Sửa - rửa xe HOÀNG THƯƠNG,0,,0.0,-6.411708841869883,0.0,49,49
+nearby_q_011,ChIJLXbu5dIvdTER7g8ZL14rluM,Ánh Dương Detailing,0,,0.0,-6.411708841869883,0.0,50,50
+nearby_q_011,ChIJh49VXwQvdTERteVbwQETYQM,Dịch Vụ Rửa Xe 109,0,,0.0,-6.411708841869883,0.0,51,51
+nearby_q_011,ChIJ35wD6AIvdTERcdM5ZxvwoYA,Dịch Vụ Rửa Xe A Thuận,0,,0.0,-6.411708841869883,0.0,52,52
+nearby_q_011,ChIJv7ct6zMvdTERf-RfP3cNIyk,Rửa Xe 170,0,,0.0,-6.411708841869883,0.0,53,53
+nearby_q_011,ChIJ1YVX-igvdTERaJMz766nH6U,Tiệm Rửa Xe 39,0,,0.0,-6.411708841869883,0.0,54,54
+nearby_q_011,ChIJy7RnTAAvdTERuHa74kwoWG0,"Bãi Giữ Xe, Rửa Xe Ôtô 635 Nguyễn Trãi",0,,0.0,-6.411708841869883,0.0,55,55
+nearby_q_011,ChIJMfw2TQAvdTER1SLfRI5lVQM,Rửa xe Ô tô - Xe máy 49 Thành Thái,0,,0.0,-6.411708841869883,0.0,56,56
+nearby_q_011,ChIJzw1c3nMvdTERQ-_es7qw718,RỬA XE CẦU NÂNG-THAY NHỚT HƯNG PHÁT 24h/7-CHĂM SÓC XE AUTO CAR,0,,0.0,-6.411708841869883,0.0,57,57
+nearby_q_011,ChIJBRwQhiEvdTER3nNM1IQr4AU,Rửa xe 100B,0,,0.0,-6.411708841869883,0.0,58,58
+nearby_q_011,ChIJcUA7eZcvdTERegYfkM6PQMg,"Rửa xe, Thay nhớt Trí 48",0,,0.0,-6.411708841869883,0.0,59,59
+nearby_q_011,ChIJeUtNRwAvdTEReYPFG0EmXTA,Rửa xe oto xe máy SBS,0,,0.0,-6.411708841869883,0.0,60,60
+nearby_q_011,ChIJaS06HOMpdTERYF3alhmcRWg,2N Detailing Car,0,,0.0,-6.411708841869883,0.0,61,61
+nearby_q_011,ChIJZXS7KtkudTERR1DL-aT9xH8,Rửa xe Kỳ Hòa,0,,0.0,-6.411708841869883,0.0,62,62
+nearby_q_011,ChIJB4-7VVcvdTERFGf8fzD2VKk,Rửa Xe Mai Tuấn,0,,0.0,-6.411708841869883,0.0,63,63
+nearby_q_011,ChIJV2CDWUsvdTERoCmtcUrUmaE,AUTOLINK VN Car Care Center,0,,0.0,-6.411708841869883,0.0,64,64
+nearby_q_011,ChIJN7tXj9ovdTERaHPUt88VtVs,Rửa xe Phong Phú,0,,0.0,-6.411708841869883,0.0,65,65
+nearby_q_011,ChIJSa9fcfIudTERW2NFs6Jbxcg,Tiệm Rửa Xe Minh Đức,0,,0.0,-6.411708841869883,0.0,66,66
+nearby_q_011,ChIJQasFZlQudTERUnY-pRaF33E,Rua Xe 63,0,,0.0,-6.411708841869883,0.0,67,67
+nearby_q_011,ChIJKbcy81UudTERkpGdL9UcyRE,Wash & Oil - Trung Tâm Đầu Nhớt Và Rửa Xe Chuyên Nghiệp,0,,0.0,-6.411708841869883,0.0,68,68
+nearby_q_011,ChIJx7Jetc4udTERaURpkyVmgdg,Tiệm Rửa Xe Dân Trí,0,,0.0,-6.411708841869883,0.0,69,69
+nearby_q_011,ChIJM7P_4-wudTERQ9H4dubIkvs,Dịch Vụ Rửa Xe 140,0,,0.0,-6.411708841869883,0.0,70,70
+nearby_q_011,ChIJ8wSxnnIvdTER4tuq_TmGSO8,Tiệm Rửa Xe F1,0,,0.0,-6.411708841869883,0.0,71,71
+nearby_q_011,ChIJGfU0Z-ovdTERc2ehGxgW5Os,Tiệm Sửa Xe Rửa Xe Máy 528,0,,0.0,-6.411708841869883,0.0,72,72
+nearby_q_011,ChIJEfV43q4vdTERoRbWxB-ctVM,Rửa xe tự động JetX,0,,0.0,-6.411708841869883,0.0,73,73
+nearby_q_011,ChIJ6yzjcqAvdTERcvVFrDNFz_M,RỬA XE 148,0,,0.0,-6.411708841869883,0.0,74,74
+nearby_q_011,ChIJM1rb4cMldTERJN3k_5HfeXk,Q7 Auto Center - Rửa xe - Chăm sóc ô tô - Phụ kiện ô tô,0,,0.0,-6.411708841869883,0.0,75,75
+nearby_q_011,ChIJDbbGtm0vdTERVHUBjRDwqJ8,Trung Tâm Chăm Sóc Xe Minh Phát,0,,0.0,-6.411708841869883,0.0,76,76
+nearby_q_011,ChIJE15xZR8pdTERjhHTMKfts8c,Trung tâm chăm sóc xe Phước Thắng,0,,0.0,-6.411708841869883,0.0,77,77
+nearby_q_011,ChIJqyScx6gvdTERn7780zpzSEs,Rửa xe Trọng Hữu,0,,0.0,-6.411708841869883,0.0,78,78
+nearby_q_011,ChIJXYD4TbsvdTERiUCTTjugBFw,Dịch Vụ Rửa Xe Ô Tô Quang Thiên,0,,0.0,-6.411708841869883,0.0,79,79
+nearby_q_011,ChIJAxwRPmwvdTERJPonxNY8yCU,VinaWash Phú Nhuận,0,,0.0,-6.411708841869883,0.0,80,80
+nearby_q_011,ChIJkSQ5sOsvdTERcNDqTNVgDCY,Rửa xe 79 Lý Thường Kiệt,0,,0.0,-6.411708841869883,0.0,81,81
+nearby_q_011,ChIJnYEfIYcvdTERyn-385Cj0go,"Thanh An Autocare - Vỏ Lốp, Cứu Hộ Ô Tô Chăm Sóc Xe Quận 7",0,,0.0,-6.411708841869883,0.0,82,82
+nearby_q_011,ChIJ6fxG6kIvdTER-Zg9XHB3_pw,Rửa Xe Bảo Long,0,,0.0,-6.411708841869883,0.0,83,83
+nearby_q_011,ChIJA7wsYakvdTERbeVCCoCEQaU,Rửa xe A Bảy,0,,0.0,-6.411708841869883,0.0,84,84
+nearby_q_011,ChIJpUp2VXAvdTER-hp9STrxCRM,Rửa Xe 116,0,,0.0,-6.411708841869883,0.0,85,85
+nearby_q_011,ChIJxa8x3tEodTERlTMK1pUYjO4,Rửa Xe 192 - Phú Nhuận,0,,0.0,-6.411708841869883,0.0,86,86
+nearby_q_011,ChIJHU8nWgAvdTERICXUCipASJs,Dịch vụ rửa xe cộng đồng Chung Cư Lò Gốm,0,,0.0,-6.411708841869883,0.0,87,87
+nearby_q_011,ChIJe6mdgWYvdTERBPBrRWm4bRg,Rửa xe Khiêm Khải,0,,0.0,-6.411708841869883,0.0,88,88
+nearby_q_011,ChIJm15DTZMudTERfdLD0CoKvkk,Tiệm Rửa Xe Tuấn,0,,0.0,-6.411708841869883,0.0,89,89
+nearby_q_011,ChIJZaU-GN8odTERlgCuwcK_Qt4,Rửa Xe Bi,0,,0.0,-6.411708841869883,0.0,90,90
+nearby_q_011,ChIJLUc60dYodTERVRhGesrzQM8,"Vòi rửa xe, máy bơm rửa xe",0,,0.0,-6.411708841869883,0.0,91,91
+nearby_q_011,ChIJz-Ha0L0udTERtKlii4wCgYY,Rửa Xe 427,0,,0.0,-6.411708841869883,0.0,92,92
+nearby_q_011,ChIJL2T8BY4udTERc2PfFI1z8OI,Tiệm Rửa Xe 130B Xóm Đất,0,,0.0,-6.411708841869883,0.0,93,93
+nearby_q_011,ChIJTaV9egApdTERWHqpwsaIPBA,Tèo rửa xe thay nhớt,0,,0.0,-6.411708841869883,0.0,94,94
+nearby_q_011,ChIJm1O96dIudTERcD1jU6rlpNI,Tiệm Rửa Xe 67,0,,0.0,-6.411708841869883,0.0,95,95
+nearby_q_011,ChIJ8fZM-OwvdTER_f1tQEM9__I,Rửa xe Ô Tô - Xe Máy Kiết Lân,0,,0.0,-6.411708841869883,0.0,96,96
+nearby_q_011,ChIJBe0M-o8udTERv_YNVumFqGw,2A Rửa xe Chuyên Nghiệp,0,,0.0,-6.411708841869883,0.0,97,97
+nearby_q_011,ChIJ1ZUpBBEpdTERVTiWZz1qDEM,DIAMOND DETAILING - Chăm sóc xe chuyên nghiệp Tân Bình,0,,0.0,-6.411708841869883,0.0,98,98
+nearby_q_011,ChIJgwxC60spdTER3x4ANrltVxE,40 phan tây hồ,0,,0.0,-6.411708841869883,0.0,99,99
+nearby_q_011,ChIJd1yMf7YvdTERJDoGEVtrQy0,RỬA XE CHĂM SÓC XE Ô TÔ CHUYÊN NGHIỆP - LUX AUTO DETAILING,0,,0.0,-6.411708841869883,0.0,100,100
+nearby_q_011,ChIJV85ZmMwtdTERpyNN1B1pnN0,Bờm Auto - Thuê xe tự lái & rửa xe,0,,0.0,-6.411708841869883,0.0,101,101
+nearby_q_011,ChIJk40j8kIudTERxtnQif0wKqg,Dịch Vụ Rửa Xe 16,0,,0.0,-6.411708841869883,0.0,102,102
+nearby_q_011,ChIJOaLdHtUudTERUEZfCm_bDLs,Rửa Xe Tiến Đạt 2,0,,0.0,-6.411708841869883,0.0,103,103
+nearby_q_011,ChIJwYnMSAAtdTERnVEwCXlMctE,Rửa xe máy - ô tô,0,,0.0,-6.411708841869883,0.0,104,104
+nearby_q_011,ChIJcdWx_y8vdTERmWnQ3Z1fsHI,Rửa Xe 20,0,,0.0,-6.411708841869883,0.0,105,105
+nearby_q_011,ChIJVRABlWgudTER_alEeJRJeOA,Phát Rửa Xe - Sửa Xe,0,,0.0,-6.411708841869883,0.0,106,106
+nearby_q_011,ChIJdxjE8JMpdTERnAUyvPtxWuo,Car and motorcycle detailing,0,,0.0,-6.411708841869883,0.0,107,107
+nearby_q_011,ChIJk3FpIa0vdTERpKPbusrwXtU,Rửa xe Bảo Đạt,0,,0.0,-6.411708841869883,0.0,108,108
+nearby_q_011,ChIJQ2Sr_mQudTERND7syqFzzcA,TIỆM RỬA XE BÌNH TIÊN,0,,0.0,-6.411708841869883,0.0,109,109
+nearby_q_011,ChIJ4125gUwpdTERrnzAA-z9GJs,TIỆM RỬA XE THAY NHỚT 25,0,,0.0,-6.411708841869883,0.0,110,110
+nearby_q_011,ChIJv0s95ZMudTER6sXb07AgUZg,Tiệm Rửa Xe Hòa,0,,0.0,-6.411708841869883,0.0,111,111
+nearby_q_011,ChIJSUcHOncvdTERA8WKVaoaJLs,Rửa Xe 37,0,,0.0,-6.411708841869883,0.0,112,112
+nearby_q_011,ChIJ43d1wJ4vdTERu3jbn2HEmZ4,Rửa xe Dũng,0,,0.0,-6.411708841869883,0.0,113,113
+nearby_q_011,ChIJnW6iKs4odTERV38FHz8ZxEs,Công Ty Cổ Phần Vietwash,0,,0.0,-6.411708841869883,0.0,114,114
+nearby_q_011,ChIJIYuOTg4pdTERRp8sLayExvI,Máy Rửa Xe Cao Áp - Công Ty Sơn Tùng Lâm,0,,0.0,-6.411708841869883,0.0,115,115
+nearby_q_011,ChIJM5mkDZgudTERa_PHXXgHoII,Rửa xe Hoàng Quân,0,,0.0,-6.411708841869883,0.0,116,116
+nearby_q_011,ChIJb1SyKw8vdTERs2Yk2qoCtz8,Rửa xe Thành Trung,0,,0.0,-6.411708841869883,0.0,117,117
+nearby_q_011,ChIJPQcH7HctdTERjGPXTmOGnFI,Green Wash Auto - Chăm sóc & Nâng cấp Oto,0,,0.0,-6.411708841869883,0.0,118,118
+nearby_q_011,ChIJ7RD6mUQpdTERda6cUV17nPc,Rửa xe máy,0,,0.0,-6.411708841869883,0.0,119,119
+nearby_q_011,ChIJmWMY5WQpdTERo53lf4hICZA,Rửa xe ô tô tự động JetX - Xô Viết Nghệ Tĩnh,0,,0.0,-6.411708841869883,0.0,120,120
+nearby_q_011,ChIJfV9rpNgtdTERuPdxlY4OJfU,Rửa Xe Bọt Tuyết - Thay Nhớt,0,,0.0,-6.411708841869883,0.0,121,121
+nearby_q_011,ChIJJf-tgPktdTERnMlZk454dfQ,Tiệm rửa xe 7talon - CN01,0,,0.0,-6.411708841869883,0.0,122,122
+nearby_q_011,ChIJu2tmmpspdTERCK-1gOJhBL4,Rửa xe Đình An,0,,0.0,-6.411708841869883,0.0,123,123
+nearby_q_011,ChIJJ7nc98AodTER-eUOFyYSut0,RỬA XE MINH ĐỨC( MINH ĐỨC WASH),0,,0.0,-6.411708841869883,0.0,124,124
+nearby_q_011,ChIJ9zaRTX4udTERBr7JULUfLd8,707 Zone - Rửa Xe 707,0,,0.0,-6.411708841869883,0.0,125,125
+nearby_q_011,ChIJt4iAA9QpdTERYuimTqEKPUg,D superwash,0,,0.0,-6.411708841869883,0.0,126,126
+nearby_q_011,ChIJeREh3fwpdTEREu1cZPxtdPc,"GodiCar Care Center - Spa Xe Oto, Xe Máy, Rửa Xe, Thay Nhớt, Dịch Vụ Trông Giữ Xe 24/24",0,,0.0,-6.411708841869883,0.0,127,127
+nearby_q_011,ChIJuTqPJXQpdTERyZA9HLklfaY,Rửa xe,0,,0.0,-6.411708841869883,0.0,128,128
+nearby_q_011,ChIJX0Z3P5YvdTERE6aj5EboTX4,Rửa Xe Hoàng Thái 286/6,0,,0.0,-6.411708841869883,0.0,129,129
+nearby_q_011,ChIJ7UShNJwvdTER4KFEs3wRjA8,Rửa xe máy 79 Bọt tuyết Villa Hào,0,,0.0,-6.411708841869883,0.0,130,130
+nearby_q_011,ChIJpxll1HMvdTERs9PaZvJhiSQ,Tiệm Rửa Xe T & T,0,,0.0,-6.411708841869883,0.0,131,131
+nearby_q_011,ChIJcS_VSGIvdTERHwe7ppb-zVI,Rửa xe Nam,0,,0.0,-6.411708841869883,0.0,132,132
+nearby_q_011,ChIJ19PwuJ0udTERUBh9phz0coc,Rửa Xe Trung Bảo,0,,0.0,-6.411708841869883,0.0,133,133
+nearby_q_011,ChIJl89HdFctdTERqKyEp2Nh9KA,Thiên Wash Super Car Q6,0,,0.0,-6.411708841869883,0.0,134,134
+nearby_q_011,ChIJebUewawodTERkj5o7Llokso,Rửa xe Cô Vân,0,,0.0,-6.411708841869883,0.0,135,135
+nearby_q_011,ChIJ2fDrVDkpdTERT7jVOFeYn2Q,Rửa xe bubblesWash,0,,0.0,-6.411708841869883,0.0,136,136
+nearby_q_011,ChIJFdc1fQAvdTERJrNhc4N_YrA,Rửa xe chuyên nghiệp NAOTA MUOI DO with T,0,,0.0,-6.411708841869883,0.0,137,137
+nearby_q_011,ChIJzxq5an8udTER_donYV9xq2o,Tiệm Rửa Xe Chí Hoàng,0,,0.0,-6.411708841869883,0.0,138,138
+nearby_q_011,ChIJBVGXtx4pdTERLe9VRcHr_Ao,Rửa xe hơi,0,,0.0,-6.411708841869883,0.0,139,139
+nearby_q_011,ChIJ2yMrw_8pdTER0DH_CbI0avI,Tiêm rửa xe phương thảo,0,,0.0,-6.411708841869883,0.0,140,140
+nearby_q_011,ChIJa-KQDNYpdTERi9r--Kt8tik,Rửa xe 22,0,,0.0,-6.411708841869883,0.0,141,141
+nearby_q_011,ChIJgQoKzTItdTERm747HBvuHis,Tiệm rửa xe thay nhớt dọn vệ sinh nội thất ôtô xe máy 287,0,,0.0,-6.411708841869883,0.0,142,142
+nearby_q_011,ChIJvc8fqo0ldTERYst7zDyC8MQ,RỬA XE MINH NHỰT,0,,0.0,-6.411708841869883,0.0,143,143
+nearby_q_011,ChIJFXXccH8pdTERiiAE5msivWA,Rửa xe oto xe máy Lê Sơn,0,,0.0,-6.411708841869883,0.0,144,144
+nearby_q_011,ChIJ_ePVDgApdTERic0nX2iwDUg,Rửa Xe 111,0,,0.0,-6.411708841869883,0.0,145,145
+nearby_q_011,ChIJGcObtsEvdTERtjKymIh1lkI,Rửa Xe Đức,0,,0.0,-6.411708841869883,0.0,146,146
+nearby_q_011,ChIJO8ghhXgudTER-_-GpmlNkdQ,Dịch Vụ Rửa Xe Thanh Sơn,0,,0.0,-6.411708841869883,0.0,147,147
+nearby_q_011,ChIJhfQaIaopdTER2ELJYK5oEic,Rửa xe 54,0,,0.0,-6.411708841869883,0.0,148,148
+nearby_q_011,ChIJoR3SkCwsdTER0lqlQ5kQF3c,Dịch Vụ Rửa Xe Mạnh Khang,0,,0.0,-6.411708841869883,0.0,149,149
+nearby_q_011,ChIJocSD1MAodTERy3XameV2IcM,Rửa Xe Bi,0,,0.0,-6.411708841869883,0.0,150,150
+nearby_q_011,ChIJC8RJnIwvdTER83b1UlHd4Xs,Rửa xe Vườn Lài,0,,0.0,-6.411708841869883,0.0,151,151
+nearby_q_011,ChIJZTTHJQAtdTER30VeV0vaZtA,Rửa xe-thay nhớt Đức Minh,0,,0.0,-6.411708841869883,0.0,152,152
+nearby_q_011,ChIJA3oXRKAvdTERP0Cd8Ub6Jhk,RỬA XE TÂN AN HUY (SWS),0,,0.0,-6.411708841869883,0.0,153,153
+nearby_q_011,ChIJvczLLHMudTERpJO_6uVwAaw,Bãi Giữ Xe Ô Tô - Rửa Xe 2574 Bình An,0,,0.0,-6.411708841869883,0.0,154,154
+nearby_q_011,ChIJ_-SKGKoudTERHDEBvqz3CPU,Rửa Xe - Thay Nhớt Thuạn Lợi,0,,0.0,-6.411708841869883,0.0,155,155
+nearby_q_011,ChIJ0YbuMNYtdTERyPPybjYDyGQ,Tiệm Rửa Xe Gia Huy,0,,0.0,-6.411708841869883,0.0,156,156
+nearby_q_011,ChIJK6JHgKsodTERm6UGeCKw7so,Rửa Xe - Thay Nhớt Tấn Phong,0,,0.0,-6.411708841869883,0.0,157,157
+nearby_q_011,ChIJPYTJFgAtdTERRSbUlwIzepw,Rửa xe ong bắp cầy,0,,0.0,-6.411708841869883,0.0,158,158
+nearby_q_011,ChIJL48FotcpdTEREQrDaq63f5Q,Nội thất ôtô Sài Thành,0,,0.0,-6.411708841869883,0.0,159,159
+nearby_q_011,ChIJndqxqskrdTERUv8TK3yNMA0,Rửa xe Thương Đoàn,0,,0.0,-6.411708841869883,0.0,160,160
+nearby_q_011,ChIJM_K8-IAvdTERWPZHJr-V6bM,Vietnam Car Care,0,,0.0,-6.411708841869883,0.0,161,161
+nearby_q_011,ChIJ-whsrHoldTERpgRPmx2F6OY,Bro Detailing,0,,0.0,-6.411708841869883,0.0,162,162
+nearby_q_011,ChIJb5Uen0QldTERBdvoB9UKu_s,BTWO Detailing - Dịch vụ chăm sóc xe,0,,0.0,-6.411708841869883,0.0,163,163
+nearby_q_011,ChIJp3zNbKItdTERosSqSZP7VAU,"Bãi Rửa Xe Máy, Xe Ô Tô Hoàng Vũ",0,,0.0,-6.411708841869883,0.0,164,164
+nearby_q_011,ChIJFff3FBMtdTERZbeRtTMhAvs,Rửa Xe Ô Tô - Xe Máy 24/24 Comeco,0,,0.0,-6.411708841869883,0.0,165,165
+nearby_q_011,ChIJdT26-jUsdTERdPzNGSL0gjM,Trung Tâm Rửa - Giữ Xe Oto - Xe Máy 68,0,,0.0,-6.411708841869883,0.0,166,166
+nearby_q_011,ChIJoT-HspgtdTERBcoGqMrCpq0,"Bãi Rửa Xe (xe máy,ôtô,xe tải)",0,,0.0,-6.411708841869883,0.0,167,167
+nearby_q_011,ChIJlZpef4grdTER7hfoHz9oAQM,Dịch Vụ Rửa Xe Tự Động Tiên Tiến,0,,0.0,-6.411708841869883,0.0,168,168
+nearby_q_011,ChIJ5WuTUBgrdTERtF8COGP7HMk,Shitek Auto Detailing Tân Phú,0,,0.0,-6.411708841869883,0.0,169,169
+nearby_q_011,ChIJPQ8m-2EpdTERZKS8WSDmA08,Vá Vỏ Lưu Động - Rửa Xe ô tô Quận Tân Bình - Phượng Lân,0,,0.0,-6.411708841869883,0.0,170,170
+nearby_q_011,ChIJz1mTmFIpdTERjiD69zHhYcU,Rửa Xe 91-93,0,,0.0,-6.411708841869883,0.0,171,171
+nearby_q_011,ChIJfXakHRkpdTER1n5X5stG_RM,Tiệm Rửa Xe Duy,0,,0.0,-6.411708841869883,0.0,172,172
+nearby_q_011,ChIJX6NdyzEpdTERJfHT9Uw_bMU,Rửa xe Nguyễn Thái Bình,0,,0.0,-6.411708841869883,0.0,173,173
+nearby_q_011,ChIJyYragc0pdTERJZUvuZwEEEc,SG Auto Detailing,0,,0.0,-6.411708841869883,0.0,174,174
+nearby_q_011,ChIJ71DAuAEsdTERTkng6PCOjp8,RỬA XE CƯỜNG,0,,0.0,-6.411708841869883,0.0,175,175
+nearby_q_011,ChIJexLMReMrdTERBdtmTTwDRAA,Tiệm Rửa Xe Bọt Tuyết - Thay Nhớt Khánh Nhân,0,,0.0,-6.411708841869883,0.0,176,176
+nearby_q_011,ChIJVXwIZgApdTER5YaO1M_iXx0,RỬA XE MÁY 297,0,,0.0,-6.411708841869883,0.0,177,177
+nearby_q_011,ChIJsVkt-KstdTERJRNTjAS1Kng,Rửa Xe Bình Long,0,,0.0,-6.411708841869883,0.0,178,178
+nearby_q_011,ChIJE_yWQ6MudTERPyxFeTTaMm0,Rửa xe Hiệp Toàn,0,,0.0,-6.411708841869883,0.0,179,179
+nearby_q_011,ChIJz4WbAOUpdTERs9rK7CsKajA,Quang Trung Auto,0,,0.0,-6.411708841869883,0.0,180,180
+nearby_q_011,ChIJD8_xMecrdTERbto7m7NZdcg,Tiệm Rửa Xe Bảo Hoàng,0,,0.0,-6.411708841869883,0.0,181,181
+nearby_q_011,ChIJPZmXbh8rdTERGxpIuP3LKdg,Rửa xe ô tô xe máy,0,,0.0,-6.411708841869883,0.0,182,182
+nearby_q_011,ChIJSxP8MwYtdTERSJoQpDIRBDM,RỬA XE CƯỜNG THỊNH,0,,0.0,-6.411708841869883,0.0,183,183
+nearby_q_011,ChIJTWxEfyUrdTERK5FoRgrpB2U,ADTEDEK Detailing | Dịch Vụ Rửa & Chăm Sóc Xe,0,,0.0,-6.411708841869883,0.0,184,184
+nearby_q_011,ChIJv6G-7lUpdTERQgfBIeAeSk4,Rửa xe 77,0,,0.0,-6.411708841869883,0.0,185,185
+nearby_q_011,ChIJjysE6x0pdTERwqN6DiGix8w,Dịch Vụ Rửa Xe 5 Sao,0,,0.0,-6.411708841869883,0.0,186,186
+nearby_q_011,ChIJ38H8RSYtdTERwnKFSQ6DmEk,Rửa Xe Chuyên Nghiệp 409,0,,0.0,-6.411708841869883,0.0,187,187
+nearby_q_011,ChIJO-rw2AcpdTERr0SQMgVXXwQ,Anh Thắng Service - Trung Tâm Chăm Sóc Xe Hơi Chuyên Nghiệp,0,,0.0,-6.411708841869883,0.0,188,188
+nearby_q_011,ChIJbbjeA9spdTER80lmGQK94QU,"🔧 Sửa Xe Tay Ga – Làm Nồi Tay Ga – Rửa Xe Moto Uy Tín Tại số 88 Nguyễn khuyến, Quận Bình Thạnh, TP.HCM",0,,0.0,-6.411708841869883,0.0,189,189
+nearby_q_011,ChIJ8U3PEYcpdTERG1wm9NrHBgw,BÃI GIỮ XE & RỬA XE OTO 24/7,0,,0.0,-6.411708841869883,0.0,190,190
+nearby_q_011,ChIJiQcQmLQpdTERy68EeEtxhQs,Trung Tâm Chăm Sóc Xe 133,0,,0.0,-6.411708841869883,0.0,191,191
+nearby_q_011,ChIJoXZmyu4rdTERbuUsj31vz1c,Tiệm Rửa Xe Tân Bình,0,,0.0,-6.411708841869883,0.0,192,192
+nearby_q_011,ChIJuc2eU-8rdTERRAGZtIvziVo,Cầu Nâng 1 Trụ Rửa Xe Ô Tô TAGORE,0,,0.0,-6.411708841869883,0.0,193,193
+nearby_q_011,ChIJd2IusuArdTERDRvWXfWkKcc,Tiệm Rửa Xe 82,0,,0.0,-6.411708841869883,0.0,194,194
+nearby_q_011,ChIJjf7EygApdTERQ0oAZlnGutw,Dịch Vụ Rửa Xe Tuấn,0,,0.0,-6.411708841869883,0.0,195,195
+nearby_q_011,ChIJicio1KcpdTER027N-u4NYuc,Rửa Xe Thay Nhớt Lộc,0,,0.0,-6.411708841869883,0.0,196,196
+nearby_q_011,ChIJv3cmeqgpdTER44dSE4M9Gbs,Dịch Vụ Rửa Xe Nghệ Thuật,0,,0.0,-6.411708841869883,0.0,197,197
+nearby_q_011,ChIJJSEXFPwpdTERL6qFysNI0Y0,Rửa Xe Bọt Tuyết Duy Hiếu,0,,0.0,-6.411708841869883,0.0,198,198
+nearby_q_011,ChIJUeoLG9IpdTERlD_pYZAakF0,Rửa Xe Thằng Bờm,0,,0.0,-6.411708841869883,0.0,199,199
+nearby_q_011,ChIJ8ejDhhYsdTER38GORUgRfBs,Quán rửa xe Mười 305/11,0,,0.0,-6.411708841869883,0.0,200,200
+nearby_q_011,ChIJv-X3SpcudTEROvT_nBGLfUs,Tiệm Rửa Xe 260,0,,0.0,-6.411708841869883,0.0,201,201
+nearby_q_011,ChIJAwIAypQpdTEROE4gFnnYQ-M,Rửa Xe Thằng Bờm 2 (294 Nguyễn Thái Sơn),0,,0.0,-6.411708841869883,0.0,202,202
+nearby_q_011,ChIJA5UVkV0pdTERqEQlYq83cjE,Chăm Sóc Xe Oto 362,0,,0.0,-6.411708841869883,0.0,203,203
+nearby_q_011,ChIJuVM5vFkpdTERKkgdaRrik7c,Gara Rửa Xe Ô Tô CARBI,0,,0.0,-6.411708841869883,0.0,204,204
+nearby_q_011,ChIJxV9RcVModTERRrogNkgVv6E,Tiệm Rửa Xe Tí Nị,0,,0.0,-6.411708841869883,0.0,205,205
+nearby_q_011,ChIJCTQOeB0vdTERFoN_cRNv9QA,Rửa Xe Huy Hoàng,0,,0.0,-6.411708841869883,0.0,206,206
+nearby_q_011,ChIJA7QSL_kodTERp-zkuoE7Eec,Giữ Xe Ôtô Rửa Xe Ôtô - Xe Máy,0,,0.0,-6.411708841869883,0.0,207,207
+nearby_q_011,ChIJhaM33pgpdTERFUK5gtpsAB8,Tý Rửa Xe,0,,0.0,-6.411708841869883,0.0,208,208
+nearby_q_011,ChIJJbmfLo8pdTERoAEm9vXAuW8,Rửa Xe 16,0,,0.0,-6.411708841869883,0.0,209,209
+nearby_q_011,ChIJvYcOjuQodTER-rZvU9XLEfQ,Tiệm Rửa XeTrung Tín,0,,0.0,-6.411708841869883,0.0,210,210
+nearby_q_011,ChIJdx9agLApdTERe4xVTT63wng,Tiệm Rửa Xe Mạnh Tường,0,,0.0,-6.411708841869883,0.0,211,211
+nearby_q_011,ChIJl5SjuawpdTERla2HXrd15Uo,Tiệm Rửa Xe & sửa xe 62 GN SCOOTER,0,,0.0,-6.411708841869883,0.0,212,212
+nearby_q_011,ChIJd_9VbR8vdTEROPUOjqft6Mc,Rửa xe Hoàng,0,,0.0,-6.411708841869883,0.0,213,213
+nearby_q_011,ChIJ2Rcm-8gpdTERcJ2VC0tDbq4,Ô tô Tấn Tới Q12,0,,0.0,-6.411708841869883,0.0,214,214
+nearby_q_011,ChIJ8SzGl2spdTERykzQQPfiebQ,MINH VŨ - RỬA XE BÌNH THẠNH,0,,0.0,-6.411708841869883,0.0,215,215
+nearby_q_011,ChIJ_ePva-IudTER3hqpNrbWafM,hethongchamsocxe.com,0,,0.0,-6.411708841869883,0.0,216,216
+nearby_q_011,ChIJAbCPoksqdTERvid1a9rOs9c,Rửa Xe 29,0,,0.0,-6.411708841869883,0.0,217,217
+nearby_q_011,ChIJ939LseMudTERpPKl4NCFgvs,Rửa Xe 33,0,,0.0,-6.411708841869883,0.0,218,218
+nearby_q_011,ChIJpwpSMJ8pdTERB-V-jQTgYcM,Tiệm rửa xe bình dân,0,,0.0,-6.411708841869883,0.0,219,219
+nearby_q_011,ChIJQxnzt3opdTERxCi-X6Y46v4,RỬA XE 3H,0,,0.0,-6.411708841869883,0.0,220,220
+nearby_q_011,ChIJha2t3ekodTEReIYG_s_iMBg,Rửa Xe Thanh Vân,0,,0.0,-6.411708841869883,0.0,221,221
+nearby_q_011,ChIJg80AdX4pdTERC6nJbmzm1Yg,Rửa xe Bình Triệu Hoá Dầu,0,,0.0,-6.411708841869883,0.0,222,222
+nearby_q_011,ChIJAd9frigpdTERpugpDXEMxuY,Chỗ Rửa Xe,0,,0.0,-6.411708841869883,0.0,223,223
+nearby_q_011,ChIJjZf3whUpdTERMvKAcT01n24,Cứu Hộ Xe Máy Tận Nơi - Minh Thành Motor,0,,0.0,-6.411708841869883,0.0,224,224
+nearby_q_011,ChIJa6iwecMvdTERsw1L3diejoA,"Sửa Xe, Cứu Hộ Xe Máy 24h - Minh Thành Motor",0,,0.0,-6.411708841869883,0.0,225,225
+nearby_q_011,ChIJtWbT9ecpdTERrtjuFdkeYPk,Bãi giữ xe ô tô Phú Nhuận,0,,0.0,-6.411708841869883,0.0,226,226
+nearby_q_011,ChIJk8NbU04pdTERq7ObcOY9c20,AKauto - Trung tâm chăm sóc & phụ kiện ô tô cao cấp,0,,0.0,-6.411708841869883,0.0,227,227
+nearby_q_011,ChIJ4TQNDSgndTERorwB5PIlsgg,VinaWash quận 9,0,,0.0,-6.411708841869883,0.0,228,228
+nearby_q_011,ChIJF1Qrl6cpdTERCXUfcS9g9NU,Rửa xe - Thay nhớt oto & xe máy,0,,0.0,-6.411708841869883,0.0,229,229
+nearby_q_011,ChIJZ1Hh4q0ndTER4eNwjGtjkJI,Tiệm Rửa Xe Việt,0,,0.0,-6.411708841869883,0.0,230,230
+nearby_q_011,ChIJI0jt1dQndTER-lWzmX3cff4,RỬA XE KHÔNG CHẠM,0,,0.0,-6.411708841869883,0.0,231,231
+nearby_q_011,ChIJmSZaf50vdTERibmZUmPQII8,Dịch Vụ Rửa Xe Huỳnh Sơn,0,,0.0,-6.411708841869883,0.0,232,232
+nearby_q_011,ChIJrxEhyIIvdTERpzjfV1HdYl8,Rửa Xe 21,0,,0.0,-6.411708841869883,0.0,233,233
+nearby_q_011,ChIJ0TqeIy0vdTERr_niNpsSS30,Rửa xe bọt tuyết PHẠM NGUYỄN,0,,0.0,-6.411708841869883,0.0,234,234
+nearby_q_011,ChIJ6XOOLpgvdTER9Zpy6y1jLbk,Dịch Vụ Rửa Xe 490,0,,0.0,-6.411708841869883,0.0,235,235
+nearby_q_011,ChIJQ6N5AO8udTERQ5hugngZmpE,Rửa Xe Văn Minh,0,,0.0,-6.411708841869883,0.0,236,236
+nearby_q_011,ChIJb6J3gXIvdTEROpw7m7E5HAE,Rửa Xe Dũng Phuộc,0,,0.0,-6.411708841869883,0.0,237,237
+nearby_q_011,ChIJkymt7dAudTERO7uajjNhIp4,Tiệm Rửa Xe Hùng,0,,0.0,-6.411708841869883,0.0,238,238
+nearby_q_011,ChIJocY7RBwsdTERRio-1BfS-60,Tiệm Rửa Xe Hoàng Uyên,0,,0.0,-6.411708841869883,0.0,239,239
+nearby_q_011,ChIJ6XVg57IvdTERzGUbWVVPQe0,Rua xe,0,,0.0,-6.411708841869883,0.0,240,240
+nearby_q_011,ChIJ37xIXCEvdTERBKA_XiotlJU,Rửa xe 103,0,,0.0,-6.411708841869883,0.0,241,241
+nearby_q_011,ChIJ_zTRdwAvdTER2eye_1Z6Db8,Rửa xe ô tô Trung Sơn,0,,0.0,-6.411708841869883,0.0,242,242
+nearby_q_011,ChIJLQDJI4MtdTER4cu80KJiWs4,"RỬA XE VÁ VỎ Ô TÔ, MOTO HUY TIẾN",0,,0.0,-6.411708841869883,0.0,243,243
+nearby_q_011,ChIJY8lsYOMrdTERMK1y_tV4cFc,Rửa xe Tý,0,,0.0,-6.411708841869883,0.0,244,244
+nearby_q_011,ChIJxaezAYIpdTERtKblomS9oMY,Rửa xe TrungUyen,0,,0.0,-6.411708841869883,0.0,245,245
+nearby_q_011,ChIJv7nemWYudTERASBX3GEc6Ts,Tiệm Rửa Xe 415,0,,0.0,-6.411708841869883,0.0,246,246
+nearby_q_011,ChIJaTNhOAAtdTERJAmFIrkm7Yk,Rửa Xe Bình Tân,0,,0.0,-6.411708841869883,0.0,247,247
+nearby_q_011,ChIJSc-2EWYpdTER86cfOB3XWws,Rửa xe máy,0,,0.0,-6.411708841869883,0.0,248,248
+nearby_q_011,ChIJeeGSwGUldTERc4yetbjW1Yk,Út Bình,0,,0.0,-6.411708841869883,0.0,249,249
+nearby_q_011,ChIJb_7JcNsldTERmRmUDwzGT9Y,Phước Tiến,0,,0.0,-6.411708841869883,0.0,250,250
+nearby_q_011,ChIJv7oKVWsvdTERKZXHvxDUeY4,Rửa Xe Văn Tí,0,,0.0,-6.411708841869883,0.0,251,251
+nearby_q_011,ChIJ00mjs4MudTERmzCqQnJyhY0,Car Wash 39,0,,0.0,-6.411708841869883,0.0,252,252
+nearby_q_011,ChIJ9a8bXo0vdTERXkEy5CO80R0,Chăm Xế Yêu - Rửa Xe Ô Tô,0,,0.0,-6.411708841869883,0.0,253,253
+nearby_q_011,ChIJz_m-GaIpdTERR4SUTNP30bA,Hệ Thống Sửa Xe Thông Minh,0,,0.0,-6.411708841869883,0.0,254,254
+nearby_q_011,ChIJEyPLQQApdTERpueJSPV2ToQ,SỬA XE GÒ VẤP,0,,0.0,-6.411708841869883,0.0,255,255
+nearby_q_011,ChIJhZmyTOEpdTERMHPFgKi-Um4,Sài Gòn Độ Xe Quận Gò Vấp,0,,0.0,-6.411708841869883,0.0,256,256
+nearby_q_011,ChIJX4vZDwApdTERo2QWWfyGHig,"Giữ Xe - Rửa Xe ÔTô, Trạm Sạc xe máy Điện, CaFe võng",0,,0.0,-6.411708841869883,0.0,257,257
+nearby_q_011,ChIJIQa8_2AodTERgYE5Dk16wKM,Trung Tâm Chăm Sóc Xe & Phụ Kiện Ôtô 4Car Workshop,0,,0.0,-6.411708841869883,0.0,258,258
+nearby_q_011,ChIJg4abnhErdTERq9xfcfvb11U,"Bãi giữ xe, rửa xe, trạm sạc điện Vinfast Phong Khanh",0,,0.0,-6.411708841869883,0.0,259,259
+nearby_q_011,ChIJy9M7QJUrdTERvTZsqYv0tBw,Rửa Xe Ngày Và Đêm U G,0,,0.0,-6.411708841869883,0.0,260,260
+nearby_q_011,ChIJq13uK6srdTERcKOBUF343aQ,Rửa Xe Gia Bảo,0,,0.0,-6.411708841869883,0.0,261,261
+nearby_q_011,ChIJI8kaYxIrdTERXYuIND-_3ic,Rửa Xe OTO Thắng-Tiến,0,,0.0,-6.411708841869883,0.0,262,262
+nearby_q_011,ChIJrfXCEZQrdTER5h7XQ-RQ4VA,Rửa Xe Nguyễn - Sơn,0,,0.0,-6.411708841869883,0.0,263,263
+nearby_q_011,ChIJkdLNs_srdTERQF25_xnbgJ0,Ngọc Sang Auto - Đồ Chơi Xe Hơi Tân Phú,0,,0.0,-6.411708841869883,0.0,264,264
+nearby_q_011,ChIJgwl_xBUrdTER3un7g5zC5cY,Cho thuê xe tự lái và có tài Hóc Môn,0,,0.0,-6.411708841869883,0.0,265,265
+nearby_q_011,ChIJw-9kyAgqdTERA0bZazcMx1o,Tiệm Rửa Xe Phú Quý,0,,0.0,-6.411708841869883,0.0,266,266
+nearby_q_011,ChIJbaNRdtnVdDERmhzyYcznyZo,Rửa Xe Hoàng Gia Việt,0,,0.0,-6.411708841869883,0.0,267,267
+nearby_q_011,ChIJyxtU8vfVdDERw-9qLa1MK8M,Tiệm Rửa Xe Thay Nhớt Hoàng Quân,0,,0.0,-6.411708841869883,0.0,268,268
+nearby_q_011,ChIJbZCluZDXdDER8jX1ufWzReU,"Rửa xe , chăm sóc xe VERA CAR CARE 2",0,,0.0,-6.411708841869883,0.0,269,269
+nearby_q_011,ChIJlSkmTjwrdTERdX5Kgq_CYKA,Rửa xe gia đình,0,,0.0,-6.411708841869883,0.0,270,270
+nearby_q_011,ChIJEWSSaQArdTER_6KocSIDZcs,Bãi Xe Rửa Xe Thành Cường,0,,0.0,-6.411708841869883,0.0,271,271
+nearby_q_011,ChIJ8cgcDQArdTERJKCORLEdiKk,Cầm đồ 253 & Giữ xe và rửa xe oto 24/24,0,,0.0,-6.411708841869883,0.0,272,272
+nearby_q_011,ChIJY_PppkgrdTERa_QtKO4qXgI,Bãi Giữ Xe - Rửa Xe Ô Tô 24/24 Gia Khang,0,,0.0,-6.411708841869883,0.0,273,273
+nearby_q_011,ChIJTYZFewDVdDERzcNshupbMXU,Tiệm sửa xe,0,,0.0,-6.411708841869883,0.0,274,274
+nearby_q_011,ChIJV2MBXPXVdDERrqBqk44dkt8,Garage Thuận Phát,0,,0.0,-6.411708841869883,0.0,275,275
+nearby_q_011,ChIJlW1eDPYpdTERQ05dcDLl6Uk,Trung Tâm Rửa & Chăm Sóc Xe Minh Dũng,0,,0.0,-6.411708841869883,0.0,276,276
+nearby_q_011,ChIJXSiFtJzVdDER2nLn6TYMnhc,Tiệm Rửa Xe Thái,0,,0.0,-6.411708841869883,0.0,277,277
+nearby_q_011,ChIJ9VaAAITVdDER31gtQy0qecw,Rửa Xe Boss,0,,0.0,-6.411708841869883,0.0,278,278
+nearby_q_011,ChIJQ1JvToPVdDER_eirCvuzVzA,Tiệm Rửa Xe Đức Hanh 888,0,,0.0,-6.411708841869883,0.0,279,279
+nearby_q_011,ChIJv3xb5istdTERLeEj_viEUDI,Rửa / Sửa Xe Ô Tô Gia Hào,0,,0.0,-6.411708841869883,0.0,280,280
+nearby_q_011,ChIJL1E_ZgApdTEROZWFCBEC05w,Rửa Xe Top 179,0,,0.0,-6.411708841869883,0.0,281,281
+nearby_q_011,ChIJob1-EQApdTERdNwTTxpM6tM,Rửa Xe Hữu Cảnh,0,,0.0,-6.411708841869883,0.0,282,282
+nearby_q_011,ChIJ9721s2s7dTERy0AnDBTSPRQ,Rửa xe 24h CAR-E,0,,0.0,-6.411708841869883,0.0,283,283
+nearby_q_011,ChIJoVKHv6ModTERuxDTu-wcay4,Rửa Xe 25D2,0,,0.0,-6.411708841869883,0.0,284,284
+nearby_q_011,ChIJiRHBAL0ndTERyve46wj343I,Rửa xe Bonbon Cao Đức Lân,0,,0.0,-6.411708841869883,0.0,285,285
+nearby_q_011,ChIJjUNOLo8pdTERylrlbw56UCY,Rửa xe 96,0,,0.0,-6.411708841869883,0.0,286,286
+nearby_q_011,ChIJzbcyLpEldTERaRG4SdE_Mz4,Rửa Xe Ô Tô - Bảo Dưỡng Xe Ô Tô Hoàng Thắng,0,,0.0,-6.411708841869883,0.0,287,287
+nearby_q_011,ChIJtX6NL1gpdTEREZ1knBMsOHQ,Tiệm Rửa Xe Văn Cường 27 Thanh Đa,0,,0.0,-6.411708841869883,0.0,288,288
+nearby_q_011,ChIJZQgWYgApdTERgDpsiiyGZHg,"Sửa xe, Vá Xe, Rửa xe Mạnh",0,,0.0,-6.411708841869883,0.0,289,289
+nearby_q_011,ChIJhekM2bcodTERGR_beHWznpM,Dịch Vụ Rửa Xe 49,0,,0.0,-6.411708841869883,0.0,290,290
+nearby_q_011,ChIJo7yvbeUpdTERTA_IPqSu_GQ,Rửa xe Bình Cao,0,,0.0,-6.411708841869883,0.0,291,291
+nearby_q_011,ChIJweYdIwAndTERUvTFA_n2MKg,Trung tâm Rửa xe ô tô - xe máy HCT,0,,0.0,-6.411708841869883,0.0,292,292
+nearby_q_011,ChIJ_2Nbe2MudTERBx8gpkmsanI,Dịch Vụ Rửa Xe 174,0,,0.0,-6.411708841869883,0.0,293,293
+nearby_q_011,ChIJb3kdn2IudTERX4OxCTaYy9k,Tiệm Rửa Xe 56,0,,0.0,-6.411708841869883,0.0,294,294
+nearby_q_011,ChIJB1pXPyAndTERd3m8Z-peLgY,Rửa xe Thủ Đức PKW,0,,0.0,-6.411708841869883,0.0,295,295
+nearby_q_011,ChIJw6raw9AodTER6m40CnmHSzc,Tiệm Rửa Xe Kim Long,0,,0.0,-6.411708841869883,0.0,296,296
+nearby_q_011,ChIJfQFiEXsudTERRTcUWWsMtwo,Văn Thân Rửa Xe - Thay Nhớt Chuyên Nghiệp,0,,0.0,-6.411708841869883,0.0,297,297
+nearby_q_011,ChIJs0DDBnoudTERgUbdUcRpgqc,Tiệm Rửa Xe Triều Dân,0,,0.0,-6.411708841869883,0.0,298,298
+nearby_q_011,ChIJs3qKUzYndTERtZLKKGlAA5w,Trung Tâm Chăm Sóc & Rửa Xe Ôtô Kakawa,0,,0.0,-6.411708841869883,0.0,299,299
+nearby_q_011,ChIJ5VRWHZwvdTERo5va1R_RLVo,Rửa Xe Sạch,0,,0.0,-6.411708841869883,0.0,300,300
+nearby_q_011,ChIJpbaCFXgudTERcsNR4Pae4Mk,Tiệm Rửa Xe Anh Huy,0,,0.0,-6.411708841869883,0.0,301,301
+nearby_q_012,ChIJaRNnpqUpdTERc_-eo8TslVY,Prime Shine Detailing - Rửa Xe Ô Tô Tân Bình- Giữ Xe 24/24,3,1.0,0.746267,2.4029225778242767,0.746267,1,1
+nearby_q_012,ChIJ7RD6mUQpdTERda6cUV17nPc,Rửa xe máy,3,2.0,0.737577,2.040794185447871,0.737577,2,2
+nearby_q_012,ChIJLeRnKbUpdTERnp0hBlwn0es,TIỆM RỬA XE HỒNG PHÚC,1,13.0,0.641985,1.948661198114135,0.641985,3,13
+nearby_q_012,ChIJ4125gUwpdTERrnzAA-z9GJs,TIỆM RỬA XE THAY NHỚT 25,2,6.0,0.694927,1.7685913103893338,0.694927,4,6
+nearby_q_012,ChIJ9zaRTX4udTERBr7JULUfLd8,707 Zone - Rửa Xe 707,2,141.0,0.381815,1.5303722165917515,0.381815,5,141
+nearby_q_012,ChIJ8fZM-OwvdTER_f1tQEM9__I,Rửa xe Ô Tô - Xe Máy Kiết Lân,1,5.0,0.703888,1.5178434067339757,0.703888,6,5
+nearby_q_012,ChIJz1mTmFIpdTERjiD69zHhYcU,Rửa Xe 91-93,1,33.0,0.57772,1.4990937820225763,0.57772,7,33
+nearby_q_012,ChIJGfU0Z-ovdTERc2ehGxgW5Os,Tiệm Sửa Xe Rửa Xe Máy 528,1,82.0,0.481219,1.1969606122910417,0.481219,8,82
+nearby_q_012,ChIJ1ZUpBBEpdTERVTiWZz1qDEM,DIAMOND DETAILING - Chăm sóc xe chuyên nghiệp Tân Bình,3,3.0,0.725984,1.0483435078435848,0.725984,9,3
+nearby_q_012,ChIJexLMReMrdTERBdtmTTwDRAA,Tiệm Rửa Xe Bọt Tuyết - Thay Nhớt Khánh Nhân,1,51.0,0.529034,1.0418214004178301,0.529034,10,51
+nearby_q_012,ChIJBVGXtx4pdTERLe9VRcHr_Ao,Rửa xe hơi,2,30.0,0.58343,0.9996141245410515,0.58343,11,30
+nearby_q_012,ChIJd1yMf7YvdTERJDoGEVtrQy0,RỬA XE CHĂM SÓC XE Ô TÔ CHUYÊN NGHIỆP - LUX AUTO DETAILING,1,10.0,0.660587,0.9488061942036231,0.660587,12,10
+nearby_q_012,ChIJaWwZs_8rdTERZRVK4X5LewY,Trung Tâm Nâng Cấp & Phụ Kiện Ô Tô - VICARE AUTO,1,11.0,0.650475,0.9466672328866783,0.650475,13,11
+nearby_q_012,ChIJF18FEjLXdDER2esvX8ZJRtg,VinaWash - Tân Phú,1,4.0,0.724484,0.6812078023000503,0.724484,14,4
+nearby_q_012,ChIJbeOvk1cpdTERJuxjZlCAdHg,Tiệm Rửa Xe Bảo Minh,1,16.0,0.627439,0.6534110230283242,0.627439,15,16
+nearby_q_012,ChIJE15xZR8pdTERjhHTMKfts8c,Trung tâm chăm sóc xe Phước Thắng,3,7.0,0.684902,0.5708712407104496,0.684902,16,7
+nearby_q_012,ChIJZcCZ49MrdTERqM8yPq0EMxs,Rửa xe 326,1,9.0,0.660899,0.5602291331262728,0.660899,17,9
+nearby_q_012,ChIJha2t3ekodTEReIYG_s_iMBg,Rửa Xe Thanh Vân,1,154.0,0.311138,0.4971110850084475,0.311138,18,154
+nearby_q_012,ChIJz-Ha0L0udTERtKlii4wCgYY,Rửa Xe 427,1,60.0,0.519508,0.4763833878554775,0.519508,19,60
+nearby_q_012,ChIJpwpSMJ8pdTERB-V-jQTgYcM,Tiệm rửa xe bình dân,2,152.0,0.318617,0.46101185996278143,0.318617,20,152
+nearby_q_012,ChIJZXS7KtkudTERR1DL-aT9xH8,Rửa xe Kỳ Hòa,2,84.0,0.476737,0.4530466889443347,0.476737,21,84
+nearby_q_012,ChIJCQmWVNMvdTERNLWPf_PE3WE,An Khang Detailing - Xưởng chăm xe vui vẻ,1,50.0,0.52933,0.3622077889984614,0.52933,22,50
+nearby_q_012,ChIJR49LHcItdTERIiTJj8DLsa0,XE ĐẸP DETAILING - ĐỘ XE Ô TÔ - ĐỖ XE 24/24 - RỬA XE,1,14.0,0.636251,0.3303537255673405,0.636251,23,14
+nearby_q_012,ChIJ_-SKGKoudTERHDEBvqz3CPU,Rửa Xe - Thay Nhớt Thuạn Lợi,1,28.0,0.587896,0.29991942563385476,0.587896,24,28
+nearby_q_012,ChIJjysE6x0pdTERwqN6DiGix8w,Dịch Vụ Rửa Xe 5 Sao,2,81.0,0.484167,0.2977356052977058,0.484167,25,81
+nearby_q_012,ChIJ9Vs22kovdTERow6znv_rO8k,Sửa - rửa xe HOÀNG THƯƠNG,1,45.0,0.535888,0.2718802456437943,0.535888,26,45
+nearby_q_012,ChIJC8RJnIwvdTER83b1UlHd4Xs,Rửa xe Vườn Lài,1,26.0,0.594744,0.2374563954728385,0.594744,27,26
+nearby_q_012,ChIJyYragc0pdTERJZUvuZwEEEc,SG Auto Detailing,1,41.0,0.559945,0.22700793643235212,0.559945,28,41
+nearby_q_012,ChIJ92uFsuYudTERvyQu9b8g8Ws,Rửa Xe Hiếu,1,76.0,0.49425,0.15337500871627807,0.49425,29,76
+nearby_q_012,ChIJqyScx6gvdTERn7780zpzSEs,Rửa xe Trọng Hữu,2,8.0,0.666911,0.14783574219720885,0.666911,30,8
+nearby_q_012,ChIJJaJF2-UrdTERHMb_1brVrU8,Gara Phú Thịnh Auto,1,12.0,0.646972,0.1320085483539862,0.646972,31,12
+nearby_q_012,ChIJZcUIDgApdTERdA46njrocSk,bãi giữ xe Tiến Dương,1,72.0,0.505107,0.12222822961164548,0.505107,32,72
+nearby_q_012,ChIJT_0lGQArdTERaQb3NJy4Io8,Trung tâm chăm sóc rửa xe Anh Em,1,42.0,0.540909,0.08470600236189736,0.540909,33,42
+nearby_q_012,ChIJAd9frigpdTERpugpDXEMxuY,Chỗ Rửa Xe,1,156.0,0.253613,0.08406539588922465,0.253613,34,156
+nearby_q_012,ChIJ71DAuAEsdTERTkng6PCOjp8,RỬA XE CƯỜNG,2,48.0,0.531599,0.05572626503501256,0.531599,35,48
+nearby_q_012,ChIJsWLDPNIrdTERTFyKf-ULxM4,Rửa Xe Máy - Ô tô,1,29.0,0.584192,0.044125456961264756,0.584192,36,29
+nearby_q_012,ChIJX6NdyzEpdTERJfHT9Uw_bMU,Rửa xe Nguyễn Thái Bình,1,40.0,0.560156,0.036883179637426225,0.560156,37,40
+nearby_q_012,ChIJM5mkDZgudTERa_PHXXgHoII,Rửa xe Hoàng Quân,1,80.0,0.486371,0.022196734349452525,0.486371,38,80
+nearby_q_012,ChIJmR_HbS8rdTERW_MPC6TllGQ,Rửa xe,1,35.0,0.569197,0.010077083379617113,0.569197,39,35
+nearby_q_012,ChIJ2Rcm-8gpdTERcJ2VC0tDbq4,Ô tô Tấn Tới Q12,3,146.0,0.36311,0.00035041613900738816,0.36311,40,146
+nearby_q_012,ChIJQxnzt3opdTERxCi-X6Y46v4,RỬA XE 3H,1,153.0,0.311449,-0.03795203952733481,0.311449,41,153
+nearby_q_012,ChIJg80AdX4pdTERC6nJbmzm1Yg,Rửa xe Bình Triệu Hoá Dầu,3,155.0,0.288463,-0.03795203952733481,0.288463,42,155
+nearby_q_012,ChIJm1O96dIudTERcD1jU6rlpNI,Tiệm Rửa Xe 67,1,49.0,0.531361,-0.061793278116097264,0.531361,43,49
+nearby_q_012,ChIJdx9agLApdTERe4xVTT63wng,Tiệm Rửa Xe Mạnh Tường,1,140.0,0.384976,-0.08093922284219882,0.384976,44,140
+nearby_q_012,ChIJ939LseMudTERpPKl4NCFgvs,Rửa Xe 33,1,151.0,0.329343,-0.08797714201575788,0.329343,45,151
+nearby_q_012,ChIJVXwIZgApdTER5YaO1M_iXx0,RỬA XE MÁY 297,1,54.0,0.525874,-0.11056978911560722,0.525874,46,54
+nearby_q_012,ChIJ1YVX-igvdTERaJMz766nH6U,Tiệm Rửa Xe 39,1,47.0,0.531851,-0.13181720283270243,0.531851,47,47
+nearby_q_012,ChIJ35wD6AIvdTERcdM5ZxvwoYA,Dịch Vụ Rửa Xe A Thuận,1,145.0,0.364799,-0.13637506163998886,0.364799,48,145
+nearby_q_012,ChIJSa9fcfIudTERW2NFs6Jbxcg,Tiệm Rửa Xe Minh Đức,2,107.0,0.437703,-0.1549959041297443,0.437703,49,107
+nearby_q_012,ChIJ8SzGl2spdTERykzQQPfiebQ,MINH VŨ - RỬA XE BÌNH THẠNH,2,147.0,0.361075,-0.17807811665908338,0.361075,50,147
+nearby_q_012,ChIJsUb44OErdTERLZRoEGZHttc,Rửa xe tự động Tiến Bộ,1,23.0,0.601164,-0.1821279366759121,0.601164,51,23
+nearby_q_012,ChIJgSi0jeArdTERVfVaVYFHD1I,Tiệm Rửa Xe 33,2,36.0,0.568589,-0.20176746358482558,0.568589,52,36
+nearby_q_012,ChIJ6yzjcqAvdTERcvVFrDNFz_M,RỬA XE 148,1,64.0,0.516104,-0.2091235197455769,0.516104,53,64
+nearby_q_012,ChIJ_ePva-IudTER3hqpNrbWafM,hethongchamsocxe.com,1,149.0,0.350069,-0.22329430149963203,0.350069,54,149
+nearby_q_012,ChIJlyvZpuQrdTERgPYy_5tbByM,Tiệm Rửa Xe - Thay Nhớt Ô Tô,3,31.0,0.578905,-0.24138811711242822,0.578905,55,31
+nearby_q_012,ChIJHU8nWgAvdTERICXUCipASJs,Dịch vụ rửa xe cộng đồng Chung Cư Lò Gốm,2,113.0,0.429505,-0.26746933486419366,0.429505,56,113
+nearby_q_012,ChIJ9xOW4RErdTERn0I4o_CR9J0,Tổng Kho Thiết Bị Rửa Xe Hồ Chí Minh - Miền Nam,2,53.0,0.527704,-0.27531320706277784,0.527704,57,53
+nearby_q_012,ChIJy7RnTAAvdTERuHa74kwoWG0,"Bãi Giữ Xe, Rửa Xe Ôtô 635 Nguyễn Trãi",1,132.0,0.399759,-0.32812023115744177,0.399759,58,132
+nearby_q_012,ChIJl5SjuawpdTERla2HXrd15Uo,Tiệm Rửa Xe & sửa xe 62 GN SCOOTER,1,143.0,0.378049,-0.33696441627478496,0.378049,59,143
+nearby_q_012,ChIJzxq5an8udTER_donYV9xq2o,Tiệm Rửa Xe Chí Hoàng,1,148.0,0.352835,-0.3404707244811203,0.352835,60,148
+nearby_q_012,ChIJuTqPJXQpdTERyZA9HLklfaY,Rửa xe,3,20.0,0.610665,-0.35628163895242304,0.610665,61,20
+nearby_q_012,ChIJIYuOTg4pdTERRp8sLayExvI,Máy Rửa Xe Cao Áp - Công Ty Sơn Tùng Lâm,2,109.0,0.433319,-0.3567231043810941,0.433319,62,109
+nearby_q_012,ChIJz4WbAOUpdTERs9rK7CsKajA,Quang Trung Auto,1,62.0,0.518884,-0.3665750283261942,0.518884,63,62
+nearby_q_012,ChIJAbCPoksqdTERvid1a9rOs9c,Rửa Xe 29,2,150.0,0.343429,-0.3940601588622619,0.343429,64,150
+nearby_q_012,ChIJwYnMSAAtdTERnVEwCXlMctE,Rửa xe máy - ô tô,1,39.0,0.560651,-0.3991451985279427,0.560651,65,39
+nearby_q_012,ChIJa0Ioe3kvdTERneUe8H-ItFc,Rửa xe bọt tuyết 34,1,21.0,0.610173,-0.40014633411572115,0.610173,66,21
+nearby_q_012,ChIJoSAZrJErdTERxuO2wsJ14fI,Tiệm rửa xe máy Phước,1,17.0,0.625277,-0.40558525467768525,0.625277,67,17
+nearby_q_012,ChIJd_9VbR8vdTEROPUOjqft6Mc,Rửa xe Hoàng,1,144.0,0.365998,-0.4059008554926196,0.365998,68,144
+nearby_q_012,ChIJgwxC60spdTER3x4ANrltVxE,40 phan tây hồ,1,73.0,0.503911,-0.4592684101683422,0.503911,69,73
+nearby_q_012,ChIJ2yMrw_8pdTER0DH_CbI0avI,Tiêm rửa xe phương thảo,1,88.0,0.464838,-0.46323628796683036,0.464838,70,88
+nearby_q_012,ChIJlZpef4grdTER7hfoHz9oAQM,Dịch Vụ Rửa Xe Tự Động Tiên Tiến,1,18.0,0.621419,-0.492871027410341,0.621419,71,18
+nearby_q_012,ChIJM7P_4-wudTERQ9H4dubIkvs,Dịch Vụ Rửa Xe 140,1,108.0,0.434557,-0.49514849348736,0.434557,72,108
+nearby_q_012,ChIJeUtNRwAvdTEReYPFG0EmXTA,Rửa xe oto xe máy SBS,1,52.0,0.528088,-0.5365412907100037,0.528088,73,52
+nearby_q_012,ChIJvYcOjuQodTER-rZvU9XLEfQ,Tiệm Rửa XeTrung Tín,1,139.0,0.385518,-0.5463276760820547,0.385518,74,139
+nearby_q_012,ChIJbbjeA9spdTER80lmGQK94QU,"🔧 Sửa Xe Tay Ga – Làm Nồi Tay Ga – Rửa Xe Moto Uy Tín Tại số 88 Nguyễn khuyến, Quận Bình Thạnh, TP.HCM",1,86.0,0.473058,-0.5724857545505425,0.473058,75,86
+nearby_q_012,ChIJT53MetordTERYUcGsCKCEdw,GRAGE - RỬA XE HOÀNG BÁCH OIL DEPOT,1,57.0,0.524057,-0.5857343994220405,0.524057,76,57
+nearby_q_012,ChIJO-rw2AcpdTERr0SQMgVXXwQ,Anh Thắng Service - Trung Tâm Chăm Sóc Xe Hơi Chuyên Nghiệp,2,85.0,0.476665,-0.6331563938592664,0.476665,77,85
+nearby_q_012,ChIJ0ajBbwArdTERR-yB5ICf2Rw,RS Car Detail | Chăm sóc xe có tâm,1,15.0,0.633076,-0.6403703647787533,0.633076,78,15
+nearby_q_012,ChIJPQcH7HctdTERjGPXTmOGnFI,Green Wash Auto - Chăm sóc & Nâng cấp Oto,1,122.0,0.413898,-0.6490565174325498,0.413898,79,122
+nearby_q_012,ChIJPQ8m-2EpdTERZKS8WSDmA08,Vá Vỏ Lưu Động - Rửa Xe ô tô Quận Tân Bình - Phượng Lân,2,32.0,0.578599,-0.6686905078548229,0.578599,80,32
+nearby_q_012,ChIJg3q4BHMpdTERTvfOjDMAfnw,Trung tâm Chăm sóc xe chuyên nghiệp Minh Huy,3,56.0,0.524476,-0.6744093195838287,0.524476,81,56
+nearby_q_012,ChIJuebhunwpdTER11Ktb4AyQSg,"Trung tâm chăm sóc, đồ chơi xe hơi Since 1985 Auto",1,34.0,0.572832,-0.6748605807851416,0.572832,82,34
+nearby_q_012,ChIJV85ZmMwtdTERpyNN1B1pnN0,Bờm Auto - Thuê xe tự lái & rửa xe,1,43.0,0.539554,-0.6857226529277092,0.539554,83,43
+nearby_q_012,ChIJsVkt-KstdTERJRNTjAS1Kng,Rửa Xe Bình Long,1,58.0,0.522444,-0.6863945045429753,0.522444,84,58
+nearby_q_012,ChIJxa8x3tEodTERlTMK1pUYjO4,Rửa Xe 192 - Phú Nhuận,1,70.0,0.505996,-0.7013153954115483,0.505996,85,70
+nearby_q_012,ChIJD8_xMecrdTERbto7m7NZdcg,Tiệm Rửa Xe Bảo Hoàng,1,65.0,0.514119,-0.7029400750177369,0.514119,86,65
+nearby_q_012,ChIJkSQ5sOsvdTERcNDqTNVgDCY,Rửa xe 79 Lý Thường Kiệt,3,24.0,0.599657,-0.7505137540120788,0.599657,87,24
+nearby_q_012,ChIJ8U3PEYcpdTERG1wm9NrHBgw,BÃI GIỮ XE & RỬA XE OTO 24/7,1,87.0,0.47275,-0.7695987220833972,0.47275,88,87
+nearby_q_012,ChIJoR3SkCwsdTER0lqlQ5kQF3c,Dịch Vụ Rửa Xe Mạnh Khang,1,135.0,0.392489,-0.7867484145132049,0.392489,89,135
+nearby_q_012,ChIJLUc60dYodTERVRhGesrzQM8,"Vòi rửa xe, máy bơm rửa xe",1,66.0,0.513242,-0.8097628433972046,0.513242,90,66
+nearby_q_012,ChIJTWxEfyUrdTERK5FoRgrpB2U,ADTEDEK Detailing | Dịch Vụ Rửa & Chăm Sóc Xe,1,77.0,0.492538,-0.8101891389842509,0.492538,91,77
+nearby_q_012,ChIJTaV9egApdTERWHqpwsaIPBA,Tèo rửa xe thay nhớt,1,55.0,0.525464,-0.8215991306759589,0.525464,92,55
+nearby_q_012,ChIJZTTHJQAtdTER30VeV0vaZtA,Rửa xe-thay nhớt Đức Minh,2,134.0,0.392595,-0.8272829826419323,0.392595,93,134
+nearby_q_012,ChIJdxjE8JMpdTERnAUyvPtxWuo,Car and motorcycle detailing,1,75.0,0.49718,-0.8439175182630467,0.49718,94,75
+nearby_q_012,ChIJnW6iKs4odTERV38FHz8ZxEs,Công Ty Cổ Phần Vietwash,3,104.0,0.444989,-0.8519296703902411,0.444989,95,104
+nearby_q_012,ChIJhaM33pgpdTERFUK5gtpsAB8,Tý Rửa Xe,3,136.0,0.391061,-0.8577673762164651,0.391061,96,136
+nearby_q_012,ChIJL2T8BY4udTERc2PfFI1z8OI,Tiệm Rửa Xe 130B Xóm Đất,1,118.0,0.421034,-0.8660934948821138,0.421034,97,118
+nearby_q_012,ChIJfXakHRkpdTER1n5X5stG_RM,Tiệm Rửa Xe Duy,1,37.0,0.567708,-0.8700089581725106,0.567708,98,37
+nearby_q_012,ChIJ85Fp_6otdTERGmUNEVAXaBs,Rưa xe Nhựt Linh,1,63.0,0.517075,-0.8781510139656101,0.517075,99,63
+nearby_q_012,ChIJ2fDrVDkpdTERT7jVOFeYn2Q,Rửa xe bubblesWash,1,105.0,0.443525,-0.8784858401609504,0.443525,100,105
+nearby_q_012,ChIJg_HsuhsrdTERiEPArN9ppyk,Tư Vấn Mở Tiệm Rửa Xe Ô Tô Xe Máy TEARU,1,59.0,0.520516,-0.8901351576826014,0.520516,101,59
+nearby_q_012,ChIJm15DTZMudTERfdLD0CoKvkk,Tiệm Rửa Xe Tuấn,2,120.0,0.417659,-0.8913690511124429,0.417659,102,120
+nearby_q_012,ChIJK7D8m28pdTEREKgyK6aySo8,Auto Care 68 - Chăm Sóc Xe Hơi Quận 12,2,79.0,0.491046,-0.9161626442844555,0.491046,103,79
+nearby_q_012,ChIJFXXccH8pdTERiiAE5msivWA,Rửa xe oto xe máy Lê Sơn,1,38.0,0.563152,-0.9263767465358657,0.563152,104,38
+nearby_q_012,ChIJxV9RcVModTERRrogNkgVv6E,Tiệm Rửa Xe Tí Nị,1,129.0,0.403847,-0.928864638282898,0.403847,105,129
+nearby_q_012,ChIJ38H8RSYtdTERwnKFSQ6DmEk,Rửa Xe Chuyên Nghiệp 409,1,83.0,0.478952,-0.9346628632169857,0.478952,106,83
+nearby_q_012,ChIJCTQOeB0vdTERFoN_cRNv9QA,Rửa Xe Huy Hoàng,1,130.0,0.403178,-0.9436984420364508,0.403178,107,130
+nearby_q_012,ChIJocSD1MAodTERy3XameV2IcM,Rửa Xe Bi,2,142.0,0.381458,-0.9618742871359576,0.381458,108,142
+nearby_q_012,ChIJUeoLG9IpdTERlD_pYZAakF0,Rửa Xe Thằng Bờm,1,115.0,0.427629,-0.9724794996142322,0.427629,109,115
+nearby_q_012,ChIJicio1KcpdTER027N-u4NYuc,Rửa Xe Thay Nhớt Lộc,1,106.0,0.438325,-0.9797738375305135,0.438325,110,106
+nearby_q_012,ChIJjf7EygApdTERQ0oAZlnGutw,Dịch Vụ Rửa Xe Tuấn,1,103.0,0.445375,-1.0142022997207036,0.445375,111,103
+nearby_q_012,ChIJJSEXFPwpdTERL6qFysNI0Y0,Rửa Xe Bọt Tuyết Duy Hiếu,1,111.0,0.430856,-1.0156096126100396,0.430856,112,111
+nearby_q_012,ChIJKXdY1iwrdTER2OyuGxR9dWI,Rửa xe Nam Vi,2,93.0,0.456821,-1.0297169632676186,0.456821,113,93
+nearby_q_012,ChIJMfw2TQAvdTER1SLfRI5lVQM,Rửa xe Ô tô - Xe máy 49 Thành Thái,1,71.0,0.505602,-1.029843700361542,0.505602,114,71
+nearby_q_012,ChIJv7ct6zMvdTERf-RfP3cNIyk,Rửa Xe 170,1,44.0,0.536358,-1.033683288689133,0.536358,115,44
+nearby_q_012,ChIJBRwQhiEvdTER3nNM1IQr4AU,Rửa xe 100B,1,112.0,0.43024,-1.0437912527976245,0.43024,116,112
+nearby_q_012,ChIJv6G-7lUpdTERQgfBIeAeSk4,Rửa xe 77,1,78.0,0.492207,-1.0460188472060563,0.492207,117,78
+nearby_q_012,ChIJhfQaIaopdTER2ELJYK5oEic,Rửa xe 54,2,133.0,0.396364,-1.1191267802204827,0.396364,118,133
+nearby_q_012,ChIJ_ePVDgApdTERic0nX2iwDUg,Rửa Xe 111,1,114.0,0.428574,-1.1274932943155456,0.428574,119,114
+nearby_q_012,ChIJEfV43q4vdTERoRbWxB-ctVM,Rửa xe tự động JetX,1,117.0,0.424949,-1.1294466158278706,0.424949,120,117
+nearby_q_012,ChIJt4iAA9QpdTERYuimTqEKPUg,D superwash,1,46.0,0.532437,-1.1891516096653667,0.532437,121,46
+nearby_q_012,ChIJgTH9XeQrdTERgB-2deLVAZc,Rửa Xe Hà Anh,1,27.0,0.589525,-1.208363888419804,0.589525,122,27
+nearby_q_012,ChIJAxwRPmwvdTERJPonxNY8yCU,VinaWash Phú Nhuận,1,67.0,0.512816,-1.2224524140765098,0.512816,123,67
+nearby_q_012,ChIJSxP8MwYtdTERSJoQpDIRBDM,RỬA XE CƯỜNG THỊNH,1,74.0,0.503398,-1.251190980799568,0.503398,124,74
+nearby_q_012,ChIJuVM5vFkpdTERKkgdaRrik7c,Gara Rửa Xe Ô Tô CARBI,1,126.0,0.409008,-1.2569729805466188,0.409008,125,126
+nearby_q_012,ChIJa-KQDNYpdTERi9r--Kt8tik,Rửa xe 22,1,96.0,0.454091,-1.286780854697675,0.454091,126,96
+nearby_q_012,ChIJE_yWQ6MudTERPyxFeTTaMm0,Rửa xe Hiệp Toàn,1,61.0,0.519259,-1.2889435360200432,0.519259,127,61
+nearby_q_012,ChIJA7QSL_kodTERp-zkuoE7Eec,Giữ Xe Ôtô Rửa Xe Ôtô - Xe Máy,1,131.0,0.401606,-1.3228647750669802,0.401606,128,131
+nearby_q_012,ChIJ5WuTUBgrdTERtF8COGP7HMk,Shitek Auto Detailing Tân Phú,1,19.0,0.610701,-1.3400822011456517,0.610701,129,19
+nearby_q_012,ChIJBe0M-o8udTERv_YNVumFqGw,2A Rửa xe Chuyên Nghiệp,2,100.0,0.449841,-1.3431350638179318,0.449841,130,100
+nearby_q_012,ChIJx7Jetc4udTERaURpkyVmgdg,Tiệm Rửa Xe Dân Trí,1,22.0,0.604792,-1.3510001981524085,0.604792,131,22
+nearby_q_012,ChIJAwIAypQpdTEROE4gFnnYQ-M,Rửa Xe Thằng Bờm 2 (294 Nguyễn Thái Sơn),1,124.0,0.411729,-1.3589850813249371,0.411729,132,124
+nearby_q_012,ChIJPZmXbh8rdTERGxpIuP3LKdg,Rửa xe ô tô xe máy,2,69.0,0.509038,-1.365452544229327,0.509038,133,69
+nearby_q_012,ChIJJ7nc98AodTER-eUOFyYSut0,RỬA XE MINH ĐỨC( MINH ĐỨC WASH),1,101.0,0.447977,-1.5005687017346956,0.447977,134,101
+nearby_q_012,ChIJ-yHgeYordTER4s81OrdG11M,Rửa Xe 247,1,116.0,0.426177,-1.5839970068535605,0.426177,135,116
+nearby_q_012,ChIJFdc1fQAvdTERJrNhc4N_YrA,Rửa xe chuyên nghiệp NAOTA MUOI DO with T,1,102.0,0.445553,-1.6365235605650044,0.445553,136,102
+nearby_q_012,ChIJv-X3SpcudTEROvT_nBGLfUs,Tiệm Rửa Xe 260,1,123.0,0.412001,-1.6370574589957687,0.412001,137,123
+nearby_q_012,ChIJJbmfLo8pdTERoAEm9vXAuW8,Rửa Xe 16,2,137.0,0.390032,-1.6663752323244239,0.390032,138,137
+nearby_q_012,ChIJZaU-GN8odTERlgCuwcK_Qt4,Rửa Xe Bi,1,25.0,0.594876,-1.6867497526394792,0.594876,139,25
+nearby_q_012,ChIJoXZmyu4rdTERbuUsj31vz1c,Tiệm Rửa Xe Tân Bình,1,94.0,0.456733,-1.7197820393719672,0.456733,140,94
+nearby_q_012,ChIJA5UVkV0pdTERqEQlYq83cjE,Chăm Sóc Xe Oto 362,1,125.0,0.41121,-1.7441368792921366,0.41121,141,125
+nearby_q_012,ChIJv0s95ZMudTER6sXb07AgUZg,Tiệm Rửa Xe Hòa,1,127.0,0.406771,-1.755825014756651,0.406771,142,127
+nearby_q_012,ChIJ19PwuJ0udTERUBh9phz0coc,Rửa Xe Trung Bảo,1,92.0,0.460719,-1.7604612418232781,0.460719,143,92
+nearby_q_012,ChIJeREh3fwpdTEREu1cZPxtdPc,"GodiCar Care Center - Spa Xe Oto, Xe Máy, Rửa Xe, Thay Nhớt, Dịch Vụ Trông Giữ Xe 24/24",1,68.0,0.511229,-1.7634175662682086,0.511229,144,68
+nearby_q_012,ChIJ10xYpLIrdTERfmLaNoCswF4,Tiệm Rửa Xe 527,1,138.0,0.387565,-1.8048487301634595,0.387565,145,138
+nearby_q_012,ChIJOaLdHtUudTERUEZfCm_bDLs,Rửa Xe Tiến Đạt 2,1,89.0,0.463007,-1.9569282812377877,0.463007,146,89
+nearby_q_012,ChIJv3cmeqgpdTER44dSE4M9Gbs,Dịch Vụ Rửa Xe Nghệ Thuật,1,110.0,0.432361,-1.9832771348807894,0.432361,147,110
+nearby_q_012,ChIJd2IusuArdTERDRvWXfWkKcc,Tiệm Rửa Xe 82,2,99.0,0.450175,-1.9855362578931492,0.450175,148,99
+nearby_q_012,ChIJ8ejDhhYsdTER38GORUgRfBs,Quán rửa xe Mười 305/11,2,121.0,0.417275,-2.0589153982654405,0.417275,149,121
+nearby_q_012,ChIJuc2eU-8rdTERRAGZtIvziVo,Cầu Nâng 1 Trụ Rửa Xe Ô Tô TAGORE,1,95.0,0.455983,-2.2134536688549824,0.455983,150,95
+nearby_q_012,ChIJcS_VSGIvdTERHwe7ppb-zVI,Rửa xe Nam,2,90.0,0.462681,-2.2244959517961016,0.462681,151,90
+nearby_q_012,ChIJ6cG9LpordTER2-KaPOsMb7U,Hệ Thống Rửa Xe Siêu Nhân Xanh,1,119.0,0.418502,-2.2265649112841404,0.418502,152,119
+nearby_q_012,ChIJiQcQmLQpdTERy68EeEtxhQs,Trung Tâm Chăm Sóc Xe 133,1,91.0,0.461021,-2.4780730833711098,0.461021,153,91
+nearby_q_012,ChIJgfiozZcrdTERgrpi6nzaZUw,Tiệm Rửa Xe Lợi,1,128.0,0.403911,-2.500194080976698,0.403911,154,128
+nearby_q_012,ChIJSyNDlccrdTERWfWofzGKPOc,Hoàng tấn rửa xe,1,98.0,0.450873,-2.9470528437121617,0.450873,155,98
+nearby_q_012,ChIJ7ccfhX0rdTERPu1BlnIPX1U,Rửa xe ô tô xe máy Anh Hạ,1,97.0,0.45244,-3.440143945276646,0.45244,156,97
+nearby_q_012,ChIJkaXsi8ovdTERV9vqRTJPqNQ,Storedetailing,0,,0.0,-6.411708841869883,0.0,157,157
+nearby_q_012,ChIJW4knxqEvdTERhuMXJ4-RYL8,"Tiệm rửa xe, sửa xe, bảo dưỡng xe 2 bánh - TN Detailing-Motorcycle wash",0,,0.0,-6.411708841869883,0.0,158,158
+nearby_q_012,ChIJh8yyigPYdDERalJPyL7NpNc,Tiệm Rửa Xe Thành,0,,0.0,-6.411708841869883,0.0,159,159
+nearby_q_012,ChIJkYfDXsUndTEREk9eYE2TDi8,Rửa Xe Takashi,0,,0.0,-6.411708841869883,0.0,160,160
+nearby_q_012,ChIJL3GiFugpdTER3DjuORNSeRI,Cứu Hộ Xe Máy - Sửa Xe Máy Tại Nhà 24h Minh Thành Motor,0,,0.0,-6.411708841869883,0.0,161,161
+nearby_q_012,ChIJ660DJwArdTERaswe-O5w_A4,Tiệm rửa xe ôtô xe máy,0,,0.0,-6.411708841869883,0.0,162,162
+nearby_q_012,ChIJwyhdiEsqdTERh06rOjUU_B0,"Tiệm rửa xe, vá lốp ôtô & xe máy Số 1",0,,0.0,-6.411708841869883,0.0,163,163
+nearby_q_012,ChIJU0GMXwApdTER0nAk4v8nxsw,"Rửa Xe 39 - Ôtô, Xe máy",0,,0.0,-6.411708841869883,0.0,164,164
+nearby_q_012,ChIJvxjCZQArdTERbx0gfTlKUB8,Tiệm Rửa Xe ÔTÔ & Xe Máy Dũng Hoàng,0,,0.0,-6.411708841869883,0.0,165,165
+nearby_q_012,ChIJLXbu5dIvdTER7g8ZL14rluM,Ánh Dương Detailing,0,,0.0,-6.411708841869883,0.0,166,166
+nearby_q_012,ChIJh49VXwQvdTERteVbwQETYQM,Dịch Vụ Rửa Xe 109,0,,0.0,-6.411708841869883,0.0,167,167
+nearby_q_012,ChIJzw1c3nMvdTERQ-_es7qw718,RỬA XE CẦU NÂNG-THAY NHỚT HƯNG PHÁT 24h/7-CHĂM SÓC XE AUTO CAR,0,,0.0,-6.411708841869883,0.0,168,168
+nearby_q_012,ChIJcUA7eZcvdTERegYfkM6PQMg,"Rửa xe, Thay nhớt Trí 48",0,,0.0,-6.411708841869883,0.0,169,169
+nearby_q_012,ChIJaS06HOMpdTERYF3alhmcRWg,2N Detailing Car,0,,0.0,-6.411708841869883,0.0,170,170
+nearby_q_012,ChIJB4-7VVcvdTERFGf8fzD2VKk,Rửa Xe Mai Tuấn,0,,0.0,-6.411708841869883,0.0,171,171
+nearby_q_012,ChIJV2CDWUsvdTERoCmtcUrUmaE,AUTOLINK VN Car Care Center,0,,0.0,-6.411708841869883,0.0,172,172
+nearby_q_012,ChIJN7tXj9ovdTERaHPUt88VtVs,Rửa xe Phong Phú,0,,0.0,-6.411708841869883,0.0,173,173
+nearby_q_012,ChIJQasFZlQudTERUnY-pRaF33E,Rua Xe 63,0,,0.0,-6.411708841869883,0.0,174,174
+nearby_q_012,ChIJKbcy81UudTERkpGdL9UcyRE,Wash & Oil - Trung Tâm Đầu Nhớt Và Rửa Xe Chuyên Nghiệp,0,,0.0,-6.411708841869883,0.0,175,175
+nearby_q_012,ChIJ8wSxnnIvdTER4tuq_TmGSO8,Tiệm Rửa Xe F1,0,,0.0,-6.411708841869883,0.0,176,176
+nearby_q_012,ChIJM1rb4cMldTERJN3k_5HfeXk,Q7 Auto Center - Rửa xe - Chăm sóc ô tô - Phụ kiện ô tô,0,,0.0,-6.411708841869883,0.0,177,177
+nearby_q_012,ChIJDbbGtm0vdTERVHUBjRDwqJ8,Trung Tâm Chăm Sóc Xe Minh Phát,0,,0.0,-6.411708841869883,0.0,178,178
+nearby_q_012,ChIJXYD4TbsvdTERiUCTTjugBFw,Dịch Vụ Rửa Xe Ô Tô Quang Thiên,0,,0.0,-6.411708841869883,0.0,179,179
+nearby_q_012,ChIJnYEfIYcvdTERyn-385Cj0go,"Thanh An Autocare - Vỏ Lốp, Cứu Hộ Ô Tô Chăm Sóc Xe Quận 7",0,,0.0,-6.411708841869883,0.0,180,180
+nearby_q_012,ChIJ6fxG6kIvdTER-Zg9XHB3_pw,Rửa Xe Bảo Long,0,,0.0,-6.411708841869883,0.0,181,181
+nearby_q_012,ChIJA7wsYakvdTERbeVCCoCEQaU,Rửa xe A Bảy,0,,0.0,-6.411708841869883,0.0,182,182
+nearby_q_012,ChIJpUp2VXAvdTER-hp9STrxCRM,Rửa Xe 116,0,,0.0,-6.411708841869883,0.0,183,183
+nearby_q_012,ChIJe6mdgWYvdTERBPBrRWm4bRg,Rửa xe Khiêm Khải,0,,0.0,-6.411708841869883,0.0,184,184
+nearby_q_012,ChIJk40j8kIudTERxtnQif0wKqg,Dịch Vụ Rửa Xe 16,0,,0.0,-6.411708841869883,0.0,185,185
+nearby_q_012,ChIJcdWx_y8vdTERmWnQ3Z1fsHI,Rửa Xe 20,0,,0.0,-6.411708841869883,0.0,186,186
+nearby_q_012,ChIJVRABlWgudTER_alEeJRJeOA,Phát Rửa Xe - Sửa Xe,0,,0.0,-6.411708841869883,0.0,187,187
+nearby_q_012,ChIJk3FpIa0vdTERpKPbusrwXtU,Rửa xe Bảo Đạt,0,,0.0,-6.411708841869883,0.0,188,188
+nearby_q_012,ChIJQ2Sr_mQudTERND7syqFzzcA,TIỆM RỬA XE BÌNH TIÊN,0,,0.0,-6.411708841869883,0.0,189,189
+nearby_q_012,ChIJSUcHOncvdTERA8WKVaoaJLs,Rửa Xe 37,0,,0.0,-6.411708841869883,0.0,190,190
+nearby_q_012,ChIJ43d1wJ4vdTERu3jbn2HEmZ4,Rửa xe Dũng,0,,0.0,-6.411708841869883,0.0,191,191
+nearby_q_012,ChIJb1SyKw8vdTERs2Yk2qoCtz8,Rửa xe Thành Trung,0,,0.0,-6.411708841869883,0.0,192,192
+nearby_q_012,ChIJmWMY5WQpdTERo53lf4hICZA,Rửa xe ô tô tự động JetX - Xô Viết Nghệ Tĩnh,0,,0.0,-6.411708841869883,0.0,193,193
+nearby_q_012,ChIJfV9rpNgtdTERuPdxlY4OJfU,Rửa Xe Bọt Tuyết - Thay Nhớt,0,,0.0,-6.411708841869883,0.0,194,194
+nearby_q_012,ChIJJf-tgPktdTERnMlZk454dfQ,Tiệm rửa xe 7talon - CN01,0,,0.0,-6.411708841869883,0.0,195,195
+nearby_q_012,ChIJu2tmmpspdTERCK-1gOJhBL4,Rửa xe Đình An,0,,0.0,-6.411708841869883,0.0,196,196
+nearby_q_012,ChIJX0Z3P5YvdTERE6aj5EboTX4,Rửa Xe Hoàng Thái 286/6,0,,0.0,-6.411708841869883,0.0,197,197
+nearby_q_012,ChIJ7UShNJwvdTER4KFEs3wRjA8,Rửa xe máy 79 Bọt tuyết Villa Hào,0,,0.0,-6.411708841869883,0.0,198,198
+nearby_q_012,ChIJpxll1HMvdTERs9PaZvJhiSQ,Tiệm Rửa Xe T & T,0,,0.0,-6.411708841869883,0.0,199,199
+nearby_q_012,ChIJl89HdFctdTERqKyEp2Nh9KA,Thiên Wash Super Car Q6,0,,0.0,-6.411708841869883,0.0,200,200
+nearby_q_012,ChIJebUewawodTERkj5o7Llokso,Rửa xe Cô Vân,0,,0.0,-6.411708841869883,0.0,201,201
+nearby_q_012,ChIJgQoKzTItdTERm747HBvuHis,Tiệm rửa xe thay nhớt dọn vệ sinh nội thất ôtô xe máy 287,0,,0.0,-6.411708841869883,0.0,202,202
+nearby_q_012,ChIJvc8fqo0ldTERYst7zDyC8MQ,RỬA XE MINH NHỰT,0,,0.0,-6.411708841869883,0.0,203,203
+nearby_q_012,ChIJGcObtsEvdTERtjKymIh1lkI,Rửa Xe Đức,0,,0.0,-6.411708841869883,0.0,204,204
+nearby_q_012,ChIJO8ghhXgudTER-_-GpmlNkdQ,Dịch Vụ Rửa Xe Thanh Sơn,0,,0.0,-6.411708841869883,0.0,205,205
+nearby_q_012,ChIJA3oXRKAvdTERP0Cd8Ub6Jhk,RỬA XE TÂN AN HUY (SWS),0,,0.0,-6.411708841869883,0.0,206,206
+nearby_q_012,ChIJvczLLHMudTERpJO_6uVwAaw,Bãi Giữ Xe Ô Tô - Rửa Xe 2574 Bình An,0,,0.0,-6.411708841869883,0.0,207,207
+nearby_q_012,ChIJ0YbuMNYtdTERyPPybjYDyGQ,Tiệm Rửa Xe Gia Huy,0,,0.0,-6.411708841869883,0.0,208,208
+nearby_q_012,ChIJK6JHgKsodTERm6UGeCKw7so,Rửa Xe - Thay Nhớt Tấn Phong,0,,0.0,-6.411708841869883,0.0,209,209
+nearby_q_012,ChIJPYTJFgAtdTERRSbUlwIzepw,Rửa xe ong bắp cầy,0,,0.0,-6.411708841869883,0.0,210,210
+nearby_q_012,ChIJL48FotcpdTEREQrDaq63f5Q,Nội thất ôtô Sài Thành,0,,0.0,-6.411708841869883,0.0,211,211
+nearby_q_012,ChIJndqxqskrdTERUv8TK3yNMA0,Rửa xe Thương Đoàn,0,,0.0,-6.411708841869883,0.0,212,212
+nearby_q_012,ChIJM_K8-IAvdTERWPZHJr-V6bM,Vietnam Car Care,0,,0.0,-6.411708841869883,0.0,213,213
+nearby_q_012,ChIJ-whsrHoldTERpgRPmx2F6OY,Bro Detailing,0,,0.0,-6.411708841869883,0.0,214,214
+nearby_q_012,ChIJb5Uen0QldTERBdvoB9UKu_s,BTWO Detailing - Dịch vụ chăm sóc xe,0,,0.0,-6.411708841869883,0.0,215,215
+nearby_q_012,ChIJp3zNbKItdTERosSqSZP7VAU,"Bãi Rửa Xe Máy, Xe Ô Tô Hoàng Vũ",0,,0.0,-6.411708841869883,0.0,216,216
+nearby_q_012,ChIJFff3FBMtdTERZbeRtTMhAvs,Rửa Xe Ô Tô - Xe Máy 24/24 Comeco,0,,0.0,-6.411708841869883,0.0,217,217
+nearby_q_012,ChIJdT26-jUsdTERdPzNGSL0gjM,Trung Tâm Rửa - Giữ Xe Oto - Xe Máy 68,0,,0.0,-6.411708841869883,0.0,218,218
+nearby_q_012,ChIJoT-HspgtdTERBcoGqMrCpq0,"Bãi Rửa Xe (xe máy,ôtô,xe tải)",0,,0.0,-6.411708841869883,0.0,219,219
+nearby_q_012,ChIJTWkqpMArdTER-wxvgnjxLIo,Tiệm Rửa Xe Minh Thuần,0,,0.0,-6.411708841869883,0.0,220,220
+nearby_q_012,ChIJuY52JmcpdTERhgDnRu-RC2s,Tiệm Rửa Xe Út,0,,0.0,-6.411708841869883,0.0,221,221
+nearby_q_012,ChIJ97n0EyErdTERKXa0j4I8VG8,Rửa xe Tin Tin,0,,0.0,-6.411708841869883,0.0,222,222
+nearby_q_012,ChIJzcBUKSUpdTERVr4l5CEefjo,Dịch vụ rửa xe Bo,0,,0.0,-6.411708841869883,0.0,223,223
+nearby_q_012,ChIJjZf3whUpdTERMvKAcT01n24,Cứu Hộ Xe Máy Tận Nơi - Minh Thành Motor,0,,0.0,-6.411708841869883,0.0,224,224
+nearby_q_012,ChIJa6iwecMvdTERsw1L3diejoA,"Sửa Xe, Cứu Hộ Xe Máy 24h - Minh Thành Motor",0,,0.0,-6.411708841869883,0.0,225,225
+nearby_q_012,ChIJtWbT9ecpdTERrtjuFdkeYPk,Bãi giữ xe ô tô Phú Nhuận,0,,0.0,-6.411708841869883,0.0,226,226
+nearby_q_012,ChIJk8NbU04pdTERq7ObcOY9c20,AKauto - Trung tâm chăm sóc & phụ kiện ô tô cao cấp,0,,0.0,-6.411708841869883,0.0,227,227
+nearby_q_012,ChIJ4TQNDSgndTERorwB5PIlsgg,VinaWash quận 9,0,,0.0,-6.411708841869883,0.0,228,228
+nearby_q_012,ChIJF1Qrl6cpdTERCXUfcS9g9NU,Rửa xe - Thay nhớt oto & xe máy,0,,0.0,-6.411708841869883,0.0,229,229
+nearby_q_012,ChIJZ1Hh4q0ndTER4eNwjGtjkJI,Tiệm Rửa Xe Việt,0,,0.0,-6.411708841869883,0.0,230,230
+nearby_q_012,ChIJI0jt1dQndTER-lWzmX3cff4,RỬA XE KHÔNG CHẠM,0,,0.0,-6.411708841869883,0.0,231,231
+nearby_q_012,ChIJmSZaf50vdTERibmZUmPQII8,Dịch Vụ Rửa Xe Huỳnh Sơn,0,,0.0,-6.411708841869883,0.0,232,232
+nearby_q_012,ChIJrxEhyIIvdTERpzjfV1HdYl8,Rửa Xe 21,0,,0.0,-6.411708841869883,0.0,233,233
+nearby_q_012,ChIJ0TqeIy0vdTERr_niNpsSS30,Rửa xe bọt tuyết PHẠM NGUYỄN,0,,0.0,-6.411708841869883,0.0,234,234
+nearby_q_012,ChIJ6XOOLpgvdTER9Zpy6y1jLbk,Dịch Vụ Rửa Xe 490,0,,0.0,-6.411708841869883,0.0,235,235
+nearby_q_012,ChIJQ6N5AO8udTERQ5hugngZmpE,Rửa Xe Văn Minh,0,,0.0,-6.411708841869883,0.0,236,236
+nearby_q_012,ChIJb6J3gXIvdTEROpw7m7E5HAE,Rửa Xe Dũng Phuộc,0,,0.0,-6.411708841869883,0.0,237,237
+nearby_q_012,ChIJkymt7dAudTERO7uajjNhIp4,Tiệm Rửa Xe Hùng,0,,0.0,-6.411708841869883,0.0,238,238
+nearby_q_012,ChIJocY7RBwsdTERRio-1BfS-60,Tiệm Rửa Xe Hoàng Uyên,0,,0.0,-6.411708841869883,0.0,239,239
+nearby_q_012,ChIJ6XVg57IvdTERzGUbWVVPQe0,Rua xe,0,,0.0,-6.411708841869883,0.0,240,240
+nearby_q_012,ChIJ37xIXCEvdTERBKA_XiotlJU,Rửa xe 103,0,,0.0,-6.411708841869883,0.0,241,241
+nearby_q_012,ChIJ_zTRdwAvdTER2eye_1Z6Db8,Rửa xe ô tô Trung Sơn,0,,0.0,-6.411708841869883,0.0,242,242
+nearby_q_012,ChIJLQDJI4MtdTER4cu80KJiWs4,"RỬA XE VÁ VỎ Ô TÔ, MOTO HUY TIẾN",0,,0.0,-6.411708841869883,0.0,243,243
+nearby_q_012,ChIJY8lsYOMrdTERMK1y_tV4cFc,Rửa xe Tý,0,,0.0,-6.411708841869883,0.0,244,244
+nearby_q_012,ChIJxaezAYIpdTERtKblomS9oMY,Rửa xe TrungUyen,0,,0.0,-6.411708841869883,0.0,245,245
+nearby_q_012,ChIJv7nemWYudTERASBX3GEc6Ts,Tiệm Rửa Xe 415,0,,0.0,-6.411708841869883,0.0,246,246
+nearby_q_012,ChIJaTNhOAAtdTERJAmFIrkm7Yk,Rửa Xe Bình Tân,0,,0.0,-6.411708841869883,0.0,247,247
+nearby_q_012,ChIJSc-2EWYpdTER86cfOB3XWws,Rửa xe máy,0,,0.0,-6.411708841869883,0.0,248,248
+nearby_q_012,ChIJeeGSwGUldTERc4yetbjW1Yk,Út Bình,0,,0.0,-6.411708841869883,0.0,249,249
+nearby_q_012,ChIJb_7JcNsldTERmRmUDwzGT9Y,Phước Tiến,0,,0.0,-6.411708841869883,0.0,250,250
+nearby_q_012,ChIJv7oKVWsvdTERKZXHvxDUeY4,Rửa Xe Văn Tí,0,,0.0,-6.411708841869883,0.0,251,251
+nearby_q_012,ChIJ00mjs4MudTERmzCqQnJyhY0,Car Wash 39,0,,0.0,-6.411708841869883,0.0,252,252
+nearby_q_012,ChIJ9a8bXo0vdTERXkEy5CO80R0,Chăm Xế Yêu - Rửa Xe Ô Tô,0,,0.0,-6.411708841869883,0.0,253,253
+nearby_q_012,ChIJz_m-GaIpdTERR4SUTNP30bA,Hệ Thống Sửa Xe Thông Minh,0,,0.0,-6.411708841869883,0.0,254,254
+nearby_q_012,ChIJEyPLQQApdTERpueJSPV2ToQ,SỬA XE GÒ VẤP,0,,0.0,-6.411708841869883,0.0,255,255
+nearby_q_012,ChIJhZmyTOEpdTERMHPFgKi-Um4,Sài Gòn Độ Xe Quận Gò Vấp,0,,0.0,-6.411708841869883,0.0,256,256
+nearby_q_012,ChIJX4vZDwApdTERo2QWWfyGHig,"Giữ Xe - Rửa Xe ÔTô, Trạm Sạc xe máy Điện, CaFe võng",0,,0.0,-6.411708841869883,0.0,257,257
+nearby_q_012,ChIJIQa8_2AodTERgYE5Dk16wKM,Trung Tâm Chăm Sóc Xe & Phụ Kiện Ôtô 4Car Workshop,0,,0.0,-6.411708841869883,0.0,258,258
+nearby_q_012,ChIJg4abnhErdTERq9xfcfvb11U,"Bãi giữ xe, rửa xe, trạm sạc điện Vinfast Phong Khanh",0,,0.0,-6.411708841869883,0.0,259,259
+nearby_q_012,ChIJy9M7QJUrdTERvTZsqYv0tBw,Rửa Xe Ngày Và Đêm U G,0,,0.0,-6.411708841869883,0.0,260,260
+nearby_q_012,ChIJq13uK6srdTERcKOBUF343aQ,Rửa Xe Gia Bảo,0,,0.0,-6.411708841869883,0.0,261,261
+nearby_q_012,ChIJI8kaYxIrdTERXYuIND-_3ic,Rửa Xe OTO Thắng-Tiến,0,,0.0,-6.411708841869883,0.0,262,262
+nearby_q_012,ChIJrfXCEZQrdTER5h7XQ-RQ4VA,Rửa Xe Nguyễn - Sơn,0,,0.0,-6.411708841869883,0.0,263,263
+nearby_q_012,ChIJkdLNs_srdTERQF25_xnbgJ0,Ngọc Sang Auto - Đồ Chơi Xe Hơi Tân Phú,0,,0.0,-6.411708841869883,0.0,264,264
+nearby_q_012,ChIJgwl_xBUrdTER3un7g5zC5cY,Cho thuê xe tự lái và có tài Hóc Môn,0,,0.0,-6.411708841869883,0.0,265,265
+nearby_q_012,ChIJw-9kyAgqdTERA0bZazcMx1o,Tiệm Rửa Xe Phú Quý,0,,0.0,-6.411708841869883,0.0,266,266
+nearby_q_012,ChIJbaNRdtnVdDERmhzyYcznyZo,Rửa Xe Hoàng Gia Việt,0,,0.0,-6.411708841869883,0.0,267,267
+nearby_q_012,ChIJyxtU8vfVdDERw-9qLa1MK8M,Tiệm Rửa Xe Thay Nhớt Hoàng Quân,0,,0.0,-6.411708841869883,0.0,268,268
+nearby_q_012,ChIJbZCluZDXdDER8jX1ufWzReU,"Rửa xe , chăm sóc xe VERA CAR CARE 2",0,,0.0,-6.411708841869883,0.0,269,269
+nearby_q_012,ChIJlSkmTjwrdTERdX5Kgq_CYKA,Rửa xe gia đình,0,,0.0,-6.411708841869883,0.0,270,270
+nearby_q_012,ChIJEWSSaQArdTER_6KocSIDZcs,Bãi Xe Rửa Xe Thành Cường,0,,0.0,-6.411708841869883,0.0,271,271
+nearby_q_012,ChIJ8cgcDQArdTERJKCORLEdiKk,Cầm đồ 253 & Giữ xe và rửa xe oto 24/24,0,,0.0,-6.411708841869883,0.0,272,272
+nearby_q_012,ChIJY_PppkgrdTERa_QtKO4qXgI,Bãi Giữ Xe - Rửa Xe Ô Tô 24/24 Gia Khang,0,,0.0,-6.411708841869883,0.0,273,273
+nearby_q_012,ChIJTYZFewDVdDERzcNshupbMXU,Tiệm sửa xe,0,,0.0,-6.411708841869883,0.0,274,274
+nearby_q_012,ChIJV2MBXPXVdDERrqBqk44dkt8,Garage Thuận Phát,0,,0.0,-6.411708841869883,0.0,275,275
+nearby_q_012,ChIJlW1eDPYpdTERQ05dcDLl6Uk,Trung Tâm Rửa & Chăm Sóc Xe Minh Dũng,0,,0.0,-6.411708841869883,0.0,276,276
+nearby_q_012,ChIJXSiFtJzVdDER2nLn6TYMnhc,Tiệm Rửa Xe Thái,0,,0.0,-6.411708841869883,0.0,277,277
+nearby_q_012,ChIJ9VaAAITVdDER31gtQy0qecw,Rửa Xe Boss,0,,0.0,-6.411708841869883,0.0,278,278
+nearby_q_012,ChIJQ1JvToPVdDER_eirCvuzVzA,Tiệm Rửa Xe Đức Hanh 888,0,,0.0,-6.411708841869883,0.0,279,279
+nearby_q_012,ChIJv3xb5istdTERLeEj_viEUDI,Rửa / Sửa Xe Ô Tô Gia Hào,0,,0.0,-6.411708841869883,0.0,280,280
+nearby_q_012,ChIJL1E_ZgApdTEROZWFCBEC05w,Rửa Xe Top 179,0,,0.0,-6.411708841869883,0.0,281,281
+nearby_q_012,ChIJob1-EQApdTERdNwTTxpM6tM,Rửa Xe Hữu Cảnh,0,,0.0,-6.411708841869883,0.0,282,282
+nearby_q_012,ChIJ9721s2s7dTERy0AnDBTSPRQ,Rửa xe 24h CAR-E,0,,0.0,-6.411708841869883,0.0,283,283
+nearby_q_012,ChIJoVKHv6ModTERuxDTu-wcay4,Rửa Xe 25D2,0,,0.0,-6.411708841869883,0.0,284,284
+nearby_q_012,ChIJiRHBAL0ndTERyve46wj343I,Rửa xe Bonbon Cao Đức Lân,0,,0.0,-6.411708841869883,0.0,285,285
+nearby_q_012,ChIJjUNOLo8pdTERylrlbw56UCY,Rửa xe 96,0,,0.0,-6.411708841869883,0.0,286,286
+nearby_q_012,ChIJzbcyLpEldTERaRG4SdE_Mz4,Rửa Xe Ô Tô - Bảo Dưỡng Xe Ô Tô Hoàng Thắng,0,,0.0,-6.411708841869883,0.0,287,287
+nearby_q_012,ChIJtX6NL1gpdTEREZ1knBMsOHQ,Tiệm Rửa Xe Văn Cường 27 Thanh Đa,0,,0.0,-6.411708841869883,0.0,288,288
+nearby_q_012,ChIJZQgWYgApdTERgDpsiiyGZHg,"Sửa xe, Vá Xe, Rửa xe Mạnh",0,,0.0,-6.411708841869883,0.0,289,289
+nearby_q_012,ChIJhekM2bcodTERGR_beHWznpM,Dịch Vụ Rửa Xe 49,0,,0.0,-6.411708841869883,0.0,290,290
+nearby_q_012,ChIJo7yvbeUpdTERTA_IPqSu_GQ,Rửa xe Bình Cao,0,,0.0,-6.411708841869883,0.0,291,291
+nearby_q_012,ChIJweYdIwAndTERUvTFA_n2MKg,Trung tâm Rửa xe ô tô - xe máy HCT,0,,0.0,-6.411708841869883,0.0,292,292
+nearby_q_012,ChIJ_2Nbe2MudTERBx8gpkmsanI,Dịch Vụ Rửa Xe 174,0,,0.0,-6.411708841869883,0.0,293,293
+nearby_q_012,ChIJb3kdn2IudTERX4OxCTaYy9k,Tiệm Rửa Xe 56,0,,0.0,-6.411708841869883,0.0,294,294
+nearby_q_012,ChIJB1pXPyAndTERd3m8Z-peLgY,Rửa xe Thủ Đức PKW,0,,0.0,-6.411708841869883,0.0,295,295
+nearby_q_012,ChIJw6raw9AodTER6m40CnmHSzc,Tiệm Rửa Xe Kim Long,0,,0.0,-6.411708841869883,0.0,296,296
+nearby_q_012,ChIJfQFiEXsudTERRTcUWWsMtwo,Văn Thân Rửa Xe - Thay Nhớt Chuyên Nghiệp,0,,0.0,-6.411708841869883,0.0,297,297
+nearby_q_012,ChIJs0DDBnoudTERgUbdUcRpgqc,Tiệm Rửa Xe Triều Dân,0,,0.0,-6.411708841869883,0.0,298,298
+nearby_q_012,ChIJs3qKUzYndTERtZLKKGlAA5w,Trung Tâm Chăm Sóc & Rửa Xe Ôtô Kakawa,0,,0.0,-6.411708841869883,0.0,299,299
+nearby_q_012,ChIJ5VRWHZwvdTERo5va1R_RLVo,Rửa Xe Sạch,0,,0.0,-6.411708841869883,0.0,300,300
+nearby_q_012,ChIJpbaCFXgudTERcsNR4Pae4Mk,Tiệm Rửa Xe Anh Huy,0,,0.0,-6.411708841869883,0.0,301,301
+route_q_001,ChIJeUtNRwAvdTEReYPFG0EmXTA,Rửa xe oto xe máy SBS,2,6.0,0.768351,1.9365824985370843,0.768351,1,6
+route_q_001,ChIJdxjE8JMpdTERnAUyvPtxWuo,Car and motorcycle detailing,2,7.0,0.767375,1.3434797955203894,0.767375,2,7
+route_q_001,ChIJ2fDrVDkpdTERT7jVOFeYn2Q,Rửa xe bubblesWash,1,14.0,0.69656,1.214499226360882,0.69656,3,14
+route_q_001,ChIJ1YVX-igvdTERaJMz766nH6U,Tiệm Rửa Xe 39,1,13.0,0.707867,1.0794518303535943,0.707867,4,13
+route_q_001,ChIJAxwRPmwvdTERJPonxNY8yCU,VinaWash Phú Nhuận,2,1.0,0.870659,1.0596428440455175,0.870659,5,1
+route_q_001,ChIJjZf3whUpdTERMvKAcT01n24,Cứu Hộ Xe Máy Tận Nơi - Minh Thành Motor,1,2.0,0.838413,0.7959041044366348,0.838413,6,2
+route_q_001,ChIJIYuOTg4pdTERRp8sLayExvI,Máy Rửa Xe Cao Áp - Công Ty Sơn Tùng Lâm,3,3.0,0.826776,0.7045701192447087,0.826776,7,3
+route_q_001,ChIJBVGXtx4pdTERLe9VRcHr_Ao,Rửa xe hơi,1,34.0,0.361089,0.48275676139041224,0.361089,8,34
+route_q_001,ChIJt4iAA9QpdTERYuimTqEKPUg,D superwash,1,25.0,0.576972,0.4750982000370447,0.576972,9,25
+route_q_001,ChIJm1O96dIudTERcD1jU6rlpNI,Tiệm Rửa Xe 67,3,17.0,0.67939,0.44625762386688095,0.67939,10,17
+route_q_001,ChIJv7ct6zMvdTERf-RfP3cNIyk,Rửa Xe 170,1,5.0,0.773233,0.443325695753805,0.773233,11,5
+route_q_001,ChIJgwxC60spdTER3x4ANrltVxE,40 phan tây hồ,1,8.0,0.7665,0.3440871664678846,0.7665,12,8
+route_q_001,ChIJbbjeA9spdTER80lmGQK94QU,"🔧 Sửa Xe Tay Ga – Làm Nồi Tay Ga – Rửa Xe Moto Uy Tín Tại số 88 Nguyễn khuyến, Quận Bình Thạnh, TP.HCM",1,4.0,0.776689,0.3186412280743325,0.776689,13,4
+route_q_001,ChIJ_ePVDgApdTERic0nX2iwDUg,Rửa Xe 111,2,15.0,0.688578,0.20462308828158254,0.688578,14,15
+route_q_001,ChIJZaU-GN8odTERlgCuwcK_Qt4,Rửa Xe Bi,1,18.0,0.673816,0.07330032215240412,0.673816,15,18
+route_q_001,ChIJa6iwecMvdTERsw1L3diejoA,"Sửa Xe, Cứu Hộ Xe Máy 24h - Minh Thành Motor",1,12.0,0.721108,0.054588610940526236,0.721108,16,12
+route_q_001,ChIJuTqPJXQpdTERyZA9HLklfaY,Rửa xe,1,32.0,0.492151,-0.17234423790794243,0.492151,17,32
+route_q_001,ChIJtWbT9ecpdTERrtjuFdkeYPk,Bãi giữ xe ô tô Phú Nhuận,1,16.0,0.685369,-0.19568576111351788,0.685369,18,16
+route_q_001,ChIJeREh3fwpdTEREu1cZPxtdPc,"GodiCar Care Center - Spa Xe Oto, Xe Máy, Rửa Xe, Thay Nhớt, Dịch Vụ Trông Giữ Xe 24/24",1,21.0,0.646248,-0.2580418718462447,0.646248,19,21
+route_q_001,ChIJJ7nc98AodTER-eUOFyYSut0,RỬA XE MINH ĐỨC( MINH ĐỨC WASH),2,9.0,0.755692,-0.3489008387894086,0.755692,20,9
+route_q_001,ChIJ2yMrw_8pdTER0DH_CbI0avI,Tiêm rửa xe phương thảo,1,19.0,0.656793,-0.35899890274197865,0.656793,21,19
+route_q_001,ChIJL3GiFugpdTER3DjuORNSeRI,Cứu Hộ Xe Máy - Sửa Xe Máy Tại Nhà 24h Minh Thành Motor,1,11.0,0.741934,-0.45933799329306785,0.741934,22,11
+route_q_001,ChIJa-KQDNYpdTERi9r--Kt8tik,Rửa xe 22,1,22.0,0.631116,-0.4969668969083254,0.631116,23,22
+route_q_001,ChIJmWMY5WQpdTERo53lf4hICZA,Rửa xe ô tô tự động JetX - Xô Viết Nghệ Tĩnh,2,10.0,0.754977,-0.573915456994822,0.754977,24,10
+route_q_001,ChIJK6JHgKsodTERm6UGeCKw7so,Rửa Xe - Thay Nhớt Tấn Phong,2,23.0,0.599579,-0.6834149964549429,0.599579,25,23
+route_q_001,ChIJE15xZR8pdTERjhHTMKfts8c,Trung tâm chăm sóc xe Phước Thắng,1,24.0,0.592995,-0.6998871889605321,0.592995,26,24
+route_q_001,ChIJZ1Hh4q0ndTER4eNwjGtjkJI,Tiệm Rửa Xe Việt,1,29.0,0.535055,-0.7085743898412946,0.535055,27,29
+route_q_001,ChIJBRwQhiEvdTER3nNM1IQr4AU,Rửa xe 100B,1,30.0,0.517599,-0.7477527382802589,0.517599,28,30
+route_q_001,ChIJF1Qrl6cpdTERCXUfcS9g9NU,Rửa xe - Thay nhớt oto & xe máy,3,28.0,0.536175,-0.7597946511055875,0.536175,29,28
+route_q_001,ChIJx7Jetc4udTERaURpkyVmgdg,Tiệm Rửa Xe Dân Trí,3,26.0,0.55532,-0.8473653474718037,0.55532,30,26
+route_q_001,ChIJMfw2TQAvdTER1SLfRI5lVQM,Rửa xe Ô tô - Xe máy 49 Thành Thái,3,33.0,0.469693,-0.9287216512156671,0.469693,31,33
+route_q_001,ChIJI0jt1dQndTER-lWzmX3cff4,RỬA XE KHÔNG CHẠM,1,31.0,0.514695,-1.6705097010201309,0.514695,32,31
+route_q_001,ChIJ4TQNDSgndTERorwB5PIlsgg,VinaWash quận 9,1,27.0,0.553935,-1.756577960787815,0.553935,33,27
+route_q_001,ChIJk8NbU04pdTERq7ObcOY9c20,AKauto - Trung tâm chăm sóc & phụ kiện ô tô cao cấp,1,20.0,0.650133,-1.776632152149497,0.650133,34,20
+route_q_001,ChIJkaXsi8ovdTERV9vqRTJPqNQ,Storedetailing,0,,0.0,-6.411708841869883,0.0,35,35
+route_q_001,ChIJR49LHcItdTERIiTJj8DLsa0,XE ĐẸP DETAILING - ĐỘ XE Ô TÔ - ĐỖ XE 24/24 - RỬA XE,0,,0.0,-6.411708841869883,0.0,36,36
+route_q_001,ChIJCQmWVNMvdTERNLWPf_PE3WE,An Khang Detailing - Xưởng chăm xe vui vẻ,0,,0.0,-6.411708841869883,0.0,37,37
+route_q_001,ChIJW4knxqEvdTERhuMXJ4-RYL8,"Tiệm rửa xe, sửa xe, bảo dưỡng xe 2 bánh - TN Detailing-Motorcycle wash",0,,0.0,-6.411708841869883,0.0,38,38
+route_q_001,ChIJh8yyigPYdDERalJPyL7NpNc,Tiệm Rửa Xe Thành,0,,0.0,-6.411708841869883,0.0,39,39
+route_q_001,ChIJkYfDXsUndTEREk9eYE2TDi8,Rửa Xe Takashi,0,,0.0,-6.411708841869883,0.0,40,40
+route_q_001,ChIJ660DJwArdTERaswe-O5w_A4,Tiệm rửa xe ôtô xe máy,0,,0.0,-6.411708841869883,0.0,41,41
+route_q_001,ChIJwyhdiEsqdTERh06rOjUU_B0,"Tiệm rửa xe, vá lốp ôtô & xe máy Số 1",0,,0.0,-6.411708841869883,0.0,42,42
+route_q_001,ChIJU0GMXwApdTER0nAk4v8nxsw,"Rửa Xe 39 - Ôtô, Xe máy",0,,0.0,-6.411708841869883,0.0,43,43
+route_q_001,ChIJvxjCZQArdTERbx0gfTlKUB8,Tiệm Rửa Xe ÔTÔ & Xe Máy Dũng Hoàng,0,,0.0,-6.411708841869883,0.0,44,44
+route_q_001,ChIJ92uFsuYudTERvyQu9b8g8Ws,Rửa Xe Hiếu,0,,0.0,-6.411708841869883,0.0,45,45
+route_q_001,ChIJ9Vs22kovdTERow6znv_rO8k,Sửa - rửa xe HOÀNG THƯƠNG,0,,0.0,-6.411708841869883,0.0,46,46
+route_q_001,ChIJLXbu5dIvdTER7g8ZL14rluM,Ánh Dương Detailing,0,,0.0,-6.411708841869883,0.0,47,47
+route_q_001,ChIJh49VXwQvdTERteVbwQETYQM,Dịch Vụ Rửa Xe 109,0,,0.0,-6.411708841869883,0.0,48,48
+route_q_001,ChIJ35wD6AIvdTERcdM5ZxvwoYA,Dịch Vụ Rửa Xe A Thuận,0,,0.0,-6.411708841869883,0.0,49,49
+route_q_001,ChIJy7RnTAAvdTERuHa74kwoWG0,"Bãi Giữ Xe, Rửa Xe Ôtô 635 Nguyễn Trãi",0,,0.0,-6.411708841869883,0.0,50,50
+route_q_001,ChIJzw1c3nMvdTERQ-_es7qw718,RỬA XE CẦU NÂNG-THAY NHỚT HƯNG PHÁT 24h/7-CHĂM SÓC XE AUTO CAR,0,,0.0,-6.411708841869883,0.0,51,51
+route_q_001,ChIJcUA7eZcvdTERegYfkM6PQMg,"Rửa xe, Thay nhớt Trí 48",0,,0.0,-6.411708841869883,0.0,52,52
+route_q_001,ChIJaS06HOMpdTERYF3alhmcRWg,2N Detailing Car,0,,0.0,-6.411708841869883,0.0,53,53
+route_q_001,ChIJZXS7KtkudTERR1DL-aT9xH8,Rửa xe Kỳ Hòa,0,,0.0,-6.411708841869883,0.0,54,54
+route_q_001,ChIJB4-7VVcvdTERFGf8fzD2VKk,Rửa Xe Mai Tuấn,0,,0.0,-6.411708841869883,0.0,55,55
+route_q_001,ChIJV2CDWUsvdTERoCmtcUrUmaE,AUTOLINK VN Car Care Center,0,,0.0,-6.411708841869883,0.0,56,56
+route_q_001,ChIJN7tXj9ovdTERaHPUt88VtVs,Rửa xe Phong Phú,0,,0.0,-6.411708841869883,0.0,57,57
+route_q_001,ChIJSa9fcfIudTERW2NFs6Jbxcg,Tiệm Rửa Xe Minh Đức,0,,0.0,-6.411708841869883,0.0,58,58
+route_q_001,ChIJQasFZlQudTERUnY-pRaF33E,Rua Xe 63,0,,0.0,-6.411708841869883,0.0,59,59
+route_q_001,ChIJKbcy81UudTERkpGdL9UcyRE,Wash & Oil - Trung Tâm Đầu Nhớt Và Rửa Xe Chuyên Nghiệp,0,,0.0,-6.411708841869883,0.0,60,60
+route_q_001,ChIJM7P_4-wudTERQ9H4dubIkvs,Dịch Vụ Rửa Xe 140,0,,0.0,-6.411708841869883,0.0,61,61
+route_q_001,ChIJ8wSxnnIvdTER4tuq_TmGSO8,Tiệm Rửa Xe F1,0,,0.0,-6.411708841869883,0.0,62,62
+route_q_001,ChIJGfU0Z-ovdTERc2ehGxgW5Os,Tiệm Sửa Xe Rửa Xe Máy 528,0,,0.0,-6.411708841869883,0.0,63,63
+route_q_001,ChIJEfV43q4vdTERoRbWxB-ctVM,Rửa xe tự động JetX,0,,0.0,-6.411708841869883,0.0,64,64
+route_q_001,ChIJ6yzjcqAvdTERcvVFrDNFz_M,RỬA XE 148,0,,0.0,-6.411708841869883,0.0,65,65
+route_q_001,ChIJM1rb4cMldTERJN3k_5HfeXk,Q7 Auto Center - Rửa xe - Chăm sóc ô tô - Phụ kiện ô tô,0,,0.0,-6.411708841869883,0.0,66,66
+route_q_001,ChIJDbbGtm0vdTERVHUBjRDwqJ8,Trung Tâm Chăm Sóc Xe Minh Phát,0,,0.0,-6.411708841869883,0.0,67,67
+route_q_001,ChIJqyScx6gvdTERn7780zpzSEs,Rửa xe Trọng Hữu,0,,0.0,-6.411708841869883,0.0,68,68
+route_q_001,ChIJXYD4TbsvdTERiUCTTjugBFw,Dịch Vụ Rửa Xe Ô Tô Quang Thiên,0,,0.0,-6.411708841869883,0.0,69,69
+route_q_001,ChIJkSQ5sOsvdTERcNDqTNVgDCY,Rửa xe 79 Lý Thường Kiệt,0,,0.0,-6.411708841869883,0.0,70,70
+route_q_001,ChIJnYEfIYcvdTERyn-385Cj0go,"Thanh An Autocare - Vỏ Lốp, Cứu Hộ Ô Tô Chăm Sóc Xe Quận 7",0,,0.0,-6.411708841869883,0.0,71,71
+route_q_001,ChIJ6fxG6kIvdTER-Zg9XHB3_pw,Rửa Xe Bảo Long,0,,0.0,-6.411708841869883,0.0,72,72
+route_q_001,ChIJA7wsYakvdTERbeVCCoCEQaU,Rửa xe A Bảy,0,,0.0,-6.411708841869883,0.0,73,73
+route_q_001,ChIJpUp2VXAvdTER-hp9STrxCRM,Rửa Xe 116,0,,0.0,-6.411708841869883,0.0,74,74
+route_q_001,ChIJxa8x3tEodTERlTMK1pUYjO4,Rửa Xe 192 - Phú Nhuận,0,,0.0,-6.411708841869883,0.0,75,75
+route_q_001,ChIJHU8nWgAvdTERICXUCipASJs,Dịch vụ rửa xe cộng đồng Chung Cư Lò Gốm,0,,0.0,-6.411708841869883,0.0,76,76
+route_q_001,ChIJe6mdgWYvdTERBPBrRWm4bRg,Rửa xe Khiêm Khải,0,,0.0,-6.411708841869883,0.0,77,77
+route_q_001,ChIJm15DTZMudTERfdLD0CoKvkk,Tiệm Rửa Xe Tuấn,0,,0.0,-6.411708841869883,0.0,78,78
+route_q_001,ChIJLUc60dYodTERVRhGesrzQM8,"Vòi rửa xe, máy bơm rửa xe",0,,0.0,-6.411708841869883,0.0,79,79
+route_q_001,ChIJz-Ha0L0udTERtKlii4wCgYY,Rửa Xe 427,0,,0.0,-6.411708841869883,0.0,80,80
+route_q_001,ChIJL2T8BY4udTERc2PfFI1z8OI,Tiệm Rửa Xe 130B Xóm Đất,0,,0.0,-6.411708841869883,0.0,81,81
+route_q_001,ChIJTaV9egApdTERWHqpwsaIPBA,Tèo rửa xe thay nhớt,0,,0.0,-6.411708841869883,0.0,82,82
+route_q_001,ChIJ8fZM-OwvdTER_f1tQEM9__I,Rửa xe Ô Tô - Xe Máy Kiết Lân,0,,0.0,-6.411708841869883,0.0,83,83
+route_q_001,ChIJBe0M-o8udTERv_YNVumFqGw,2A Rửa xe Chuyên Nghiệp,0,,0.0,-6.411708841869883,0.0,84,84
+route_q_001,ChIJ1ZUpBBEpdTERVTiWZz1qDEM,DIAMOND DETAILING - Chăm sóc xe chuyên nghiệp Tân Bình,0,,0.0,-6.411708841869883,0.0,85,85
+route_q_001,ChIJd1yMf7YvdTERJDoGEVtrQy0,RỬA XE CHĂM SÓC XE Ô TÔ CHUYÊN NGHIỆP - LUX AUTO DETAILING,0,,0.0,-6.411708841869883,0.0,86,86
+route_q_001,ChIJV85ZmMwtdTERpyNN1B1pnN0,Bờm Auto - Thuê xe tự lái & rửa xe,0,,0.0,-6.411708841869883,0.0,87,87
+route_q_001,ChIJk40j8kIudTERxtnQif0wKqg,Dịch Vụ Rửa Xe 16,0,,0.0,-6.411708841869883,0.0,88,88
+route_q_001,ChIJOaLdHtUudTERUEZfCm_bDLs,Rửa Xe Tiến Đạt 2,0,,0.0,-6.411708841869883,0.0,89,89
+route_q_001,ChIJwYnMSAAtdTERnVEwCXlMctE,Rửa xe máy - ô tô,0,,0.0,-6.411708841869883,0.0,90,90
+route_q_001,ChIJcdWx_y8vdTERmWnQ3Z1fsHI,Rửa Xe 20,0,,0.0,-6.411708841869883,0.0,91,91
+route_q_001,ChIJVRABlWgudTER_alEeJRJeOA,Phát Rửa Xe - Sửa Xe,0,,0.0,-6.411708841869883,0.0,92,92
+route_q_001,ChIJk3FpIa0vdTERpKPbusrwXtU,Rửa xe Bảo Đạt,0,,0.0,-6.411708841869883,0.0,93,93
+route_q_001,ChIJQ2Sr_mQudTERND7syqFzzcA,TIỆM RỬA XE BÌNH TIÊN,0,,0.0,-6.411708841869883,0.0,94,94
+route_q_001,ChIJ4125gUwpdTERrnzAA-z9GJs,TIỆM RỬA XE THAY NHỚT 25,0,,0.0,-6.411708841869883,0.0,95,95
+route_q_001,ChIJv0s95ZMudTER6sXb07AgUZg,Tiệm Rửa Xe Hòa,0,,0.0,-6.411708841869883,0.0,96,96
+route_q_001,ChIJSUcHOncvdTERA8WKVaoaJLs,Rửa Xe 37,0,,0.0,-6.411708841869883,0.0,97,97
+route_q_001,ChIJ43d1wJ4vdTERu3jbn2HEmZ4,Rửa xe Dũng,0,,0.0,-6.411708841869883,0.0,98,98
+route_q_001,ChIJnW6iKs4odTERV38FHz8ZxEs,Công Ty Cổ Phần Vietwash,0,,0.0,-6.411708841869883,0.0,99,99
+route_q_001,ChIJM5mkDZgudTERa_PHXXgHoII,Rửa xe Hoàng Quân,0,,0.0,-6.411708841869883,0.0,100,100
+route_q_001,ChIJb1SyKw8vdTERs2Yk2qoCtz8,Rửa xe Thành Trung,0,,0.0,-6.411708841869883,0.0,101,101
+route_q_001,ChIJPQcH7HctdTERjGPXTmOGnFI,Green Wash Auto - Chăm sóc & Nâng cấp Oto,0,,0.0,-6.411708841869883,0.0,102,102
+route_q_001,ChIJ7RD6mUQpdTERda6cUV17nPc,Rửa xe máy,0,,0.0,-6.411708841869883,0.0,103,103
+route_q_001,ChIJfV9rpNgtdTERuPdxlY4OJfU,Rửa Xe Bọt Tuyết - Thay Nhớt,0,,0.0,-6.411708841869883,0.0,104,104
+route_q_001,ChIJJf-tgPktdTERnMlZk454dfQ,Tiệm rửa xe 7talon - CN01,0,,0.0,-6.411708841869883,0.0,105,105
+route_q_001,ChIJu2tmmpspdTERCK-1gOJhBL4,Rửa xe Đình An,0,,0.0,-6.411708841869883,0.0,106,106
+route_q_001,ChIJ9zaRTX4udTERBr7JULUfLd8,707 Zone - Rửa Xe 707,0,,0.0,-6.411708841869883,0.0,107,107
+route_q_001,ChIJX0Z3P5YvdTERE6aj5EboTX4,Rửa Xe Hoàng Thái 286/6,0,,0.0,-6.411708841869883,0.0,108,108
+route_q_001,ChIJ7UShNJwvdTER4KFEs3wRjA8,Rửa xe máy 79 Bọt tuyết Villa Hào,0,,0.0,-6.411708841869883,0.0,109,109
+route_q_001,ChIJpxll1HMvdTERs9PaZvJhiSQ,Tiệm Rửa Xe T & T,0,,0.0,-6.411708841869883,0.0,110,110
+route_q_001,ChIJcS_VSGIvdTERHwe7ppb-zVI,Rửa xe Nam,0,,0.0,-6.411708841869883,0.0,111,111
+route_q_001,ChIJ19PwuJ0udTERUBh9phz0coc,Rửa Xe Trung Bảo,0,,0.0,-6.411708841869883,0.0,112,112
+route_q_001,ChIJl89HdFctdTERqKyEp2Nh9KA,Thiên Wash Super Car Q6,0,,0.0,-6.411708841869883,0.0,113,113
+route_q_001,ChIJebUewawodTERkj5o7Llokso,Rửa xe Cô Vân,0,,0.0,-6.411708841869883,0.0,114,114
+route_q_001,ChIJFdc1fQAvdTERJrNhc4N_YrA,Rửa xe chuyên nghiệp NAOTA MUOI DO with T,0,,0.0,-6.411708841869883,0.0,115,115
+route_q_001,ChIJzxq5an8udTER_donYV9xq2o,Tiệm Rửa Xe Chí Hoàng,0,,0.0,-6.411708841869883,0.0,116,116
+route_q_001,ChIJgQoKzTItdTERm747HBvuHis,Tiệm rửa xe thay nhớt dọn vệ sinh nội thất ôtô xe máy 287,0,,0.0,-6.411708841869883,0.0,117,117
+route_q_001,ChIJvc8fqo0ldTERYst7zDyC8MQ,RỬA XE MINH NHỰT,0,,0.0,-6.411708841869883,0.0,118,118
+route_q_001,ChIJFXXccH8pdTERiiAE5msivWA,Rửa xe oto xe máy Lê Sơn,0,,0.0,-6.411708841869883,0.0,119,119
+route_q_001,ChIJGcObtsEvdTERtjKymIh1lkI,Rửa Xe Đức,0,,0.0,-6.411708841869883,0.0,120,120
+route_q_001,ChIJO8ghhXgudTER-_-GpmlNkdQ,Dịch Vụ Rửa Xe Thanh Sơn,0,,0.0,-6.411708841869883,0.0,121,121
+route_q_001,ChIJhfQaIaopdTER2ELJYK5oEic,Rửa xe 54,0,,0.0,-6.411708841869883,0.0,122,122
+route_q_001,ChIJoR3SkCwsdTER0lqlQ5kQF3c,Dịch Vụ Rửa Xe Mạnh Khang,0,,0.0,-6.411708841869883,0.0,123,123
+route_q_001,ChIJocSD1MAodTERy3XameV2IcM,Rửa Xe Bi,0,,0.0,-6.411708841869883,0.0,124,124
+route_q_001,ChIJC8RJnIwvdTER83b1UlHd4Xs,Rửa xe Vườn Lài,0,,0.0,-6.411708841869883,0.0,125,125
+route_q_001,ChIJZTTHJQAtdTER30VeV0vaZtA,Rửa xe-thay nhớt Đức Minh,0,,0.0,-6.411708841869883,0.0,126,126
+route_q_001,ChIJa0Ioe3kvdTERneUe8H-ItFc,Rửa xe bọt tuyết 34,0,,0.0,-6.411708841869883,0.0,127,127
+route_q_001,ChIJA3oXRKAvdTERP0Cd8Ub6Jhk,RỬA XE TÂN AN HUY (SWS),0,,0.0,-6.411708841869883,0.0,128,128
+route_q_001,ChIJvczLLHMudTERpJO_6uVwAaw,Bãi Giữ Xe Ô Tô - Rửa Xe 2574 Bình An,0,,0.0,-6.411708841869883,0.0,129,129
+route_q_001,ChIJ_-SKGKoudTERHDEBvqz3CPU,Rửa Xe - Thay Nhớt Thuạn Lợi,0,,0.0,-6.411708841869883,0.0,130,130
+route_q_001,ChIJ0YbuMNYtdTERyPPybjYDyGQ,Tiệm Rửa Xe Gia Huy,0,,0.0,-6.411708841869883,0.0,131,131
+route_q_001,ChIJLeRnKbUpdTERnp0hBlwn0es,TIỆM RỬA XE HỒNG PHÚC,0,,0.0,-6.411708841869883,0.0,132,132
+route_q_001,ChIJPYTJFgAtdTERRSbUlwIzepw,Rửa xe ong bắp cầy,0,,0.0,-6.411708841869883,0.0,133,133
+route_q_001,ChIJL48FotcpdTEREQrDaq63f5Q,Nội thất ôtô Sài Thành,0,,0.0,-6.411708841869883,0.0,134,134
+route_q_001,ChIJndqxqskrdTERUv8TK3yNMA0,Rửa xe Thương Đoàn,0,,0.0,-6.411708841869883,0.0,135,135
+route_q_001,ChIJM_K8-IAvdTERWPZHJr-V6bM,Vietnam Car Care,0,,0.0,-6.411708841869883,0.0,136,136
+route_q_001,ChIJ-whsrHoldTERpgRPmx2F6OY,Bro Detailing,0,,0.0,-6.411708841869883,0.0,137,137
+route_q_001,ChIJb5Uen0QldTERBdvoB9UKu_s,BTWO Detailing - Dịch vụ chăm sóc xe,0,,0.0,-6.411708841869883,0.0,138,138
+route_q_001,ChIJp3zNbKItdTERosSqSZP7VAU,"Bãi Rửa Xe Máy, Xe Ô Tô Hoàng Vũ",0,,0.0,-6.411708841869883,0.0,139,139
+route_q_001,ChIJFff3FBMtdTERZbeRtTMhAvs,Rửa Xe Ô Tô - Xe Máy 24/24 Comeco,0,,0.0,-6.411708841869883,0.0,140,140
+route_q_001,ChIJdT26-jUsdTERdPzNGSL0gjM,Trung Tâm Rửa - Giữ Xe Oto - Xe Máy 68,0,,0.0,-6.411708841869883,0.0,141,141
+route_q_001,ChIJoT-HspgtdTERBcoGqMrCpq0,"Bãi Rửa Xe (xe máy,ôtô,xe tải)",0,,0.0,-6.411708841869883,0.0,142,142
+route_q_001,ChIJ0ajBbwArdTERR-yB5ICf2Rw,RS Car Detail | Chăm sóc xe có tâm,0,,0.0,-6.411708841869883,0.0,143,143
+route_q_001,ChIJF18FEjLXdDER2esvX8ZJRtg,VinaWash - Tân Phú,0,,0.0,-6.411708841869883,0.0,144,144
+route_q_001,ChIJaWwZs_8rdTERZRVK4X5LewY,Trung Tâm Nâng Cấp & Phụ Kiện Ô Tô - VICARE AUTO,0,,0.0,-6.411708841869883,0.0,145,145
+route_q_001,ChIJ9xOW4RErdTERn0I4o_CR9J0,Tổng Kho Thiết Bị Rửa Xe Hồ Chí Minh - Miền Nam,0,,0.0,-6.411708841869883,0.0,146,146
+route_q_001,ChIJg_HsuhsrdTERiEPArN9ppyk,Tư Vấn Mở Tiệm Rửa Xe Ô Tô Xe Máy TEARU,0,,0.0,-6.411708841869883,0.0,147,147
+route_q_001,ChIJT53MetordTERYUcGsCKCEdw,GRAGE - RỬA XE HOÀNG BÁCH OIL DEPOT,0,,0.0,-6.411708841869883,0.0,148,148
+route_q_001,ChIJgSi0jeArdTERVfVaVYFHD1I,Tiệm Rửa Xe 33,0,,0.0,-6.411708841869883,0.0,149,149
+route_q_001,ChIJgTH9XeQrdTERgB-2deLVAZc,Rửa Xe Hà Anh,0,,0.0,-6.411708841869883,0.0,150,150
+route_q_001,ChIJJaJF2-UrdTERHMb_1brVrU8,Gara Phú Thịnh Auto,0,,0.0,-6.411708841869883,0.0,151,151
+route_q_001,ChIJT_0lGQArdTERaQb3NJy4Io8,Trung tâm chăm sóc rửa xe Anh Em,0,,0.0,-6.411708841869883,0.0,152,152
+route_q_001,ChIJZcCZ49MrdTERqM8yPq0EMxs,Rửa xe 326,0,,0.0,-6.411708841869883,0.0,153,153
+route_q_001,ChIJsUb44OErdTERLZRoEGZHttc,Rửa xe tự động Tiến Bộ,0,,0.0,-6.411708841869883,0.0,154,154
+route_q_001,ChIJlyvZpuQrdTERgPYy_5tbByM,Tiệm Rửa Xe - Thay Nhớt Ô Tô,0,,0.0,-6.411708841869883,0.0,155,155
+route_q_001,ChIJoSAZrJErdTERxuO2wsJ14fI,Tiệm rửa xe máy Phước,0,,0.0,-6.411708841869883,0.0,156,156
+route_q_001,ChIJuebhunwpdTER11Ktb4AyQSg,"Trung tâm chăm sóc, đồ chơi xe hơi Since 1985 Auto",0,,0.0,-6.411708841869883,0.0,157,157
+route_q_001,ChIJTWkqpMArdTER-wxvgnjxLIo,Tiệm Rửa Xe Minh Thuần,0,,0.0,-6.411708841869883,0.0,158,158
+route_q_001,ChIJaRNnpqUpdTERc_-eo8TslVY,Prime Shine Detailing - Rửa Xe Ô Tô Tân Bình- Giữ Xe 24/24,0,,0.0,-6.411708841869883,0.0,159,159
+route_q_001,ChIJ7ccfhX0rdTERPu1BlnIPX1U,Rửa xe ô tô xe máy Anh Hạ,0,,0.0,-6.411708841869883,0.0,160,160
+route_q_001,ChIJbeOvk1cpdTERJuxjZlCAdHg,Tiệm Rửa Xe Bảo Minh,0,,0.0,-6.411708841869883,0.0,161,161
+route_q_001,ChIJsWLDPNIrdTERTFyKf-ULxM4,Rửa Xe Máy - Ô tô,0,,0.0,-6.411708841869883,0.0,162,162
+route_q_001,ChIJ6cG9LpordTER2-KaPOsMb7U,Hệ Thống Rửa Xe Siêu Nhân Xanh,0,,0.0,-6.411708841869883,0.0,163,163
+route_q_001,ChIJgfiozZcrdTERgrpi6nzaZUw,Tiệm Rửa Xe Lợi,0,,0.0,-6.411708841869883,0.0,164,164
+route_q_001,ChIJZcUIDgApdTERdA46njrocSk,bãi giữ xe Tiến Dương,0,,0.0,-6.411708841869883,0.0,165,165
+route_q_001,ChIJ85Fp_6otdTERGmUNEVAXaBs,Rưa xe Nhựt Linh,0,,0.0,-6.411708841869883,0.0,166,166
+route_q_001,ChIJK7D8m28pdTEREKgyK6aySo8,Auto Care 68 - Chăm Sóc Xe Hơi Quận 12,0,,0.0,-6.411708841869883,0.0,167,167
+route_q_001,ChIJ-yHgeYordTER4s81OrdG11M,Rửa Xe 247,0,,0.0,-6.411708841869883,0.0,168,168
+route_q_001,ChIJg3q4BHMpdTERTvfOjDMAfnw,Trung tâm Chăm sóc xe chuyên nghiệp Minh Huy,0,,0.0,-6.411708841869883,0.0,169,169
+route_q_001,ChIJmR_HbS8rdTERW_MPC6TllGQ,Rửa xe,0,,0.0,-6.411708841869883,0.0,170,170
+route_q_001,ChIJuY52JmcpdTERhgDnRu-RC2s,Tiệm Rửa Xe Út,0,,0.0,-6.411708841869883,0.0,171,171
+route_q_001,ChIJSyNDlccrdTERWfWofzGKPOc,Hoàng tấn rửa xe,0,,0.0,-6.411708841869883,0.0,172,172
+route_q_001,ChIJKXdY1iwrdTER2OyuGxR9dWI,Rửa xe Nam Vi,0,,0.0,-6.411708841869883,0.0,173,173
+route_q_001,ChIJ97n0EyErdTERKXa0j4I8VG8,Rửa xe Tin Tin,0,,0.0,-6.411708841869883,0.0,174,174
+route_q_001,ChIJ10xYpLIrdTERfmLaNoCswF4,Tiệm Rửa Xe 527,0,,0.0,-6.411708841869883,0.0,175,175
+route_q_001,ChIJzcBUKSUpdTERVr4l5CEefjo,Dịch vụ rửa xe Bo,0,,0.0,-6.411708841869883,0.0,176,176
+route_q_001,ChIJlZpef4grdTER7hfoHz9oAQM,Dịch Vụ Rửa Xe Tự Động Tiên Tiến,0,,0.0,-6.411708841869883,0.0,177,177
+route_q_001,ChIJ5WuTUBgrdTERtF8COGP7HMk,Shitek Auto Detailing Tân Phú,0,,0.0,-6.411708841869883,0.0,178,178
+route_q_001,ChIJPQ8m-2EpdTERZKS8WSDmA08,Vá Vỏ Lưu Động - Rửa Xe ô tô Quận Tân Bình - Phượng Lân,0,,0.0,-6.411708841869883,0.0,179,179
+route_q_001,ChIJz1mTmFIpdTERjiD69zHhYcU,Rửa Xe 91-93,0,,0.0,-6.411708841869883,0.0,180,180
+route_q_001,ChIJfXakHRkpdTER1n5X5stG_RM,Tiệm Rửa Xe Duy,0,,0.0,-6.411708841869883,0.0,181,181
+route_q_001,ChIJX6NdyzEpdTERJfHT9Uw_bMU,Rửa xe Nguyễn Thái Bình,0,,0.0,-6.411708841869883,0.0,182,182
+route_q_001,ChIJyYragc0pdTERJZUvuZwEEEc,SG Auto Detailing,0,,0.0,-6.411708841869883,0.0,183,183
+route_q_001,ChIJ71DAuAEsdTERTkng6PCOjp8,RỬA XE CƯỜNG,0,,0.0,-6.411708841869883,0.0,184,184
+route_q_001,ChIJexLMReMrdTERBdtmTTwDRAA,Tiệm Rửa Xe Bọt Tuyết - Thay Nhớt Khánh Nhân,0,,0.0,-6.411708841869883,0.0,185,185
+route_q_001,ChIJVXwIZgApdTER5YaO1M_iXx0,RỬA XE MÁY 297,0,,0.0,-6.411708841869883,0.0,186,186
+route_q_001,ChIJsVkt-KstdTERJRNTjAS1Kng,Rửa Xe Bình Long,0,,0.0,-6.411708841869883,0.0,187,187
+route_q_001,ChIJE_yWQ6MudTERPyxFeTTaMm0,Rửa xe Hiệp Toàn,0,,0.0,-6.411708841869883,0.0,188,188
+route_q_001,ChIJz4WbAOUpdTERs9rK7CsKajA,Quang Trung Auto,0,,0.0,-6.411708841869883,0.0,189,189
+route_q_001,ChIJD8_xMecrdTERbto7m7NZdcg,Tiệm Rửa Xe Bảo Hoàng,0,,0.0,-6.411708841869883,0.0,190,190
+route_q_001,ChIJPZmXbh8rdTERGxpIuP3LKdg,Rửa xe ô tô xe máy,0,,0.0,-6.411708841869883,0.0,191,191
+route_q_001,ChIJSxP8MwYtdTERSJoQpDIRBDM,RỬA XE CƯỜNG THỊNH,0,,0.0,-6.411708841869883,0.0,192,192
+route_q_001,ChIJTWxEfyUrdTERK5FoRgrpB2U,ADTEDEK Detailing | Dịch Vụ Rửa & Chăm Sóc Xe,0,,0.0,-6.411708841869883,0.0,193,193
+route_q_001,ChIJv6G-7lUpdTERQgfBIeAeSk4,Rửa xe 77,0,,0.0,-6.411708841869883,0.0,194,194
+route_q_001,ChIJjysE6x0pdTERwqN6DiGix8w,Dịch Vụ Rửa Xe 5 Sao,0,,0.0,-6.411708841869883,0.0,195,195
+route_q_001,ChIJ38H8RSYtdTERwnKFSQ6DmEk,Rửa Xe Chuyên Nghiệp 409,0,,0.0,-6.411708841869883,0.0,196,196
+route_q_001,ChIJO-rw2AcpdTERr0SQMgVXXwQ,Anh Thắng Service - Trung Tâm Chăm Sóc Xe Hơi Chuyên Nghiệp,0,,0.0,-6.411708841869883,0.0,197,197
+route_q_001,ChIJ8U3PEYcpdTERG1wm9NrHBgw,BÃI GIỮ XE & RỬA XE OTO 24/7,0,,0.0,-6.411708841869883,0.0,198,198
+route_q_001,ChIJiQcQmLQpdTERy68EeEtxhQs,Trung Tâm Chăm Sóc Xe 133,0,,0.0,-6.411708841869883,0.0,199,199
+route_q_001,ChIJoXZmyu4rdTERbuUsj31vz1c,Tiệm Rửa Xe Tân Bình,0,,0.0,-6.411708841869883,0.0,200,200
+route_q_001,ChIJuc2eU-8rdTERRAGZtIvziVo,Cầu Nâng 1 Trụ Rửa Xe Ô Tô TAGORE,0,,0.0,-6.411708841869883,0.0,201,201
+route_q_001,ChIJd2IusuArdTERDRvWXfWkKcc,Tiệm Rửa Xe 82,0,,0.0,-6.411708841869883,0.0,202,202
+route_q_001,ChIJjf7EygApdTERQ0oAZlnGutw,Dịch Vụ Rửa Xe Tuấn,0,,0.0,-6.411708841869883,0.0,203,203
+route_q_001,ChIJicio1KcpdTER027N-u4NYuc,Rửa Xe Thay Nhớt Lộc,0,,0.0,-6.411708841869883,0.0,204,204
+route_q_001,ChIJv3cmeqgpdTER44dSE4M9Gbs,Dịch Vụ Rửa Xe Nghệ Thuật,0,,0.0,-6.411708841869883,0.0,205,205
+route_q_001,ChIJJSEXFPwpdTERL6qFysNI0Y0,Rửa Xe Bọt Tuyết Duy Hiếu,0,,0.0,-6.411708841869883,0.0,206,206
+route_q_001,ChIJUeoLG9IpdTERlD_pYZAakF0,Rửa Xe Thằng Bờm,0,,0.0,-6.411708841869883,0.0,207,207
+route_q_001,ChIJ8ejDhhYsdTER38GORUgRfBs,Quán rửa xe Mười 305/11,0,,0.0,-6.411708841869883,0.0,208,208
+route_q_001,ChIJv-X3SpcudTEROvT_nBGLfUs,Tiệm Rửa Xe 260,0,,0.0,-6.411708841869883,0.0,209,209
+route_q_001,ChIJAwIAypQpdTEROE4gFnnYQ-M,Rửa Xe Thằng Bờm 2 (294 Nguyễn Thái Sơn),0,,0.0,-6.411708841869883,0.0,210,210
+route_q_001,ChIJA5UVkV0pdTERqEQlYq83cjE,Chăm Sóc Xe Oto 362,0,,0.0,-6.411708841869883,0.0,211,211
+route_q_001,ChIJuVM5vFkpdTERKkgdaRrik7c,Gara Rửa Xe Ô Tô CARBI,0,,0.0,-6.411708841869883,0.0,212,212
+route_q_001,ChIJxV9RcVModTERRrogNkgVv6E,Tiệm Rửa Xe Tí Nị,0,,0.0,-6.411708841869883,0.0,213,213
+route_q_001,ChIJCTQOeB0vdTERFoN_cRNv9QA,Rửa Xe Huy Hoàng,0,,0.0,-6.411708841869883,0.0,214,214
+route_q_001,ChIJA7QSL_kodTERp-zkuoE7Eec,Giữ Xe Ôtô Rửa Xe Ôtô - Xe Máy,0,,0.0,-6.411708841869883,0.0,215,215
+route_q_001,ChIJhaM33pgpdTERFUK5gtpsAB8,Tý Rửa Xe,0,,0.0,-6.411708841869883,0.0,216,216
+route_q_001,ChIJJbmfLo8pdTERoAEm9vXAuW8,Rửa Xe 16,0,,0.0,-6.411708841869883,0.0,217,217
+route_q_001,ChIJvYcOjuQodTER-rZvU9XLEfQ,Tiệm Rửa XeTrung Tín,0,,0.0,-6.411708841869883,0.0,218,218
+route_q_001,ChIJdx9agLApdTERe4xVTT63wng,Tiệm Rửa Xe Mạnh Tường,0,,0.0,-6.411708841869883,0.0,219,219
+route_q_001,ChIJl5SjuawpdTERla2HXrd15Uo,Tiệm Rửa Xe & sửa xe 62 GN SCOOTER,0,,0.0,-6.411708841869883,0.0,220,220
+route_q_001,ChIJd_9VbR8vdTEROPUOjqft6Mc,Rửa xe Hoàng,0,,0.0,-6.411708841869883,0.0,221,221
+route_q_001,ChIJ2Rcm-8gpdTERcJ2VC0tDbq4,Ô tô Tấn Tới Q12,0,,0.0,-6.411708841869883,0.0,222,222
+route_q_001,ChIJ8SzGl2spdTERykzQQPfiebQ,MINH VŨ - RỬA XE BÌNH THẠNH,0,,0.0,-6.411708841869883,0.0,223,223
+route_q_001,ChIJ_ePva-IudTER3hqpNrbWafM,hethongchamsocxe.com,0,,0.0,-6.411708841869883,0.0,224,224
+route_q_001,ChIJAbCPoksqdTERvid1a9rOs9c,Rửa Xe 29,0,,0.0,-6.411708841869883,0.0,225,225
+route_q_001,ChIJ939LseMudTERpPKl4NCFgvs,Rửa Xe 33,0,,0.0,-6.411708841869883,0.0,226,226
+route_q_001,ChIJpwpSMJ8pdTERB-V-jQTgYcM,Tiệm rửa xe bình dân,0,,0.0,-6.411708841869883,0.0,227,227
+route_q_001,ChIJQxnzt3opdTERxCi-X6Y46v4,RỬA XE 3H,0,,0.0,-6.411708841869883,0.0,228,228
+route_q_001,ChIJha2t3ekodTEReIYG_s_iMBg,Rửa Xe Thanh Vân,0,,0.0,-6.411708841869883,0.0,229,229
+route_q_001,ChIJg80AdX4pdTERC6nJbmzm1Yg,Rửa xe Bình Triệu Hoá Dầu,0,,0.0,-6.411708841869883,0.0,230,230
+route_q_001,ChIJAd9frigpdTERpugpDXEMxuY,Chỗ Rửa Xe,0,,0.0,-6.411708841869883,0.0,231,231
+route_q_001,ChIJmSZaf50vdTERibmZUmPQII8,Dịch Vụ Rửa Xe Huỳnh Sơn,0,,0.0,-6.411708841869883,0.0,232,232
+route_q_001,ChIJrxEhyIIvdTERpzjfV1HdYl8,Rửa Xe 21,0,,0.0,-6.411708841869883,0.0,233,233
+route_q_001,ChIJ0TqeIy0vdTERr_niNpsSS30,Rửa xe bọt tuyết PHẠM NGUYỄN,0,,0.0,-6.411708841869883,0.0,234,234
+route_q_001,ChIJ6XOOLpgvdTER9Zpy6y1jLbk,Dịch Vụ Rửa Xe 490,0,,0.0,-6.411708841869883,0.0,235,235
+route_q_001,ChIJQ6N5AO8udTERQ5hugngZmpE,Rửa Xe Văn Minh,0,,0.0,-6.411708841869883,0.0,236,236
+route_q_001,ChIJb6J3gXIvdTEROpw7m7E5HAE,Rửa Xe Dũng Phuộc,0,,0.0,-6.411708841869883,0.0,237,237
+route_q_001,ChIJkymt7dAudTERO7uajjNhIp4,Tiệm Rửa Xe Hùng,0,,0.0,-6.411708841869883,0.0,238,238
+route_q_001,ChIJocY7RBwsdTERRio-1BfS-60,Tiệm Rửa Xe Hoàng Uyên,0,,0.0,-6.411708841869883,0.0,239,239
+route_q_001,ChIJ6XVg57IvdTERzGUbWVVPQe0,Rua xe,0,,0.0,-6.411708841869883,0.0,240,240
+route_q_001,ChIJ37xIXCEvdTERBKA_XiotlJU,Rửa xe 103,0,,0.0,-6.411708841869883,0.0,241,241
+route_q_001,ChIJ_zTRdwAvdTER2eye_1Z6Db8,Rửa xe ô tô Trung Sơn,0,,0.0,-6.411708841869883,0.0,242,242
+route_q_001,ChIJLQDJI4MtdTER4cu80KJiWs4,"RỬA XE VÁ VỎ Ô TÔ, MOTO HUY TIẾN",0,,0.0,-6.411708841869883,0.0,243,243
+route_q_001,ChIJY8lsYOMrdTERMK1y_tV4cFc,Rửa xe Tý,0,,0.0,-6.411708841869883,0.0,244,244
+route_q_001,ChIJxaezAYIpdTERtKblomS9oMY,Rửa xe TrungUyen,0,,0.0,-6.411708841869883,0.0,245,245
+route_q_001,ChIJv7nemWYudTERASBX3GEc6Ts,Tiệm Rửa Xe 415,0,,0.0,-6.411708841869883,0.0,246,246
+route_q_001,ChIJaTNhOAAtdTERJAmFIrkm7Yk,Rửa Xe Bình Tân,0,,0.0,-6.411708841869883,0.0,247,247
+route_q_001,ChIJSc-2EWYpdTER86cfOB3XWws,Rửa xe máy,0,,0.0,-6.411708841869883,0.0,248,248
+route_q_001,ChIJeeGSwGUldTERc4yetbjW1Yk,Út Bình,0,,0.0,-6.411708841869883,0.0,249,249
+route_q_001,ChIJb_7JcNsldTERmRmUDwzGT9Y,Phước Tiến,0,,0.0,-6.411708841869883,0.0,250,250
+route_q_001,ChIJv7oKVWsvdTERKZXHvxDUeY4,Rửa Xe Văn Tí,0,,0.0,-6.411708841869883,0.0,251,251
+route_q_001,ChIJ00mjs4MudTERmzCqQnJyhY0,Car Wash 39,0,,0.0,-6.411708841869883,0.0,252,252
+route_q_001,ChIJ9a8bXo0vdTERXkEy5CO80R0,Chăm Xế Yêu - Rửa Xe Ô Tô,0,,0.0,-6.411708841869883,0.0,253,253
+route_q_001,ChIJz_m-GaIpdTERR4SUTNP30bA,Hệ Thống Sửa Xe Thông Minh,0,,0.0,-6.411708841869883,0.0,254,254
+route_q_001,ChIJEyPLQQApdTERpueJSPV2ToQ,SỬA XE GÒ VẤP,0,,0.0,-6.411708841869883,0.0,255,255
+route_q_001,ChIJhZmyTOEpdTERMHPFgKi-Um4,Sài Gòn Độ Xe Quận Gò Vấp,0,,0.0,-6.411708841869883,0.0,256,256
+route_q_001,ChIJX4vZDwApdTERo2QWWfyGHig,"Giữ Xe - Rửa Xe ÔTô, Trạm Sạc xe máy Điện, CaFe võng",0,,0.0,-6.411708841869883,0.0,257,257
+route_q_001,ChIJIQa8_2AodTERgYE5Dk16wKM,Trung Tâm Chăm Sóc Xe & Phụ Kiện Ôtô 4Car Workshop,0,,0.0,-6.411708841869883,0.0,258,258
+route_q_001,ChIJg4abnhErdTERq9xfcfvb11U,"Bãi giữ xe, rửa xe, trạm sạc điện Vinfast Phong Khanh",0,,0.0,-6.411708841869883,0.0,259,259
+route_q_001,ChIJy9M7QJUrdTERvTZsqYv0tBw,Rửa Xe Ngày Và Đêm U G,0,,0.0,-6.411708841869883,0.0,260,260
+route_q_001,ChIJq13uK6srdTERcKOBUF343aQ,Rửa Xe Gia Bảo,0,,0.0,-6.411708841869883,0.0,261,261
+route_q_001,ChIJI8kaYxIrdTERXYuIND-_3ic,Rửa Xe OTO Thắng-Tiến,0,,0.0,-6.411708841869883,0.0,262,262
+route_q_001,ChIJrfXCEZQrdTER5h7XQ-RQ4VA,Rửa Xe Nguyễn - Sơn,0,,0.0,-6.411708841869883,0.0,263,263
+route_q_001,ChIJkdLNs_srdTERQF25_xnbgJ0,Ngọc Sang Auto - Đồ Chơi Xe Hơi Tân Phú,0,,0.0,-6.411708841869883,0.0,264,264
+route_q_001,ChIJgwl_xBUrdTER3un7g5zC5cY,Cho thuê xe tự lái và có tài Hóc Môn,0,,0.0,-6.411708841869883,0.0,265,265
+route_q_001,ChIJw-9kyAgqdTERA0bZazcMx1o,Tiệm Rửa Xe Phú Quý,0,,0.0,-6.411708841869883,0.0,266,266
+route_q_001,ChIJbaNRdtnVdDERmhzyYcznyZo,Rửa Xe Hoàng Gia Việt,0,,0.0,-6.411708841869883,0.0,267,267
+route_q_001,ChIJyxtU8vfVdDERw-9qLa1MK8M,Tiệm Rửa Xe Thay Nhớt Hoàng Quân,0,,0.0,-6.411708841869883,0.0,268,268
+route_q_001,ChIJbZCluZDXdDER8jX1ufWzReU,"Rửa xe , chăm sóc xe VERA CAR CARE 2",0,,0.0,-6.411708841869883,0.0,269,269
+route_q_001,ChIJlSkmTjwrdTERdX5Kgq_CYKA,Rửa xe gia đình,0,,0.0,-6.411708841869883,0.0,270,270
+route_q_001,ChIJEWSSaQArdTER_6KocSIDZcs,Bãi Xe Rửa Xe Thành Cường,0,,0.0,-6.411708841869883,0.0,271,271
+route_q_001,ChIJ8cgcDQArdTERJKCORLEdiKk,Cầm đồ 253 & Giữ xe và rửa xe oto 24/24,0,,0.0,-6.411708841869883,0.0,272,272
+route_q_001,ChIJY_PppkgrdTERa_QtKO4qXgI,Bãi Giữ Xe - Rửa Xe Ô Tô 24/24 Gia Khang,0,,0.0,-6.411708841869883,0.0,273,273
+route_q_001,ChIJTYZFewDVdDERzcNshupbMXU,Tiệm sửa xe,0,,0.0,-6.411708841869883,0.0,274,274
+route_q_001,ChIJV2MBXPXVdDERrqBqk44dkt8,Garage Thuận Phát,0,,0.0,-6.411708841869883,0.0,275,275
+route_q_001,ChIJlW1eDPYpdTERQ05dcDLl6Uk,Trung Tâm Rửa & Chăm Sóc Xe Minh Dũng,0,,0.0,-6.411708841869883,0.0,276,276
+route_q_001,ChIJXSiFtJzVdDER2nLn6TYMnhc,Tiệm Rửa Xe Thái,0,,0.0,-6.411708841869883,0.0,277,277
+route_q_001,ChIJ9VaAAITVdDER31gtQy0qecw,Rửa Xe Boss,0,,0.0,-6.411708841869883,0.0,278,278
+route_q_001,ChIJQ1JvToPVdDER_eirCvuzVzA,Tiệm Rửa Xe Đức Hanh 888,0,,0.0,-6.411708841869883,0.0,279,279
+route_q_001,ChIJv3xb5istdTERLeEj_viEUDI,Rửa / Sửa Xe Ô Tô Gia Hào,0,,0.0,-6.411708841869883,0.0,280,280
+route_q_001,ChIJL1E_ZgApdTEROZWFCBEC05w,Rửa Xe Top 179,0,,0.0,-6.411708841869883,0.0,281,281
+route_q_001,ChIJob1-EQApdTERdNwTTxpM6tM,Rửa Xe Hữu Cảnh,0,,0.0,-6.411708841869883,0.0,282,282
+route_q_001,ChIJ9721s2s7dTERy0AnDBTSPRQ,Rửa xe 24h CAR-E,0,,0.0,-6.411708841869883,0.0,283,283
+route_q_001,ChIJoVKHv6ModTERuxDTu-wcay4,Rửa Xe 25D2,0,,0.0,-6.411708841869883,0.0,284,284
+route_q_001,ChIJiRHBAL0ndTERyve46wj343I,Rửa xe Bonbon Cao Đức Lân,0,,0.0,-6.411708841869883,0.0,285,285
+route_q_001,ChIJjUNOLo8pdTERylrlbw56UCY,Rửa xe 96,0,,0.0,-6.411708841869883,0.0,286,286
+route_q_001,ChIJzbcyLpEldTERaRG4SdE_Mz4,Rửa Xe Ô Tô - Bảo Dưỡng Xe Ô Tô Hoàng Thắng,0,,0.0,-6.411708841869883,0.0,287,287
+route_q_001,ChIJtX6NL1gpdTEREZ1knBMsOHQ,Tiệm Rửa Xe Văn Cường 27 Thanh Đa,0,,0.0,-6.411708841869883,0.0,288,288
+route_q_001,ChIJZQgWYgApdTERgDpsiiyGZHg,"Sửa xe, Vá Xe, Rửa xe Mạnh",0,,0.0,-6.411708841869883,0.0,289,289
+route_q_001,ChIJhekM2bcodTERGR_beHWznpM,Dịch Vụ Rửa Xe 49,0,,0.0,-6.411708841869883,0.0,290,290
+route_q_001,ChIJo7yvbeUpdTERTA_IPqSu_GQ,Rửa xe Bình Cao,0,,0.0,-6.411708841869883,0.0,291,291
+route_q_001,ChIJweYdIwAndTERUvTFA_n2MKg,Trung tâm Rửa xe ô tô - xe máy HCT,0,,0.0,-6.411708841869883,0.0,292,292
+route_q_001,ChIJ_2Nbe2MudTERBx8gpkmsanI,Dịch Vụ Rửa Xe 174,0,,0.0,-6.411708841869883,0.0,293,293
+route_q_001,ChIJb3kdn2IudTERX4OxCTaYy9k,Tiệm Rửa Xe 56,0,,0.0,-6.411708841869883,0.0,294,294
+route_q_001,ChIJB1pXPyAndTERd3m8Z-peLgY,Rửa xe Thủ Đức PKW,0,,0.0,-6.411708841869883,0.0,295,295
+route_q_001,ChIJw6raw9AodTER6m40CnmHSzc,Tiệm Rửa Xe Kim Long,0,,0.0,-6.411708841869883,0.0,296,296
+route_q_001,ChIJfQFiEXsudTERRTcUWWsMtwo,Văn Thân Rửa Xe - Thay Nhớt Chuyên Nghiệp,0,,0.0,-6.411708841869883,0.0,297,297
+route_q_001,ChIJs0DDBnoudTERgUbdUcRpgqc,Tiệm Rửa Xe Triều Dân,0,,0.0,-6.411708841869883,0.0,298,298
+route_q_001,ChIJs3qKUzYndTERtZLKKGlAA5w,Trung Tâm Chăm Sóc & Rửa Xe Ôtô Kakawa,0,,0.0,-6.411708841869883,0.0,299,299
+route_q_001,ChIJ5VRWHZwvdTERo5va1R_RLVo,Rửa Xe Sạch,0,,0.0,-6.411708841869883,0.0,300,300
+route_q_001,ChIJpbaCFXgudTERcsNR4Pae4Mk,Tiệm Rửa Xe Anh Huy,0,,0.0,-6.411708841869883,0.0,301,301

@@ -242,7 +242,7 @@ export const TopBar = ({ onMenuClick }: TopBarProps) => {
       }
 
       if (!data) {
-        setSearchNotice('Loading mock search data...');
+        setSearchNotice('Loading search data…');
         setSearchOpen(true);
         return;
       }
@@ -435,11 +435,11 @@ export const TopBar = ({ onMenuClick }: TopBarProps) => {
                 searchDataLoading ? (
                   <div className="flex items-center gap-2 rounded-2xl bg-surface-container-low px-4 py-3 text-sm text-slate-500">
                     <LoaderCircle size={16} className="animate-spin" />
-                    Loading searchable mock data...
+                    Loading search…
                   </div>
                 ) : searchDataError ? (
                   <div className="rounded-2xl bg-red-50 px-4 py-3 text-sm text-red-600">
-                    Unable to load mock search data right now.
+                    Unable to load search data right now.
                   </div>
                 ) : searchResults.length === 0 ? (
                   <div className="flex items-center gap-2 rounded-2xl bg-surface-container-low px-4 py-3 text-sm text-slate-500">

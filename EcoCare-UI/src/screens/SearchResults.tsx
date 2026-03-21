@@ -34,7 +34,7 @@ export const SearchResults = () => {
   );
 
   const usersById = React.useMemo(
-    () => new Map((data?.users ?? []).map((mockUser) => [mockUser.id, mockUser])),
+    () => new Map((data?.users ?? []).map((account) => [account.id, account])),
     [data?.users]
   );
 
@@ -57,11 +57,11 @@ export const SearchResults = () => {
       <section className="overflow-hidden rounded-[2rem] border border-outline-variant/20 bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-950 px-6 py-6 text-white shadow-xl sm:px-8">
         <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.22em] text-white/80">
           <Sparkles size={14} />
-          Mock Search
+          Search
         </div>
         <h2 className="mt-4 font-headline text-3xl font-extrabold tracking-tight">Search Results</h2>
         <p className="mt-2 max-w-2xl text-sm font-medium text-white/75">
-          Search is currently powered by local mock data, so service-center names and vehicle plate numbers work before backend integration is ready.
+          Find service centers by name or match vehicles by plate number from your saved profile data.
         </p>
         <div className="mt-5 inline-flex max-w-full items-center gap-3 rounded-[1.4rem] bg-white/10 px-4 py-3 backdrop-blur">
           <SearchCheck size={18} className="shrink-0 text-emerald-300" />
@@ -75,11 +75,11 @@ export const SearchResults = () => {
       {loading ? (
         <div className="flex items-center gap-3 rounded-3xl bg-surface-container-low px-5 py-4 text-sm text-slate-500">
           <LoaderCircle className="h-5 w-5 animate-spin" />
-          Loading mock search index...
+          Loading search…
         </div>
       ) : error ? (
         <div className="rounded-3xl bg-red-50 px-5 py-4 text-sm font-medium text-red-600">
-          Unable to load mock search data right now.
+          Unable to load search data right now.
         </div>
       ) : !query ? (
         <div className="rounded-3xl bg-surface-container-low px-5 py-6 text-sm text-slate-600">
@@ -88,7 +88,7 @@ export const SearchResults = () => {
       ) : results.length === 0 ? (
         <div className="flex items-center gap-3 rounded-3xl bg-surface-container-low px-5 py-5 text-sm text-slate-600">
           <SearchX className="h-5 w-5" />
-          No service centers or vehicle plates matched "{query}" in the current mock data.
+          No service centers or vehicle plates matched “{query}”.
         </div>
       ) : (
         <>
@@ -191,7 +191,7 @@ export const SearchResults = () => {
                           </div>
                           <div className="rounded-2xl bg-surface-container-low px-4 py-3">
                             <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-400">Owner</p>
-                            <p className="mt-1 text-sm font-bold text-slate-900">{owner?.name ?? 'Mock account'}</p>
+                            <p className="mt-1 text-sm font-bold text-slate-900">{owner?.name ?? 'Registered user'}</p>
                           </div>
                         </div>
                       )}

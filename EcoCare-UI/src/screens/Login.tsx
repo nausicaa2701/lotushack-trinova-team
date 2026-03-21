@@ -4,10 +4,30 @@ import { useEffect, useState } from 'react';
 import { Button } from 'primereact/button';
 import { Link, useNavigate } from 'react-router-dom';
 import { Clock3, Leaf, Lock, Mail, Zap } from 'lucide-react';
-import { useAuth } from '../auth/AuthContext';
+import { useAuth, type UserRole } from '../auth/AuthContext';
 import { useMockData } from '../hooks/useMockData';
+import type { PlatformUser } from '../lib/platformMock';
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL ?? '';
+
+function mapRemoteUserToAuth(
+  raw: { id: string; name: string; email: string; roles: string[]; defaultRole?: string },
+  enrich: PlatformUser
+) {
+  const roles = raw.roles.filter((r): r is UserRole => r === 'owner' || r === 'provider' || r === 'admin');
+  return {
+    id: raw.id,
+    name: raw.name,
+    email: raw.email,
+    roles: roles.length ? roles : enrich.roles,
+    defaultRole: (raw.defaultRole as UserRole | undefined) ?? enrich.defaultRole,
+    providerAccountId: enrich.providerAccountId,
+    vehicle: enrich.vehicle,
+    vehiclePlate: enrich.vehiclePlate,
+    branch: enrich.branch,
+    title: enrich.title,
+  };
+}
 
 export default function Login() {
   const navigate = useNavigate();
@@ -51,14 +71,29 @@ export default function Login() {
         if (!response.ok) {
           throw new Error('Login failed');
         }
-        return response.json() as Promise<{ user: typeof found }>;
+        return response.json() as Promise<{
+          user: { id: string; name: string; email: string; roles: string[]; defaultRole?: string };
+        }>;
       })
       .then((result) => {
-        const nextRole = login(result.user);
+        const nextRole = login(mapRemoteUserToAuth(result.user, found));
         navigate(`/${nextRole}/dashboard`);
       })
       .catch(() => {
-        setSubmitError('Unable to login with backend. Check backend service and selected email.');
+        setSubmitError('Sign-in service is unavailable. Continuing with the selected demo profile.');
+        const nextRole = login({
+          id: found.id,
+          name: found.name,
+          email: found.email,
+          roles: found.roles,
+          defaultRole: found.defaultRole,
+          providerAccountId: found.providerAccountId,
+          vehicle: found.vehicle,
+          vehiclePlate: found.vehiclePlate,
+          branch: found.branch,
+          title: found.title,
+        });
+        navigate(`/${nextRole}/dashboard`);
       })
       .finally(() => {
         setSubmitting(false);
@@ -86,9 +121,11 @@ export default function Login() {
           <form className="space-y-5" onSubmit={handleSubmit}>
             <div className="space-y-4">
               <div className="space-y-1.5">
-                <label className="ml-1 text-sm font-semibold text-on-surface-variant" htmlFor="mock-user">Mock User</label>
+                <label className="ml-1 text-sm font-semibold text-on-surface-variant" htmlFor="demo-profile">
+                  Demo profile
+                </label>
                 <select
-                  id="mock-user"
+                  id="demo-profile"
                   className="w-full rounded-2xl border-none bg-surface-container-highest px-4 py-3.5 text-sm font-semibold text-slate-700 outline-none focus:ring-1 focus:ring-primary"
                   value={selectedUserId}
                   onChange={(evt) => setSelectedUserId(evt.target.value)}

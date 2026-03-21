@@ -3,10 +3,10 @@ import { fetchPlatformMockData, type PlatformData } from '../lib/platformMock';
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL ?? '';
 
-async function fetchPlatformDataFromBackend(): Promise<PlatformData> {
+async function fetchPlatformDataRemote(): Promise<PlatformData> {
   const response = await fetch(`${API_BASE}/api/platform/bootstrap`);
   if (!response.ok) {
-    throw new Error('Unable to load platform data from backend');
+    throw new Error('Unable to load platform data');
   }
 
   return (await response.json()) as PlatformData;
@@ -24,7 +24,7 @@ export function useMockData() {
         setLoading(true);
         let json: PlatformData;
         try {
-          json = await fetchPlatformDataFromBackend();
+          json = await fetchPlatformDataRemote();
         } catch {
           json = await fetchPlatformMockData();
         }

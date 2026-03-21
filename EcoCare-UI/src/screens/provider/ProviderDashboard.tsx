@@ -1,23 +1,46 @@
 import React from 'react';
 import { Activity, Star, Users } from 'lucide-react';
-import { useMockData } from '../../hooks/useMockData';
+import { useAuth } from '../../auth/AuthContext';
+import { useProviderBookings, useProviderRatings } from '../../hooks/useProviderApi';
 
 export const ProviderDashboard = () => {
-  const { data, loading, error } = useMockData();
+  const { user, activeRole } = useAuth();
+  const providerApiId =
+    activeRole === 'provider' ? (user?.providerAccountId ?? user?.id) : undefined;
+  const { bookings, loading: bookingsLoading, error } = useProviderBookings(providerApiId);
+  const { metrics, loading: ratingsLoading } = useProviderRatings(providerApiId);
 
-  if (loading) return <div className="rounded-3xl bg-surface-container-low p-6 text-sm text-slate-500">Loading provider metrics...</div>;
-  if (error || !data) return <div className="rounded-3xl bg-red-50 p-6 text-sm text-red-600">Unable to load provider data.</div>;
+  if (!providerApiId) {
+    return (
+      <div className="rounded-3xl bg-surface-container-low p-6 text-sm text-slate-500">
+        Switch to the provider role to see operations.
+      </div>
+    );
+  }
+
+  if (bookingsLoading && !bookings.length) {
+    return <div className="rounded-3xl bg-surface-container-low p-6 text-sm text-slate-500">Loading provider metrics...</div>;
+  }
+  if (error) return <div className="rounded-3xl bg-red-50 p-6 text-sm text-red-600">{error}</div>;
 
   return (
     <div className="space-y-8">
       <header>
         <h2 className="font-headline text-3xl font-extrabold">Provider Operations</h2>
-        <p className="mt-1 text-slate-500">Track bookings, ratings, and conversion performance.</p>
+        <p className="mt-1 text-slate-500">Track bookings, ratings, and conversion.</p>
       </header>
       <section className="grid grid-cols-1 gap-6 md:grid-cols-3">
-        <MetricCard icon={<Activity size={20} />} label="Active Bookings" value={`${data.providerBookings.length}`} />
-        <MetricCard icon={<Star size={20} />} label="Average Rating" value="4.8" />
-        <MetricCard icon={<Users size={20} />} label="Review Count" value="1,246" />
+        <MetricCard icon={<Activity size={20} />} label="Bookings (queue)" value={`${bookings.length}`} />
+        <MetricCard
+          icon={<Star size={20} />}
+          label="Average Rating"
+          value={ratingsLoading ? '…' : metrics ? `${metrics.avgRating.toFixed(1)}` : '—'}
+        />
+        <MetricCard
+          icon={<Users size={20} />}
+          label="Successful orders (market)"
+          value={ratingsLoading ? '…' : metrics ? `${metrics.successfulOrders}` : '—'}
+        />
       </section>
     </div>
   );

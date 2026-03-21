@@ -1,0 +1,69 @@
+booking_event_id,click_event_id,query_id,search_event_id,user_id,session_id,event_ts,search_mode,merchant_id,merchant_name,booking_value_band,booking_status
+booking_evt_00001,click_evt_00006,nearby_q_005,search_evt_0005,user_005,session_005_01,2026-03-22T09:32:25+00:00,nearby,ChIJh49VXwQvdTERteVbwQETYQM,Dịch Vụ Rửa Xe 109,medium,confirmed
+booking_evt_00002,click_evt_00007,nearby_q_005,search_evt_0005,user_005,session_005_01,2026-03-22T09:34:15+00:00,nearby,ChIJ35wD6AIvdTERcdM5ZxvwoYA,Dịch Vụ Rửa Xe A Thuận,medium,confirmed
+booking_evt_00003,click_evt_00008,nearby_q_005,search_evt_0005,user_005,session_005_01,2026-03-22T09:32:30+00:00,nearby,ChIJy7RnTAAvdTERuHa74kwoWG0,"Bãi Giữ Xe, Rửa Xe Ôtô 635 Nguyễn Trãi",medium,confirmed
+booking_evt_00004,click_evt_00017,nearby_q_005,search_evt_0005,user_005,session_005_01,2026-03-22T09:33:50+00:00,nearby,ChIJz-Ha0L0udTERtKlii4wCgYY,Rửa Xe 427,medium,confirmed
+booking_evt_00005,click_evt_00021,nearby_q_005,search_evt_0005,user_005,session_005_01,2026-03-22T09:34:30+00:00,nearby,ChIJSUcHOncvdTERA8WKVaoaJLs,Rửa Xe 37,medium,confirmed
+booking_evt_00006,click_evt_00023,nearby_q_005,search_evt_0005,user_005,session_005_01,2026-03-22T09:36:40+00:00,nearby,ChIJb1SyKw8vdTERs2Yk2qoCtz8,Rửa xe Thành Trung,medium,confirmed
+booking_evt_00007,click_evt_00026,nearby_q_005,search_evt_0005,user_005,session_005_01,2026-03-22T09:40:55+00:00,nearby,ChIJu2tmmpspdTERCK-1gOJhBL4,Rửa xe Đình An,medium,confirmed
+booking_evt_00008,click_evt_00027,nearby_q_005,search_evt_0005,user_005,session_005_01,2026-03-22T09:36:50+00:00,nearby,ChIJ9zaRTX4udTERBr7JULUfLd8,707 Zone - Rửa Xe 707,medium,confirmed
+booking_evt_00009,click_evt_00028,nearby_q_005,search_evt_0005,user_005,session_005_01,2026-03-22T09:35:05+00:00,nearby,ChIJuTqPJXQpdTERyZA9HLklfaY,Rửa xe,medium,confirmed
+booking_evt_00010,click_evt_00029,nearby_q_005,search_evt_0005,user_005,session_005_01,2026-03-22T09:36:55+00:00,nearby,ChIJX0Z3P5YvdTERE6aj5EboTX4,Rửa Xe Hoàng Thái 286/6,medium,confirmed
+booking_evt_00011,click_evt_00035,nearby_q_005,search_evt_0005,user_005,session_005_01,2026-03-22T09:41:55+00:00,nearby,ChIJK6JHgKsodTERm6UGeCKw7so,Rửa Xe - Thay Nhớt Tấn Phong,medium,confirmed
+booking_evt_00012,click_evt_00043,nearby_q_009,search_evt_0009,user_009,session_009_01,2026-03-22T10:00:30+00:00,nearby,ChIJaS06HOMpdTERYF3alhmcRWg,2N Detailing Car,medium,confirmed
+booking_evt_00013,click_evt_00045,nearby_q_010,search_evt_0010,user_001,session_001_02,2026-03-22T10:11:15+00:00,nearby,ChIJW4knxqEvdTERhuMXJ4-RYL8,"Tiệm rửa xe, sửa xe, bảo dưỡng xe 2 bánh - TN Detailing-Motorcycle wash",medium,confirmed
+booking_evt_00014,click_evt_00046,nearby_q_010,search_evt_0010,user_001,session_001_02,2026-03-22T10:07:25+00:00,nearby,ChIJFff3FBMtdTERZbeRtTMhAvs,Rửa Xe Ô Tô - Xe Máy 24/24 Comeco,medium,confirmed
+booking_evt_00015,click_evt_00049,nearby_q_011,search_evt_0011,user_002,session_002_02,2026-03-22T10:14:25+00:00,nearby,ChIJ9xOW4RErdTERn0I4o_CR9J0,Tổng Kho Thiết Bị Rửa Xe Hồ Chí Minh - Miền Nam,medium,confirmed
+booking_evt_00016,click_evt_00057,nearby_q_012,search_evt_0012,user_003,session_003_02,2026-03-22T10:23:10+00:00,nearby,ChIJaRNnpqUpdTERc_-eo8TslVY,Prime Shine Detailing - Rửa Xe Ô Tô Tân Bình- Giữ Xe 24/24,medium,confirmed
+booking_evt_00017,click_evt_00058,nearby_q_012,search_evt_0012,user_003,session_003_02,2026-03-22T10:25:15+00:00,nearby,ChIJ7RD6mUQpdTERda6cUV17nPc,Rửa xe máy,medium,confirmed
+booking_evt_00018,click_evt_00059,nearby_q_012,search_evt_0012,user_003,session_003_02,2026-03-22T10:27:20+00:00,nearby,ChIJ1ZUpBBEpdTERVTiWZz1qDEM,DIAMOND DETAILING - Chăm sóc xe chuyên nghiệp Tân Bình,medium,confirmed
+booking_evt_00019,click_evt_00061,nearby_q_012,search_evt_0012,user_003,session_003_02,2026-03-22T10:27:25+00:00,nearby,ChIJE15xZR8pdTERjhHTMKfts8c,Trung tâm chăm sóc xe Phước Thắng,medium,confirmed
+booking_evt_00020,click_evt_00063,nearby_q_012,search_evt_0012,user_003,session_003_02,2026-03-22T10:21:45+00:00,nearby,ChIJuTqPJXQpdTERyZA9HLklfaY,Rửa xe,medium,confirmed
+booking_evt_00021,click_evt_00064,nearby_q_012,search_evt_0012,user_003,session_003_02,2026-03-22T10:22:05+00:00,nearby,ChIJkSQ5sOsvdTERcNDqTNVgDCY,Rửa xe 79 Lý Thường Kiệt,medium,confirmed
+booking_evt_00022,click_evt_00066,nearby_q_012,search_evt_0012,user_003,session_003_02,2026-03-22T10:28:10+00:00,nearby,ChIJlyvZpuQrdTERgPYy_5tbByM,Tiệm Rửa Xe - Thay Nhớt Ô Tô,medium,confirmed
+booking_evt_00023,click_evt_00071,nearby_q_012,search_evt_0012,user_003,session_003_02,2026-03-22T10:23:00+00:00,nearby,ChIJg3q4BHMpdTERTvfOjDMAfnw,Trung tâm Chăm sóc xe chuyên nghiệp Minh Huy,medium,confirmed
+booking_evt_00024,click_evt_00081,nearby_q_012,search_evt_0012,user_003,session_003_02,2026-03-22T10:24:45+00:00,nearby,ChIJnW6iKs4odTERV38FHz8ZxEs,Công Ty Cổ Phần Vietwash,medium,confirmed
+booking_evt_00025,click_evt_00089,nearby_q_012,search_evt_0012,user_003,session_003_02,2026-03-22T10:25:40+00:00,nearby,ChIJhaM33pgpdTERFUK5gtpsAB8,Tý Rửa Xe,medium,confirmed
+booking_evt_00026,click_evt_00093,nearby_q_012,search_evt_0012,user_003,session_003_02,2026-03-22T10:30:00+00:00,nearby,ChIJ2Rcm-8gpdTERcJ2VC0tDbq4,Ô tô Tấn Tới Q12,medium,confirmed
+booking_evt_00027,click_evt_00097,nearby_q_012,search_evt_0012,user_003,session_003_02,2026-03-22T10:32:15+00:00,nearby,ChIJg80AdX4pdTERC6nJbmzm1Yg,Rửa xe Bình Triệu Hoá Dầu,medium,confirmed
+booking_evt_00028,click_evt_00099,route_q_001,search_evt_0013,user_004,session_004_02,2026-03-22T10:34:20+00:00,on_route,ChIJIYuOTg4pdTERRp8sLayExvI,Máy Rửa Xe Cao Áp - Công Ty Sơn Tùng Lâm,high,confirmed
+booking_evt_00029,click_evt_00105,route_q_001,search_evt_0013,user_004,session_004_02,2026-03-22T10:30:45+00:00,on_route,ChIJm1O96dIudTERcD1jU6rlpNI,Tiệm Rửa Xe 67,medium,confirmed
+booking_evt_00030,click_evt_00107,route_q_001,search_evt_0013,user_004,session_004_02,2026-03-22T10:33:00+00:00,on_route,ChIJx7Jetc4udTERaURpkyVmgdg,Tiệm Rửa Xe Dân Trí,medium,confirmed
+booking_evt_00031,click_evt_00108,route_q_001,search_evt_0013,user_004,session_004_02,2026-03-22T10:29:10+00:00,on_route,ChIJF1Qrl6cpdTERCXUfcS9g9NU,Rửa xe - Thay nhớt oto & xe máy,medium,confirmed
+booking_evt_00032,click_evt_00109,route_q_001,search_evt_0013,user_004,session_004_02,2026-03-22T10:31:20+00:00,on_route,ChIJMfw2TQAvdTER1SLfRI5lVQM,Rửa xe Ô tô - Xe máy 49 Thành Thái,medium,confirmed
+booking_evt_00033,click_evt_00110,route_q_002,search_evt_0014,user_005,session_005_02,2026-03-22T10:41:20+00:00,on_route,ChIJh49VXwQvdTERteVbwQETYQM,Dịch Vụ Rửa Xe 109,high,confirmed
+booking_evt_00034,click_evt_00112,route_q_002,search_evt_0014,user_005,session_005_02,2026-03-22T10:39:25+00:00,on_route,ChIJDbbGtm0vdTERVHUBjRDwqJ8,Trung Tâm Chăm Sóc Xe Minh Phát,high,confirmed
+booking_evt_00035,click_evt_00115,route_q_002,search_evt_0014,user_005,session_005_02,2026-03-22T10:35:45+00:00,on_route,ChIJcUA7eZcvdTERegYfkM6PQMg,"Rửa xe, Thay nhớt Trí 48",high,confirmed
+booking_evt_00036,click_evt_00117,route_q_002,search_evt_0014,user_005,session_005_02,2026-03-22T10:39:55+00:00,on_route,ChIJ0TqeIy0vdTERr_niNpsSS30,Rửa xe bọt tuyết PHẠM NGUYỄN,high,confirmed
+booking_evt_00037,click_evt_00125,route_q_002,search_evt_0014,user_005,session_005_02,2026-03-22T10:36:25+00:00,on_route,ChIJM5mkDZgudTERa_PHXXgHoII,Rửa xe Hoàng Quân,medium,confirmed
+booking_evt_00038,click_evt_00128,route_q_002,search_evt_0014,user_005,session_005_02,2026-03-22T10:36:55+00:00,on_route,ChIJ1YVX-igvdTERaJMz766nH6U,Tiệm Rửa Xe 39,medium,confirmed
+booking_evt_00039,click_evt_00129,route_q_002,search_evt_0014,user_005,session_005_02,2026-03-22T10:42:55+00:00,on_route,ChIJKbcy81UudTERkpGdL9UcyRE,Wash & Oil - Trung Tâm Đầu Nhớt Và Rửa Xe Chuyên Nghiệp,medium,confirmed
+booking_evt_00040,click_evt_00130,route_q_002,search_evt_0014,user_005,session_005_02,2026-03-22T10:37:00+00:00,on_route,ChIJsVkt-KstdTERJRNTjAS1Kng,Rửa Xe Bình Long,medium,confirmed
+booking_evt_00041,click_evt_00131,route_q_002,search_evt_0014,user_005,session_005_02,2026-03-22T10:37:35+00:00,on_route,ChIJm1O96dIudTERcD1jU6rlpNI,Tiệm Rửa Xe 67,medium,confirmed
+booking_evt_00042,click_evt_00133,route_q_002,search_evt_0014,user_005,session_005_02,2026-03-22T10:41:55+00:00,on_route,ChIJE15xZR8pdTERjhHTMKfts8c,Trung tâm chăm sóc xe Phước Thắng,medium,confirmed
+booking_evt_00043,click_evt_00134,route_q_002,search_evt_0014,user_005,session_005_02,2026-03-22T10:38:05+00:00,on_route,ChIJY8lsYOMrdTERMK1y_tV4cFc,Rửa xe Tý,medium,confirmed
+booking_evt_00044,click_evt_00135,route_q_002,search_evt_0014,user_005,session_005_02,2026-03-22T10:42:00+00:00,on_route,ChIJlyvZpuQrdTERgPYy_5tbByM,Tiệm Rửa Xe - Thay Nhớt Ô Tô,medium,confirmed
+booking_evt_00045,click_evt_00144,route_q_003,search_evt_0015,user_006,session_006_02,2026-03-22T10:44:10+00:00,on_route,ChIJR49LHcItdTERIiTJj8DLsa0,XE ĐẸP DETAILING - ĐỘ XE Ô TÔ - ĐỖ XE 24/24 - RỬA XE,high,confirmed
+booking_evt_00046,click_evt_00146,route_q_003,search_evt_0015,user_006,session_006_02,2026-03-22T10:48:20+00:00,on_route,ChIJlZpef4grdTER7hfoHz9oAQM,Dịch Vụ Rửa Xe Tự Động Tiên Tiến,medium,confirmed
+booking_evt_00047,click_evt_00150,route_q_004,search_evt_0016,user_007,session_007_02,2026-03-22T10:49:35+00:00,on_route,ChIJhZmyTOEpdTERMHPFgKi-Um4,Sài Gòn Độ Xe Quận Gò Vấp,medium,confirmed
+booking_evt_00048,click_evt_00152,route_q_004,search_evt_0016,user_007,session_007_02,2026-03-22T10:53:45+00:00,on_route,ChIJA7QSL_kodTERp-zkuoE7Eec,Giữ Xe Ôtô Rửa Xe Ôtô - Xe Máy,medium,confirmed
+booking_evt_00049,click_evt_00153,route_q_005,search_evt_0017,user_008,session_008_02,2026-03-22T10:58:10+00:00,on_route,ChIJCQmWVNMvdTERNLWPf_PE3WE,An Khang Detailing - Xưởng chăm xe vui vẻ,high,confirmed
+booking_evt_00050,click_evt_00154,route_q_005,search_evt_0017,user_008,session_008_02,2026-03-22T11:02:20+00:00,on_route,ChIJdxjE8JMpdTERnAUyvPtxWuo,Car and motorcycle detailing,medium,confirmed
+booking_evt_00051,click_evt_00156,route_q_006,search_evt_0018,user_009,session_009_02,2026-03-22T11:09:20+00:00,on_route,ChIJg4abnhErdTERq9xfcfvb11U,"Bãi giữ xe, rửa xe, trạm sạc điện Vinfast Phong Khanh",high,confirmed
+booking_evt_00052,click_evt_00157,route_q_006,search_evt_0018,user_009,session_009_02,2026-03-22T11:03:25+00:00,on_route,ChIJZcCZ49MrdTERqM8yPq0EMxs,Rửa xe 326,high,confirmed
+booking_evt_00053,click_evt_00158,route_q_006,search_evt_0018,user_009,session_009_02,2026-03-22T11:07:20+00:00,on_route,ChIJoSAZrJErdTERxuO2wsJ14fI,Tiệm rửa xe máy Phước,high,confirmed
+booking_evt_00054,click_evt_00162,route_q_006,search_evt_0018,user_009,session_009_02,2026-03-22T11:07:45+00:00,on_route,ChIJaWwZs_8rdTERZRVK4X5LewY,Trung Tâm Nâng Cấp & Phụ Kiện Ô Tô - VICARE AUTO,high,confirmed
+booking_evt_00055,click_evt_00167,route_q_006,search_evt_0018,user_009,session_009_02,2026-03-22T11:06:15+00:00,on_route,ChIJwyhdiEsqdTERh06rOjUU_B0,"Tiệm rửa xe, vá lốp ôtô & xe máy Số 1",medium,confirmed
+booking_evt_00056,click_evt_00169,route_q_006,search_evt_0018,user_009,session_009_02,2026-03-22T11:08:25+00:00,on_route,ChIJ_-SKGKoudTERHDEBvqz3CPU,Rửa Xe - Thay Nhớt Thuạn Lợi,medium,confirmed
+booking_evt_00057,click_evt_00170,route_q_006,search_evt_0018,user_009,session_009_02,2026-03-22T11:10:15+00:00,on_route,ChIJoXZmyu4rdTERbuUsj31vz1c,Tiệm Rửa Xe Tân Bình,medium,confirmed
+booking_evt_00058,click_evt_00177,route_q_006,search_evt_0018,user_009,session_009_02,2026-03-22T11:10:55+00:00,on_route,ChIJaRNnpqUpdTERc_-eo8TslVY,Prime Shine Detailing - Rửa Xe Ô Tô Tân Bình- Giữ Xe 24/24,medium,confirmed
+booking_evt_00059,click_evt_00181,route_q_006,search_evt_0018,user_009,session_009_02,2026-03-22T11:11:30+00:00,on_route,ChIJ8cgcDQArdTERJKCORLEdiKk,Cầm đồ 253 & Giữ xe và rửa xe oto 24/24,medium,confirmed
+booking_evt_00060,click_evt_00186,route_q_008,search_evt_0020,user_002,session_002_03,2026-03-22T11:19:35+00:00,on_route,ChIJeUtNRwAvdTEReYPFG0EmXTA,Rửa xe oto xe máy SBS,high,confirmed
+booking_evt_00061,click_evt_00188,route_q_008,search_evt_0020,user_002,session_002_03,2026-03-22T11:19:40+00:00,on_route,ChIJ92uFsuYudTERvyQu9b8g8Ws,Rửa Xe Hiếu,high,confirmed
+booking_evt_00062,click_evt_00189,route_q_008,search_evt_0020,user_002,session_002_03,2026-03-22T11:21:45+00:00,on_route,ChIJQasFZlQudTERUnY-pRaF33E,Rua Xe 63,high,confirmed
+booking_evt_00063,click_evt_00195,route_q_008,search_evt_0020,user_002,session_002_03,2026-03-22T11:22:00+00:00,on_route,ChIJB4-7VVcvdTERFGf8fzD2VKk,Rửa Xe Mai Tuấn,medium,confirmed
+booking_evt_00064,click_evt_00196,route_q_008,search_evt_0020,user_002,session_002_03,2026-03-22T11:22:05+00:00,on_route,ChIJaS06HOMpdTERYF3alhmcRWg,2N Detailing Car,medium,confirmed
+booking_evt_00065,click_evt_00199,route_q_008,search_evt_0020,user_002,session_002_03,2026-03-22T11:24:45+00:00,on_route,ChIJM7P_4-wudTERQ9H4dubIkvs,Dịch Vụ Rửa Xe 140,medium,confirmed
+booking_evt_00066,click_evt_00202,route_q_008,search_evt_0020,user_002,session_002_03,2026-03-22T11:23:10+00:00,on_route,ChIJHU8nWgAvdTERICXUCipASJs,Dịch vụ rửa xe cộng đồng Chung Cư Lò Gốm,medium,confirmed
+booking_evt_00067,click_evt_00213,route_q_008,search_evt_0020,user_002,session_002_03,2026-03-22T11:20:10+00:00,on_route,ChIJJf-tgPktdTERnMlZk454dfQ,Tiệm rửa xe 7talon - CN01,medium,confirmed
+booking_evt_00068,click_evt_00214,route_q_008,search_evt_0020,user_002,session_002_03,2026-03-22T11:26:15+00:00,on_route,ChIJ00mjs4MudTERmzCqQnJyhY0,Car Wash 39,medium,confirmed

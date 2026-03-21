@@ -1,0 +1,102 @@
+column_name,source_table,data_type,description,used_for_model
+query_id,relevance_labels,object,Stable query grouping key for ranking tasks.,no
+search_event_id,relevance_labels/search_events,object,Dataset column `search_event_id` carried into the model-ready ranking table.,no
+user_id,relevance_labels,object,Dataset column `user_id` carried into the model-ready ranking table.,no
+session_id,relevance_labels,object,Dataset column `session_id` carried into the model-ready ranking table.,no
+search_mode,search_events,object,"Search mode context, nearby or on_route.",no
+merchant_id,relevance_labels,object,Stable merchant identifier for joins and evaluation.,no
+merchant_name,joined_dataset,object,Dataset column `merchant_name` carried into the model-ready ranking table.,no
+impressed,joined_dataset,int64,Dataset column `impressed` carried into the model-ready ranking table.,no
+clicked,joined_dataset,int64,Dataset column `clicked` carried into the model-ready ranking table.,no
+booked,joined_dataset,int64,Dataset column `booked` carried into the model-ready ranking table.,no
+relevance_label,relevance_labels,int64,"Target label where booked=3, clicked=2, impression-only=1, not shown=0.",no
+label_source,relevance_labels,object,Dataset column `label_source` carried into the model-ready ranking table.,no
+query_source,search_events,object,Query source descriptor from the synthetic or future production pipeline.,no
+require_open_now,search_events,float64,Dataset column `require_open_now` carried into the model-ready ranking table.,no
+min_rating,search_events,float64,Dataset column `min_rating` carried into the model-ready ranking table.,no
+radius_km,search_events,float64,Dataset column `radius_km` carried into the model-ready ranking table.,no
+max_corridor_km,search_events,float64,Dataset column `max_corridor_km` carried into the model-ready ranking table.,no
+has_destination,engineered_from_search_events,int64,Dataset column `has_destination` carried into the model-ready ranking table.,yes
+rank_position,impression_events,float64,Baseline ranked list position from Phase 4 impressions.,no
+final_rank_score,impression_events,float64,Rule-based baseline ranking score from Phase 4.,no
+distance_km,impression_events,float64,Nearby distance between user and merchant when available.,no
+route_distance_proxy,impression_events,float64,Approximate merchant distance to route corridor when available.,no
+detour_proxy,impression_events,float64,Approximate extra route cost proxy when a merchant is added to a route query.,no
+was_impressed,relevance_labels/impression_events,bool,Dataset column `was_impressed` carried into the model-ready ranking table.,no
+click_event_count,joined_dataset,float64,Dataset column `click_event_count` carried into the model-ready ranking table.,no
+was_clicked,relevance_labels/click_events,bool,Dataset column `was_clicked` carried into the model-ready ranking table.,no
+booking_event_count,joined_dataset,float64,Dataset column `booking_event_count` carried into the model-ready ranking table.,no
+was_booked,relevance_labels/booking_events,bool,Dataset column `was_booked` carried into the model-ready ranking table.,no
+district_norm,joined_dataset,object,Dataset column `district_norm` carried into the model-ready ranking table.,no
+latitude,merchant_geo_ready,float64,Dataset column `latitude` carried into the model-ready ranking table.,no
+longitude,merchant_geo_ready,float64,Dataset column `longitude` carried into the model-ready ranking table.,no
+rating,merchant_geo_ready,float64,Dataset column `rating` carried into the model-ready ranking table.,no
+review_count_source,merchant_geo_ready,int64,Dataset column `review_count_source` carried into the model-ready ranking table.,no
+is_open_now_proxy,merchant_geo_ready,float64,Dataset column `is_open_now_proxy` carried into the model-ready ranking table.,no
+is_valid_geo,joined_dataset,int64,Dataset column `is_valid_geo` carried into the model-ready ranking table.,yes
+rating_score,merchant_ranking_features,float64,Dataset column `rating_score` carried into the model-ready ranking table.,no
+review_volume_score,merchant_ranking_features,float64,Dataset column `review_volume_score` carried into the model-ready ranking table.,no
+trust_score,merchant_ranking_features,float64,Dataset column `trust_score` carried into the model-ready ranking table.,no
+open_score,merchant_ranking_features,float64,Dataset column `open_score` carried into the model-ready ranking table.,no
+service_richness_score,merchant_ranking_features,float64,Dataset column `service_richness_score` carried into the model-ready ranking table.,no
+unclaimed_penalty,merchant_ranking_features,float64,Dataset column `unclaimed_penalty` carried into the model-ready ranking table.,no
+base_rank_score,merchant_ranking_features,float64,Dataset column `base_rank_score` carried into the model-ready ranking table.,no
+service_exterior_wash,merchant_ranking_features,int64,Dataset column `service_exterior_wash` carried into the model-ready ranking table.,yes
+service_interior_cleaning,merchant_ranking_features,int64,Dataset column `service_interior_cleaning` carried into the model-ready ranking table.,yes
+service_detailing,merchant_ranking_features,int64,Dataset column `service_detailing` carried into the model-ready ranking table.,yes
+service_ceramic,merchant_ranking_features,int64,Dataset column `service_ceramic` carried into the model-ready ranking table.,yes
+service_ev_safe,merchant_ranking_features,int64,Dataset column `service_ev_safe` carried into the model-ready ranking table.,yes
+service_fast_lane,merchant_ranking_features,int64,Dataset column `service_fast_lane` carried into the model-ready ranking table.,yes
+service_car_supported,merchant_ranking_features,int64,Dataset column `service_car_supported` carried into the model-ready ranking table.,yes
+service_motorbike_supported,merchant_ranking_features,int64,Dataset column `service_motorbike_supported` carried into the model-ready ranking table.,yes
+route_query_flag,engineered,int64,Indicator that the query is an on-route search.,yes
+nearby_query_flag,engineered,int64,Indicator that the query is a nearby search.,yes
+reciprocal_rank,engineered,float64,"Inverse rank feature, 1 / rank_position when available.",no
+top_3_flag,engineered,int64,Indicator that the merchant was in the top 3 baseline positions.,yes
+top_5_flag,engineered,int64,Indicator that the merchant was in the top 5 baseline positions.,yes
+high_rating_flag,engineered,int64,Indicator that merchant rating is at least 4.5.,yes
+open_and_high_rating_flag,engineered,int64,Indicator that merchant appears open now and has a high rating.,yes
+require_open_now_missing,engineered,int64,Dataset column `require_open_now_missing` carried into the model-ready ranking table.,yes
+require_open_now_filled,engineered,float64,Dataset column `require_open_now_filled` carried into the model-ready ranking table.,yes
+min_rating_missing,engineered,int64,Dataset column `min_rating_missing` carried into the model-ready ranking table.,yes
+min_rating_filled,engineered,float64,Dataset column `min_rating_filled` carried into the model-ready ranking table.,yes
+radius_km_missing,engineered,int64,Dataset column `radius_km_missing` carried into the model-ready ranking table.,yes
+radius_km_filled,engineered,float64,Dataset column `radius_km_filled` carried into the model-ready ranking table.,yes
+max_corridor_km_missing,engineered,int64,Dataset column `max_corridor_km_missing` carried into the model-ready ranking table.,yes
+max_corridor_km_filled,engineered,float64,Dataset column `max_corridor_km_filled` carried into the model-ready ranking table.,yes
+latitude_missing,engineered,int64,Dataset column `latitude_missing` carried into the model-ready ranking table.,yes
+latitude_filled,engineered,float64,Dataset column `latitude_filled` carried into the model-ready ranking table.,yes
+longitude_missing,engineered,int64,Dataset column `longitude_missing` carried into the model-ready ranking table.,yes
+longitude_filled,engineered,float64,Dataset column `longitude_filled` carried into the model-ready ranking table.,yes
+rating_missing,engineered,int64,Dataset column `rating_missing` carried into the model-ready ranking table.,yes
+rating_filled,engineered,float64,Dataset column `rating_filled` carried into the model-ready ranking table.,yes
+review_count_source_missing,engineered,int64,Dataset column `review_count_source_missing` carried into the model-ready ranking table.,yes
+review_count_source_filled,engineered,int64,Dataset column `review_count_source_filled` carried into the model-ready ranking table.,yes
+is_open_now_proxy_missing,engineered,int64,Dataset column `is_open_now_proxy_missing` carried into the model-ready ranking table.,yes
+is_open_now_proxy_filled,engineered,float64,Dataset column `is_open_now_proxy_filled` carried into the model-ready ranking table.,yes
+rating_score_missing,engineered,int64,Dataset column `rating_score_missing` carried into the model-ready ranking table.,yes
+rating_score_filled,engineered,float64,Dataset column `rating_score_filled` carried into the model-ready ranking table.,yes
+review_volume_score_missing,engineered,int64,Dataset column `review_volume_score_missing` carried into the model-ready ranking table.,yes
+review_volume_score_filled,engineered,float64,Dataset column `review_volume_score_filled` carried into the model-ready ranking table.,yes
+trust_score_missing,engineered,int64,Dataset column `trust_score_missing` carried into the model-ready ranking table.,yes
+trust_score_filled,engineered,float64,Dataset column `trust_score_filled` carried into the model-ready ranking table.,yes
+open_score_missing,engineered,int64,Dataset column `open_score_missing` carried into the model-ready ranking table.,yes
+open_score_filled,engineered,float64,Dataset column `open_score_filled` carried into the model-ready ranking table.,yes
+service_richness_score_missing,engineered,int64,Dataset column `service_richness_score_missing` carried into the model-ready ranking table.,yes
+service_richness_score_filled,engineered,float64,Dataset column `service_richness_score_filled` carried into the model-ready ranking table.,yes
+unclaimed_penalty_missing,engineered,int64,Dataset column `unclaimed_penalty_missing` carried into the model-ready ranking table.,yes
+unclaimed_penalty_filled,engineered,float64,Dataset column `unclaimed_penalty_filled` carried into the model-ready ranking table.,yes
+base_rank_score_missing,engineered,int64,Dataset column `base_rank_score_missing` carried into the model-ready ranking table.,yes
+base_rank_score_filled,engineered,float64,Dataset column `base_rank_score_filled` carried into the model-ready ranking table.,yes
+rank_position_missing,engineered,int64,Dataset column `rank_position_missing` carried into the model-ready ranking table.,yes
+rank_position_filled,engineered,float64,Dataset column `rank_position_filled` carried into the model-ready ranking table.,yes
+final_rank_score_missing,engineered,int64,Dataset column `final_rank_score_missing` carried into the model-ready ranking table.,yes
+final_rank_score_filled,engineered,float64,Dataset column `final_rank_score_filled` carried into the model-ready ranking table.,yes
+distance_km_missing,engineered,int64,Dataset column `distance_km_missing` carried into the model-ready ranking table.,yes
+distance_km_filled,engineered,float64,Dataset column `distance_km_filled` carried into the model-ready ranking table.,yes
+route_distance_proxy_missing,engineered,int64,Dataset column `route_distance_proxy_missing` carried into the model-ready ranking table.,yes
+route_distance_proxy_filled,engineered,float64,Dataset column `route_distance_proxy_filled` carried into the model-ready ranking table.,yes
+detour_proxy_missing,engineered,int64,Dataset column `detour_proxy_missing` carried into the model-ready ranking table.,yes
+detour_proxy_filled,engineered,float64,Dataset column `detour_proxy_filled` carried into the model-ready ranking table.,yes
+reciprocal_rank_missing,engineered,int64,Dataset column `reciprocal_rank_missing` carried into the model-ready ranking table.,yes
+reciprocal_rank_filled,engineered,float64,Dataset column `reciprocal_rank_filled` carried into the model-ready ranking table.,yes

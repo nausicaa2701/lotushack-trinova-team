@@ -9,6 +9,8 @@ import { MerchantList } from './MerchantList';
 import { RouteSearchForm } from './RouteSearchForm';
 import { SearchModeToggle } from './SearchModeToggle';
 import { fallbackSearch, logSearchEvent, nearbySearch, onRouteSearch, routePreview } from './exploreApi';
+import { useAuth } from '../../auth/AuthContext';
+import { createOwnerBooking } from '../../lib/ownerBookingsApi';
 import { filterMerchantsByQuery } from '../../lib/platformMock';
 import type { ExploreFilters, LatLng, Merchant, SearchMode } from './types';
 
@@ -22,6 +24,7 @@ const initialFilters: ExploreFilters = {
 };
 
 export const ExplorePage = () => {
+  const { user } = useAuth();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const [mode, setMode] = React.useState<SearchMode>('nearby');
@@ -39,6 +42,33 @@ export const ExplorePage = () => {
   const highlightedMerchantId = searchParams.get('merchant');
 
   const selectedMerchant = merchants.find((item) => item.merchantId === selectedMerchantId) ?? null;
+
+  const handleBookMerchant = React.useCallback(
+    async (merchantId: string) => {
+      const m = merchants.find((x) => x.merchantId === merchantId);
+      if (!m) return;
+      if (!user) {
+        navigate('/login');
+        return;
+      }
+      setError(null);
+      try {
+        await createOwnerBooking(user.id, {
+          id: `bk-${Date.now()}`,
+          providerId: m.merchantId,
+          provider: m.name,
+          service: 'Eco wash',
+          slot: 'Next available',
+          price: m.priceFrom,
+        });
+        setShowDetail(false);
+        navigate('/owner/bookings');
+      } catch (e) {
+        setError(e instanceof Error ? e.message : 'Could not create booking');
+      }
+    },
+    [merchants, user, navigate]
+  );
 
   const useCurrentLocation = () => {
     navigator.geolocation.getCurrentPosition(
@@ -88,13 +118,16 @@ export const ExplorePage = () => {
           ? highlightedMerchantId
           : filteredResults[0]?.merchantId ?? null
       );
-      await logSearchEvent({
-        mode,
-        origin,
-        destination: mode === 'on-route' ? destination : null,
-        filters,
-        shownMerchants: filteredResults.map((item, index) => ({ merchantId: item.merchantId, rank: index + 1 })),
-      });
+      await logSearchEvent(
+        {
+          mode,
+          origin,
+          destination: mode === 'on-route' ? destination : null,
+          filters,
+          shownMerchants: filteredResults.map((item, index) => ({ merchantId: item.merchantId, rank: index + 1 })),
+        },
+        { userId: user?.id }
+      );
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Search failed');
     } finally {
@@ -132,7 +165,7 @@ export const ExplorePage = () => {
           <h2 className="font-headline text-3xl font-extrabold">Explore Route Search</h2>
           <p className="mt-1 text-slate-500">
             {topBarSearchQuery
-              ? `Showing mock search matches for "${topBarSearchQuery}".`
+              ? `Showing results for “${topBarSearchQuery}”.`
               : 'Nearby and on-route merchant discovery with ranked results.'}
           </p>
         </div>
@@ -179,7 +212,7 @@ export const ExplorePage = () => {
                 setSelectedMerchantId(merchantId);
                 setShowDetail(true);
               }}
-              onBookMerchant={() => navigate('/owner/bookings')}
+              onBookMerchant={(id) => void handleBookMerchant(id)}
             />
           )}
         </section>
@@ -193,7 +226,7 @@ export const ExplorePage = () => {
         merchant={selectedMerchant}
         visible={showDetail}
         onHide={() => setShowDetail(false)}
-        onBook={() => navigate('/owner/bookings')}
+        onBook={() => selectedMerchant && void handleBookMerchant(selectedMerchant.merchantId)}
       />
     </div>
   );
