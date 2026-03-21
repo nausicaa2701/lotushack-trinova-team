@@ -4,9 +4,9 @@ dist
 .git
 .gitignore
 .vscode
-.env
-.env.local
-.env.prod
+*.env
+*.env.local
+*.env.prod
 __pycache__
 *.pyc
 .DS_Store
