@@ -63,6 +63,14 @@
   @apply backdrop-blur-lg bg-white/80 dark:bg-slate-950/80;
 }
 
+/* Stacking: nav sidebar (z-[10050]) & overlay (z-[10040]) sit above Leaflet panes (~400–1000) and TopBar */
+.p-sidebar-mask {
+  z-index: 10048 !important;
+}
+.p-sidebar {
+  z-index: 10049 !important;
+}
+
 /* PrimeReact Overrides for Design System */
 .p-button {
   border-radius: 9999px !important;

@@ -70,7 +70,7 @@ export const Sidebar = ({ open = false, onClose }: SidebarProps) => {
   return (
     <aside
       className={cn(
-        'fixed left-0 top-0 z-50 flex h-screen h-dvh w-64 flex-col border-r border-slate-200/50 bg-slate-50 p-4 transition-transform duration-300 ease-out',
+        'fixed left-0 top-0 z-[10050] flex h-screen h-dvh w-64 flex-col border-r border-slate-200/50 bg-slate-50 p-4 transition-transform duration-300 ease-out',
         open ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
       )}
     >

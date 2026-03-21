@@ -18,7 +18,7 @@ export const Layout: React.FC = () => {
         <button
           type="button"
           aria-label="Close menu"
-          className="fixed inset-0 z-40 bg-slate-900/40 backdrop-blur-sm transition-opacity lg:hidden"
+          className="fixed inset-0 z-[10040] bg-slate-900/40 backdrop-blur-sm transition-opacity lg:hidden"
           onClick={() => setSidebarOpen(false)}
         />
       )}
