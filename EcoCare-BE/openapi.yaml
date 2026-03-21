@@ -1,0 +1,426 @@
+openapi: 3.0.3
+info:
+  title: EcoCare Backend API
+  version: 0.1.0
+  description: Initial OpenAPI skeleton generated from FE mock contracts.
+servers:
+  - url: /api
+    description: Current FE-compatible base path
+paths:
+  /routes/preview:
+    post:
+      summary: Preview route between origin and destination
+      operationId: routePreview
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RoutePreviewRequest'
+      responses:
+        '200':
+          description: Route preview result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RoutePreviewResponse'
+  /search/nearby:
+    post:
+      summary: Search merchants near a location
+      operationId: nearbySearch
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NearbySearchRequest'
+      responses:
+        '200':
+          description: Nearby search result
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SearchResultMerchant'
+                required: [results]
+  /search/on-route:
+    post:
+      summary: Search merchants along route
+      operationId: onRouteSearch
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OnRouteSearchRequest'
+      responses:
+        '200':
+          description: On-route search result
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SearchResultMerchant'
+                required: [results]
+  /search/logs:
+    post:
+      summary: Log AI search event
+      operationId: logSearchEvent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchLogEvent'
+      responses:
+        '200':
+          description: Log accepted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accepted:
+                    type: boolean
+                required: [accepted]
+  /auth/login:
+    post:
+      summary: User login
+      operationId: login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+              required: [email, password]
+      responses:
+        '200':
+          description: Login success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                  refreshToken:
+                    type: string
+                  user:
+                    $ref: '#/components/schemas/User'
+                required: [token, refreshToken, user]
+  /owners/{ownerId}/bookings:
+    get:
+      summary: Get owner bookings
+      operationId: getOwnerBookings
+      parameters:
+        - in: path
+          name: ownerId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Owner bookings
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  bookings:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Booking'
+                required: [bookings]
+  /providers/{providerId}/bookings:
+    get:
+      summary: Get provider booking queue
+      operationId: getProviderBookings
+      parameters:
+        - in: path
+          name: providerId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Provider booking queue
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  providerBookings:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ProviderBooking'
+                required: [providerBookings]
+  /admin/disputes:
+    get:
+      summary: Get disputes queue
+      operationId: getDisputes
+      responses:
+        '200':
+          description: Disputes list
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  disputes:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Dispute'
+                required: [disputes]
+components:
+  schemas:
+    LatLng:
+      type: object
+      properties:
+        lat:
+          type: number
+          format: double
+        lng:
+          type: number
+          format: double
+      required: [lat, lng]
+    SearchFilters:
+      type: object
+      properties:
+        openNow:
+          type: boolean
+        evSafe:
+          type: boolean
+        minRating:
+          type: number
+          minimum: 0
+          maximum: 5
+        serviceTypes:
+          type: array
+          items:
+            type: string
+      required: [openNow, evSafe, minRating, serviceTypes]
+    RoutePreviewRequest:
+      type: object
+      properties:
+        origin:
+          $ref: '#/components/schemas/LatLng'
+        destination:
+          $ref: '#/components/schemas/LatLng'
+      required: [origin, destination]
+    RouteBounds:
+      type: object
+      properties:
+        north:
+          type: number
+        south:
+          type: number
+        east:
+          type: number
+        west:
+          type: number
+      required: [north, south, east, west]
+    RoutePreviewResponse:
+      type: object
+      properties:
+        distanceKm:
+          type: number
+        durationMin:
+          type: integer
+        polyline:
+          type: string
+        bounds:
+          $ref: '#/components/schemas/RouteBounds'
+      required: [distanceKm, durationMin, polyline, bounds]
+    NearbySearchRequest:
+      type: object
+      properties:
+        location:
+          $ref: '#/components/schemas/LatLng'
+        radiusKm:
+          type: number
+        filters:
+          $ref: '#/components/schemas/SearchFilters'
+      required: [location, radiusKm, filters]
+    OnRouteSearchRequest:
+      type: object
+      properties:
+        origin:
+          $ref: '#/components/schemas/LatLng'
+        destination:
+          $ref: '#/components/schemas/LatLng'
+        polyline:
+          type: string
+        maxDetourKm:
+          type: number
+        filters:
+          $ref: '#/components/schemas/SearchFilters'
+      required: [origin, destination, polyline, maxDetourKm, filters]
+    SearchResultMerchant:
+      type: object
+      properties:
+        merchantId:
+          type: string
+        name:
+          type: string
+        lat:
+          type: number
+        lng:
+          type: number
+        rating:
+          type: number
+        successfulOrders:
+          type: integer
+        priceFrom:
+          type: number
+        distanceFromRouteKm:
+          type: number
+        detourMin:
+          type: integer
+        availableNow:
+          type: boolean
+        reasonTags:
+          type: array
+          items:
+            type: string
+      required:
+        - merchantId
+        - name
+        - lat
+        - lng
+        - rating
+        - successfulOrders
+        - priceFrom
+        - distanceFromRouteKm
+        - detourMin
+        - availableNow
+        - reasonTags
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        roles:
+          type: array
+          items:
+            type: string
+        defaultRole:
+          type: string
+      required: [id, name, email, roles, defaultRole]
+    Booking:
+      type: object
+      properties:
+        id:
+          type: string
+        ownerId:
+          type: string
+        provider:
+          type: string
+        service:
+          type: string
+        slot:
+          type: string
+        state:
+          type: string
+          enum: [pending, confirmed, in_progress, completed, cancelled, no_show]
+        price:
+          type: number
+      required: [id, ownerId, provider, service, slot, state, price]
+    ProviderBooking:
+      type: object
+      properties:
+        id:
+          type: string
+        providerId:
+          type: string
+        owner:
+          type: string
+        service:
+          type: string
+        state:
+          type: string
+      required: [id, providerId, owner, service, state]
+    Dispute:
+      type: object
+      properties:
+        id:
+          type: string
+        bookingId:
+          type: string
+        type:
+          type: string
+        status:
+          type: string
+      required: [id, bookingId, type, status]
+    SearchLogEvent:
+      type: object
+      properties:
+        id:
+          type: string
+        user_id_anonymized:
+          type: string
+        mode:
+          type: string
+          enum: [nearby, on-route]
+        origin_lat:
+          type: number
+        origin_lng:
+          type: number
+        destination_lat:
+          type: number
+        destination_lng:
+          type: number
+        route_polyline:
+          type: string
+        filters_json:
+          type: object
+        shown_merchants_json:
+          type: array
+          items:
+            type: object
+        clicked_merchant_id:
+          type: string
+        booked_merchant_id:
+          type: string
+        merchant_rank_position:
+          type: integer
+        detour_minutes:
+          type: integer
+        created_at:
+          type: string
+          format: date-time
+      required:
+        - id
+        - user_id_anonymized
+        - mode
+        - origin_lat
+        - origin_lng
+        - destination_lat
+        - destination_lng
+        - route_polyline
+        - filters_json
+        - shown_merchants_json
+        - clicked_merchant_id
+        - booked_merchant_id
+        - merchant_rank_position
+        - detour_minutes
+        - created_at
