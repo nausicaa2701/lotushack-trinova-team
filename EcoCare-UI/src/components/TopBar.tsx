@@ -340,7 +340,7 @@ export const TopBar = ({ onMenuClick }: TopBarProps) => {
   const showSearchPanel = searchOpen && (hasTypedQuery || Boolean(statusMessage) || searchDataLoading);
 
   return (
-    <header className="sticky top-0 z-30 flex h-16 w-full shrink-0 items-center justify-between gap-3 px-4 font-sans text-sm glass-effect sm:gap-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-30 flex h-16 w-full shrink-0 items-center justify-between gap-3 border-b border-slate-200/60 bg-white/75 px-4 font-sans text-sm backdrop-blur-md sm:gap-4 sm:px-6 lg:px-8">
       <div className="flex min-w-0 flex-1 items-center gap-3">
         <button
           type="button"

@@ -2,8 +2,6 @@ import { motion } from 'motion/react';
 import type { FormEvent } from 'react';
 import { useEffect, useState } from 'react';
 import { Button } from 'primereact/button';
-import { InputText } from 'primereact/inputtext';
-import { Password } from 'primereact/password';
 import { Link, useNavigate } from 'react-router-dom';
 import { Clock3, Leaf, Lock, Mail, Zap } from 'lucide-react';
 import { useAuth } from '../auth/AuthContext';
@@ -14,6 +12,8 @@ export default function Login() {
   const { login } = useAuth();
   const { data, loading, error } = useMockData();
   const [selectedUserId, setSelectedUserId] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const users = data?.users ?? [];
 
   useEffect(() => {
@@ -45,7 +45,6 @@ export default function Login() {
           className="max-w-md w-full mx-auto space-y-8"
         >
           <div className="space-y-2">
-            <h1 className="font-headline text-3xl font-bold tracking-tight text-on-surface">Welcome back</h1>
             <p className="text-on-surface-variant font-medium">Access your premium EV wash dashboard.</p>
           </div>
 
@@ -75,9 +74,12 @@ export default function Login() {
                 <label className="text-sm font-semibold text-on-surface-variant ml-1" htmlFor="email">Email Address</label>
                 <div className="relative">
                   <Mail className="pointer-events-none absolute left-4 top-1/2 z-10 h-4 w-4 -translate-y-1/2 text-outline" />
-                  <InputText 
+                  <input
                     id="email" 
-                    placeholder="name@company.com" 
+                    type="email"
+                    placeholder="name@company.com"
+                    value={email}
+                    onChange={(event) => setEmail(event.target.value)}
                     className="w-full pl-12 pr-4 py-3.5 bg-surface-container-highest border-none rounded-2xl focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary transition-all duration-200 outline-none"
                   />
                 </div>
@@ -90,13 +92,13 @@ export default function Login() {
                 </div>
                 <div className="relative">
                   <Lock className="pointer-events-none absolute left-4 top-1/2 z-10 h-4 w-4 -translate-y-1/2 text-outline" />
-                  <Password 
-                    id="password" 
-                    placeholder="••••••••" 
-                    toggleMask 
-                    feedback={false}
-                    className="w-full [&_.p-inputtext]:w-full [&_.p-password-input]:w-full"
-                    inputClassName="w-full pl-12 pr-12 py-3.5 bg-surface-container-highest border-none rounded-2xl focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary transition-all duration-200 outline-none"
+                  <input
+                    id="password"
+                    type="password"
+                    placeholder="••••••••"
+                    value={password}
+                    onChange={(event) => setPassword(event.target.value)}
+                    className="w-full pl-12 pr-4 py-3.5 bg-surface-container-highest border-none rounded-2xl focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary transition-all duration-200 outline-none"
                   />
                 </div>
               </div>
