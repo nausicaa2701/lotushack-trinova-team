@@ -10,6 +10,7 @@ RUN pip install --no-cache-dir -r /app/requirements.txt
 
 COPY EcoCare-BE /app
 COPY EcoCare-UI/public/mock /mock
+COPY Dataset /Dataset
 
 EXPOSE 8000
 

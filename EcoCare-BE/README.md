@@ -1,263 +1,156 @@
 # EcoCare-BE
 
-Backend starter document for EcoCare platform APIs.
+## Overview
 
-This document defines an initial REST API structure based on FE mock contracts in `EcoCare-UI/public/mock` and current FE API calls.
+EcoCare-BE is a FastAPI backend for authentication, platform bootstrap data, merchant discovery, slot recommendation, and AI-assisted forecast services.
 
-## 1) API Conventions
+It serves two types of data:
 
-- Base URL: `/api`
-- Versioning (recommended): `/api/v1/...` (FE currently calls `/api/...`)
-- Content type: `application/json`
-- Time format: ISO-8601 UTC (example: `2026-03-21T10:30:00Z`)
-- Auth: Bearer JWT (except login endpoint)
+- Application data stored in PostgreSQL
+- AI/recommendation artifacts loaded from `Dataset/ProcessedData`
 
-### Standard Success Envelope
+## Tech Stack
 
-```json
-{
-	"data": {},
-	"meta": {
-		"requestId": "req_123",
-		"timestamp": "2026-03-21T10:30:00Z"
-	}
-}
+- FastAPI
+- SQLAlchemy 2
+- PostgreSQL
+- Pydantic v2
+- Uvicorn
+
+## Project Structure
+
+- `app/main.py`: FastAPI app entrypoint and CORS setup
+- `app/api/router.py`: top-level API router registration
+- `app/api/routes`: feature routes (`auth`, `search`, `slots`, `platform`, `forecast`, etc.)
+- `app/models`: SQLAlchemy models
+- `app/schemas`: request and response schemas
+- `app/services/ai_serving.py`: AI artifact loading and recommendation logic
+- `scripts/seed_from_mock.py`: database seeding from frontend mock JSON
+
+## Environment Variables
+
+Reference file: `.env.example`
+
+```dotenv
+APP_NAME=EcoCare Backend API
+APP_ENV=development
+API_PREFIX=/api
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
+POSTGRES_DB=ecocare
+POSTGRES_USER=ecocare
+POSTGRES_PASSWORD=ecocare
+DATABASE_URL=
 ```
 
-Note: For MVP compatibility, keep existing direct-response contracts for FE-called endpoints where needed.
+AI artifact paths are configured through settings defaults:
 
-### Standard Error Envelope
+- `processed_data_dir=../Dataset/ProcessedData`
+- `processed_models_dir=../Dataset/ProcessedData/models`
 
-```json
-{
-	"error": {
-		"code": "VALIDATION_ERROR",
-		"message": "Invalid request payload",
-		"details": [
-			{
-				"field": "filters.minRating",
-				"issue": "Must be between 0 and 5"
-			}
-		]
-	},
-	"meta": {
-		"requestId": "req_123",
-		"timestamp": "2026-03-21T10:30:00Z"
-	}
-}
+## Run Locally Without Docker
+
+Create and activate a Python environment, then install dependencies:
+
+```bash
+pip install -r requirements.txt
 ```
 
-### Common HTTP Statuses
+Start the API from `EcoCare-BE`:
 
-- `200` success
-- `201` created
-- `400` validation error
-- `401` unauthorized
-- `403` forbidden
-- `404` not found
-- `409` conflict
-- `422` semantic validation error
-- `500` internal error
-
-## 2) Domain Models (Initial)
-
-### User
-
-```json
-{
-	"id": "owner-01",
-	"name": "Alex Rivera",
-	"email": "alex@washnet.app",
-	"roles": ["owner", "provider"],
-	"defaultRole": "owner"
-}
+```bash
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-### Merchant
+## Run With Docker Compose
 
-```json
-{
-	"merchantId": "m_001",
-	"name": "EcoGloss Elite",
-	"address": "1422 Marina Blvd, San Francisco",
-	"lat": 37.8062,
-	"lng": -122.4371,
-	"rating": 4.9,
-	"reviewCount": 1240,
-	"successfulOrders": 1420,
-	"priceFrom": 45,
-	"isEvSafe": true,
-	"openNow": true,
-	"serviceTypes": ["ceramic", "interior", "express"]
-}
+From the repository root:
+
+```bash
+docker compose up --build -d
 ```
 
-### Booking
+This starts:
 
-```json
-{
-	"id": "b-1001",
-	"ownerId": "owner-01",
-	"providerId": "provider-02",
-	"service": "Premium Exterior",
-	"slot": "09:30",
-	"state": "confirmed",
-	"price": 45
-}
+- PostgreSQL
+- FastAPI backend
+- React frontend
+
+## Database Seeding
+
+Seed the database from the repository root after containers are running:
+
+```bash
+docker compose exec backend python scripts/seed_from_mock.py
 ```
 
-## 3) REST API Structure
+The seed process loads:
 
-## 3.1 Authentication
+- auth users
+- 100 generated synthetic users
+- merchants
+- owner/provider/admin operational data
+- search logs
+- vehicles from `EcoCare-UI/public/mock/platform-data.json`
 
-### POST `/api/auth/login`
+## Core API Areas
 
-- Purpose: authenticate user by email and return available roles.
+Registered API groups:
 
-Request:
+- `/api/auth`
+- `/api/routes`
+- `/api/search`
+- `/api/merchants`
+- `/api/slots`
+- `/api/forecast`
+- `/api/platform`
+- `/api/owners`
+- `/api/providers`
+- `/api/admin`
 
-```json
-{
-	"email": "alex@washnet.app",
-	"password": "demo-password"
-}
+## Frequently Used Endpoints
+
+- `GET /health`
+- `POST /api/auth/login`
+- `GET /api/auth/me`
+- `GET /api/platform/bootstrap`
+- `POST /api/routes/preview`
+- `POST /api/search/nearby`
+- `POST /api/search/on-route`
+- `POST /api/search/logs`
+- `POST /api/slots/recommend`
+
+## Notes On Slot Recommendations
+
+Slot recommendation uses AI-serving artifacts from `Dataset/ProcessedData`.
+
+In Docker mode, the backend image must include the `Dataset` folder so `/api/slots/recommend` and forecast services can read artifact files such as:
+
+- `merchant_ranking_features.csv`
+- `slot_events.csv`
+- `demand_forecast_predictions.csv`
+
+If a frontend mock merchant ID does not exist in the artifact merchant index, the API falls back to safe default slot recommendations instead of failing.
+
+## Health and Validation
+
+Useful URLs:
+
+- Health: `http://localhost:8000/health`
+- OpenAPI docs: `http://localhost:8000/docs`
+
+Quick validation example:
+
+```powershell
+Invoke-RestMethod -Method Get -Uri "http://localhost:8000/health"
 ```
 
-Response:
+## Current Auth Behavior
 
-```json
-{
-	"token": "jwt_token_here",
-	"refreshToken": "refresh_token_here",
-	"user": {
-		"id": "owner-01",
-		"name": "Alex Rivera",
-		"email": "alex@washnet.app",
-		"roles": ["owner", "provider"],
-		"defaultRole": "owner"
-	}
-}
-```
-
-### GET `/api/auth/me`
-
-- Purpose: fetch current user profile and role set.
-
-### POST `/api/auth/switch-role`
-
-- Purpose: switch active role if user has multiple roles.
-
-Request:
-
-```json
-{
-	"role": "provider"
-}
-```
-
-## 3.2 Route and Discovery (required by FE)
-
-These are already consumed by FE in `exploreApi.ts`.
-
-### POST `/api/routes/preview`
-
-Request:
-
-```json
-{
-	"origin": { "lat": 10.776, "lng": 106.7 },
-	"destination": { "lat": 10.801, "lng": 106.66 }
-}
-```
-
-Response:
-
-```json
-{
-	"distanceKm": 8.4,
-	"durationMin": 24,
-	"polyline": "encoded_polyline_mock",
-	"bounds": {
-		"north": 10.81,
-		"south": 10.75,
-		"east": 106.71,
-		"west": 106.65
-	}
-}
-```
-
-### POST `/api/search/nearby`
-
-Request:
-
-```json
-{
-	"location": { "lat": 10.776, "lng": 106.7 },
-	"radiusKm": 5,
-	"filters": {
-		"openNow": true,
-		"evSafe": true,
-		"minRating": 4,
-		"serviceTypes": ["ceramic"]
-	}
-}
-```
-
-Response:
-
-```json
-{
-	"results": [
-		{
-			"merchantId": "m_001",
-			"name": "EcoGloss Elite",
-			"lat": 10.785,
-			"lng": 106.684,
-			"rating": 4.9,
-			"successfulOrders": 1240,
-			"priceFrom": 45,
-			"distanceFromRouteKm": 0.8,
-			"detourMin": 4,
-			"availableNow": true,
-			"reasonTags": ["Near You", "Top Rated", "Available Now"]
-		}
-	]
-}
-```
-
-### POST `/api/search/on-route`
-
-Request:
-
-```json
-{
-	"origin": { "lat": 10.776, "lng": 106.7 },
-	"destination": { "lat": 10.801, "lng": 106.66 },
-	"polyline": "encoded_polyline_mock",
-	"maxDetourKm": 2,
-	"filters": {
-		"openNow": true,
-		"evSafe": true,
-		"minRating": 4,
-		"serviceTypes": ["ceramic", "interior"]
-	}
-}
-```
-
-Response:
-
-```json
-{
-	"results": [
-		{
-			"merchantId": "m_001",
-			"name": "EcoGloss Elite",
-			"lat": 10.785,
-			"lng": 106.684,
-			"rating": 4.9,
-			"successfulOrders": 1240,
-			"priceFrom": 45,
-			"distanceFromRouteKm": 0.8,
+- Login is email-based for the current demo flow
+- Token format is placeholder/demo format
+- Some seeded users use local-domain emails such as `@seed.ecocare.local`
+- Session persistence is handled on the frontend side
 			"detourMin": 4,
 			"availableNow": true,
 			"reasonTags": ["On Route", "Top Rated", "Available Now"]

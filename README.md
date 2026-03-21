@@ -1,117 +1,43 @@
 # lotushack-trinova-team
 
-## Environment Setup Guideline
+## Overview
 
-This project contains:
+This repository contains a full-stack EcoCare demo platform:
 
 - `EcoCare-UI`: React + Vite frontend
-- `EcoCare-BE`: FastAPI backend
-- PostgreSQL database (via Docker Compose)
+- `EcoCare-BE`: FastAPI + SQLAlchemy backend
+- `Dataset`: AI/recommendation artifacts used by backend ranking, slots, and forecast services
+- `docker-compose.yml`: local development stack
+- `docker-compose.prod.yml`: production-oriented compose file
 
-## Prerequisites
+## Documentation Index
 
-- Docker Desktop 4.x+
-- Docker Compose v2 (`docker compose version`)
+- Frontend guide: `EcoCare-UI/README.md`
+- Backend guide: `EcoCare-BE/README.md`
 
-## Local Development Setup (Recommended)
+## Quick Start
 
-From repository root, start all services:
+Start the full local stack from the repository root:
 
 ```bash
 docker compose up --build -d
 ```
 
-Check running services:
-
-```bash
-docker compose ps
-```
-
-View logs:
-
-```bash
-docker compose logs -f
-```
-
-Stop services:
-
-```bash
-docker compose down
-```
-
-## Environment Variables
-
-### Backend env
-
-Use `EcoCare-BE/.env.example` as reference:
-
-```dotenv
-APP_NAME=EcoCare Backend API
-APP_ENV=development
-API_PREFIX=/api
-POSTGRES_HOST=localhost
-POSTGRES_PORT=5432
-POSTGRES_DB=ecocare
-POSTGRES_USER=ecocare
-POSTGRES_PASSWORD=ecocare
-DATABASE_URL=
-```
-
-In Docker local mode, these are already injected by `docker-compose.yml`.
-
-### Frontend env
-
-For production frontend values, configure `EcoCare-UI/.env.prod`.
-
-Important:
-
-- Keep `VITE_API_BASE_URL` as the API host only (without trailing `/api`)
-- Example: `VITE_API_BASE_URL=https://api.trinova.it.com`
-
-## Initialize Database Data (Including Vehicles)
-
-Run seed script after containers are up:
+Seed database data:
 
 ```bash
 docker compose exec backend python scripts/seed_from_mock.py
 ```
 
-What this seeds:
-
-- Base users from mock files
-- 100 synthetic random users
-- Merchants
-- Bookings and operations data
-- Search logs
-- Vehicles from `EcoCare-UI/public/mock/platform-data.json`
-
-## Verify Setup
-
-Open these URLs:
+Useful local URLs:
 
 - Frontend: `http://localhost:3000`
 - Backend health: `http://localhost:8000/health`
 - Backend docs: `http://localhost:8000/docs`
 - Platform bootstrap: `http://localhost:8000/api/platform/bootstrap`
 
-Quick API check (PowerShell):
-
-```powershell
-Invoke-RestMethod -Method Get -Uri "http://localhost:8000/api/platform/bootstrap"
-```
-
-## Production Compose Notes
-
-Use production file:
+Stop the stack:
 
 ```bash
-docker compose -f docker-compose.prod.yml up --build -d
-```
-
-`docker-compose.prod.yml` expects reverse proxy labels and external `web` network.
-
-If needed, create external network first:
-
-```bash
-docker network create web
+docker compose down
 ```

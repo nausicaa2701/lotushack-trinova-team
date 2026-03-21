@@ -12,10 +12,6 @@ def recommend_slots(
     repo: AIServingRepository = Depends(get_ai_serving_repository),
 ):
     try:
-        merchant = repo.get_merchant(payload.merchantId)
-        if not merchant:
-            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Merchant not found")
-
         slots = repo.recommend_slots(
             merchant_id=payload.merchantId,
             search_timestamp=payload.searchTimestamp,
