@@ -8,6 +8,11 @@ from app.schemas import LoginRequest, LoginResponse, SwitchRoleRequest, UserOut
 
 router = APIRouter()
 
+@router.get("/health")
+def health_check():
+    """Health check endpoint"""
+    return {"status": "healthy", "service": "EcoCare Backend"}
+
 
 @router.post("/login", response_model=LoginResponse)
 def login(payload: LoginRequest, db: Session = Depends(get_db)):
