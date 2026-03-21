@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-headline: "Manrope", sans-serif;
+
+  --color-primary: #005bc1;
+  --color-primary-container: #bcd0ff;
+  --color-surface: #f7f9fb;
+  --color-surface-container-low: #f2f4f6;
+  --color-surface-container-lowest: #ffffff;
+  --color-tertiary: #006c49;
+  --color-tertiary-fixed: #6ffbbe;
+  --color-on-surface: #191c1e;
+  --color-outline-variant: #bac9cc;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-sans antialiased;
+  }
+}
+
+.power-gradient {
+  background: linear-gradient(135deg, #005bc1 0%, #bcd0ff 100%);
+}
+
+.eco-gradient {
+  background: linear-gradient(135deg, #006c49 0%, #5be9ad 100%);
+}
+
+.glass-effect {
+  @apply backdrop-blur-lg bg-white/80 dark:bg-slate-950/80;
+}
+
+/* PrimeReact Overrides for Design System */
+.p-button {
+  border-radius: 9999px !important;
+  font-weight: 600 !important;
+  transition: all 0.2s !important;
+}
+
+.p-button.p-button-primary {
+  background: linear-gradient(135deg, #005bc1 0%, #bcd0ff 100%) !important;
+  border: none !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 91, 193, 0.2) !important;
+}
+
+.p-inputtext {
+  background-color: #f2f4f6 !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}

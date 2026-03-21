@@ -1,0 +1,7 @@
+{
+  "name": "WashConnect EV Precision Care",
+  "description": "A premium EV car wash and maintenance platform featuring real-time tracking, eco-impact monitoring, and smart scheduling.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
