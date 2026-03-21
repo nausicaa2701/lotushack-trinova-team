@@ -16,7 +16,7 @@ export const Dashboard = () => {
   React.useEffect(() => {
     if (!data?.providers?.length) return;
     let cancelled = false;
-    const top = data.providers.slice(0, 2);
+    const top = (data.providers || []).slice(0, 2);
     void Promise.all(
       top.map(async (p: { id: string }) => {
         try {
@@ -207,12 +207,12 @@ export const Dashboard = () => {
         <div>
           <h3 className="font-headline text-2xl font-extrabold tracking-tight text-on-surface">Ranking & Slot Reasons</h3>
         </div>
-        {loading || !data ? (
+        {loading || !data || !data.providers ? (
           <div className="rounded-3xl bg-surface-container-low p-6 text-sm text-slate-500">Loading recommendation reasons...</div>
         ) : (
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
             {data.providers.slice(0, 2).map((provider: any) => {
-              const slotEntry = data.slotRecommendations.find((entry: any) => entry.providerId === provider.id) as any;
+              const slotEntry = data.slotRecommendations?.find((entry: any) => entry.providerId === provider.id) as any;
               const slotsForUi = apiSlotsByProvider[provider.id] ?? slotEntry?.slots ?? [];
               return (
                 <div key={provider.id} className="rounded-3xl border border-outline-variant/20 bg-surface-container-lowest p-6 shadow-sm">
