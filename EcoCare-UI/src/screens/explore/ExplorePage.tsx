@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Filter, LoaderCircle, MapPinned } from 'lucide-react';
 import { Sidebar } from 'primereact/sidebar';
 import { AdvancedFilterPanel } from './AdvancedFilterPanel';
@@ -9,6 +9,7 @@ import { MerchantList } from './MerchantList';
 import { RouteSearchForm } from './RouteSearchForm';
 import { SearchModeToggle } from './SearchModeToggle';
 import { fallbackSearch, logSearchEvent, nearbySearch, onRouteSearch, routePreview } from './exploreApi';
+import { filterMerchantsByQuery } from '../../lib/platformMock';
 import type { ExploreFilters, LatLng, Merchant, SearchMode } from './types';
 
 const initialFilters: ExploreFilters = {
@@ -22,6 +23,7 @@ const initialFilters: ExploreFilters = {
 
 export const ExplorePage = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [mode, setMode] = React.useState<SearchMode>('nearby');
   const [filters, setFilters] = React.useState<ExploreFilters>(initialFilters);
   const [origin, setOrigin] = React.useState<LatLng>({ lat: 10.776, lng: 106.7 });
@@ -33,6 +35,8 @@ export const ExplorePage = () => {
   const [error, setError] = React.useState<string | null>(null);
   const [showFilters, setShowFilters] = React.useState(false);
   const [showDetail, setShowDetail] = React.useState(false);
+  const topBarSearchQuery = searchParams.get('search')?.trim() ?? '';
+  const highlightedMerchantId = searchParams.get('merchant');
 
   const selectedMerchant = merchants.find((item) => item.merchantId === selectedMerchantId) ?? null;
 
@@ -50,36 +54,46 @@ export const ExplorePage = () => {
       let results: Merchant[] = [];
       let polyline = '';
 
-      if (mode === 'nearby') {
-        try {
-          results = await nearbySearch(origin, filters);
-        } catch {
-          results = await fallbackSearch('nearby');
-        }
-        setRouteLine([]);
+      if (topBarSearchQuery) {
+        results = await fallbackSearch(mode, topBarSearchQuery);
+        setRouteLine(mode === 'on-route' ? [origin, destination] : []);
       } else {
-        try {
-          const preview = await routePreview(origin, destination);
-          polyline = preview.polyline ?? '';
-        } catch {
-          polyline = '';
+        if (mode === 'nearby') {
+          try {
+            results = await nearbySearch(origin, filters);
+          } catch {
+            results = await fallbackSearch('nearby');
+          }
+          setRouteLine([]);
+        } else {
+          try {
+            const preview = await routePreview(origin, destination);
+            polyline = preview.polyline ?? '';
+          } catch {
+            polyline = '';
+          }
+          try {
+            results = await onRouteSearch(origin, destination, filters, polyline);
+          } catch {
+            results = await fallbackSearch('on-route');
+          }
+          setRouteLine([origin, destination]);
         }
-        try {
-          results = await onRouteSearch(origin, destination, filters, polyline);
-        } catch {
-          results = await fallbackSearch('on-route');
-        }
-        setRouteLine([origin, destination]);
       }
 
-      setMerchants(results);
-      setSelectedMerchantId(results[0]?.merchantId ?? null);
+      const filteredResults = topBarSearchQuery ? filterMerchantsByQuery(results, topBarSearchQuery) : results;
+      setMerchants(filteredResults);
+      setSelectedMerchantId(
+        highlightedMerchantId && filteredResults.some((item) => item.merchantId === highlightedMerchantId)
+          ? highlightedMerchantId
+          : filteredResults[0]?.merchantId ?? null
+      );
       await logSearchEvent({
         mode,
         origin,
         destination: mode === 'on-route' ? destination : null,
         filters,
-        shownMerchants: results.map((item, index) => ({ merchantId: item.merchantId, rank: index + 1 })),
+        shownMerchants: filteredResults.map((item, index) => ({ merchantId: item.merchantId, rank: index + 1 })),
       });
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Search failed');
@@ -91,7 +105,7 @@ export const ExplorePage = () => {
   React.useEffect(() => {
     executeSearch();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mode]);
+  }, [mode, topBarSearchQuery, highlightedMerchantId]);
 
   const filterPanel = (
     <div className="space-y-4">
@@ -116,7 +130,11 @@ export const ExplorePage = () => {
       <div className="flex items-center justify-between">
         <div>
           <h2 className="font-headline text-3xl font-extrabold">Explore Route Search</h2>
-          <p className="mt-1 text-slate-500">Nearby and on-route merchant discovery with ranked results.</p>
+          <p className="mt-1 text-slate-500">
+            {topBarSearchQuery
+              ? `Showing mock search matches for "${topBarSearchQuery}".`
+              : 'Nearby and on-route merchant discovery with ranked results.'}
+          </p>
         </div>
         <button
           type="button"

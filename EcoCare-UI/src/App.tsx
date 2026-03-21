@@ -13,6 +13,7 @@ import Login from './screens/Login';
 import { Dashboard } from './screens/Dashboard';
 import { Bookings } from './screens/Bookings';
 import { Explore } from './screens/Explore';
+import { SearchResults } from './screens/SearchResults';
 import { Vehicles } from './screens/Vehicles';
 import { Analytics } from './screens/Analytics';
 import { ProviderDashboard } from './screens/provider/ProviderDashboard';
@@ -75,6 +76,7 @@ export default function App() {
                 </ProtectedRoute>
               }
             />
+            <Route path="/search" element={<SearchResults />} />
 
             <Route
               path="/provider/dashboard"

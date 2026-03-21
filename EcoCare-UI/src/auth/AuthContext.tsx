@@ -9,6 +9,7 @@ export interface AuthUser {
   roles: UserRole[];
   defaultRole?: UserRole;
   vehicle?: string;
+  vehiclePlate?: string;
   branch?: string;
   title?: string;
 }

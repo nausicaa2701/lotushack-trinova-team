@@ -6,7 +6,8 @@
       "email": "alex@washnet.app",
       "roles": ["owner", "provider"],
       "defaultRole": "owner",
-      "vehicle": "Tesla Model S Plaid"
+      "vehicle": "Tesla Model 3 Long Range",
+      "vehiclePlate": "51K-248.81"
     },
     {
       "id": "owner-02",
@@ -14,7 +15,8 @@
       "email": "mia@washnet.app",
       "roles": ["owner"],
       "defaultRole": "owner",
-      "vehicle": "Hyundai Ioniq 5"
+      "vehicle": "Hyundai Ioniq 5",
+      "vehiclePlate": "51H-520.58"
     },
     {
       "id": "provider-01",
@@ -45,35 +47,148 @@
     {
       "id": "p-01",
       "name": "VoltFlow Station",
+      "branch": "Downtown Hub",
+      "city": "Ho Chi Minh City",
+      "address": "12 Nguyen Hue, District 1",
+      "lat": 10.7764,
+      "lng": 106.7009,
       "rating": 4.9,
       "successfulOrders": 1420,
       "distanceKm": 1.2,
+      "detourMin": 4,
+      "priceFrom": 45,
       "openNow": true,
       "evSafe": true,
       "boosted": true,
+      "serviceTypes": ["premium wash", "ev charging", "ceramic coating"],
       "reasonCodes": ["nearest_to_you", "available_now"]
     },
     {
       "id": "p-02",
       "name": "Sora Auto Care",
+      "branch": "Marina Point",
+      "city": "Ho Chi Minh City",
+      "address": "88 Ton Duc Thang, District 1",
+      "lat": 10.7818,
+      "lng": 106.7085,
       "rating": 4.8,
       "successfulOrders": 1288,
       "distanceKm": 2.4,
+      "detourMin": 6,
+      "priceFrom": 39,
       "openNow": true,
       "evSafe": true,
       "boosted": false,
+      "serviceTypes": ["eco detail", "express exterior", "interior care"],
       "reasonCodes": ["top_rated_nearby", "best_time_fit"]
     },
     {
       "id": "p-03",
       "name": "Eco Gloss Hub",
+      "branch": "Binh Thanh Riverside",
+      "city": "Ho Chi Minh City",
+      "address": "240 Dien Bien Phu, Binh Thanh",
+      "lat": 10.8034,
+      "lng": 106.7131,
       "rating": 4.7,
       "successfulOrders": 980,
       "distanceKm": 3.1,
+      "detourMin": 8,
+      "priceFrom": 30,
       "openNow": false,
       "evSafe": true,
       "boosted": false,
+      "serviceTypes": ["deep clean", "steam interior", "paint protection"],
       "reasonCodes": ["on_your_route"]
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "veh-01",
+      "ownerId": "owner-01",
+      "make": "Tesla",
+      "model": "Model 3",
+      "trim": "Long Range",
+      "year": 2024,
+      "color": "Midnight Silver",
+      "plateNumber": "51K-248.81",
+      "status": "active",
+      "mileageMiles": 12482,
+      "batteryHealthPct": 98,
+      "nextServiceDue": "2026-10-14",
+      "nextServiceLabel": "Oct 14, 2026",
+      "lastWashLabel": "12 days ago",
+      "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuAgzzi6jHn-ElmE3sx2DEur1zzBxqBPnSWyMS93z0w2rv-Nn3GfMgMPCxIBz5tq4n6drSOnYxr39sHx-fVSu-oApHVsuQ9T4NU5oubS5XHdQv8jC5ErIqOspLVtVjx-gULS4XkEhcT2oOFkBA2sOTX27P8MnhwqzX0sQwLKBfXDdaM-EXF53Ojg6WdNet8BIeQf9Lb-dI2Dm5C7bTHnALp7ZXfm4KjR0bKZmdGB_mIAqJP_MUIG0-1IF3bWeRlkpGDI7pX57jrF1Tdf",
+      "waterSavedLiters": 420,
+      "co2OffsetKg": 12.4,
+      "loyaltyPoints": 750,
+      "rewardsProgressPct": 75,
+      "subscription": "Platinum Plus",
+      "rangeKm": 522,
+      "upcomingWash": {
+        "dateLabel": "Thursday, Mar 27",
+        "provider": "VoltFlow Station",
+        "location": "Downtown Hub, District 1",
+        "service": "Precision Eco-Steam"
+      }
+    },
+    {
+      "id": "veh-02",
+      "ownerId": "owner-01",
+      "make": "Tesla",
+      "model": "Model Y",
+      "trim": "Performance",
+      "year": 2025,
+      "color": "Pearl White",
+      "plateNumber": "51L-909.45",
+      "status": "charging",
+      "mileageMiles": 6840,
+      "batteryHealthPct": 99,
+      "nextServiceDue": "2026-08-02",
+      "nextServiceLabel": "Aug 2, 2026",
+      "lastWashLabel": "4 days ago",
+      "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuAgzzi6jHn-ElmE3sx2DEur1zzBxqBPnSWyMS93z0w2rv-Nn3GfMgMPCxIBz5tq4n6drSOnYxr39sHx-fVSu-oApHVsuQ9T4NU5oubS5XHdQv8jC5ErIqOspLVtVjx-gULS4XkEhcT2oOFkBA2sOTX27P8MnhwqzX0sQwLKBfXDdaM-EXF53Ojg6WdNet8BIeQf9Lb-dI2Dm5C7bTHnALp7ZXfm4KjR0bKZmdGB_mIAqJP_MUIG0-1IF3bWeRlkpGDI7pX57jrF1Tdf",
+      "waterSavedLiters": 210,
+      "co2OffsetKg": 6.1,
+      "loyaltyPoints": 420,
+      "rewardsProgressPct": 42,
+      "subscription": "Performance Care",
+      "rangeKm": 488,
+      "upcomingWash": {
+        "dateLabel": "Sunday, Mar 30",
+        "provider": "Sora Auto Care",
+        "location": "Marina Point, District 1",
+        "service": "Express Exterior"
+      }
+    },
+    {
+      "id": "veh-03",
+      "ownerId": "owner-02",
+      "make": "Hyundai",
+      "model": "Ioniq 5",
+      "trim": "Limited",
+      "year": 2024,
+      "color": "Atlas White",
+      "plateNumber": "51H-520.58",
+      "status": "service_due",
+      "mileageMiles": 9821,
+      "batteryHealthPct": 96,
+      "nextServiceDue": "2026-04-06",
+      "nextServiceLabel": "Apr 6, 2026",
+      "lastWashLabel": "8 days ago",
+      "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuAgzzi6jHn-ElmE3sx2DEur1zzBxqBPnSWyMS93z0w2rv-Nn3GfMgMPCxIBz5tq4n6drSOnYxr39sHx-fVSu-oApHVsuQ9T4NU5oubS5XHdQv8jC5ErIqOspLVtVjx-gULS4XkEhcT2oOFkBA2sOTX27P8MnhwqzX0sQwLKBfXDdaM-EXF53Ojg6WdNet8BIeQf9Lb-dI2Dm5C7bTHnALp7ZXfm4KjR0bKZmdGB_mIAqJP_MUIG0-1IF3bWeRlkpGDI7pX57jrF1Tdf",
+      "waterSavedLiters": 305,
+      "co2OffsetKg": 8.9,
+      "loyaltyPoints": 610,
+      "rewardsProgressPct": 61,
+      "subscription": "Eco Detail",
+      "rangeKm": 454,
+      "upcomingWash": {
+        "dateLabel": "Tuesday, Apr 1",
+        "provider": "Eco Gloss Hub",
+        "location": "Binh Thanh Riverside",
+        "service": "Steam Interior"
+      }
     }
   ],
   "slotRecommendations": [
@@ -95,9 +210,33 @@
     }
   ],
   "ownerBookings": [
-    { "id": "b-1001", "provider": "VoltFlow Station", "slot": "09:30", "state": "confirmed", "price": 45 },
-    { "id": "b-1002", "provider": "Sora Auto Care", "slot": "13:00", "state": "completed", "price": 39 },
-    { "id": "b-1003", "provider": "Eco Gloss Hub", "slot": "15:30", "state": "cancelled", "price": 30 }
+    {
+      "id": "b-1001",
+      "vehicleId": "veh-01",
+      "plateNumber": "51K-248.81",
+      "provider": "VoltFlow Station",
+      "slot": "09:30",
+      "state": "confirmed",
+      "price": 45
+    },
+    {
+      "id": "b-1002",
+      "vehicleId": "veh-02",
+      "plateNumber": "51L-909.45",
+      "provider": "Sora Auto Care",
+      "slot": "13:00",
+      "state": "completed",
+      "price": 39
+    },
+    {
+      "id": "b-1003",
+      "vehicleId": "veh-03",
+      "plateNumber": "51H-520.58",
+      "provider": "Eco Gloss Hub",
+      "slot": "15:30",
+      "state": "cancelled",
+      "price": 30
+    }
   ],
   "providerBookings": [
     { "id": "pb-01", "owner": "Alex Rivera", "service": "Premium Exterior", "state": "in_progress" },
@@ -119,14 +258,14 @@
   "rankingRules": {
     "distanceWeight": 0.28,
     "ratingWeight": 0.22,
-    "availabilityWeight": 0.20,
+    "availabilityWeight": 0.2,
     "etaWeight": 0.12,
     "priceWeight": 0.08,
-    "boostWeight": 0.10
+    "boostWeight": 0.1
   },
   "aiRollout": {
     "rankingModel": { "status": "shadow_mode", "ndcg10": 0.82, "recall10": 0.8 },
-    "slotModel": { "status": "rule_engine_active", "top3HitRate": 0.74, "auc": 0.0 },
+    "slotModel": { "status": "rule_engine_active", "top3HitRate": 0.74, "auc": 0 },
     "fallbackHealthy": true
   },
   "forecast": [

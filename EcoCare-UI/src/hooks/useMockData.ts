@@ -1,19 +1,5 @@
 import { useEffect, useState } from 'react';
-import type { AuthUser } from '../auth/AuthContext';
-
-interface PlatformData {
-  users: AuthUser[];
-  providers: Array<Record<string, unknown>>;
-  slotRecommendations: Array<Record<string, unknown>>;
-  ownerBookings: Array<Record<string, unknown>>;
-  providerBookings: Array<Record<string, unknown>>;
-  campaignRequests: Array<Record<string, unknown>>;
-  merchantApprovals: Array<Record<string, unknown>>;
-  disputes: Array<Record<string, unknown>>;
-  rankingRules: Record<string, number>;
-  aiRollout: Record<string, unknown>;
-  forecast: Array<Record<string, unknown>>;
-}
+import { fetchPlatformMockData, type PlatformData } from '../lib/platformMock';
 
 export function useMockData() {
   const [data, setData] = useState<PlatformData | null>(null);
@@ -25,11 +11,7 @@ export function useMockData() {
     const load = async () => {
       try {
         setLoading(true);
-        const response = await fetch('/mock/platform-data.json');
-        if (!response.ok) {
-          throw new Error('Unable to load mock data');
-        }
-        const json = (await response.json()) as PlatformData;
+        const json = await fetchPlatformMockData();
         if (mounted) {
           setData(json);
           setError(null);
