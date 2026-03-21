@@ -22,18 +22,20 @@ export const Analytics = () => {
       animate={{ opacity: 1, y: 0 }}
       className="space-y-10"
     >
-      <header className="flex justify-between items-end">
+      <header className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h2 className="text-3xl font-extrabold font-headline tracking-tight text-on-surface">Admin Analytics</h2>
-          <p className="text-slate-500 mt-1">Real-time performance metrics for WashConnect network operators.</p>
+          <h2 className="font-headline text-2xl font-extrabold tracking-tight text-on-surface sm:text-3xl">Admin Analytics</h2>
+          <p className="mt-1 text-slate-500">Real-time performance metrics for WashNet network operators.</p>
         </div>
-        <div className="flex gap-3">
-          <select className="bg-surface-container-low border-none rounded-xl px-4 py-2 text-sm font-bold text-slate-700 outline-none focus:ring-2 focus:ring-primary/20">
+        <div className="flex flex-col gap-2 sm:flex-row sm:gap-3">
+          <select className="rounded-xl border-none bg-surface-container-low px-4 py-2 text-sm font-bold text-slate-700 outline-none focus:ring-2 focus:ring-primary/20">
             <option>Last 7 Days</option>
             <option>Last 30 Days</option>
             <option>Year to Date</option>
           </select>
-          <button className="power-gradient text-white px-6 py-2 rounded-xl font-bold text-sm shadow-lg shadow-primary/20">Export Report</button>
+          <button type="button" className="rounded-xl px-6 py-2 text-sm font-bold text-white shadow-lg shadow-primary/20 power-gradient">
+            Export Report
+          </button>
         </div>
       </header>
 
@@ -75,13 +77,13 @@ export const Analytics = () => {
 
       <div className="grid grid-cols-12 gap-8">
         {/* Revenue Chart Placeholder */}
-        <div className="col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-[2rem] p-8 shadow-sm border border-outline-variant/10">
-          <div className="flex justify-between items-center mb-10">
+        <div className="col-span-12 rounded-[2rem] border border-outline-variant/10 bg-surface-container-lowest p-5 shadow-sm sm:p-8 lg:col-span-8">
+          <div className="mb-8 flex flex-col gap-4 sm:mb-10 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <h4 className="font-headline text-xl font-bold">Revenue Growth</h4>
-              <p className="text-slate-400 text-xs font-medium uppercase tracking-widest mt-1">Daily earnings vs target</p>
+              <p className="mt-1 text-xs font-medium uppercase tracking-widest text-slate-400">Daily earnings vs target</p>
             </div>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-4">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-primary"></div>
                 <span className="text-xs font-bold text-slate-500">Actual</span>
@@ -93,9 +95,10 @@ export const Analytics = () => {
             </div>
           </div>
           
-          <div className="h-64 flex items-end justify-between gap-2">
+          <div className="-mx-1 overflow-x-auto pb-2 sm:mx-0 md:overflow-visible">
+            <div className="flex h-56 min-w-[520px] items-end justify-between gap-1.5 sm:h-64 sm:min-w-0 sm:gap-2 md:w-full">
             {[40, 65, 45, 90, 75, 55, 85, 60, 95, 70, 50, 80].map((h, i) => (
-              <div key={i} className="flex-1 flex flex-col items-center gap-2 group">
+              <div key={i} className="group flex min-w-0 flex-1 flex-col items-center gap-2">
                 <div className="w-full bg-slate-100 rounded-t-lg relative overflow-hidden h-full">
                   <motion.div 
                     initial={{ height: 0 }}
@@ -104,9 +107,10 @@ export const Analytics = () => {
                     className="absolute bottom-0 left-0 right-0 power-gradient rounded-t-lg group-hover:opacity-80 transition-opacity"
                   ></motion.div>
                 </div>
-                <span className="text-[10px] font-bold text-slate-400 uppercase">{['J','F','M','A','M','J','J','A','S','O','N','D'][i]}</span>
+                <span className="text-[10px] font-bold uppercase text-slate-400">{['J','F','M','A','M','J','J','A','S','O','N','D'][i]}</span>
               </div>
             ))}
+            </div>
           </div>
         </div>
 
@@ -146,30 +150,30 @@ export const Analytics = () => {
       </div>
 
       {/* Eco Metrics */}
-      <section className="bg-tertiary-container/20 rounded-[2rem] p-10 border border-tertiary/10">
-        <div className="flex items-center gap-4 mb-10">
+      <section className="rounded-[2rem] border border-tertiary/10 bg-tertiary-container/20 p-6 sm:p-10">
+        <div className="mb-8 flex flex-col gap-4 sm:mb-10 sm:flex-row sm:items-center">
           <div className="w-12 h-12 rounded-2xl bg-tertiary flex items-center justify-center text-white">
             <Droplets size={24} />
           </div>
           <div>
-            <h4 className="font-headline text-2xl font-extrabold text-tertiary">Sustainability Dashboard</h4>
+            <h4 className="font-headline text-xl font-extrabold text-tertiary sm:text-2xl">Sustainability Dashboard</h4>
             <p className="text-tertiary/70 font-medium">Network-wide environmental impact tracking</p>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-10">
           <div className="space-y-2">
-            <p className="text-sm font-bold text-tertiary/60 uppercase tracking-widest">Water Recycled</p>
-            <p className="text-5xl font-headline font-extrabold text-tertiary">84.2%</p>
+            <p className="text-sm font-bold uppercase tracking-widest text-tertiary/60">Water Recycled</p>
+            <p className="font-headline text-4xl font-extrabold text-tertiary sm:text-5xl">84.2%</p>
             <p className="text-xs text-tertiary/80 leading-relaxed">Average across 34 stations this month. Target: 90%</p>
           </div>
           <div className="space-y-2">
-            <p className="text-sm font-bold text-tertiary/60 uppercase tracking-widest">Renewable Energy</p>
-            <p className="text-5xl font-headline font-extrabold text-tertiary">100%</p>
+            <p className="text-sm font-bold uppercase tracking-widest text-tertiary/60">Renewable Energy</p>
+            <p className="font-headline text-4xl font-extrabold text-tertiary sm:text-5xl">100%</p>
             <p className="text-xs text-tertiary/80 leading-relaxed">All stations powered by certified solar and wind offsets.</p>
           </div>
           <div className="space-y-2">
-            <p className="text-sm font-bold text-tertiary/60 uppercase tracking-widest">Plastic Reduced</p>
-            <p className="text-5xl font-headline font-extrabold text-tertiary">1.2t</p>
+            <p className="text-sm font-bold uppercase tracking-widest text-tertiary/60">Plastic Reduced</p>
+            <p className="font-headline text-4xl font-extrabold text-tertiary sm:text-5xl">1.2t</p>
             <p className="text-xs text-tertiary/80 leading-relaxed">Through bulk chemical delivery and refillable containers.</p>
           </div>
         </div>

@@ -11,7 +11,7 @@ export const Dashboard = () => {
       className="space-y-12"
     >
       {/* Hero Section */}
-      <section className="relative overflow-hidden rounded-[2rem] bg-slate-900 p-12 flex flex-col justify-end min-h-[400px]">
+      <section className="relative flex min-h-[min(420px,70vh)] flex-col justify-end overflow-hidden rounded-3xl bg-slate-900 p-6 sm:min-h-[400px] sm:rounded-[2rem] sm:p-8 md:p-12">
         <img 
           alt="Modern sustainable car wash facility" 
           className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-luminosity" 
@@ -21,23 +21,23 @@ export const Dashboard = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent"></div>
         <div className="relative z-10 max-w-2xl">
           <span className="inline-block px-4 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-bold text-xs uppercase tracking-widest mb-4">Sustainability First</span>
-          <h2 className="text-5xl font-extrabold text-white font-headline leading-tight mb-6">Find the perfect sustainable shine.</h2>
-          <p className="text-lg text-slate-300 font-sans mb-8 max-w-lg">Advanced water filtration and eco-friendly formulas for a showroom finish that respects the planet.</p>
-          <div className="flex gap-4">
-            <button className="power-gradient text-white px-8 py-4 rounded-full font-bold shadow-xl shadow-primary/30 hover:scale-105 transition-transform">Book Now</button>
-            <button className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-full font-bold hover:bg-white/20 transition-all">View Near Me</button>
+          <h2 className="mb-4 font-headline text-3xl font-extrabold leading-tight text-white sm:mb-6 sm:text-4xl md:text-5xl">Find the perfect sustainable shine.</h2>
+          <p className="mb-6 max-w-lg font-sans text-base text-slate-300 sm:mb-8 sm:text-lg">Advanced water filtration and eco-friendly formulas for a showroom finish that respects the planet.</p>
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+            <button className="rounded-full px-6 py-3 font-bold text-white shadow-xl shadow-primary/30 transition-transform power-gradient hover:scale-105 sm:px-8 sm:py-4">Book Now</button>
+            <button className="rounded-full border border-white/20 bg-white/10 px-6 py-3 font-bold text-white backdrop-blur-md transition-all hover:bg-white/20 sm:px-8 sm:py-4">View Near Me</button>
           </div>
         </div>
       </section>
 
       {/* Nearby Stations */}
       <section>
-        <div className="flex justify-between items-end mb-8">
+        <div className="mb-6 flex flex-col gap-4 sm:mb-8 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h3 className="text-3xl font-extrabold font-headline tracking-tight text-on-surface">Nearby Stations</h3>
-            <p className="text-slate-500 font-medium mt-1">Found 12 premium locations within 5 miles</p>
+            <h3 className="font-headline text-2xl font-extrabold tracking-tight text-on-surface sm:text-3xl">Nearby Stations</h3>
+            <p className="mt-1 font-medium text-slate-500">Found 12 premium locations within 5 miles</p>
           </div>
-          <button className="text-primary font-bold flex items-center gap-1 group">
+          <button type="button" className="group flex shrink-0 items-center gap-1 self-start font-bold text-primary sm:self-auto">
             See All 
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </button>
@@ -136,9 +136,9 @@ export const Dashboard = () => {
 
       {/* Featured Services */}
       <section className="pb-20">
-        <div className="mb-8">
-          <h3 className="text-3xl font-extrabold font-headline tracking-tight text-on-surface">Featured Services</h3>
-          <p className="text-slate-500 font-medium mt-1">Specialized treatments for the meticulous driver</p>
+        <div className="mb-6 sm:mb-8">
+          <h3 className="font-headline text-2xl font-extrabold tracking-tight text-on-surface sm:text-3xl">Featured Services</h3>
+          <p className="mt-1 font-medium text-slate-500">Specialized treatments for the meticulous driver</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <ServiceCard 

@@ -25,15 +25,15 @@ export const Vehicles = () => {
       className="space-y-10"
     >
       <header>
-        <h2 className="text-3xl font-extrabold font-headline tracking-tight text-on-surface">Vehicles & Impact</h2>
-        <p className="text-slate-500 mt-1">Manage your EV profile and monitor your sustainability contribution.</p>
+        <h2 className="font-headline text-2xl font-extrabold tracking-tight text-on-surface sm:text-3xl">Vehicles & Impact</h2>
+        <p className="mt-1 text-slate-500">Manage your EV profile and monitor your sustainability contribution.</p>
       </header>
 
-      <div className="grid grid-cols-12 gap-8">
+      <div className="grid grid-cols-12 gap-6 sm:gap-8">
         {/* Main Profile Card */}
         <div className="col-span-12 lg:col-span-8 space-y-8">
-          <div className="bg-surface-container-lowest rounded-[2rem] p-8 relative overflow-hidden group shadow-sm border border-transparent hover:border-primary/10 transition-all duration-500">
-            <div className="absolute top-0 right-0 p-8">
+          <div className="group relative overflow-hidden rounded-[2rem] border border-transparent bg-surface-container-lowest p-5 shadow-sm transition-all duration-500 hover:border-primary/10 sm:p-8">
+            <div className="absolute right-0 top-0 p-4 sm:p-8">
               <span className="bg-tertiary-fixed text-on-tertiary-fixed px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Active</span>
             </div>
             <div className="flex flex-col md:flex-row gap-10 items-center">
@@ -48,7 +48,7 @@ export const Vehicles = () => {
               </div>
               <div className="w-full md:w-1/2 space-y-6">
                 <div>
-                  <h3 className="font-headline text-4xl font-extrabold text-on-surface">Tesla Model 3</h3>
+                  <h3 className="font-headline text-2xl font-extrabold text-on-surface sm:text-3xl md:text-4xl">Tesla Model 3</h3>
                   <p className="text-slate-500 font-medium tracking-wide mt-1">Dual Motor Long Range • Midnight Silver</p>
                 </div>
                 <div className="grid grid-cols-2 gap-4">

@@ -7,18 +7,47 @@
 
   --color-primary: #005bc1;
   --color-primary-container: #bcd0ff;
-  --color-surface: #f7f9fb;
-  --color-surface-container-low: #f2f4f6;
-  --color-surface-container-lowest: #ffffff;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #0055b6;
+
+  --color-secondary: #515f74;
+  --color-secondary-container: #d5e3fc;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #57657a;
+
   --color-tertiary: #006c49;
+  --color-tertiary-container: #5be9ad;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #006645;
   --color-tertiary-fixed: #6ffbbe;
+  --color-on-tertiary-fixed: #002113;
+
+  --color-surface: #f7f9fb;
+  --color-surface-dim: #d8dadc;
+  --color-surface-bright: #f7f9fb;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f2f4f6;
+  --color-surface-container: #eceef0;
+  --color-surface-container-high: #e6e8ea;
+  --color-surface-container-highest: #e0e3e5;
+
   --color-on-surface: #191c1e;
+  --color-on-surface-variant: #3b494c;
+  --color-outline: #6b7a7d;
   --color-outline-variant: #bac9cc;
+
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
 }
 
 @layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
   body {
     @apply bg-surface text-on-surface font-sans antialiased;
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
   }
 }
 
@@ -55,4 +84,34 @@
   padding-right: 1rem !important;
   padding-top: 0.5rem !important;
   padding-bottom: 0.5rem !important;
+}
+
+.power-gradient {
+  background: linear-gradient(135deg, #005bc1 0%, #bcd0ff 100%);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+}
+
+.glass-header {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+}
+
+.selection\:bg-primary-container ::selection {
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+}
+
+
+@layer utilities {
+  .power-gradient {
+    background: linear-gradient(135deg, #005bc1 0%, #bcd0ff 100%);
+  }
+  .glass-header {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(16px);
+  }
 }

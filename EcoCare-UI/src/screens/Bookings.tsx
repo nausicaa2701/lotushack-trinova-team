@@ -10,12 +10,12 @@ export const Bookings = () => {
       animate={{ opacity: 1, y: 0 }}
       className="space-y-10"
     >
-      <div className="flex items-end justify-between">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h2 className="text-3xl font-extrabold font-headline tracking-tight text-on-surface">My Bookings</h2>
-          <p className="text-slate-500 font-medium">Manage your ongoing and historical service sessions.</p>
+          <h2 className="font-headline text-2xl font-extrabold tracking-tight text-on-surface sm:text-3xl">My Bookings</h2>
+          <p className="font-medium text-slate-500">Manage your ongoing and historical service sessions.</p>
         </div>
-        <span className="px-4 py-2 bg-tertiary-fixed text-on-tertiary-fixed font-bold text-xs rounded-lg flex items-center gap-2">
+        <span className="inline-flex w-fit items-center gap-2 rounded-lg bg-tertiary-fixed px-4 py-2 font-bold text-xs text-on-tertiary-fixed">
           <CheckCircle2 size={16} fill="currentColor" />
           System Online
         </span>
@@ -23,7 +23,7 @@ export const Bookings = () => {
 
       {/* Active Booking Card */}
       <section>
-        <div className="relative overflow-hidden rounded-3xl bg-surface-container-lowest shadow-sm p-8 flex flex-col md:flex-row gap-8 items-center border-none">
+        <div className="relative flex flex-col items-center gap-6 overflow-hidden rounded-3xl border-none bg-surface-container-lowest p-5 shadow-sm sm:p-6 md:flex-row md:items-center md:gap-8 md:p-8">
           <div className="absolute top-0 right-0 w-64 h-64 power-gradient opacity-[0.03] blur-3xl -mr-20 -mt-20"></div>
           <div className="relative w-full md:w-1/3">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-surface-container-low group">
@@ -40,17 +40,17 @@ export const Bookings = () => {
             </div>
           </div>
           <div className="flex-1 space-y-6">
-            <div className="flex justify-between items-start">
-              <div>
-                <h3 className="text-2xl font-bold font-headline">Sparkle Station West</h3>
-                <p className="text-slate-500 flex items-center gap-2 mt-1">
-                  <MapPin size={14} />
-                  Bay 04 • 1.2 miles away
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+              <div className="min-w-0">
+                <h3 className="font-headline text-xl font-bold sm:text-2xl">Sparkle Station West</h3>
+                <p className="mt-1 flex items-center gap-2 text-slate-500">
+                  <MapPin size={14} className="shrink-0" />
+                  <span className="text-sm">Bay 04 • 1.2 miles away</span>
                 </p>
               </div>
-              <div className="text-right">
-                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Estimated Completion</p>
-                <p className="text-xl font-headline font-extrabold text-primary">14:45</p>
+              <div className="text-left sm:text-right">
+                <p className="mb-1 text-[10px] font-bold uppercase tracking-widest text-slate-400">Estimated Completion</p>
+                <p className="font-headline text-xl font-extrabold text-primary">14:45</p>
               </div>
             </div>
             <div className="space-y-3">
@@ -62,15 +62,15 @@ export const Bookings = () => {
                 <div className="h-full power-gradient rounded-full w-3/4 shadow-[0_0_12px_rgba(0,91,193,0.3)]"></div>
               </div>
             </div>
-            <div className="flex gap-4">
-              <div className="bg-surface-container-low px-4 py-3 rounded-2xl flex-1">
+            <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+              <div className="flex-1 rounded-2xl bg-surface-container-low px-4 py-3">
                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Service Stage</p>
                 <div className="flex items-center gap-2 text-on-surface font-semibold">
                   <Droplets size={16} className="text-tertiary" />
                   Osmosis Rinse
                 </div>
               </div>
-              <div className="bg-surface-container-low px-4 py-3 rounded-2xl flex-1">
+              <div className="flex-1 rounded-2xl bg-surface-container-low px-4 py-3">
                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">EV Status</p>
                 <div className="flex items-center gap-2 text-on-surface font-semibold">
                   <Zap size={16} className="text-tertiary" />
@@ -84,51 +84,55 @@ export const Bookings = () => {
 
       {/* Recent History */}
       <section className="space-y-6">
-        <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-bold font-headline tracking-tight">Recent History</h2>
-          <button className="text-primary font-bold text-sm hover:underline flex items-center gap-1">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <h2 className="font-headline text-xl font-bold tracking-tight sm:text-2xl">Recent History</h2>
+          <button type="button" className="flex items-center gap-1 text-sm font-bold text-primary hover:underline">
             Download All Receipts
             <Download size={16} />
           </button>
         </div>
 
-        <div className="bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm">
-          <div className="grid grid-cols-6 px-8 py-5 bg-surface-container-low text-[11px] font-bold uppercase tracking-widest text-slate-400">
-            <div className="col-span-2">Service Center</div>
-            <div>Date & Time</div>
-            <div>Service Type</div>
-            <div>Cost</div>
-            <div className="text-right">Action</div>
-          </div>
-          <div className="divide-y divide-slate-100">
-            <HistoryRow 
-              icon={EvStation}
-              name="VoltFlow Premium Hub"
-              location="Downtown District"
-              date="Oct 24, 2023"
-              time="10:15 AM"
-              type="Wash + EV Charge"
-              cost={42.50}
-            />
-            <HistoryRow 
-              icon={Car}
-              name="The Glass Finish"
-              location="Northside Plaza"
-              date="Oct 18, 2023"
-              time="02:40 PM"
-              type="Express Exterior"
-              cost={18.00}
-            />
-            <HistoryRow 
-              icon={Droplets}
-              name="Ocean Mist Auto Care"
-              location="Marina Bay"
-              date="Oct 12, 2023"
-              time="09:00 AM"
-              type="Eco-Friendly Deep Clean"
-              cost={55.00}
-              isEco
-            />
+        <div className="overflow-hidden rounded-3xl bg-surface-container-lowest shadow-sm">
+          <div className="-mx-px overflow-x-auto overscroll-x-contain">
+            <div className="min-w-[640px]">
+              <div className="grid grid-cols-6 bg-surface-container-low px-4 py-4 text-[11px] font-bold uppercase tracking-widest text-slate-400 sm:px-8 sm:py-5">
+                <div className="col-span-2">Service Center</div>
+                <div>Date & Time</div>
+                <div>Service Type</div>
+                <div>Cost</div>
+                <div className="text-right">Action</div>
+              </div>
+              <div className="divide-y divide-slate-100">
+                <HistoryRow 
+                  icon={EvStation}
+                  name="VoltFlow Premium Hub"
+                  location="Downtown District"
+                  date="Oct 24, 2023"
+                  time="10:15 AM"
+                  type="Wash + EV Charge"
+                  cost={42.50}
+                />
+                <HistoryRow 
+                  icon={Car}
+                  name="The Glass Finish"
+                  location="Northside Plaza"
+                  date="Oct 18, 2023"
+                  time="02:40 PM"
+                  type="Express Exterior"
+                  cost={18.00}
+                />
+                <HistoryRow 
+                  icon={Droplets}
+                  name="Ocean Mist Auto Care"
+                  location="Marina Bay"
+                  date="Oct 12, 2023"
+                  time="09:00 AM"
+                  type="Eco-Friendly Deep Clean"
+                  cost={55.00}
+                  isEco
+                />
+              </div>
+            </div>
           </div>
         </div>
         <div className="flex justify-center">
@@ -183,7 +187,7 @@ export const Bookings = () => {
 };
 
 const HistoryRow = ({ icon: Icon, name, location, date, time, type, cost, isEco }: any) => (
-  <div className="grid grid-cols-6 px-8 py-6 items-center hover:bg-surface-container-low transition-colors group">
+  <div className="group grid grid-cols-6 items-center px-4 py-5 transition-colors hover:bg-surface-container-low sm:px-8 sm:py-6">
     <div className="col-span-2 flex items-center gap-4">
       <div className="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-slate-500 group-hover:bg-white transition-colors">
         <Icon size={20} />
