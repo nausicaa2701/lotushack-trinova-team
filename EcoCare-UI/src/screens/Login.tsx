@@ -6,8 +6,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Clock3, Leaf, Lock, Mail, Zap } from 'lucide-react';
 import { useAuth, type UserRole } from '../auth/AuthContext';
 import { useMockData } from '../hooks/useMockData';
+import { ApiError, apiPostJson } from '../lib/apiClient';
 import type { PlatformUser } from '../lib/platformMock';
-import { getApiBase } from '../lib/apiClient';
 
 function mapRemoteUserToAuth(
   raw: { id: string; name: string; email: string; roles: string[]; defaultRole?: string },
@@ -28,6 +28,21 @@ function mapRemoteUserToAuth(
   };
 }
 
+function mapLocalUserToAuth(user: PlatformUser) {
+  return {
+    id: user.id,
+    name: user.name,
+    email: user.email,
+    roles: user.roles,
+    defaultRole: user.defaultRole,
+    providerAccountId: user.providerAccountId,
+    vehicle: user.vehicle,
+    vehiclePlate: user.vehiclePlate,
+    branch: user.branch,
+    title: user.title,
+  };
+}
+
 export default function Login() {
   const navigate = useNavigate();
   const { login } = useAuth();
@@ -45,7 +60,7 @@ export default function Login() {
     }
   }, [users, selectedUserId]);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitError(null);
 
@@ -58,45 +73,24 @@ export default function Login() {
     const loginEmail = email.trim() || found.email;
 
     setSubmitting(true);
-    fetch(`${getApiBase()}/api/auth/login`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
+    try {
+      const result = await apiPostJson<{
+        user: { id: string; name: string; email: string; roles: string[]; defaultRole?: string };
+      }>('/api/auth/login', {
         email: loginEmail,
         password: password || 'demo-password',
-      }),
-    })
-      .then(async (response) => {
-        if (!response.ok) {
-          throw new Error('Login failed');
-        }
-        return response.json() as Promise<{
-          user: { id: string; name: string; email: string; roles: string[]; defaultRole?: string };
-        }>;
-      })
-      .then((result) => {
-        const nextRole = login(mapRemoteUserToAuth(result.user, found));
-        navigate(`/${nextRole}/dashboard`);
-      })
-      .catch(() => {
-        setSubmitError('Sign-in service is unavailable. Continuing with the selected demo profile.');
-        const nextRole = login({
-          id: found.id,
-          name: found.name,
-          email: found.email,
-          roles: found.roles,
-          defaultRole: found.defaultRole,
-          providerAccountId: found.providerAccountId,
-          vehicle: found.vehicle,
-          vehiclePlate: found.vehiclePlate,
-          branch: found.branch,
-          title: found.title,
-        });
-        navigate(`/${nextRole}/dashboard`);
-      })
-      .finally(() => {
-        setSubmitting(false);
       });
+
+      const nextRole = login(mapRemoteUserToAuth(result.user, found));
+      navigate(`/${nextRole}/dashboard`);
+    } catch (error) {
+      const message = error instanceof ApiError ? error.message : 'Sign-in service is unavailable.';
+      setSubmitError(`${message} Continuing with the selected demo profile.`);
+      const nextRole = login(mapLocalUserToAuth(found));
+      navigate(`/${nextRole}/dashboard`);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (

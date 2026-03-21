@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { apiFetch, apiJson } from '../lib/apiClient';
+import { apiFetchOk, apiJson } from '../lib/apiClient';
 
 export interface MerchantApprovalRow {
   id: string;
@@ -68,7 +68,7 @@ export function useAdminMerchants(adminUserId: string | undefined) {
 
   const patchStatus = async (approvalId: string, status: string) => {
     if (!adminUserId) return;
-    await apiFetch(`/api/admin/merchant-approvals/${approvalId}`, {
+    await apiFetchOk(`/api/admin/merchant-approvals/${approvalId}`, {
       method: 'PATCH',
       userId: adminUserId,
       headers: { 'Content-Type': 'application/json' },
@@ -152,7 +152,7 @@ export function useAdminDisputes(adminUserId: string | undefined) {
 
   const patchStatus = async (disputeId: string, status: string) => {
     if (!adminUserId) return;
-    await apiFetch(`/api/admin/disputes/${disputeId}`, {
+    await apiFetchOk(`/api/admin/disputes/${disputeId}`, {
       method: 'PATCH',
       userId: adminUserId,
       headers: { 'Content-Type': 'application/json' },

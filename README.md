@@ -29,6 +29,14 @@ Seed database data:
 docker compose exec backend python scripts/seed_from_mock.py
 ```
 
+Import operational data from `Dataset/ProcessedData` into PostgreSQL:
+
+```bash
+docker compose exec backend python scripts/seed_from_processed_data.py --truncate
+```
+
+This loads `users`, `merchants`, `bookings`, and `search_logs` from processed CSV files.
+
 Useful local URLs:
 
 - Frontend: `http://localhost:3000`

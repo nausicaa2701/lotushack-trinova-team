@@ -72,6 +72,28 @@ def _merchant_result(merchant: Merchant, distance_km: float, reason_context: str
     )
 
 
+def _relaxed_nearby_payload(payload: NearbySearchRequest) -> NearbySearchRequest:
+    relaxed_filters = payload.filters.model_copy(
+        update={
+            "openNow": False,
+            "evSafe": False,
+            "minRating": 0,
+        }
+    )
+    return payload.model_copy(update={"filters": relaxed_filters})
+
+
+def _relaxed_on_route_payload(payload: OnRouteSearchRequest) -> OnRouteSearchRequest:
+    relaxed_filters = payload.filters.model_copy(
+        update={
+            "openNow": False,
+            "evSafe": False,
+            "minRating": 0,
+        }
+    )
+    return payload.model_copy(update={"filters": relaxed_filters})
+
+
 def _db_nearby_search(payload: NearbySearchRequest, db: Session) -> NearbySearchResponse:
     merchants = db.scalars(select(Merchant)).all()
     results: list[SearchResultMerchant] = []
@@ -136,9 +158,21 @@ def nearby_search(
             radius_km=payload.radiusKm,
             filters=payload.filters.model_dump(),
         )
+        if not results:
+            relaxed = _relaxed_nearby_payload(payload)
+            results = repo.search_nearby(
+                latitude=relaxed.location.lat,
+                longitude=relaxed.location.lng,
+                radius_km=relaxed.radiusKm,
+                filters=relaxed.filters.model_dump(),
+            )
         return NearbySearchResponse(results=results)
     except ArtifactUnavailableError:
-        return _db_nearby_search(payload, db)
+        strict = _db_nearby_search(payload, db)
+        if strict.results:
+            return strict
+        relaxed = _relaxed_nearby_payload(payload)
+        return _db_nearby_search(relaxed, db)
 
 
 @router.post("/on-route", response_model=NearbySearchResponse)
@@ -156,9 +190,23 @@ def on_route_search(
             max_corridor_km=payload.maxDetourKm,
             filters=payload.filters.model_dump(),
         )
+        if not results:
+            relaxed = _relaxed_on_route_payload(payload)
+            results = repo.search_on_route(
+                origin_lat=relaxed.origin.lat,
+                origin_lng=relaxed.origin.lng,
+                destination_lat=relaxed.destination.lat,
+                destination_lng=relaxed.destination.lng,
+                max_corridor_km=relaxed.maxDetourKm,
+                filters=relaxed.filters.model_dump(),
+            )
         return NearbySearchResponse(results=results)
     except ArtifactUnavailableError:
-        return _db_on_route_search(payload, db)
+        strict = _db_on_route_search(payload, db)
+        if strict.results:
+            return strict
+        relaxed = _relaxed_on_route_payload(payload)
+        return _db_on_route_search(relaxed, db)
 
 
 @router.post("/logs")

@@ -4,14 +4,28 @@ import { MapPin, CheckCircle2, Download, Droplets, Sparkles } from 'lucide-react
 import { useNavigate } from 'react-router-dom';
 import { cn } from '@/src/lib/utils';
 import { useAuth } from '../auth/AuthContext';
+import { useMockData } from '../hooks/useMockData';
 import { useOwnerBookings } from '../hooks/useOwnerBookings';
 
 export const Bookings = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
   const { bookings, loading, error } = useOwnerBookings(user?.id);
+  const { data: platformData } = useMockData();
 
   const activeBooking = bookings.find((b) => b.state === 'in_progress' || b.state === 'confirmed');
+  const ownedVehicles = React.useMemo(
+    () => platformData?.vehicles.filter((vehicle) => vehicle.ownerId === user?.id) ?? [],
+    [platformData?.vehicles, user?.id]
+  );
+
+  const ecoStats = React.useMemo(() => {
+    return {
+      totalWaterSaved: ownedVehicles.reduce((total, vehicle) => total + vehicle.waterSavedLiters, 0),
+      totalPoints: ownedVehicles.reduce((total, vehicle) => total + vehicle.loyaltyPoints, 0),
+      totalCo2Offset: ownedVehicles.reduce((total, vehicle) => total + vehicle.co2OffsetKg, 0),
+    };
+  }, [ownedVehicles]);
 
   return (
     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="space-y-10">
@@ -127,7 +141,12 @@ export const Bookings = () => {
             <h4 className="font-headline font-bold">Eco Impact</h4>
           </div>
           <p className="font-headline text-3xl font-extrabold">
-            — <span className="text-sm font-medium text-slate-400">(ties to vehicles)</span>
+            {ecoStats.totalWaterSaved.toLocaleString()}L
+          </p>
+          <p className="text-sm font-medium text-slate-400">
+            {ownedVehicles.length > 0
+              ? `${ecoStats.totalCo2Offset.toFixed(1)} kg CO2 offset across ${ownedVehicles.length} vehicle${ownedVehicles.length === 1 ? '' : 's'}.`
+              : 'No linked vehicle impact data for this account yet.'}
           </p>
         </div>
 
@@ -138,7 +157,12 @@ export const Bookings = () => {
             </div>
             <h4 className="font-headline font-bold">Rewards</h4>
           </div>
-          <p className="font-headline text-3xl font-extrabold">—</p>
+          <p className="font-headline text-3xl font-extrabold">{ecoStats.totalPoints.toLocaleString()}</p>
+          <p className="text-sm font-medium text-slate-400">
+            {ownedVehicles.length > 0
+              ? 'Reward points accumulated from your linked vehicle activity.'
+              : 'Rewards will appear once vehicles and bookings are linked.'}
+          </p>
         </div>
 
         <div className="power-gradient relative space-y-4 overflow-hidden rounded-3xl p-6 text-white shadow-lg">

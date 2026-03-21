@@ -1,14 +1,9 @@
 import { useEffect, useState } from 'react';
-import { getApiBase } from '../lib/apiClient';
+import { apiJson } from '../lib/apiClient';
 import { fetchPlatformMockData, type PlatformData } from '../lib/platformMock';
 
 async function fetchPlatformDataRemote(): Promise<PlatformData> {
-  const response = await fetch(`${getApiBase()}/api/platform/bootstrap`);
-  if (!response.ok) {
-    throw new Error('Unable to load platform data');
-  }
-
-  return (await response.json()) as PlatformData;
+  return apiJson<PlatformData>('/api/platform/bootstrap');
 }
 
 export function useMockData() {
