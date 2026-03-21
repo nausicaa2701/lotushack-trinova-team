@@ -1,5 +1,6 @@
 import csv
 import hashlib
+import random
 import sys
 from collections import defaultdict
 from datetime import datetime
@@ -203,6 +204,51 @@ def run(truncate_first: bool = False) -> None:
             )
         db.commit()
 
+        vehicle_specs = [
+            ("Tesla", "Model 3", "Long Range"),
+            ("Tesla", "Model Y", "Performance"),
+            ("Hyundai", "Ioniq 5", "Limited"),
+            ("Kia", "EV6", "GT-Line"),
+            ("VinFast", "VF 8", "Plus"),
+            ("BYD", "Atto 3", "Premium"),
+        ]
+        vehicle_colors = ["Pearl White", "Midnight Silver", "Deep Blue", "Graphite", "Crimson Red", "Atlas White"]
+        vehicle_rng = random.Random(20260322)
+
+        for idx, owner_id in enumerate(sorted(owner_user_ids), start=1):
+            make, model, trim = vehicle_specs[(idx - 1) % len(vehicle_specs)]
+            color = vehicle_colors[(idx - 1) % len(vehicle_colors)]
+            mileage = 4000 + (idx * 173)
+            battery_health = max(88, 100 - (idx % 12))
+
+            db.merge(
+                Vehicle(
+                    id=f"veh-{owner_id}",
+                    owner_id=owner_id,
+                    make=make,
+                    model=model,
+                    trim=trim,
+                    year=2023 + (idx % 3),
+                    color=color,
+                    plate_number=f"DS{idx:03d}-{vehicle_rng.randint(10, 99)}.{vehicle_rng.randint(10, 99)}",
+                    status="active",
+                    mileage_miles=mileage,
+                    battery_health_pct=battery_health,
+                    next_service_due="2026-12-31",
+                    next_service_label="Dec 31, 2026",
+                    last_wash_label=f"{vehicle_rng.randint(2, 14)} days ago",
+                    image_url="https://images.pexels.com/photos/2127039/pexels-photo-2127039.jpeg",
+                    water_saved_liters=180 + (idx * 7),
+                    co2_offset_kg=round(4.0 + (idx * 0.18), 1),
+                    loyalty_points=220 + (idx * 15),
+                    rewards_progress_pct=min(100, 20 + (idx % 9) * 8),
+                    subscription="Eco Care",
+                    range_km=420 + (idx % 6) * 22,
+                    upcoming_wash_json=None,
+                )
+            )
+        db.commit()
+
         successful_orders_count: dict[str, int] = defaultdict(int)
         booked_merchant_by_search_event: dict[str, str] = {}
 
@@ -327,6 +373,7 @@ def run(truncate_first: bool = False) -> None:
         print("ProcessedData import complete.")
         print(f"Imported merchants: {len(merchant_rows)}")
         print(f"Imported users (owners + providers): {len(owner_user_ids) + len(provider_user_by_merchant)}")
+        print(f"Imported vehicles: {len(owner_user_ids)}")
         print(f"Imported bookings: {len(booking_rows)}")
         print(f"Imported search logs: {len(search_rows)}")
     finally:
