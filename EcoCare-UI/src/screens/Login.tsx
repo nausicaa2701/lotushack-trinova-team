@@ -48,17 +48,45 @@ export default function Login() {
   const { login } = useAuth();
   const { data, loading, error } = useMockData();
   const [selectedUserId, setSelectedUserId] = useState('');
+  const [searchInput, setSearchInput] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
   const users = data?.users ?? [];
+  
+  const filteredUsers = users.filter(user =>
+    user.name.toLowerCase().includes(searchInput.toLowerCase()) ||
+    user.email.toLowerCase().includes(searchInput.toLowerCase())
+  );
 
+  const selectedUser = users.find(u => u.id === selectedUserId);
+  
+  const handleUserSelect = (userId: string, userName: string) => {
+    setSelectedUserId(userId);
+    setSearchInput(userName);
+    setShowDropdown(false);
+  };
+  
   useEffect(() => {
-    if (!selectedUserId && users.length > 0) {
+    if (!selectedUserId && users.length > 0 && !loading) {
       setSelectedUserId(users[0].id);
+      setSearchInput(users[0].name);
     }
-  }, [users, selectedUserId]);
+  }, [users.length, loading, selectedUserId]);
+  
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest('#demo-profile') && !target.closest('[role="listbox"]')) {
+        setShowDropdown(false);
+      }
+    };
+    
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, []);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -117,22 +145,45 @@ export default function Login() {
                 <label className="ml-1 text-sm font-semibold text-on-surface-variant" htmlFor="demo-profile">
                   Demo profile
                 </label>
-                <select
-                  id="demo-profile"
-                  className="w-full rounded-2xl border-none bg-surface-container-highest px-4 py-3.5 text-sm font-semibold text-slate-700 outline-none focus:ring-1 focus:ring-primary"
-                  value={selectedUserId}
-                  onChange={(evt) => setSelectedUserId(evt.target.value)}
-                  disabled={loading || Boolean(error)}
-                >
-                  {loading && <option>Loading users...</option>}
-                  {error && <option>Failed to load users</option>}
-                  {!loading && !error && users.length === 0 && <option>No users found</option>}
-                  {users.map((item) => (
-                    <option key={item.id} value={item.id}>
-                      {item.name} ({item.roles.join(' / ')})
-                    </option>
-                  ))}
-                </select>
+                <div className="relative">
+                  <input
+                    id="demo-profile"
+                    type="text"
+                    placeholder="Search users by name or email..."
+                    value={searchInput}
+                    onChange={(evt) => setSearchInput(evt.target.value)}
+                    onFocus={() => setShowDropdown(true)}
+                    disabled={loading || Boolean(error)}
+                    className="w-full rounded-2xl border-none bg-surface-container-highest px-4 py-3.5 text-sm font-semibold text-slate-700 outline-none focus:ring-1 focus:ring-primary disabled:opacity-50"
+                  />
+                  
+                  {showDropdown && (
+                    <div className="absolute top-full left-0 right-0 mt-2 bg-surface-container-highest border border-outline-variant/20 rounded-2xl shadow-lg z-50 max-h-60 overflow-y-auto">
+                      {loading && (
+                        <div className="px-4 py-3.5 text-center text-sm text-slate-500">Loading users...</div>
+                      )}
+                      {error && (
+                        <div className="px-4 py-3.5 text-center text-sm text-red-500">Failed to load users</div>
+                      )}
+                      {!loading && !error && filteredUsers.length === 0 && (
+                        <div className="px-4 py-3.5 text-center text-sm text-slate-500">No users found</div>
+                      )}
+                      {filteredUsers.map((item) => (
+                        <button
+                          key={item.id}
+                          type="button"
+                          onClick={() => handleUserSelect(item.id, item.name)}
+                          className={`w-full px-4 py-3 text-left text-sm hover:bg-surface-container-low transition-colors ${
+                            selectedUserId === item.id ? 'bg-primary text-white' : 'text-slate-700'
+                          }`}
+                        >
+                          <div className="font-semibold">{item.name}</div>
+                          <div className="text-xs opacity-75">{item.email} • {item.roles.join(' / ')}</div>
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
 
               <div className="space-y-1.5">
