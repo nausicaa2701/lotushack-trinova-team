@@ -433,6 +433,22 @@ a {
   border: 1px solid var(--surface-light-border);
 }
 
+.arch-diagram-wrap {
+  margin: 8px 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+.arch-diagram {
+  display: block;
+  width: 100%;
+  max-width: min(1200px, 100%);
+  height: auto;
+  border-radius: 28px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--surface-light-border);
+}
+
 .problem-card h3,
 .feature-tile h3,
 .layer-card h3,
@@ -449,6 +465,76 @@ a {
 
 .problem-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.problem-pain-shell {
+  margin-top: 4px;
+  padding-inline: clamp(8px, 2.5vw, 28px);
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
+  border-right: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.problem-grid--pain {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.problem-card--pain {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.problem-stat {
+  display: block;
+  font-size: clamp(2.6rem, 5.5vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 16px;
+  letter-spacing: -0.04em;
+  font-family: "Avenir Next Condensed", "Arial Narrow", "Segoe UI", sans-serif;
+}
+
+.problem-stat--blue {
+  color: var(--accent-soft);
+}
+
+.problem-stat--red {
+  color: #f87171;
+}
+
+.problem-card--pain h3.problem-pain-title {
+  margin: 0 0 12px;
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1.35;
+  color: var(--text-light);
+}
+
+.problem-card--pain p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.problem-source {
+  margin: 22px 0 0;
+  padding-top: 18px;
+  text-align: center;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: rgba(239, 245, 255, 0.62);
+}
+
+.problem-source a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.problem-source a:hover {
+  color: rgba(239, 245, 255, 0.88);
 }
 
 .problem-card,
@@ -786,6 +872,10 @@ a {
 
 .reveal-delay-2 {
   transition-delay: 220ms;
+}
+
+.reveal-delay-3 {
+  transition-delay: 320ms;
 }
 
 .reveal.is-visible {
