@@ -23,10 +23,12 @@ function normalizeVoiceSearchError(message: string) {
     return 'Voice transcription failed. Please try again.';
   }
 
-  if (
-    normalizedMessage.toLowerCase().includes('corrupted') ||
-    normalizedMessage.toLowerCase().includes('playable audio')
-  ) {
+  const lower = normalizedMessage.toLowerCase();
+  if (lower.includes('missing elevenlabs_api_key') || lower.includes('elevenlabs_api_key')) {
+    return 'Voice search needs ELEVENLABS_API_KEY in EcoCare-UI/.env (dev). Restart the dev server after adding it.';
+  }
+
+  if (lower.includes('corrupted') || lower.includes('playable audio')) {
     return 'Recording was too short or incomplete. Please speak a little longer before stopping.';
   }
 

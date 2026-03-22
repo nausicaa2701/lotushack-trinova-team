@@ -325,7 +325,8 @@ export function useVoiceSearch({
         void finalizeRecording();
       };
 
-      recorder.start();
+      /* Timeslice helps some browsers emit audio chunks before stop(); improves reliability vs. a single blob on stop(). */
+      recorder.start(250);
       startSilenceMonitor(stream);
 
       if (mountedRef.current) {

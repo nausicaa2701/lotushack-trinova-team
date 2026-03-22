@@ -17,8 +17,7 @@ export default defineConfig(({mode}) => {
       sourcemap: false,
     },
     plugins: [
-      react(),
-      tailwindcss(),
+      /* Must run before other plugins so this middleware is early in the stack and can handle POST /api/voice-search/transcribe before the /api proxy. */
       {
         name: 'voice-search-proxy',
         configureServer(server) {
@@ -28,6 +27,8 @@ export default defineConfig(({mode}) => {
           server.middlewares.use(createVoiceSearchProxy(env.ELEVENLABS_API_KEY));
         },
       },
+      react(),
+      tailwindcss(),
     ],
     resolve: {
       alias: {
@@ -45,10 +46,16 @@ export default defineConfig(({mode}) => {
         '127.0.0.1',
       ],
       // When VITE_API_BASE_URL is unset, `/api/*` resolves on the dev server; forward to FastAPI (default :8000).
+      // Do not proxy voice transcription: FastAPI has no such route; handled by voice-search-proxy middleware + ElevenLabs.
       proxy: {
         '/api': {
           target: 'http://127.0.0.1:8000',
           changeOrigin: true,
+          bypass(req) {
+            if (req.url?.startsWith('/api/voice-search')) {
+              return false;
+            }
+          },
         },
       },
     },
