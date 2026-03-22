@@ -243,14 +243,6 @@
                 <p>Google Maps and review collection flow upstream into Dataset; the Dockerized stack runs locally and the same platform is deployed live at <a href="https://trinova.it.com/" target="_blank" rel="noopener noreferrer">trinova.it.com</a>.</p>
               </div>
             </div>
-            <div class="proof-strip reveal">
-              <div class="proof-chip">https://trinova.it.com/</div>
-              <div class="proof-chip">docker compose up --build -d</div>
-              <div class="proof-chip">/health</div>
-              <div class="proof-chip">/docs</div>
-              <div class="proof-chip">/api/platform/bootstrap</div>
-              <div class="proof-chip">seed_from_processed_data.py --truncate</div>
-            </div>
           </div>
         </section>
 
@@ -338,15 +330,6 @@
                   <li>Live deployment at trinova.it.com; Docker compose for local dev</li>
                 </ol>
               </div>
-            </div>
-            <div class="terminal-card reveal">
-              <div class="terminal-bar">
-                <span></span><span></span><span></span>
-              </div>
-              <pre><code>$ docker compose up --build -d
-$ docker compose exec backend python scripts/seed_from_processed_data.py --truncate
-$ open https://trinova.it.com/
-$ curl https://trinova.it.com/health</code></pre>
             </div>
           </div>
         </section>
