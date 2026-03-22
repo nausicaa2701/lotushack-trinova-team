@@ -1,7 +1,6 @@
 const slides = Array.from(document.querySelectorAll(".slide"));
 const dots = Array.from(document.querySelectorAll(".slide-dot"));
 const counter = document.getElementById("section-counter");
-const jumpNextButton = document.getElementById("jump-next");
 const reveals = Array.from(document.querySelectorAll(".reveal"));
 
 const revealObserver = new IntersectionObserver(
@@ -34,23 +33,11 @@ const slideObserver = new IntersectionObserver(
     dots.forEach((dot, dotIndex) => {
       dot.classList.toggle("active", dotIndex === index);
     });
-
-    if (jumpNextButton) {
-      jumpNextButton.textContent = index === slides.length - 1 ? "Back to Top" : "Next Slide";
-    }
   },
   { threshold: 0.55 }
 );
 
 slides.forEach((slide) => slideObserver.observe(slide));
-
-if (jumpNextButton) {
-  jumpNextButton.addEventListener("click", () => {
-    const activeIndex = dots.findIndex((dot) => dot.classList.contains("active"));
-    const nextIndex = activeIndex >= 0 && activeIndex < slides.length - 1 ? activeIndex + 1 : 0;
-    slides[nextIndex].scrollIntoView({ behavior: "smooth", block: "start" });
-  });
-}
 
 window.addEventListener("keydown", (event) => {
   if (["ArrowDown", "PageDown", "ArrowRight"].includes(event.key)) {
