@@ -33,6 +33,14 @@ import "primeicons/primeicons.css";
 import { MobileBottomNav } from './components/MobileBottomNav';
 import './styles/mobile.css';
 
+function PitchDeskRedirect() {
+  React.useEffect(() => {
+    window.location.replace('/pitch-desk/index.html');
+  }, []);
+
+  return null;
+}
+
 export default function App() {
   return (
     <AuthProvider>
@@ -155,6 +163,7 @@ export default function App() {
           <Route path="/explore" element={<Navigate to="/owner/explore" replace />} />
           <Route path="/vehicles" element={<Navigate to="/owner/vehicles" replace />} />
           <Route path="/analytics" element={<Navigate to="/admin/dashboard" replace />} />
+          <Route path="/pitch-desk" element={<PitchDeskRedirect />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <MobileBottomNav />

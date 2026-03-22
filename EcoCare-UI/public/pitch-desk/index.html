@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WashNet Pitch Presentation</title>
+    <meta
+      name="description"
+      content="WashNet hackathon pitch presentation: a full-stack AI-assisted sustainable car-care marketplace demo."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="presentation-shell">
+      <header class="floating-deck-nav">
+        <div class="deck-brand">
+          <div class="deck-mark" aria-hidden="true">
+            <span></span>
+          </div>
+          <div>
+            <p class="deck-kicker">Hackathon pitch deck</p>
+            <h1>WashNet</h1>
+          </div>
+        </div>
+        <div class="deck-status">
+          <span id="section-counter">01 / 12</span>
+          <button id="jump-next" type="button" class="deck-button">Next Slide</button>
+        </div>
+      </header>
+
+      <nav class="slide-rail" aria-label="Presentation navigation">
+        <a href="#hero" data-slide="1" class="slide-dot active"><span>Hero</span></a>
+        <a href="#team" data-slide="2" class="slide-dot"><span>Team</span></a>
+        <a href="#problem" data-slide="3" class="slide-dot"><span>Problem</span></a>
+        <a href="#solution" data-slide="4" class="slide-dot"><span>Solution</span></a>
+        <a href="#architecture" data-slide="5" class="slide-dot"><span>Architecture</span></a>
+        <a href="#ai-layer" data-slide="6" class="slide-dot"><span>AI Layer</span></a>
+        <a href="#reliability" data-slide="7" class="slide-dot"><span>Reliability</span></a>
+        <a href="#innovation" data-slide="8" class="slide-dot"><span>Innovation</span></a>
+        <a href="#impact" data-slide="9" class="slide-dot"><span>Impact</span></a>
+        <a href="#evidence" data-slide="10" class="slide-dot"><span>Evidence</span></a>
+        <a href="#roadmap" data-slide="11" class="slide-dot"><span>Roadmap</span></a>
+        <a href="#thanks" data-slide="12" class="slide-dot"><span>Thanks</span></a>
+      </nav>
+
+      <main>
+        <section id="hero" class="slide slide-hero slide-dark">
+          <div class="section-inner hero-grid">
+            <div class="hero-copy reveal">
+              <p class="section-tag">Full-stack AI-assisted sustainable car-care marketplace demo</p>
+              <h2>WashNet</h2>
+              <p class="hero-lead">
+                Connecting EV and hybrid owners, car wash providers, and platform operators through intelligent
+                discovery, ranking, booking support, and ecosystem growth.
+              </p>
+              <div class="hero-meta">
+                <div>
+                  <span class="meta-label">Presented by</span>
+                  <strong>Trinova Team</strong>
+                </div>
+                <div>
+                  <span class="meta-label">Powered by</span>
+                  <strong>Codex · Prompting with love by Hong Cuc</strong>
+                </div>
+              </div>
+              <div class="hero-actions">
+                <a class="hero-link" href="https://trinova.it.com/" target="_blank" rel="noopener noreferrer">Open live app</a>
+                <a class="hero-link hero-link-muted" href="#architecture">See the stack</a>
+                <a class="hero-link hero-link-muted" href="#evidence">See system proof</a>
+              </div>
+            </div>
+            <div class="hero-poster reveal reveal-delay">
+              <div class="poster-glow"></div>
+              <div class="poster-card">
+                <div class="poster-panel">
+                  <span>Owner</span>
+                  <strong>Nearby + on-route EV-safe wash search</strong>
+                </div>
+                <div class="poster-panel">
+                  <span>Provider</span>
+                  <strong>Visibility, ranking, and booking demand capture</strong>
+                </div>
+                <div class="poster-panel">
+                  <span>Operator</span>
+                  <strong>Forecasting, quality signals, and ecosystem oversight</strong>
+                </div>
+                <div class="poster-footer">
+                  <div class="signal-block">
+                    <span>Real stack</span>
+                    <strong>UI + API + PostgreSQL + Dataset + n8n + Docker</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="team" class="slide slide-light slide-textured">
+          <div class="section-inner">
+            <div class="section-head reveal">
+              <p class="section-tag">Team spotlight</p>
+              <h2>The builders behind WashNet</h2>
+              <p>
+                A focused product and engineering team shaping WashNet as a demo that is not only visually polished,
+                but operationally credible end to end.
+              </p>
+            </div>
+            <figure class="team-photo-wrap reveal">
+              <img
+                class="team-photo"
+                src="./YDCC_2025_TriNova_Team.png"
+                alt="Trinova Team — YDCC 2025"
+                width="1920"
+                height="1080"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+          </div>
+        </section>
+
+        <section id="problem" class="slide slide-dark">
+          <div class="section-inner">
+            <div class="section-head reveal">
+              <p class="section-tag">Problem</p>
+              <h2>Car-care discovery is fragmented exactly where trust and timing matter most.</h2>
+            </div>
+            <div class="problem-grid">
+              <article class="problem-card reveal">
+                <span class="problem-index">01</span>
+                <h3>Owners lack confidence</h3>
+                <p>EV and hybrid drivers need the right service at the right place and time, but trusted discovery is still manual and uncertain.</p>
+              </article>
+              <article class="problem-card reveal reveal-delay">
+                <span class="problem-index">02</span>
+                <h3>Providers lack visibility</h3>
+                <p>Car wash businesses struggle to surface their strengths, attract new traffic, and join a better digital ecosystem.</p>
+              </article>
+              <article class="problem-card reveal reveal-delay-2">
+                <span class="problem-index">03</span>
+                <h3>Operators lack system insight</h3>
+                <p>Without integrated ranking, feedback, and demand signals, service quality and capacity planning stay reactive.</p>
+              </article>
+            </div>
+            <div class="metric-row reveal">
+              <div class="metric-block">
+                <strong>3</strong>
+                <span>stakeholder groups that must stay aligned</span>
+              </div>
+              <div class="metric-block">
+                <strong>1</strong>
+                <span>critical moment: location + route + time + trust</span>
+              </div>
+              <div class="metric-block">
+                <strong>0</strong>
+                <span>value in a marketplace if the search flow is not reliable</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="solution" class="slide slide-light slide-textured">
+          <div class="section-inner">
+            <div class="section-head reveal">
+              <p class="section-tag">Solution</p>
+              <h2>WashNet is a multi-sided service platform, not just a booking screen.</h2>
+              <p>
+                It connects vehicle owners, providers, and operators through one discovery and decision layer powered by
+                search, ranking, slot support, and ecosystem intelligence.
+              </p>
+            </div>
+            <div class="solution-layout">
+              <div class="audience-stack reveal">
+                <div class="audience-pill owner">Vehicle owners</div>
+                <div class="audience-pill provider">Car wash providers</div>
+                <div class="audience-pill operator">Platform operators</div>
+              </div>
+              <div class="feature-grid">
+                <article class="feature-tile reveal">
+                  <h3>Nearby search</h3>
+                  <p>Fast location-based discovery for trusted providers around the user.</p>
+                </article>
+                <article class="feature-tile reveal reveal-delay">
+                  <h3>Route-based search</h3>
+                  <p>Find merchants that fit the journey, not only the destination.</p>
+                </article>
+                <article class="feature-tile reveal reveal-delay-2">
+                  <h3>Provider ranking</h3>
+                  <p>Balance distance, reviews, trust, openness, and service richness.</p>
+                </article>
+                <article class="feature-tile reveal">
+                  <h3>Slot recommendation</h3>
+                  <p>Turn merchant context and timing signals into better scheduling suggestions.</p>
+                </article>
+                <article class="feature-tile reveal reveal-delay">
+                  <h3>Demand forecasting</h3>
+                  <p>Give operators a forward view of search and booking demand by zone and hour.</p>
+                </article>
+                <article class="feature-tile reveal reveal-delay-2">
+                  <h3>Ecosystem connection</h3>
+                  <p>Grow visibility for providers while improving trust and oversight for the full marketplace.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="architecture" class="slide slide-dark">
+          <div class="section-inner">
+            <div class="section-head reveal">
+              <p class="section-tag">Full-stack architecture</p>
+              <h2>A layered system with UI, API, data pipelines, automation, and runtime evidence.</h2>
+              <p>The architecture is designed to be demoable today and extensible tomorrow.</p>
+            </div>
+            <div class="architecture-board reveal">
+              <div class="layer-card">
+                <span class="layer-label">Frontend layer</span>
+                <h3>React 19 · TypeScript · Vite 6</h3>
+                <p>Tailwind 4, React Router 7, PrimeReact, and Leaflet power the user-facing exploration and dashboard experience.</p>
+              </div>
+              <div class="architecture-arrow"></div>
+              <div class="layer-card">
+                <span class="layer-label">Backend layer</span>
+                <h3>FastAPI · SQLAlchemy 2 · Pydantic v2</h3>
+                <p>Serves auth, search, route preview, merchant detail, slots, forecasting, bootstrap, and admin/provider flows.</p>
+              </div>
+              <div class="architecture-arrow"></div>
+              <div class="layer-card">
+                <span class="layer-label">Operational data</span>
+                <h3>PostgreSQL + seedable entities</h3>
+                <p>Processed data can be loaded into operational tables while analytics and ML artifacts remain under Dataset.</p>
+              </div>
+              <div class="architecture-arrow"></div>
+              <div class="layer-card">
+                <span class="layer-label">AI + analytics</span>
+                <h3>ProcessedData + model artifacts</h3>
+                <p>Ranking, slot recommendation, and forecasting outputs are stored as files and consumed safely by the API.</p>
+              </div>
+              <div class="architecture-arrow"></div>
+              <div class="layer-card">
+                <span class="layer-label">Automation + runtime</span>
+                <h3>n8n workflows + docker compose</h3>
+                <p>Google Maps and review collection flow upstream into Dataset; the Dockerized stack runs locally and the same platform is deployed live at <a href="https://trinova.it.com/" target="_blank" rel="noopener noreferrer">trinova.it.com</a>.</p>
+              </div>
+            </div>
+            <div class="proof-strip reveal">
+              <div class="proof-chip">https://trinova.it.com/</div>
+              <div class="proof-chip">docker compose up --build -d</div>
+              <div class="proof-chip">/health</div>
+              <div class="proof-chip">/docs</div>
+              <div class="proof-chip">/api/platform/bootstrap</div>
+              <div class="proof-chip">seed_from_processed_data.py --truncate</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="ai-layer" class="slide slide-light slide-textured">
+          <div class="section-inner">
+            <div class="section-head reveal">
+              <p class="section-tag">AI / intelligence layer</p>
+              <h2>Practical intelligence engineered as a pipeline, not vague AI branding.</h2>
+              <p>
+                WashNet uses a staged approach: preprocessing, baseline logic, interaction logging, training data,
+                prototype models, and safe serving defaults.
+              </p>
+            </div>
+            <div class="ai-grid">
+              <article class="ai-card reveal">
+                <h3>Retrieval + ranking</h3>
+                <p>Nearby and on-route retrieval baselines feed ranking outputs, while learning-to-rank artifacts remain ready for experimentation.</p>
+                <ul>
+                  <li>Distance-aware candidate generation</li>
+                  <li>Rule-based production baseline</li>
+                  <li>Optional LightGBM ranking model artifacts</li>
+                </ul>
+              </article>
+              <article class="ai-card reveal reveal-delay">
+                <h3>Slot recommendation</h3>
+                <p>Heuristic-first slot serving is backed by synthetic interaction design, model-ready datasets, and classifier evaluation outputs.</p>
+                <ul>
+                  <li>Slot event logging schema</li>
+                  <li>Training dataset + feature dictionary</li>
+                  <li>Prototype model kept behind the heuristic path</li>
+                </ul>
+              </article>
+              <article class="ai-card reveal reveal-delay-2">
+                <h3>Demand forecasting</h3>
+                <p>Zone and hour demand aggregation supports forecasting prototypes and dashboard-friendly summaries for operators.</p>
+                <ul>
+                  <li>Demand time-series dataset</li>
+                  <li>Prediction and evaluation files</li>
+                  <li>Prototype-ready, not overclaimed as production ML</li>
+                </ul>
+              </article>
+            </div>
+            <div class="artifact-ribbon reveal">
+              <span>ranking_model_lightgbm.txt</span>
+              <span>slot_model_lightgbm.pkl</span>
+              <span>demand_forecast_predictions.csv</span>
+              <span>ranking_training_dataset.csv</span>
+              <span>slot_training_dataset.csv</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="reliability" class="slide slide-dark">
+          <div class="section-inner">
+            <div class="section-head reveal">
+              <p class="section-tag">Functionality / reliability</p>
+              <h2>The system proves end-to-end completeness, not just feature concepts.</h2>
+            </div>
+            <div class="flow-grid">
+              <div class="flow-column reveal">
+                <h3>Owner journey</h3>
+                <ol>
+                  <li>Search nearby or on-route</li>
+                  <li>See ranked merchants with reasons</li>
+                  <li>Open merchant detail</li>
+                  <li>Get slot recommendations</li>
+                  <li>Continue into booking support</li>
+                </ol>
+              </div>
+              <div class="flow-column reveal reveal-delay">
+                <h3>Provider and operator journey</h3>
+                <ol>
+                  <li>Provider visibility through marketplace ranking</li>
+                  <li>Booking and campaign operations</li>
+                  <li>Admin oversight for approvals and disputes</li>
+                  <li>Demand and AI rollout visibility</li>
+                </ol>
+              </div>
+              <div class="flow-column reveal reveal-delay-2">
+                <h3>Reliability evidence</h3>
+                <ol>
+                  <li>Backend health and docs endpoints exist</li>
+                  <li>Bootstrap endpoint exists for demo hydration</li>
+                  <li>Processed data can seed PostgreSQL</li>
+                  <li>Live deployment at trinova.it.com; Docker compose for local dev</li>
+                </ol>
+              </div>
+            </div>
+            <div class="terminal-card reveal">
+              <div class="terminal-bar">
+                <span></span><span></span><span></span>
+              </div>
+              <pre><code>$ docker compose up --build -d
+$ docker compose exec backend python scripts/seed_from_processed_data.py --truncate
+$ open https://trinova.it.com/
+$ curl https://trinova.it.com/health</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <section id="innovation" class="slide slide-light slide-textured">
+          <div class="section-inner">
+            <div class="section-head reveal">
+              <p class="section-tag">Innovation</p>
+              <h2>WashNet stands out by connecting real operational layers, not just adding another booking interface.</h2>
+            </div>
+            <div class="innovation-grid">
+              <article class="innovation-card reveal">
+                <h3>Route-aware discovery</h3>
+                <p>Search follows the trip context, which is a better fit for real-world service decisions than static nearby-only lookup.</p>
+              </article>
+              <article class="innovation-card reveal reveal-delay">
+                <h3>AI-assisted decision support</h3>
+                <p>Ranking, slot, and forecasting are engineered as explainable, staged system components with safe fallbacks.</p>
+              </article>
+              <article class="innovation-card reveal reveal-delay-2">
+                <h3>Marketplace ecosystem design</h3>
+                <p>Owners, providers, and operators are treated as one connected network with shared value creation.</p>
+              </article>
+              <article class="innovation-card reveal">
+                <h3>Automation upstream</h3>
+                <p>n8n workflows connect data collection and synchronization to the rest of the stack, strengthening the pipeline story.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="impact" class="slide slide-dark">
+          <div class="section-inner">
+            <div class="section-head reveal">
+              <p class="section-tag">Impact / relevance</p>
+              <h2>Better discovery, better provider growth, better operational visibility.</h2>
+            </div>
+            <div class="impact-layout">
+              <div class="impact-panel reveal">
+                <h3>For EV / hybrid owners</h3>
+                <p>More trust, faster discovery, and better timing when searching for the right wash service.</p>
+              </div>
+              <div class="impact-panel reveal reveal-delay">
+                <h3>For providers</h3>
+                <p>More visibility, better reach, and clearer positioning inside an emerging sustainable mobility ecosystem.</p>
+              </div>
+              <div class="impact-panel reveal reveal-delay-2">
+                <h3>For operators</h3>
+                <p>Stronger control over service quality, search quality, and demand planning across the network.</p>
+              </div>
+            </div>
+            <div class="impact-banner reveal">
+              <strong>WashNet makes sustainable car care discoverable, rankable, and operable as a real digital marketplace.</strong>
+            </div>
+          </div>
+        </section>
+
+        <section id="evidence" class="slide slide-light slide-textured">
+          <div class="section-inner">
+            <div class="section-head reveal">
+              <p class="section-tag">Demo / system evidence</p>
+              <h2>Proof that the system is integrated across UI, API, data, automation, and runtime.</h2>
+            </div>
+            <div class="evidence-grid">
+              <article class="evidence-frame reveal">
+                <div class="frame-header">UI proof</div>
+                <div class="mock-window">
+                  <div class="mock-sidebar"></div>
+                  <div class="mock-body">
+                    <div class="mock-map"></div>
+                    <div class="mock-card-stack">
+                      <div class="mock-card"></div>
+                      <div class="mock-card narrow"></div>
+                      <div class="mock-card"></div>
+                    </div>
+                  </div>
+                </div>
+                <p>React + Vite frontend with explore, merchant cards, slots, and admin/provider views.</p>
+              </article>
+              <article class="evidence-frame reveal reveal-delay">
+                <div class="frame-header">API proof</div>
+                <div class="evidence-list">
+                  <span>/health</span>
+                  <span>/docs</span>
+                  <span>/api/platform/bootstrap</span>
+                  <span>/api/search/nearby</span>
+                  <span>/api/search/on-route</span>
+                  <span>/api/slots/recommend</span>
+                </div>
+                <p>FastAPI endpoints already expose core serving capability and demo hydration routes (same host as the live app when proxied).</p>
+              </article>
+              <article class="evidence-frame reveal reveal-delay-2">
+                <div class="frame-header">Data + automation proof</div>
+                <div class="evidence-list">
+                  <span>Dataset/ProcessedData</span>
+                  <span>Dataset/RawData</span>
+                  <span>Dataset/ProcessedData/models</span>
+                  <span>n8n Google Maps crawler</span>
+                  <span>n8n review crawler</span>
+                  <span>Google Sheets sync</span>
+                </div>
+                <p>Upstream workflows and downstream artifacts make the intelligence layer traceable.</p>
+              </article>
+              <article class="evidence-frame reveal">
+                <div class="frame-header">Runtime proof</div>
+                <div class="stack-metrics">
+                  <div><strong>3</strong><span>containerized services</span></div>
+                  <div><strong>2</strong><span>compose files</span></div>
+                  <div><strong>1</strong><span>HTTPS deployment (trinova.it.com)</span></div>
+                </div>
+                <p>Dockerized startup keeps frontend, backend, and database aligned for demo reliability; production is live at <a href="https://trinova.it.com/" target="_blank" rel="noopener noreferrer">trinova.it.com</a>.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="roadmap" class="slide slide-dark">
+          <div class="section-inner">
+            <div class="section-head reveal">
+              <p class="section-tag">Roadmap</p>
+              <h2>Next moves to turn a credible demo into a smarter operating platform.</h2>
+            </div>
+            <div class="roadmap-line">
+              <article class="roadmap-step reveal">
+                <span>01</span>
+                <h3>Collect real interaction data</h3>
+                <p>Move from synthetic learning signals to real user behavior across search, click, slot, and booking flows.</p>
+              </article>
+              <article class="roadmap-step reveal reveal-delay">
+                <span>02</span>
+                <h3>Upgrade ranking and slot models</h3>
+                <p>Improve model quality with online evaluation, better calibration, and richer feature coverage.</p>
+              </article>
+              <article class="roadmap-step reveal reveal-delay-2">
+                <span>03</span>
+                <h3>Expand provider ecosystem</h3>
+                <p>Bring in more merchants, richer service taxonomy, and stronger provider-side tooling.</p>
+              </article>
+              <article class="roadmap-step reveal">
+                <span>04</span>
+                <h3>Deepen demand intelligence</h3>
+                <p>Move from prototype forecasting to better operational planning and zone-level actions.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="thanks" class="slide slide-hero slide-dark">
+          <div class="section-inner thanks-layout">
+            <div class="reveal">
+              <p class="section-tag">Closing</p>
+              <h2>Thank you.</h2>
+              <p class="hero-lead">
+                WashNet is built to show technical depth, marketplace thinking, and practical intelligence in one
+                coherent demo platform.
+              </p>
+            </div>
+            <div class="thanks-card reveal reveal-delay">
+              <p>WashNet</p>
+              <h3>Search smarter. Rank better. Grow the ecosystem.</h3>
+              <span>Le Thi Hong Cuc · Nguyen Hieu Trung · Dang Kien Tuong</span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
