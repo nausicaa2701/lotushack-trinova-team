@@ -6,11 +6,15 @@ import { createVoiceSearchProxy } from './server/voiceSearchProxy';
 
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
-  const isProd = mode === 'production';
   return {
     build: {
-      // Do not ship source maps to browsers in production (harder to reverse-engineer).
-      sourcemap: !isProd,
+      sourcemap: false,
+    },
+    css: {
+      devSourcemap: false,
+    },
+    esbuild: {
+      sourcemap: false,
     },
     plugins: [
       react(),

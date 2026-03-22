@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { Button } from 'primereact/button';
 import { MapPin, CheckCircle2, Download, Droplets, Sparkles } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { cn } from '@/src/lib/utils';
@@ -77,15 +78,16 @@ export const Bookings = () => {
       <section className="space-y-6">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <h2 className="font-headline text-xl font-bold tracking-tight sm:text-2xl">Booking history</h2>
-          <button
+          <Button
             type="button"
             disabled
             title="Planned for post-MVP"
-            className="flex items-center gap-1 text-sm font-bold text-slate-400"
+            text
+            className="flex items-center gap-1 text-sm font-bold text-slate-400 border-none shadow-none"
           >
             Download All Receipts
             <Download size={16} />
-          </button>
+          </Button>
         </div>
 
         {loading && (
@@ -103,11 +105,12 @@ export const Bookings = () => {
         {!loading && bookings.length > 0 && (
           <div className="overflow-hidden rounded-3xl bg-surface-container-lowest shadow-sm">
             <div className="-mx-px overflow-x-auto overscroll-x-contain">
-              <div className="min-w-[640px]">
-                <div className="grid grid-cols-6 bg-surface-container-low px-4 py-4 text-[11px] font-bold uppercase tracking-widest text-slate-400 sm:px-8 sm:py-5">
+              <div className="min-w-[820px]">
+                <div className="grid grid-cols-7 bg-surface-container-low px-4 py-4 text-[11px] font-bold uppercase tracking-widest text-slate-400 sm:px-8 sm:py-5">
                   <div className="col-span-2">Service Center</div>
                   <div>Slot</div>
-                  <div>Service Type</div>
+                  <div>Service</div>
+                  <div>Booked at</div>
                   <div>Cost</div>
                   <div className="text-right">State</div>
                 </div>
@@ -117,11 +120,11 @@ export const Bookings = () => {
                       key={b.id}
                       icon={Droplets}
                       name={b.provider}
-                      location={b.slot}
-                      date={b.state}
-                      time=""
-                      type={b.service}
+                      slotLabel={b.slot}
+                      serviceType={b.service}
+                      bookedAt={b.createdAt}
                       cost={b.price}
+                      state={b.state}
                       onRebook={() => navigate('/owner/explore')}
                     />
                   ))}
@@ -169,74 +172,85 @@ export const Bookings = () => {
           <Sparkles className="absolute -bottom-4 -right-4 rotate-12 text-[120px] opacity-10 transition-transform duration-700" />
           <h4 className="font-headline font-bold">Premium Perk</h4>
           <p className="text-sm text-white/80">Subscription and perks — post-MVP.</p>
-          <button
+          <Button
             type="button"
             disabled
             title="Planned for post-MVP"
-            className="w-fit rounded-full bg-white/80 px-4 py-2 text-xs font-bold text-slate-400"
-          >
-            Manage Plan
-          </button>
+            label="Manage Plan"
+            className="w-fit rounded-full bg-white/80 px-4 py-2 text-xs font-bold text-slate-400 border-none"
+          />
         </div>
       </section>
     </motion.div>
   );
 };
 
+function formatBookedAt(iso?: string): string {
+  if (!iso) return '—';
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  return d.toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' });
+}
+
 const HistoryRow = ({
   icon: Icon,
   name,
-  location,
-  date,
-  time,
-  type,
+  slotLabel,
+  serviceType,
+  bookedAt,
   cost,
-  isEco,
+  state,
   onRebook,
 }: {
   icon: React.ComponentType<{ size?: number; className?: string }>;
   name: string;
-  location: string;
-  date: string;
-  time: string;
-  type: string;
+  slotLabel: string;
+  serviceType: string;
+  bookedAt?: string;
   cost: number;
-  isEco?: boolean;
+  state: string;
   onRebook: () => void;
-}) => (
-  <div className="group grid grid-cols-6 items-center px-4 py-5 transition-colors hover:bg-surface-container-low sm:px-8 sm:py-6">
-    <div className="col-span-2 flex items-center gap-4">
-      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-surface-container-high text-slate-500 transition-colors group-hover:bg-white">
-        <Icon size={20} />
+}) => {
+  const stateLabel = state.replace('_', ' ');
+  return (
+    <div className="group grid grid-cols-7 items-center px-4 py-5 transition-colors hover:bg-surface-container-low sm:px-8 sm:py-6">
+      <div className="col-span-2 flex items-center gap-4">
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-surface-container-high text-slate-500 transition-colors group-hover:bg-white">
+          <Icon size={20} />
+        </div>
+        <div>
+          <p className="font-headline font-bold">{name}</p>
+        </div>
       </div>
-      <div>
-        <p className="font-headline font-bold">{name}</p>
-        <p className="text-xs text-slate-400">{location}</p>
+      <div className="text-sm font-medium text-slate-700">{slotLabel}</div>
+      <div className="text-sm">
+        <span className="rounded-md bg-secondary-container px-2 py-1 text-[10px] font-bold uppercase text-on-secondary-container">
+          {serviceType}
+        </span>
+      </div>
+      <div className="text-sm text-slate-600">{formatBookedAt(bookedAt)}</div>
+      <div className="font-headline text-sm font-extrabold">${cost.toFixed(2)}</div>
+      <div className="flex flex-col items-end gap-2 text-right">
+        <span
+          className={cn(
+            'rounded-md px-2 py-1 text-[10px] font-bold uppercase',
+            state === 'cancelled' || state === 'no_show'
+              ? 'bg-red-50 text-red-700'
+              : state === 'completed'
+                ? 'bg-tertiary-container text-on-tertiary-container'
+                : 'bg-surface-container-high text-slate-600'
+          )}
+        >
+          {stateLabel}
+        </span>
+        <Button
+          type="button"
+          label="Re-book"
+          onClick={onRebook}
+          text
+          className="rounded-full border border-outline-variant px-5 py-2 text-xs font-bold transition-all hover:border-primary hover:text-primary"
+        />
       </div>
     </div>
-    <div className="text-sm">
-      <p className="font-semibold">{date}</p>
-      {time ? <p className="text-xs text-slate-400">{time}</p> : null}
-    </div>
-    <div className="text-sm">
-      <span
-        className={cn(
-          'rounded-md px-2 py-1 text-[10px] font-bold uppercase',
-          isEco ? 'bg-tertiary-container text-on-tertiary-container' : 'bg-secondary-container text-on-secondary-container'
-        )}
-      >
-        {type}
-      </span>
-    </div>
-    <div className="font-headline text-sm font-extrabold">${cost.toFixed(2)}</div>
-    <div className="text-right">
-      <button
-        type="button"
-        onClick={onRebook}
-        className="rounded-full border border-outline-variant px-5 py-2 text-xs font-bold transition-all hover:border-primary hover:text-primary"
-      >
-        Re-book
-      </button>
-    </div>
-  </div>
-);
+  );
+};

@@ -23,9 +23,15 @@ export interface Merchant {
   successfulOrders: number;
   priceFrom: number;
   distanceFromRouteKm?: number;
+  /** Alias used by some UI (km from search origin). */
+  distanceKm?: number;
   detourMin?: number;
   availableNow: boolean;
   reasonTags: string[];
+  openNow?: boolean;
+  evSafe?: boolean;
+  address?: string;
+  serviceTypes?: string[];
 }
 
 export interface RoutePreviewResponse {

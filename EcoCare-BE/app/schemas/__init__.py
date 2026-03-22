@@ -103,6 +103,8 @@ class BookingOut(BaseModel):
     slot: str
     state: str
     price: float
+    created_at: datetime = Field(alias="createdAt")
+    vehicle_id: str | None = Field(default=None, alias="vehicleId")
 
 
 class CreateBookingRequest(BaseModel):

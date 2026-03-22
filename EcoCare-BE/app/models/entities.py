@@ -42,10 +42,11 @@ class Booking(Base):
     provider_id: Mapped[str | None] = mapped_column(ForeignKey("users.id"), nullable=True)
     provider: Mapped[str] = mapped_column(String(255), nullable=False)
     service: Mapped[str] = mapped_column(String(255), nullable=False)
-    slot: Mapped[str] = mapped_column(String(32), nullable=False)
+    slot: Mapped[str] = mapped_column(String(512), nullable=False)
     state: Mapped[str] = mapped_column(String(32), nullable=False)
     price: Mapped[float] = mapped_column(Numeric(10, 2), nullable=False)
     created_at: Mapped[datetime] = mapped_column(DateTime, nullable=False, default=datetime.utcnow)
+    vehicle_id: Mapped[str | None] = mapped_column(String(64), nullable=True)
 
 
 class Vehicle(Base):

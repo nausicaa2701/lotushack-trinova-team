@@ -1,5 +1,20 @@
 import React from 'react';
+import { Button } from 'primereact/button';
+import { Checkbox } from 'primereact/checkbox';
+import { Dropdown } from 'primereact/dropdown';
+import { InputNumber } from 'primereact/inputnumber';
 import { useAuth } from '../../auth/AuthContext';
+
+const rankingModelStatusOptions = [
+  { label: 'shadow_mode', value: 'shadow_mode' },
+  { label: 'canary', value: 'canary' },
+  { label: 'live', value: 'live' },
+];
+
+const slotModelStatusOptions = [
+  { label: 'rule_engine_active', value: 'rule_engine_active' },
+  { label: 'model_active', value: 'model_active' },
+];
 import { useAdminAiRollout, useAdminRankingRules } from '../../hooks/useAdminApi';
 
 export const AdminAIRollout = () => {
@@ -95,31 +110,30 @@ export const AdminAIRollout = () => {
         <h3 className="font-headline text-lg font-bold">Release controls</h3>
         <p className="mt-1 text-sm text-slate-500">Adjust model rollout flags and fallback health.</p>
         <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-          <label className="flex items-center gap-2 text-sm font-bold text-slate-700">
-            <input
-              type="checkbox"
+          <label className="flex items-center gap-2 text-sm font-bold text-slate-700" htmlFor="fallback-healthy">
+            <Checkbox
+              inputId="fallback-healthy"
               checked={data.fallbackHealthy}
-              onChange={(ev) => void patchAiRollout({ fallbackHealthy: ev.target.checked })}
+              onChange={(e) => void patchAiRollout({ fallbackHealthy: Boolean(e.checked) })}
             />
             Fallback healthy
           </label>
-          <select
-            className="rounded-xl border border-outline-variant bg-surface-container-low px-3 py-2 text-sm font-bold"
+          <Dropdown
             value={data.rankingModel.status}
-            onChange={(ev) => void patchAiRollout({ rankingModelStatus: ev.target.value })}
-          >
-            <option value="shadow_mode">shadow_mode</option>
-            <option value="canary">canary</option>
-            <option value="live">live</option>
-          </select>
-          <select
-            className="rounded-xl border border-outline-variant bg-surface-container-low px-3 py-2 text-sm font-bold"
+            options={rankingModelStatusOptions}
+            optionLabel="label"
+            optionValue="value"
+            onChange={(e) => void patchAiRollout({ rankingModelStatus: e.value as string })}
+            className="min-w-[10rem] text-sm font-bold"
+          />
+          <Dropdown
             value={data.slotModel.status}
-            onChange={(ev) => void patchAiRollout({ slotModelStatus: ev.target.value })}
-          >
-            <option value="rule_engine_active">rule_engine_active</option>
-            <option value="model_active">model_active</option>
-          </select>
+            options={slotModelStatusOptions}
+            optionLabel="label"
+            optionValue="value"
+            onChange={(e) => void patchAiRollout({ slotModelStatus: e.value as string })}
+            className="min-w-[12rem] text-sm font-bold"
+          />
         </div>
       </section>
 
@@ -130,24 +144,28 @@ export const AdminAIRollout = () => {
           {weightFields.map(([key, label]) => (
             <label key={key} className="flex flex-col gap-1 text-sm font-semibold text-slate-700">
               {label}
-              <input
-                type="number"
-                step="0.01"
-                className="rounded-xl border border-outline-variant bg-surface-container-low px-3 py-2"
+              <InputNumber
                 value={draft[key] ?? ranking.data[key]}
-                onChange={(ev) => setDraft((d) => ({ ...d, [key]: Number(ev.target.value) }))}
+                onValueChange={(e) => {
+                  const v = Array.isArray(e.value) ? 0 : Number(e.value ?? 0);
+                  setDraft((d) => ({ ...d, [key]: v }));
+                }}
+                minFractionDigits={2}
+                maxFractionDigits={4}
+                step={0.01}
+                className="w-full"
+                inputClassName="rounded-xl border border-outline-variant bg-surface-container-low px-3 py-2 w-full"
               />
             </label>
           ))}
         </div>
-        <button
+        <Button
           type="button"
+          label={saving ? 'Saving…' : 'Save weights'}
           disabled={saving}
           onClick={() => void saveRanking()}
-          className="mt-4 rounded-full bg-primary px-6 py-2 text-sm font-bold text-white disabled:opacity-50"
-        >
-          {saving ? 'Saving…' : 'Save weights'}
-        </button>
+          className="mt-4 rounded-full bg-primary px-6 py-2 text-sm font-bold text-white disabled:opacity-50 border-none"
+        />
       </section>
     </div>
   );

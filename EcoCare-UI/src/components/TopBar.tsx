@@ -17,7 +17,10 @@ import { useAuth } from '../auth/AuthContext';
 import { useMockData } from '../hooks/useMockData';
 import { useVoiceSearch } from '../hooks/useVoiceSearch';
 import { searchPlatformData, type SearchHit } from '../lib/platformMock';
+import { Button } from 'primereact/button';
+import { InputText } from 'primereact/inputtext';
 import { cn } from '@/src/lib/utils';
+import type { UserRole } from '../auth/AuthContext';
 
 interface TopBarProps {
   onMenuClick?: () => void;
@@ -37,6 +40,11 @@ export const TopBar = ({ onMenuClick }: TopBarProps) => {
   const watchIdRef = React.useRef<number | null>(null);
   const retryTimerRef = React.useRef<number | null>(null);
   const searchInputRef = React.useRef<HTMLInputElement | null>(null);
+  const focusSearchInputField = React.useCallback(() => {
+    window.setTimeout(() => {
+      searchInputRef.current?.focus();
+    }, 0);
+  }, []);
   const searchShellRef = React.useRef<HTMLDivElement | null>(null);
 
   const canOpenOwnerSearchRoutes = availableRoles.includes('owner');
@@ -176,11 +184,7 @@ export const TopBar = ({ onMenuClick }: TopBarProps) => {
     [data, searchOwnerId, searchQuery]
   );
 
-  const focusSearchInput = React.useCallback(() => {
-    window.setTimeout(() => {
-      searchInputRef.current?.focus();
-    }, 0);
-  }, []);
+  const focusSearchInput = focusSearchInputField;
 
   const navigateToOwnerSearchTarget = React.useCallback(
     (path: string) => {
@@ -221,7 +225,7 @@ export const TopBar = ({ onMenuClick }: TopBarProps) => {
 
       setSearchQuery(result.plateNumber);
       if (canOpenOwnerSearchRoutes) {
-        navigateToOwnerSearchTarget(`/owner/vehicles?search=${encodeURIComponent(result.plateNumber)}&vehicle=${encodeURIComponent(result.vehicleId)}`);
+        navigateToOwnerSearchTarget(`/owner/vehicles?vehicle=${encodeURIComponent(result.vehicleId)}`);
         return;
       }
 
@@ -271,7 +275,7 @@ export const TopBar = ({ onMenuClick }: TopBarProps) => {
     [data, focusSearchInput, openSearchResult, searchOwnerId]
   );
 
-  const handleRoleSwitch = (nextRole: 'owner' | 'provider' | 'admin') => {
+  const handleRoleSwitch = (nextRole: UserRole) => {
     switchRole(nextRole);
     navigate(`/${nextRole}/dashboard`);
   };
@@ -342,38 +346,43 @@ export const TopBar = ({ onMenuClick }: TopBarProps) => {
   return (
     <header className="sticky top-0 z-30 flex h-16 w-full shrink-0 items-center justify-between gap-3 border-b border-slate-200/60 bg-white/75 px-4 font-sans text-sm backdrop-blur-md sm:gap-4 sm:px-6 lg:px-8">
       <div className="flex min-w-0 flex-1 items-center gap-3">
-        <button
+        <Button
           type="button"
+          text
+          rounded
           onClick={onMenuClick}
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-slate-600 transition-colors hover:bg-slate-100 hover:text-primary lg:hidden"
+          className="flex h-10 w-10 shrink-0 items-center justify-center text-slate-600 transition-colors hover:bg-slate-100 hover:text-primary lg:hidden border-none shadow-none"
           aria-label="Open menu"
         >
           <Menu size={22} />
-        </button>
+        </Button>
 
         <div ref={searchShellRef} className="relative flex min-w-0 flex-1 items-center">
           <div className="flex min-w-0 flex-1 items-center rounded-full bg-surface-container-low px-3 py-2 transition-all focus-within:ring-2 focus-within:ring-primary/20 sm:px-4 sm:py-2.5 md:max-w-md lg:max-w-xl">
-            <button
+            <Button
               type="button"
+              text
               onClick={handleRequestLocation}
-              className="mr-2 inline-flex max-w-[46%] shrink-0 items-center gap-1 rounded-full bg-white px-2.5 py-1 text-[10px] font-bold text-slate-600 shadow-sm hover:text-primary sm:text-xs"
+              className="mr-2 inline-flex max-w-[46%] shrink-0 items-center gap-1 rounded-full bg-white px-2.5 py-1 text-[10px] font-bold text-slate-600 shadow-sm hover:text-primary sm:text-xs border-none"
               title="Get your current location"
             >
               <MapPin size={12} />
               <span className="truncate">{locationLabel}</span>
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
+              text
+              rounded
               onClick={handleSearchSubmit}
-              className="mr-2 shrink-0 rounded-full p-1 text-slate-400 transition-colors hover:bg-white hover:text-primary"
+              className="mr-2 shrink-0 p-1 text-slate-400 transition-colors hover:bg-white hover:text-primary border-none shadow-none"
               aria-label="Submit search"
               title="Search"
             >
               <Search size={18} />
-            </button>
-            <input
+            </Button>
+            <InputText
               ref={searchInputRef}
-              className="w-full min-w-0 border-none bg-transparent text-sm outline-none placeholder:text-slate-400 focus:ring-0"
+              className="ec-input-pill w-full min-w-0 flex-1 !border-0 !bg-transparent !shadow-none ring-0 focus:!ring-0 text-sm placeholder:text-slate-400"
               onChange={(event) => {
                 setSearchQuery(event.target.value);
                 setSearchNotice(null);
@@ -390,13 +399,15 @@ export const TopBar = ({ onMenuClick }: TopBarProps) => {
               autoComplete="off"
               value={searchQuery}
             />
-            <button
+            <Button
               type="button"
+              text
+              rounded
               onClick={handleVoiceSearch}
               aria-label={voiceSearchTitle}
               aria-pressed={isVoiceSearchListening}
               className={cn(
-                'ml-2 flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors',
+                'ml-2 flex h-8 w-8 shrink-0 items-center justify-center border-none shadow-none',
                 isVoiceSearchListening
                   ? 'bg-red-50 text-red-500 hover:bg-red-100'
                   : isVoiceSearchStarting || isVoiceSearchTranscribing
@@ -411,7 +422,7 @@ export const TopBar = ({ onMenuClick }: TopBarProps) => {
               ) : (
                 <Mic size={16} className={isVoiceSearchListening ? 'animate-pulse' : undefined} />
               )}
-            </button>
+            </Button>
           </div>
 
           {showSearchPanel && (
@@ -449,12 +460,13 @@ export const TopBar = ({ onMenuClick }: TopBarProps) => {
                 ) : (
                   <div className="space-y-2">
                     {searchResults.map((result) => (
-                      <button
+                      <Button
                         key={result.id}
                         type="button"
+                        text
                         onClick={() => openSearchResult(result)}
                         onMouseDown={(event) => event.preventDefault()}
-                        className="flex w-full items-center gap-3 rounded-2xl px-3 py-3 text-left transition-colors hover:bg-surface-container-low"
+                        className="flex w-full items-center justify-start gap-3 rounded-2xl px-3 py-3 text-left transition-colors hover:bg-surface-container-low border-none shadow-none"
                       >
                         <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-surface-container-low text-primary">
                           {result.type === 'vehicle' ? <CarFront size={18} /> : <Store size={18} />}
@@ -469,7 +481,7 @@ export const TopBar = ({ onMenuClick }: TopBarProps) => {
                           </span>
                           <ArrowUpRight size={16} className="text-slate-300" />
                         </div>
-                      </button>
+                      </Button>
                     ))}
                   </div>
                 )
@@ -484,39 +496,44 @@ export const TopBar = ({ onMenuClick }: TopBarProps) => {
           {availableRoles.length > 1 && (
             <div className="flex items-center rounded-full bg-surface-container-low p-1">
               {availableRoles.map((role) => (
-                <button
+                <Button
                   key={role}
                   type="button"
+                  text={activeRole !== role}
                   onClick={() => handleRoleSwitch(role)}
-                  className={`rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest transition sm:px-3 ${
+                  className={`rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest transition sm:px-3 border-none shadow-none ${
                     activeRole === role ? 'bg-white text-primary shadow-sm' : 'text-slate-500 hover:text-slate-800'
                   }`}
-                >
-                  {role}
-                </button>
+                  label={role}
+                />
               ))}
             </div>
           )}
-          <button
+          <Button
             type="button"
-            className="relative text-slate-500 transition-colors hover:text-primary"
+            text
+            rounded
+            className="relative text-slate-500 transition-colors hover:text-primary border-none shadow-none"
             aria-label="Notifications"
           >
             <Bell size={20} />
             <span className="absolute right-0 top-0 h-2 w-2 rounded-full border-2 border-white bg-red-500" />
-          </button>
-          <button
+          </Button>
+          <Button
             type="button"
-            className="hidden text-slate-500 transition-colors hover:text-primary sm:block"
+            text
+            rounded
+            className="hidden text-slate-500 transition-colors hover:text-primary sm:inline-flex border-none shadow-none"
             aria-label="Help"
           >
             <HelpCircle size={20} />
-          </button>
+          </Button>
         </div>
         <div className="hidden h-8 w-px bg-slate-200 sm:block" />
-        <button
+        <Button
           type="button"
-          className="flex items-center gap-2 transition-opacity hover:opacity-80 sm:gap-3"
+          text
+          className="flex items-center gap-2 transition-opacity hover:opacity-80 sm:gap-3 border-none shadow-none"
         >
           <div className="hidden text-right sm:block">
             <p className="mb-1 font-headline text-xs font-bold leading-none">{user?.name ?? 'Guest'}</p>
@@ -530,7 +547,7 @@ export const TopBar = ({ onMenuClick }: TopBarProps) => {
               referrerPolicy="no-referrer"
             />
           </div>
-        </button>
+        </Button>
       </div>
     </header>
   );

@@ -5,7 +5,12 @@ export interface CreateBookingPayload {
   providerId: string | null;
   provider: string;
   service: string;
+  /** Display / fallback slot label when no ISO time */
   slot: string;
+  /** ISO8601 slot start — used for uniqueness (same day + same time in VN) */
+  slot_time?: string | null;
+  merchant_id?: string;
+  vehicle_id?: string | null;
   price: number;
 }
 

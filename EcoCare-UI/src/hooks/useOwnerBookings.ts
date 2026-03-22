@@ -10,6 +10,8 @@ export interface OwnerBookingRow {
   slot: string;
   state: string;
   price: number;
+  createdAt?: string;
+  vehicleId?: string | null;
 }
 
 export function useOwnerBookings(ownerId: string | undefined) {
@@ -28,7 +30,13 @@ export function useOwnerBookings(ownerId: string | undefined) {
       const data = await apiJson<{ bookings: OwnerBookingRow[] }>(`/api/owners/${ownerId}/bookings`, {
         userId: ownerId,
       });
-      setBookings(data.bookings ?? []);
+      const rows = data.bookings ?? [];
+      const sorted = [...rows].sort((a, b) => {
+        const ta = a.createdAt ? new Date(a.createdAt).getTime() : 0;
+        const tb = b.createdAt ? new Date(b.createdAt).getTime() : 0;
+        return tb - ta;
+      });
+      setBookings(sorted);
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Failed to load bookings');
       setBookings([]);

@@ -169,6 +169,7 @@ class AIServingRepository:
             service_flags = {field: _to_bool(row.get(field)) for field in SERVICE_FLAG_FIELDS}
             open_now_value = _to_optional_float(row.get("is_open_now_proxy"))
             review_count = _to_int(row.get("review_count_source") or row.get("review_row_count"))
+            price_from = _to_float(row.get("price"), default=0.0)
             merchant = {
                 "merchantId": merchant_id,
                 "merchantName": (row.get("merchant_name") or "").strip(),
@@ -181,6 +182,7 @@ class AIServingRepository:
                 "longitude": _to_optional_float(row.get("longitude")),
                 "rating": _to_float(row.get("rating")),
                 "reviewCount": review_count,
+                "priceFrom": price_from,
                 "openState": (row.get("open_state") or "").strip(),
                 "openNowValue": open_now_value,
                 "openNow": open_now_value == 1.0,
@@ -367,7 +369,7 @@ class AIServingRepository:
             "rating": merchant["rating"],
             "reviewCount": merchant["reviewCount"],
             "successfulOrders": merchant["reviewCount"],
-            "priceFrom": 0.0,
+            "priceFrom": float(merchant.get("priceFrom", 0.0) or 0.0),
             "distanceFromRouteKm": round(distance_for_eta, 4),
             "distanceKm": round(distance_km, 4) if distance_km is not None else None,
             "routeDistanceProxy": round(route_distance_proxy, 4) if route_distance_proxy is not None else None,
@@ -492,6 +494,7 @@ class AIServingRepository:
             "longitude": merchant["longitude"],
             "rating": merchant["rating"],
             "reviewCount": merchant["reviewCount"],
+            "priceFrom": float(merchant.get("priceFrom", 0.0) or 0.0),
             "openState": merchant["openState"],
             "openNow": merchant["openNow"],
             "hoursText": merchant["hoursTextClean"],

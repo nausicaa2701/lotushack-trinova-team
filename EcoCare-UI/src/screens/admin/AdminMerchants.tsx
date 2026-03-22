@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'primereact/button';
 import { useAuth } from '../../auth/AuthContext';
 import { useAdminMerchants } from '../../hooks/useAdminApi';
 
@@ -31,20 +32,18 @@ export const AdminMerchants = () => {
             <p className="text-sm text-slate-500">{merchant.city}</p>
             <p className="mt-2 text-xs font-bold uppercase tracking-widest text-primary">Status: {merchant.status}</p>
             <div className="mt-4 flex gap-2">
-              <button
+              <Button
                 type="button"
+                label="Approve"
                 onClick={() => void patchStatus(merchant.id, 'approved')}
-                className="rounded-full bg-primary px-4 py-2 text-xs font-bold text-white"
-              >
-                Approve
-              </button>
-              <button
+                className="rounded-full bg-primary px-4 py-2 text-xs font-bold text-white border-none"
+              />
+              <Button
                 type="button"
+                label="Suspend"
                 onClick={() => void patchStatus(merchant.id, 'suspended')}
-                className="rounded-full bg-slate-200 px-4 py-2 text-xs font-bold text-slate-700"
-              >
-                Suspend
-              </button>
+                className="rounded-full bg-slate-200 px-4 py-2 text-xs font-bold text-slate-700 border-none"
+              />
             </div>
           </div>
         ))}

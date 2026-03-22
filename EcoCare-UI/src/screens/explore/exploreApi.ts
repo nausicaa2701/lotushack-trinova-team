@@ -11,7 +11,7 @@ export function normalizeSearchMerchant(raw: Record<string, unknown>): Merchant 
     lng: Number(raw.lng ?? 0),
     rating: Number(raw.rating ?? 0),
     successfulOrders: Number(raw.successfulOrders ?? 0),
-    priceFrom: Number(raw.priceFrom ?? 0),
+    priceFrom: Number(raw.priceFrom ?? raw.price_from ?? 0),
     distanceFromRouteKm: raw.distanceFromRouteKm != null ? Number(raw.distanceFromRouteKm) : undefined,
     detourMin: raw.detourMin != null ? Number(raw.detourMin) : undefined,
     availableNow: Boolean(raw.availableNow),

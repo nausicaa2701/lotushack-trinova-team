@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'primereact/button';
 import { Star, MapPinned, Zap, Clock } from 'lucide-react';
 import type { Merchant } from './types';
 
@@ -105,16 +106,15 @@ export const MobileMerchantCard: React.FC<MobileMerchantCardProps> = ({
           </div>
         )}
         
-        {/* Action Button */}
-        <button
+        <Button
+          type="button"
+          label="Book Now"
           onClick={(e) => {
             e.stopPropagation();
             onBook();
           }}
-          className="w-full py-3 bg-primary text-on-primary font-semibold rounded-xl active:bg-primary/90 transition-colors"
-        >
-          Book Now
-        </button>
+          className="w-full py-3 bg-primary text-on-primary font-semibold rounded-xl active:bg-primary/90 transition-colors border-none"
+        />
       </div>
     </div>
   );

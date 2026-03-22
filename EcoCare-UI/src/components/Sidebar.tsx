@@ -15,6 +15,7 @@ import {
   LogOut,
   Droplets
 } from 'lucide-react';
+import { Button } from 'primereact/button';
 import { cn } from '@/src/lib/utils';
 import { useAuth, type UserRole } from '../auth/AuthContext';
 
@@ -70,11 +71,11 @@ export const Sidebar = ({ open = false, onClose }: SidebarProps) => {
   return (
     <aside
       className={cn(
-        'fixed left-0 top-0 z-[10050] flex h-screen h-dvh w-64 flex-col border-r border-slate-200/50 bg-slate-50 p-4 transition-transform duration-300 ease-out',
+        'fixed left-0 top-0 z-[10050] flex h-screen h-dvh w-64 flex-col border-r border-slate-200/50 bg-slate-50 pb-[max(1rem,env(safe-area-inset-bottom))] pl-[max(1rem,env(safe-area-inset-left))] pr-4 pt-6 transition-transform duration-300 ease-out sm:pr-5',
         open ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
       )}
     >
-      <div className="mb-8 flex items-center gap-3 px-2 sm:mb-10 sm:px-4">
+      <div className="mb-6 flex shrink-0 items-center gap-3">
         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl power-gradient text-white shadow-lg">
           <Droplets size={24} fill="currentColor" />
         </div>
@@ -84,59 +85,63 @@ export const Sidebar = ({ open = false, onClose }: SidebarProps) => {
         </div>
       </div>
 
-      <nav className="flex-1 space-y-1 overflow-y-auto overscroll-contain [-webkit-overflow-scrolling:touch]">
+      <nav className="flex min-h-0 flex-1 flex-col gap-0.5 overflow-y-auto overscroll-contain py-1 [-webkit-overflow-scrolling:touch]">
         {navItems.map((item) => (
           <NavLink
             key={item.path}
             to={item.path}
             onClick={linkClose}
-            className={({ isActive }) => cn(
-              'flex items-center gap-3 rounded-xl px-4 py-3 font-headline text-sm font-medium transition-all duration-200',
-              isActive
-                ? 'border-r-4 border-primary bg-white font-bold text-primary shadow-sm'
-                : 'text-slate-500 hover:bg-slate-100 hover:text-slate-900'
-            )}
+            className={({ isActive }) =>
+              cn(
+                'flex items-center gap-3 rounded-xl py-2.5 pl-3 pr-3 font-headline text-sm font-medium transition-all duration-200',
+                isActive
+                  ? 'border-l-[3px] border-primary bg-white font-bold text-primary shadow-sm'
+                  : 'border-l-[3px] border-transparent text-slate-500 hover:bg-slate-100/90 hover:text-slate-900'
+              )
+            }
           >
             <item.icon size={20} className="shrink-0" />
-            <span>{item.label}</span>
+            <span className="leading-snug">{item.label}</span>
           </NavLink>
         ))}
       </nav>
 
-      <div className="mt-auto space-y-1 border-t border-slate-200/50 pt-4 sm:pt-6">
-        <button
+      <div className="mt-auto flex shrink-0 flex-col gap-1 border-t border-slate-200/50 pt-5">
+        <Button
           type="button"
+          label={activeRole === 'provider' ? 'Open Booking Ops' : activeRole === 'admin' ? 'Open Admin Hub' : 'Start Wash'}
           onClick={handleStartAction}
-          className="mb-4 w-full rounded-full py-3.5 font-bold text-white shadow-xl shadow-primary/20 power-gradient transition-transform active:scale-95 sm:mb-6 sm:py-4"
-        >
-          {activeRole === 'provider' ? 'Open Booking Ops' : activeRole === 'admin' ? 'Open Admin Hub' : 'Start Wash'}
-        </button>
-        <button
+          className="mb-2 w-full rounded-full py-3 font-bold text-white shadow-xl shadow-primary/20 power-gradient transition-transform active:scale-95 sm:mb-3 sm:py-3.5 border-none"
+        />
+        <Button
           type="button"
           disabled
           title="Planned for post-MVP"
-          className="flex w-full items-center gap-3 px-4 py-3 text-left font-headline text-sm font-medium text-slate-400 opacity-70"
+          text
+          className="flex w-full items-center justify-start gap-3 rounded-lg px-3 py-2.5 font-headline text-sm font-medium text-slate-400 opacity-70"
         >
           <Settings size={20} />
           <span>Settings</span>
-        </button>
-        <button
+        </Button>
+        <Button
           type="button"
           disabled
           title="Planned for post-MVP"
-          className="flex w-full items-center gap-3 px-4 py-3 text-left font-headline text-sm font-medium text-slate-400 opacity-70"
+          text
+          className="flex w-full items-center justify-start gap-3 rounded-lg px-3 py-2.5 font-headline text-sm font-medium text-slate-400 opacity-70"
         >
           <HelpCircle size={20} />
           <span>Support</span>
-        </button>
-        <button
+        </Button>
+        <Button
           type="button"
+          text
           onClick={handleLogout}
-          className="flex w-full items-center gap-3 px-4 py-3 font-headline text-sm font-medium text-slate-500 transition-colors hover:text-error"
+          className="flex w-full items-center justify-start gap-3 rounded-lg px-3 py-2.5 font-headline text-sm font-medium text-slate-500 transition-colors hover:text-error border-none shadow-none"
         >
           <LogOut size={20} />
           <span>Logout</span>
-        </button>
+        </Button>
       </div>
     </aside>
   );

@@ -14,9 +14,10 @@ import {
   Sparkles,
   Ticket,
 } from 'lucide-react';
+import { Button } from 'primereact/button';
 import { useAuth } from '../auth/AuthContext';
 import { useMockData } from '../hooks/useMockData';
-import { filterVehiclesByQuery, formatVehicleHeadline, formatVehicleSubtitle, type VehicleRecord } from '../lib/platformMock';
+import { formatVehicleHeadline, formatVehicleSubtitle, type VehicleRecord } from '../lib/platformMock';
 import { cn } from '@/src/lib/utils';
 
 export const Vehicles = () => {
@@ -25,37 +26,27 @@ export const Vehicles = () => {
   const { data, loading, error } = useMockData();
   const [searchParams] = useSearchParams();
 
-  const topBarSearchQuery = searchParams.get('search')?.trim() ?? '';
   const selectedVehicleId = searchParams.get('vehicle');
 
   const ownedVehicles = React.useMemo(
-    () => data?.vehicles.filter((vehicle) => vehicle.ownerId === user?.id) ?? [],
+    () => data?.vehicles?.filter((vehicle) => vehicle.ownerId === user?.id) ?? [],
     [data?.vehicles, user?.id]
   );
 
-  const filteredVehicles = React.useMemo(
-    () => filterVehiclesByQuery(ownedVehicles, topBarSearchQuery),
-    [ownedVehicles, topBarSearchQuery]
-  );
-
+  /** URL `vehicle` selects the detail card only; the list always shows the full fleet (not filtered by nav search). */
   const activeVehicle =
-    filteredVehicles.find((vehicle) => vehicle.id === selectedVehicleId) ??
-    filteredVehicles[0] ??
-    ownedVehicles[0] ??
-    null;
+    ownedVehicles.find((vehicle) => vehicle.id === selectedVehicleId) ?? ownedVehicles[0] ?? null;
 
   const aggregateStats = React.useMemo(() => {
-    const baseList = filteredVehicles.length > 0 ? filteredVehicles : ownedVehicles;
-
     return {
       avgBatteryHealth:
-        baseList.length > 0
-          ? Math.round(baseList.reduce((total, vehicle) => total + vehicle.batteryHealthPct, 0) / baseList.length)
+        ownedVehicles.length > 0
+          ? Math.round(ownedVehicles.reduce((total, vehicle) => total + vehicle.batteryHealthPct, 0) / ownedVehicles.length)
           : 0,
-      totalPoints: baseList.reduce((total, vehicle) => total + vehicle.loyaltyPoints, 0),
-      totalWaterSaved: baseList.reduce((total, vehicle) => total + vehicle.waterSavedLiters, 0),
+      totalPoints: ownedVehicles.reduce((total, vehicle) => total + vehicle.loyaltyPoints, 0),
+      totalWaterSaved: ownedVehicles.reduce((total, vehicle) => total + vehicle.waterSavedLiters, 0),
     };
-  }, [filteredVehicles, ownedVehicles]);
+  }, [ownedVehicles]);
 
   if (loading) {
     return <div className="rounded-3xl bg-surface-container-low p-6 text-sm text-slate-500">Loading vehicles...</div>;
@@ -79,17 +70,9 @@ export const Vehicles = () => {
         <div>
           <h2 className="font-headline text-2xl font-extrabold tracking-tight text-on-surface sm:text-3xl">Vehicles & Impact</h2>
           <p className="mt-1 text-slate-500">
-            {topBarSearchQuery
-              ? `Showing vehicles that match "${topBarSearchQuery}".`
-              : 'Manage your EV profile, plate numbers, and sustainability contribution.'}
+            Manage your EV profile, plate numbers, and sustainability contribution. Select a vehicle to update the detail card.
           </p>
         </div>
-        {topBarSearchQuery && (
-          <div className="inline-flex w-fit items-center gap-2 rounded-full bg-primary-container/40 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-primary">
-            Search Filter
-            <span className="rounded-full bg-white px-3 py-1 text-[10px] tracking-wide text-slate-600">{topBarSearchQuery}</span>
-          </div>
-        )}
       </header>
 
       <div className="grid grid-cols-1 gap-8 xl:grid-cols-[minmax(0,1.15fr)_360px]">
@@ -155,13 +138,12 @@ export const Vehicles = () => {
                         <span>{activeVehicle.upcomingWash.provider} · {activeVehicle.upcomingWash.location}</span>
                       </div>
                     </div>
-                    <button
+                    <Button
                       type="button"
+                      label="View Booking"
                       onClick={() => navigate('/owner/bookings')}
-                      className="rounded-full bg-white px-4 py-2 text-xs font-bold text-primary shadow-sm transition-colors hover:bg-primary hover:text-white"
-                    >
-                      View Booking
-                    </button>
+                      className="rounded-full bg-white px-4 py-2 text-xs font-bold text-primary shadow-sm transition-colors hover:bg-primary hover:text-white border-none"
+                    />
                   </div>
                 </div>
               )}
@@ -199,32 +181,33 @@ export const Vehicles = () => {
           <div>
             <h3 className="font-headline text-xl font-bold tracking-tight sm:text-2xl">Registered Vehicles</h3>
             <p className="mt-1 text-sm text-slate-500">
-              {filteredVehicles.length} vehicle{filteredVehicles.length === 1 ? '' : 's'} shown
+              {ownedVehicles.length} vehicle{ownedVehicles.length === 1 ? '' : 's'} registered
             </p>
           </div>
-          <button
+          <Button
             type="button"
             disabled
             title="Vehicle editing is planned post-MVP"
-            className="inline-flex w-fit items-center gap-2 rounded-full bg-surface-container-low px-4 py-2 text-sm font-bold text-slate-400"
+            text
+            className="inline-flex w-fit items-center gap-2 rounded-full bg-surface-container-low px-4 py-2 text-sm font-bold text-slate-400 border-none shadow-none"
           >
             <Ticket size={16} />
-            Manage Registrations
-          </button>
+            <span>Manage Registrations</span>
+          </Button>
         </div>
 
-        {filteredVehicles.length === 0 ? (
+        {ownedVehicles.length === 0 ? (
           <div className="rounded-[2rem] bg-surface-container-low p-8 text-sm text-slate-500">
-            No vehicles matched "{topBarSearchQuery}". Try another plate number from the search bar.
+            No vehicles registered for this account.
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
-            {filteredVehicles.map((vehicle) => (
+            {ownedVehicles.map((vehicle) => (
               <VehicleSummaryCard
                 key={vehicle.id}
                 vehicle={vehicle}
                 selected={vehicle.id === activeVehicle.id}
-                onOpen={() => navigate(`/owner/vehicles?search=${encodeURIComponent(topBarSearchQuery || vehicle.plateNumber)}&vehicle=${encodeURIComponent(vehicle.id)}`)}
+                onOpen={() => navigate(`/owner/vehicles?vehicle=${encodeURIComponent(vehicle.id)}`)}
               />
             ))}
           </div>
@@ -326,11 +309,12 @@ const VehicleSummaryCard = ({
   selected: boolean;
   onOpen: () => void;
 }) => (
-  <button
+  <Button
     type="button"
+    text
     onClick={onOpen}
     className={cn(
-      'group w-full rounded-[2rem] border p-5 text-left shadow-sm transition-all',
+      'group h-auto w-full justify-start rounded-[2rem] border p-5 text-left shadow-sm transition-all',
       selected
         ? 'border-primary bg-primary-container/10'
         : 'border-outline-variant/20 bg-surface-container-lowest hover:-translate-y-0.5 hover:shadow-lg'
@@ -360,7 +344,7 @@ const VehicleSummaryCard = ({
       </div>
       <ChevronRight size={18} className="text-slate-300 transition-transform group-hover:translate-x-1" />
     </div>
-  </button>
+  </Button>
 );
 
 const SummaryPill = ({

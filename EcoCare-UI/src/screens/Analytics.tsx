@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { Button } from 'primereact/button';
+import { Dropdown } from 'primereact/dropdown';
 import { useNavigate } from 'react-router-dom';
 import { 
   TrendingUp, 
@@ -17,8 +19,15 @@ import {
 import { cn } from '@/src/lib/utils';
 import { fetchForecastSummary } from '../lib/forecastApi';
 
+const periodOptions = [
+  { label: 'Last 7 Days', value: '7d' },
+  { label: 'Last 30 Days', value: '30d' },
+  { label: 'Year to Date', value: 'ytd' },
+];
+
 export const Analytics = () => {
   const navigate = useNavigate();
+  const [period, setPeriod] = React.useState(periodOptions[0]);
   const [forecastSummary, setForecastSummary] = React.useState<Record<string, unknown> | null>(null);
 
   React.useEffect(() => {
@@ -64,14 +73,18 @@ export const Analytics = () => {
           <p className="mt-1 text-slate-500">Real-time performance metrics for WashNet network operators.</p>
         </div>
         <div className="flex flex-col gap-2 sm:flex-row sm:gap-3">
-          <select className="rounded-xl border-none bg-surface-container-low px-4 py-2 text-sm font-bold text-slate-700 outline-none focus:ring-2 focus:ring-primary/20">
-            <option>Last 7 Days</option>
-            <option>Last 30 Days</option>
-            <option>Year to Date</option>
-          </select>
-          <button type="button" onClick={handleExportReport} className="rounded-xl px-6 py-2 text-sm font-bold text-white shadow-lg shadow-primary/20 power-gradient">
-            Export Report
-          </button>
+          <Dropdown
+            value={period}
+            options={periodOptions}
+            onChange={(e) => setPeriod(e.value)}
+            className="w-full min-w-[200px] border-none bg-surface-container-low text-sm font-bold text-slate-700 md:w-auto"
+          />
+          <Button
+            type="button"
+            label="Export Report"
+            onClick={handleExportReport}
+            className="rounded-xl px-6 py-2 text-sm font-bold text-white shadow-lg shadow-primary/20 power-gradient border-none"
+          />
         </div>
       </header>
 
@@ -193,9 +206,13 @@ export const Analytics = () => {
               <LaneStatus lane="03" status="Maintenance" time="2h left" type="Repair" isMaintenance />
               <LaneStatus lane="04" status="Occupied" time="4m left" type="Basic" />
             </div>
-            <button type="button" onClick={() => navigate('/admin/merchants')} className="w-full mt-6 py-3 rounded-xl bg-surface-container-low text-slate-600 font-bold text-sm hover:bg-surface-container-high transition-colors">
-              Manage All Lanes
-            </button>
+            <Button
+              type="button"
+              label="Manage All Lanes"
+              onClick={() => navigate('/admin/merchants')}
+              text
+              className="w-full mt-6 py-3 rounded-xl bg-surface-container-low text-slate-600 font-bold text-sm hover:bg-surface-container-high transition-colors border-none shadow-none"
+            />
           </div>
 
           <div className="bg-slate-900 rounded-[2rem] p-8 text-white relative overflow-hidden">

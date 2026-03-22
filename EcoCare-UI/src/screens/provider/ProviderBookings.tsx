@@ -1,5 +1,19 @@
 import React from 'react';
+import { Button } from 'primereact/button';
+import { Dropdown } from 'primereact/dropdown';
 import { useAuth } from '../../auth/AuthContext';
+
+const bookingStateOptions: {
+  label: string;
+  value: 'pending' | 'confirmed' | 'in_progress' | 'completed' | 'cancelled' | 'no_show';
+}[] = [
+  { label: 'pending', value: 'pending' },
+  { label: 'confirmed', value: 'confirmed' },
+  { label: 'in_progress', value: 'in_progress' },
+  { label: 'completed', value: 'completed' },
+  { label: 'cancelled', value: 'cancelled' },
+  { label: 'no_show', value: 'no_show' },
+];
 import { useMockData } from '../../hooks/useMockData';
 import { patchProviderBookingState, useProviderBookings } from '../../hooks/useProviderApi';
 
@@ -47,13 +61,12 @@ export const ProviderBookings = () => {
           <h2 className="font-headline text-3xl font-extrabold">Booking Queue</h2>
           <p className="mt-1 text-slate-500">No bookings yet for this provider account.</p>
         </header>
-        <button
+        <Button
           type="button"
+          label="Refresh"
           onClick={() => void reload()}
-          className="rounded-full bg-primary px-4 py-2 text-xs font-bold text-white"
-        >
-          Refresh
-        </button>
+          className="rounded-full bg-primary px-4 py-2 text-xs font-bold text-white border-none"
+        />
       </div>
     );
 
@@ -64,13 +77,13 @@ export const ProviderBookings = () => {
           <h2 className="font-headline text-3xl font-extrabold">Booking Queue</h2>
           <p className="mt-1 text-slate-500">Update booking status and process service orders.</p>
         </div>
-        <button
+        <Button
           type="button"
+          label="Refresh"
           onClick={() => void reload()}
+          text
           className="w-fit rounded-full border border-outline-variant px-4 py-2 text-xs font-bold text-slate-600 hover:bg-surface-container-low"
-        >
-          Refresh
-        </button>
+        />
       </header>
       <div className="overflow-hidden rounded-3xl bg-surface-container-lowest shadow-sm">
         <div className="grid grid-cols-1 gap-2 bg-surface-container-low px-6 py-4 text-xs font-bold uppercase tracking-widest text-slate-400 sm:grid-cols-[1fr_1fr_auto]">
@@ -85,25 +98,21 @@ export const ProviderBookings = () => {
               <span className="text-slate-600">{booking.service}</span>
               <div className="flex flex-wrap items-center justify-end gap-2">
                 <span className="text-sm font-bold text-primary">{booking.state}</span>
-                <select
+                <Dropdown
                   aria-label={`Update status for booking ${booking.id}`}
                   disabled={busyId === booking.id}
-                  className="max-w-[11rem] rounded-lg border border-outline-variant bg-surface-container-lowest px-2 py-1 text-xs font-bold text-slate-700"
                   value={booking.state}
-                  onChange={(ev) =>
+                  options={bookingStateOptions}
+                  optionLabel="label"
+                  optionValue="value"
+                  onChange={(e) =>
                     void updateBookingState(
                       booking.id,
-                      ev.target.value as 'pending' | 'confirmed' | 'in_progress' | 'completed' | 'cancelled' | 'no_show'
+                      e.value as 'pending' | 'confirmed' | 'in_progress' | 'completed' | 'cancelled' | 'no_show'
                     )
                   }
-                >
-                  <option value="pending">pending</option>
-                  <option value="confirmed">confirmed</option>
-                  <option value="in_progress">in_progress</option>
-                  <option value="completed">completed</option>
-                  <option value="cancelled">cancelled</option>
-                  <option value="no_show">no_show</option>
-                </select>
+                  className="max-w-[11rem] text-xs font-bold"
+                />
               </div>
             </div>
           ))}

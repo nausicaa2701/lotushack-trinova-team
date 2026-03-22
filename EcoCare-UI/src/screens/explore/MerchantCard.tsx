@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'primereact/button';
 import { MapPin, Star } from 'lucide-react';
 import type { Merchant } from './types';
 
@@ -37,9 +38,12 @@ export const MerchantCard: React.FC<Props> = ({ merchant, selected, onSelect, on
     </div>
     <div className="mt-4 flex items-center justify-between">
       <p className="font-bold text-slate-700">${merchant.priceFrom}</p>
-      <button type="button" onClick={onBook} className="rounded-full bg-primary px-4 py-2 text-xs font-bold text-white">
-        Book
-      </button>
+      <Button
+        type="button"
+        label="Book"
+        onClick={onBook}
+        className="rounded-full bg-primary px-4 py-2 text-xs font-bold text-white border-none"
+      />
     </div>
   </div>
 );

@@ -1,6 +1,14 @@
 import React from 'react';
+import { Button } from 'primereact/button';
+import { Dropdown } from 'primereact/dropdown';
 import { Megaphone } from 'lucide-react';
 import { useAuth } from '../../auth/AuthContext';
+
+const campaignTypeOptions = [
+  { label: 'Map boost', value: 'map_boost' },
+  { label: 'Search highlight', value: 'search_highlight' },
+  { label: 'Weekend promo', value: 'weekend_promo' },
+];
 import { createCampaignRequest, useProviderCampaigns } from '../../hooks/useProviderApi';
 
 export const ProviderCampaigns = () => {
@@ -53,34 +61,32 @@ export const ProviderCampaigns = () => {
           <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-end">
             <label className="flex flex-col gap-1 text-sm font-semibold text-slate-600">
               Campaign type
-              <select
-                className="rounded-xl border border-outline-variant bg-surface-container-low px-3 py-2 font-bold"
+              <Dropdown
                 value={campaignType}
-                onChange={(ev) => setCampaignType(ev.target.value)}
-              >
-                <option value="map_boost">Map boost</option>
-                <option value="search_highlight">Search highlight</option>
-                <option value="weekend_promo">Weekend promo</option>
-              </select>
+                options={campaignTypeOptions}
+                optionLabel="label"
+                optionValue="value"
+                onChange={(e) => setCampaignType(e.value as string)}
+                className="w-full max-w-xs font-bold md:w-auto"
+              />
             </label>
-            <button
+            <Button
               type="button"
+              label={submitting ? 'Submitting…' : 'Submit request'}
               disabled={submitting}
               onClick={() => void submitCampaign()}
-              className="rounded-full bg-primary px-6 py-2 text-sm font-bold text-white disabled:opacity-50"
-            >
-              {submitting ? 'Submitting…' : 'Submit request'}
-            </button>
+              className="rounded-full bg-primary px-6 py-2 text-sm font-bold text-white disabled:opacity-50 border-none"
+            />
           </div>
           {formError ? <p className="mt-3 text-sm text-red-600">{formError}</p> : null}
         </div>
-        <button
+        <Button
           type="button"
+          label="Refresh"
           onClick={() => void reload()}
+          text
           className="rounded-full border border-outline-variant px-4 py-2 text-xs font-bold text-slate-600"
-        >
-          Refresh
-        </button>
+        />
       </div>
     );
   }
@@ -92,13 +98,13 @@ export const ProviderCampaigns = () => {
           <h2 className="font-headline text-3xl font-extrabold">Visibility Campaigns</h2>
           <p className="mt-1 text-slate-500">Request boost campaigns and track approval status.</p>
         </div>
-        <button
+        <Button
           type="button"
+          label="Refresh"
           onClick={() => void reload()}
+          text
           className="w-fit rounded-full border border-outline-variant px-4 py-2 text-xs font-bold text-slate-600 hover:bg-surface-container-low"
-        >
-          Refresh
-        </button>
+        />
       </header>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {campaigns.map((campaign) => (

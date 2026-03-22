@@ -257,7 +257,10 @@ export function searchPlatformData(
     return [];
   }
 
-  const providerHits = data.providers
+  const providers = data.providers ?? [];
+  const vehicles = data.vehicles ?? [];
+
+  const providerHits = providers
     .map((provider) => {
       const haystack = normalizeText(
         [provider.name, provider.branch, provider.city, provider.address, ...(provider.serviceTypes ?? [])]
@@ -279,9 +282,10 @@ export function searchPlatformData(
     })
     .filter((item): item is Extract<SearchHit, { type: 'service-center' }> => Boolean(item));
 
-  const scopedVehicles = options?.includeVehicles === false
-    ? []
-    : data.vehicles.filter((vehicle) => (options?.ownerId ? vehicle.ownerId === options.ownerId : true));
+  const scopedVehicles =
+    options?.includeVehicles === false
+      ? []
+      : vehicles.filter((vehicle) => (options?.ownerId ? vehicle.ownerId === options.ownerId : true));
 
   const vehicleHits = scopedVehicles
     .map((vehicle) => {
@@ -334,12 +338,12 @@ export function mapProviderToMerchant(provider: ProviderRecord): Merchant {
 export function getMockSearchKeyterms(data: PlatformData) {
   const keyterms = new Set<string>();
 
-  data.providers.forEach((provider) => {
+  (data.providers ?? []).forEach((provider) => {
     keyterms.add(provider.name);
     if (provider.branch) keyterms.add(provider.branch);
   });
 
-  data.vehicles.forEach((vehicle) => {
+  (data.vehicles ?? []).forEach((vehicle) => {
     keyterms.add(vehicle.plateNumber);
     keyterms.add(formatVehicleName(vehicle));
   });

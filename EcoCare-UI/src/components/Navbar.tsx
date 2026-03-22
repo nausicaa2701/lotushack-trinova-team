@@ -32,19 +32,20 @@ export default function Navbar() {
         </Link>
       </div>
 
-      <button
+      <Button
         type="button"
-        className="md:hidden flex h-10 w-10 items-center justify-center rounded-xl text-on-surface-variant hover:bg-surface-container-low"
+        text
+        rounded
+        className="md:hidden flex h-10 w-10 items-center justify-center text-on-surface-variant hover:bg-surface-container-low border-none shadow-none"
         aria-label="Toggle menu"
         onClick={() => setMenuOpen((prev) => !prev)}
-      >
-        <i className={`pi ${menuOpen ? 'pi-times' : 'pi-bars'} text-lg`} />
-      </button>
+        icon={menuOpen ? 'pi pi-times' : 'pi pi-bars'}
+      />
       </nav>
 
       {menuOpen && (
-        <div className="border-t border-outline-variant/20 bg-surface-container-lowest px-4 py-4 md:hidden">
-          <div className="flex flex-col gap-3 text-sm font-semibold">
+        <div className="border-t border-outline-variant/20 bg-surface-container-lowest px-4 py-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] md:hidden">
+          <div className="flex flex-col gap-4 text-sm font-semibold">
             <a href="#features" className="text-on-surface-variant hover:text-on-surface" onClick={() => setMenuOpen(false)}>Features</a>
             <a href="#partners" className="text-on-surface-variant hover:text-on-surface" onClick={() => setMenuOpen(false)}>Partners</a>
             <a href="#about" className="text-on-surface-variant hover:text-on-surface" onClick={() => setMenuOpen(false)}>About</a>

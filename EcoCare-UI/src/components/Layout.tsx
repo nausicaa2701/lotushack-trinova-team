@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
+import { Button } from 'primereact/button';
 import { Sidebar } from './Sidebar';
 import { TopBar } from './TopBar';
 
@@ -24,10 +25,10 @@ export const Layout: React.FC = () => {
     <div className="min-h-screen min-h-dvh bg-surface overflow-x-hidden pb-20 lg:pb-0">
       <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       {sidebarOpen && (
-        <button
+        <Button
           type="button"
           aria-label="Close menu"
-          className="fixed inset-0 z-[10040] bg-slate-900/40 backdrop-blur-sm transition-opacity lg:hidden"
+          className="fixed inset-0 z-[10040] !h-full !w-full !rounded-none border-0 bg-slate-900/40 p-0 backdrop-blur-sm transition-opacity lg:hidden"
           onClick={() => setSidebarOpen(false)}
         />
       )}

@@ -6,7 +6,7 @@ interface Props {
   merchants: Merchant[];
   selectedMerchantId: string | null;
   onSelectMerchant: (merchantId: string) => void;
-  onBookMerchant: (merchantId: string) => void;
+  onBookMerchant: (merchant: Merchant) => void;
 }
 
 export const MerchantList: React.FC<Props> = ({ merchants, selectedMerchantId, onSelectMerchant, onBookMerchant }) => {
@@ -22,7 +22,7 @@ export const MerchantList: React.FC<Props> = ({ merchants, selectedMerchantId, o
           merchant={merchant}
           selected={selectedMerchantId === merchant.merchantId}
           onSelect={() => onSelectMerchant(merchant.merchantId)}
-          onBook={() => onBookMerchant(merchant.merchantId)}
+          onBook={() => onBookMerchant(merchant)}
         />
       ))}
     </div>

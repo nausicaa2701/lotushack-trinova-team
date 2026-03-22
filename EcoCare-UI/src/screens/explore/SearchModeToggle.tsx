@@ -1,4 +1,5 @@
 import React from 'react';
+import { SelectButton } from 'primereact/selectbutton';
 import type { SearchMode } from './types';
 
 interface Props {
@@ -6,21 +7,21 @@ interface Props {
   onChange: (mode: SearchMode) => void;
 }
 
+const modeOptions: { label: string; value: SearchMode }[] = [
+  { label: 'Nearby', value: 'nearby' },
+  { label: 'On Route', value: 'on-route' },
+];
+
 export const SearchModeToggle: React.FC<Props> = ({ mode, onChange }) => (
-  <div className="grid grid-cols-2 gap-2 rounded-2xl bg-surface-container-low p-1">
-    <button
-      type="button"
-      onClick={() => onChange('nearby')}
-      className={`rounded-xl px-3 py-2 text-xs font-bold uppercase tracking-wide ${mode === 'nearby' ? 'bg-white text-primary shadow-sm' : 'text-slate-500'}`}
-    >
-      Nearby
-    </button>
-    <button
-      type="button"
-      onClick={() => onChange('on-route')}
-      className={`rounded-xl px-3 py-2 text-xs font-bold uppercase tracking-wide ${mode === 'on-route' ? 'bg-white text-primary shadow-sm' : 'text-slate-500'}`}
-    >
-      On Route
-    </button>
-  </div>
+  <SelectButton
+    value={mode}
+    options={modeOptions}
+    optionLabel="label"
+    optionValue="value"
+    onChange={(e) => {
+      const v = e.value as SearchMode | null;
+      if (v) onChange(v);
+    }}
+    className="grid w-full grid-cols-2 gap-0 rounded-2xl bg-surface-container-low p-1 [&_.p-button]:flex-1 [&_.p-button]:rounded-xl [&_.p-button]:border-none [&_.p-button]:px-3 [&_.p-button]:py-2 [&_.p-button]:text-xs [&_.p-button]:font-bold [&_.p-button]:uppercase [&_.p-button]:tracking-wide"
+  />
 );

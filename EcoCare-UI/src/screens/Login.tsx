@@ -2,6 +2,8 @@ import { motion } from 'motion/react';
 import type { FormEvent } from 'react';
 import { useEffect, useState } from 'react';
 import { Button } from 'primereact/button';
+import { Dropdown } from 'primereact/dropdown';
+import { InputText } from 'primereact/inputtext';
 import { Link, useNavigate } from 'react-router-dom';
 import { Clock3, Leaf, Lock, Mail, Zap } from 'lucide-react';
 import { useAuth, type UserRole } from '../auth/AuthContext';
@@ -48,45 +50,22 @@ export default function Login() {
   const { login } = useAuth();
   const { data, loading, error } = useMockData();
   const [selectedUserId, setSelectedUserId] = useState('');
-  const [searchInput, setSearchInput] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
-  const [showDropdown, setShowDropdown] = useState(false);
   const users = data?.users ?? [];
-  
-  const filteredUsers = users.filter(user =>
-    user.name.toLowerCase().includes(searchInput.toLowerCase()) ||
-    user.email.toLowerCase().includes(searchInput.toLowerCase())
-  );
 
-  const selectedUser = users.find(u => u.id === selectedUserId);
-  
-  const handleUserSelect = (userId: string, userName: string) => {
-    setSelectedUserId(userId);
-    setSearchInput(userName);
-    setShowDropdown(false);
-  };
-  
+  const demoProfileOptions = users.map((u) => ({
+    label: `${u.name} — ${u.email} (${u.roles.join(' / ')})`,
+    value: u.id,
+  }));
+
   useEffect(() => {
     if (!selectedUserId && users.length > 0 && !loading) {
       setSelectedUserId(users[0].id);
-      setSearchInput(users[0].name);
     }
   }, [users.length, loading, selectedUserId]);
-  
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (!target.closest('#demo-profile') && !target.closest('[role="listbox"]')) {
-        setShowDropdown(false);
-      }
-    };
-    
-    document.addEventListener('click', handleClickOutside);
-    return () => document.removeEventListener('click', handleClickOutside);
-  }, []);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -145,53 +124,42 @@ export default function Login() {
                 <label className="ml-1 text-sm font-semibold text-on-surface-variant" htmlFor="demo-profile">
                   Demo profile
                 </label>
-                <div className="relative">
-                  <input
-                    id="demo-profile"
-                    type="text"
-                    placeholder="Search users by name or email..."
-                    value={searchInput}
-                    onChange={(evt) => setSearchInput(evt.target.value)}
-                    onFocus={() => setShowDropdown(true)}
-                    disabled={loading || Boolean(error)}
-                    className="w-full rounded-2xl border-none bg-surface-container-highest px-4 py-3.5 text-sm font-semibold text-slate-700 outline-none focus:ring-1 focus:ring-primary disabled:opacity-50"
-                  />
-                  
-                  {showDropdown && (
-                    <div className="absolute top-full left-0 right-0 mt-2 bg-surface-container-highest border border-outline-variant/20 rounded-2xl shadow-lg z-50 max-h-60 overflow-y-auto">
-                      {loading && (
-                        <div className="px-4 py-3.5 text-center text-sm text-slate-500">Loading users...</div>
-                      )}
-                      {error && (
-                        <div className="px-4 py-3.5 text-center text-sm text-red-500">Failed to load users</div>
-                      )}
-                      {!loading && !error && filteredUsers.length === 0 && (
-                        <div className="px-4 py-3.5 text-center text-sm text-slate-500">No users found</div>
-                      )}
-                      {filteredUsers.map((item) => (
-                        <button
-                          key={item.id}
-                          type="button"
-                          onClick={() => handleUserSelect(item.id, item.name)}
-                          className={`w-full px-4 py-3 text-left text-sm hover:bg-surface-container-low transition-colors ${
-                            selectedUserId === item.id ? 'bg-primary text-white' : 'text-slate-700'
-                          }`}
-                        >
-                          <div className="font-semibold">{item.name}</div>
-                          <div className="text-xs opacity-75">{item.email} • {item.roles.join(' / ')}</div>
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                {loading && (
+                  <div className="rounded-2xl bg-surface-container-highest px-4 py-3.5 text-sm text-slate-500">Loading users...</div>
+                )}
+                {error && !loading && (
+                  <div className="rounded-2xl bg-red-50 px-4 py-3.5 text-sm text-red-600">Failed to load demo users</div>
+                )}
+                {!loading && !error && (
+                  <div className="login-demo-profile-wrapper relative w-full min-w-0">
+                    <Dropdown
+                      inputId="demo-profile"
+                      value={selectedUserId || null}
+                      options={demoProfileOptions}
+                      onChange={(e) => setSelectedUserId(e.value as string)}
+                      optionLabel="label"
+                      optionValue="value"
+                      filter
+                      filterPlaceholder="Search name or email…"
+                      filterBy="label"
+                      resetFilterOnHide
+                      showClear
+                      placeholder="Select a demo profile"
+                      className="w-full login-demo-profile-dropdown"
+                      panelClassName="login-demo-profile-panel"
+                      appendTo="self"
+                      disabled={users.length === 0}
+                    />
+                  </div>
+                )}
               </div>
 
               <div className="space-y-1.5">
                 <label className="text-sm font-semibold text-on-surface-variant ml-1" htmlFor="email">Email Address</label>
                 <div className="relative">
                   <Mail className="pointer-events-none absolute left-4 top-1/2 z-10 h-4 w-4 -translate-y-1/2 text-outline" />
-                  <input
-                    id="email" 
+                  <InputText
+                    id="email"
                     type="email"
                     placeholder="name@company.com"
                     value={email}
@@ -208,7 +176,7 @@ export default function Login() {
                 </div>
                 <div className="relative">
                   <Lock className="pointer-events-none absolute left-4 top-1/2 z-10 h-4 w-4 -translate-y-1/2 text-outline" />
-                  <input
+                  <InputText
                     id="password"
                     type="password"
                     placeholder="••••••••"
@@ -224,8 +192,9 @@ export default function Login() {
               <p className="rounded-xl bg-red-50 px-3 py-2 text-sm font-medium text-red-600">{submitError}</p>
             )}
 
-            <Button 
-              label="Login to Dashboard" 
+            <Button
+              type="submit"
+              label="Login to Dashboard"
               className="w-full py-4 px-6 power-gradient text-white font-headline font-bold rounded-full hover:opacity-90 active:scale-[0.98] transition-all shadow-lg shadow-primary/20 border-none"
               disabled={loading || Boolean(error) || users.length === 0 || submitting}
             />
@@ -238,19 +207,29 @@ export default function Login() {
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            <button type="button" disabled title="Social login is planned post-MVP" className="flex items-center justify-center gap-3 py-3 px-4 bg-surface-container-low rounded-full border border-outline-variant/10 text-slate-400 font-semibold text-sm">
-              <img 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3ZqmtS--SZgoAxdj8WtkURIg_XfSJcLu3Mq5YJPGiIs2QCpUbA8kkwVnrWVnrP4BarBlCG5G7EIXabs17PNmbhm3_HabcNEOBCA94hhvgTzNfjAgcPwbz2nUYQHTZhz0p96Q0JV4IajDXbZ7PCr51jTYNkVFTpY2gsk1qKPD82_gu8kSKmMWinwDjrNRTAzDMqySQEl0ngs8vD5ArBfCndrDR4lLcnBgOZL_Lj9V6-sp9Moy2U4GZVtUZXsy-E18Tvupo1dcdG52J" 
-                alt="Google" 
+            <Button
+              type="button"
+              disabled
+              title="Social login is planned post-MVP"
+              className="flex items-center justify-center gap-3 py-3 px-4 bg-surface-container-low rounded-full border border-outline-variant/10 text-slate-400 font-semibold text-sm"
+            >
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3ZqmtS--SZgoAxdj8WtkURIg_XfSJcLu3Mq5YJPGiIs2QCpUbA8kkwVnrWVnrP4BarBlCG5G7EIXabs17PNmbhm3_HabcNEOBCA94hhvgTzNfjAgcPwbz2nUYQHTZhz0p96Q0JV4IajDXbZ7PCr51jTYNkVFTpY2gsk1qKPD82_gu8kSKmMWinwDjrNRTAzDMqySQEl0ngs8vD5ArBfCndrDR4lLcnBgOZL_Lj9V6-sp9Moy2U4GZVtUZXsy-E18Tvupo1dcdG52J"
+                alt="Google"
                 className="w-5 h-5"
                 referrerPolicy="no-referrer"
               />
               Google
-            </button>
-            <button type="button" disabled title="Social login is planned post-MVP" className="flex items-center justify-center gap-3 py-3 px-4 bg-slate-300 text-white rounded-full font-semibold text-sm">
+            </Button>
+            <Button
+              type="button"
+              disabled
+              title="Social login is planned post-MVP"
+              className="flex items-center justify-center gap-3 py-3 px-4 bg-slate-300 text-white rounded-full font-semibold text-sm border-none"
+            >
               <i className="pi pi-apple text-xl"></i>
               Apple
-            </button>
+            </Button>
           </div>
 
           <p className="text-center text-on-surface-variant text-sm font-medium">

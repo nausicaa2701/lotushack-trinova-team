@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'primereact/button';
 import { useAuth } from '../../auth/AuthContext';
 import { useAdminDisputes } from '../../hooks/useAdminApi';
 
@@ -32,20 +33,19 @@ export const AdminDisputes = () => {
             <p className="mt-2 font-headline text-xl font-bold">Booking {dispute.bookingId}</p>
             <p className="mt-1 text-sm font-semibold text-primary">Status: {dispute.status}</p>
             <div className="mt-4 flex flex-wrap gap-2">
-              <button
+              <Button
                 type="button"
+                label="Investigating"
                 onClick={() => void patchStatus(dispute.id, 'investigating')}
-                className="rounded-full bg-surface-container-low px-3 py-1.5 text-xs font-bold text-slate-700"
-              >
-                Investigating
-              </button>
-              <button
+                text
+                className="rounded-full bg-surface-container-low px-3 py-1.5 text-xs font-bold text-slate-700 border-none shadow-none"
+              />
+              <Button
                 type="button"
+                label="Close"
                 onClick={() => void patchStatus(dispute.id, 'closed')}
-                className="rounded-full bg-primary px-3 py-1.5 text-xs font-bold text-white"
-              >
-                Close
-              </button>
+                className="rounded-full bg-primary px-3 py-1.5 text-xs font-bold text-white border-none"
+              />
             </div>
           </div>
         ))}

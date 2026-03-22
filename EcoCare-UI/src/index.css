@@ -71,6 +71,39 @@
   z-index: 10049 !important;
 }
 
+/* Side panels: consistent padding + safe-area (notch / home indicator) */
+.p-sidebar .p-sidebar-content {
+  padding-top: 1.25rem !important;
+  padding-bottom: max(1.25rem, env(safe-area-inset-bottom, 0px)) !important;
+  padding-left: max(1.25rem, env(safe-area-inset-left, 0px)) !important;
+  padding-right: max(1.25rem, env(safe-area-inset-right, 0px)) !important;
+}
+
+.p-sidebar.p-sidebar-right .p-sidebar-content {
+  padding-right: max(1.25rem, env(safe-area-inset-right, 0px)) !important;
+}
+
+.p-sidebar.p-sidebar-left .p-sidebar-content {
+  padding-left: max(1.25rem, env(safe-area-inset-left, 0px)) !important;
+}
+
+.p-sidebar .p-sidebar-header {
+  padding: 0 0 0.75rem 0 !important;
+  margin: 0 !important;
+}
+
+.p-sidebar .p-sidebar-close {
+  margin: 0 !important;
+}
+
+/* Merchant detail (right): scrollable body, no double padding squeeze */
+.p-sidebar.merchant-detail-sidebar .p-sidebar-content {
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0 !important;
+  max-height: 100dvh !important;
+}
+
 /* PrimeReact Overrides for Design System */
 .p-button {
   border-radius: 9999px !important;
@@ -84,14 +117,46 @@
   box-shadow: 0 10px 15px -3px rgba(0, 91, 193, 0.2) !important;
 }
 
+/* Default PrimeReact text fields — rounded-xl to match forms; add ec-input-pill for search bars */
 .p-inputtext {
   background-color: #f2f4f6 !important;
   border: none !important;
-  border-radius: 9999px !important;
+  border-radius: 1rem !important;
   padding-left: 1rem !important;
   padding-right: 1rem !important;
   padding-top: 0.5rem !important;
   padding-bottom: 0.5rem !important;
+}
+
+.p-inputtext.ec-input-pill {
+  border-radius: 9999px !important;
+}
+
+.p-slider .p-slider-range {
+  background: linear-gradient(135deg, #005bc1 0%, #6b9fff 100%) !important;
+}
+
+.p-slider .p-slider-handle {
+  border-color: #005bc1 !important;
+  background: #ffffff !important;
+}
+
+.p-checkbox .p-checkbox-box.p-highlight {
+  background: #005bc1 !important;
+  border-color: #005bc1 !important;
+}
+
+.p-selectbutton .p-button.p-highlight {
+  background: #ffffff !important;
+  color: #005bc1 !important;
+  border-color: transparent !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06) !important;
+}
+
+.p-dropdown {
+  border: none !important;
+  border-radius: 0.75rem !important;
+  background-color: #f2f4f6 !important;
 }
 
 .power-gradient {
@@ -111,6 +176,54 @@
 .selection\:bg-primary-container ::selection {
   background-color: var(--color-primary-container);
   color: var(--color-on-primary-container);
+}
+
+/* Login: demo profile dropdown panel matches trigger width (appendTo=self) */
+.login-demo-profile-wrapper .p-dropdown {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.login-demo-profile-wrapper .p-dropdown-panel,
+.login-demo-profile-panel.p-dropdown-panel {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  left: 0 !important;
+  right: auto !important;
+}
+
+.login-demo-profile-wrapper .p-dropdown .p-dropdown-label {
+  white-space: normal !important;
+  overflow: hidden !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 1.35;
+}
+
+/* Booking confirm dialog: wider modal, dropdowns not clipped, labels wrap */
+.booking-confirm-dialog.p-dialog .p-dialog-content.booking-confirm-dialog-content {
+  overflow: visible !important;
+}
+
+.booking-confirm-dialog .p-dropdown {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.booking-confirm-dialog .p-dropdown .p-dropdown-label {
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+}
+
+.booking-confirm-dialog .p-dropdown-panel,
+.booking-confirm-slot-panel.p-dropdown-panel,
+.booking-confirm-vehicle-panel.p-dropdown-panel {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
 }
 
 

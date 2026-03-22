@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Filter, LoaderCircle, MapPinned } from 'lucide-react';
+import { Button } from 'primereact/button';
 import { Sidebar } from 'primereact/sidebar';
 import { AdvancedFilterPanel } from './AdvancedFilterPanel';
 import { MapView } from './MapView';
@@ -9,10 +10,28 @@ import { MerchantList } from './MerchantList';
 import { RouteSearchForm } from './RouteSearchForm';
 import { SearchModeToggle } from './SearchModeToggle';
 import { fallbackSearch, logSearchEvent, nearbySearch, onRouteSearch, routePreview } from './exploreApi';
+import { BookingConfirmDialog } from './BookingConfirmDialog';
 import { useAuth } from '../../auth/AuthContext';
+import { useMockData } from '../../hooks/useMockData';
+import { ApiError } from '../../lib/apiClient';
 import { createOwnerBooking } from '../../lib/ownerBookingsApi';
+import { fetchSlotRecommendations, type SlotRecommendationUi } from '../../lib/slotsApi';
 import { filterMerchantsByQuery } from '../../lib/platformMock';
 import type { ExploreFilters, LatLng, Merchant, SearchMode } from './types';
+
+/** https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPositionError/code */
+function geolocationFailureMessage(code: number): string {
+  switch (code) {
+    case 1:
+      return 'Location access was blocked. Allow location for this site in your browser (lock icon in the address bar), or enter latitude/longitude manually.';
+    case 2:
+      return 'Your position could not be determined. Try again outdoors or with Wi‑Fi enabled, or enter coordinates manually.';
+    case 3:
+      return 'Location request timed out. Try again or enter coordinates manually.';
+    default:
+      return 'Could not read your location. Use HTTPS or localhost, check browser permissions, or enter coordinates manually.';
+  }
+}
 
 /** Empty serviceTypes = any service (matches API: no extra filter). */
 const initialFilters: ExploreFilters = {
@@ -26,6 +45,8 @@ const initialFilters: ExploreFilters = {
 
 export const ExplorePage = () => {
   const { user } = useAuth();
+  const { data: platformData } = useMockData();
+  const vehicles = platformData?.vehicles ?? [];
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const [mode, setMode] = React.useState<SearchMode>('nearby');
@@ -39,44 +60,108 @@ export const ExplorePage = () => {
   const [error, setError] = React.useState<string | null>(null);
   const [showFilters, setShowFilters] = React.useState(false);
   const [showDetail, setShowDetail] = React.useState(false);
+  const [bookingFlow, setBookingFlow] = React.useState<{ merchant: Merchant; slots: SlotRecommendationUi[] } | null>(null);
+  const [bookingDialogOpen, setBookingDialogOpen] = React.useState(false);
+  const [bookingSubmitting, setBookingSubmitting] = React.useState(false);
   const topBarSearchQuery = searchParams.get('search')?.trim() ?? '';
   const highlightedMerchantId = searchParams.get('merchant');
 
   const selectedMerchant = merchants.find((item) => item.merchantId === selectedMerchantId) ?? null;
 
-  const handleBookMerchant = React.useCallback(
-    async (merchantId: string) => {
-      const m = merchants.find((x) => x.merchantId === merchantId);
-      if (!m) return;
+  /** Close merchant detail sidebar whenever the booking confirm dialog opens */
+  React.useEffect(() => {
+    if (bookingDialogOpen) {
+      setShowDetail(false);
+    }
+  }, [bookingDialogOpen]);
+
+  const openBookingForMerchant = React.useCallback(
+    async (merchant: Merchant) => {
       if (!user) {
         navigate('/login');
         return;
       }
       setError(null);
+      setBookingSubmitting(true);
+      try {
+        const { slots } = await fetchSlotRecommendations(merchant.merchantId, { searchMode: mode });
+        setBookingFlow({ merchant, slots });
+        setBookingDialogOpen(true);
+      } catch {
+        setBookingFlow({ merchant, slots: [] });
+        setBookingDialogOpen(true);
+      } finally {
+        setBookingSubmitting(false);
+      }
+    },
+    [user, navigate, mode]
+  );
+
+  const handleContinueFromDrawer = React.useCallback(
+    (ctx: { merchant: Merchant; slots: SlotRecommendationUi[] }) => {
+      if (!user) {
+        navigate('/login');
+        return;
+      }
+      setError(null);
+      setBookingFlow(ctx);
+      setBookingDialogOpen(true);
+    },
+    [user, navigate]
+  );
+
+  const submitBooking = React.useCallback(
+    async (result: { slotLabel: string; slotTimeIso: string | null; vehicleId: string | null }) => {
+      if (!user || !bookingFlow) return;
+      setBookingSubmitting(true);
+      setError(null);
       try {
         await createOwnerBooking(user.id, {
           id: `bk-${Date.now()}`,
-          providerId: m.merchantId,
-          provider: m.name,
+          merchant_id: bookingFlow.merchant.merchantId,
+          providerId: bookingFlow.merchant.merchantId,
+          provider: bookingFlow.merchant.name,
           service: 'Eco wash',
-          slot: 'Next available',
-          price: m.priceFrom,
+          slot: result.slotLabel,
+          slot_time: result.slotTimeIso ?? undefined,
+          vehicle_id: result.vehicleId,
+          price: bookingFlow.merchant.priceFrom,
         });
+        setBookingDialogOpen(false);
         setShowDetail(false);
+        setBookingFlow(null);
         navigate('/owner/bookings');
       } catch (e) {
-        setError(e instanceof Error ? e.message : 'Could not create booking');
+        const msg =
+          e instanceof ApiError ? e.message : e instanceof Error ? e.message : 'Could not create booking';
+        setError(msg);
+        throw e instanceof Error ? e : new Error(msg);
+      } finally {
+        setBookingSubmitting(false);
       }
     },
-    [merchants, user, navigate]
+    [user, bookingFlow, navigate]
   );
 
-  const useCurrentLocation = () => {
+  const useCurrentLocation = React.useCallback(() => {
+    setError(null);
+    if (typeof navigator === 'undefined' || !navigator.geolocation) {
+      setError(
+        'This browser does not support geolocation, or the page is not served over HTTPS (or localhost). Enter latitude and longitude manually.'
+      );
+      return;
+    }
     navigator.geolocation.getCurrentPosition(
-      ({ coords }) => setOrigin({ lat: coords.latitude, lng: coords.longitude }),
-      () => setError('Unable to access current location')
+      ({ coords }) => {
+        setOrigin({ lat: coords.latitude, lng: coords.longitude });
+        setError(null);
+      },
+      (err) => {
+        setError(geolocationFailureMessage(err.code));
+      },
+      { enableHighAccuracy: false, maximumAge: 60_000, timeout: 15_000 }
     );
-  };
+  }, []);
 
   const executeSearch = async () => {
     setLoading(true);
@@ -142,7 +227,11 @@ export const ExplorePage = () => {
   }, [mode, topBarSearchQuery, highlightedMerchantId]);
 
   const filterPanel = (
-    <div className="space-y-4">
+    <div className="flex flex-col gap-5">
+      <div>
+        <h2 className="font-headline text-lg font-bold text-slate-900">Search filters</h2>
+        <p className="mt-1 text-xs text-slate-500">Mode, route, and advanced options.</p>
+      </div>
       <SearchModeToggle mode={mode} onChange={setMode} />
       <RouteSearchForm
         mode={mode}
@@ -153,9 +242,12 @@ export const ExplorePage = () => {
         onUseCurrentLocation={useCurrentLocation}
       />
       <AdvancedFilterPanel filters={filters} onChange={setFilters} />
-      <button type="button" onClick={executeSearch} className="w-full rounded-full bg-primary px-4 py-3 text-sm font-bold text-white">
-        Search Providers
-      </button>
+      <Button
+        type="button"
+        label="Search Providers"
+        onClick={executeSearch}
+        className="w-full rounded-full bg-primary px-4 py-3 text-sm font-bold text-white border-none"
+      />
     </div>
   );
 
@@ -170,14 +262,15 @@ export const ExplorePage = () => {
               : 'Nearby and on-route merchant discovery with ranked results.'}
           </p>
         </div>
-        <button
+        <Button
           type="button"
+          text
           onClick={() => setShowFilters(true)}
-          className="inline-flex items-center gap-2 rounded-full bg-surface-container-low px-4 py-2 text-sm font-bold text-slate-700 lg:hidden"
+          className="inline-flex items-center gap-2 rounded-full bg-surface-container-low px-4 py-2 text-sm font-bold text-slate-700 lg:hidden border-none shadow-none"
         >
           <Filter size={16} />
-          Filters
-        </button>
+          <span>Filters</span>
+        </Button>
       </div>
 
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-[360px_1fr]">
@@ -213,21 +306,43 @@ export const ExplorePage = () => {
                 setSelectedMerchantId(merchantId);
                 setShowDetail(true);
               }}
-              onBookMerchant={(id) => void handleBookMerchant(id)}
+              onBookMerchant={(m) => void openBookingForMerchant(m)}
             />
           )}
         </section>
       </div>
 
-      <Sidebar visible={showFilters} onHide={() => setShowFilters(false)} position="left" className="w-full max-w-sm lg:hidden">
+      <Sidebar
+        visible={showFilters}
+        onHide={() => setShowFilters(false)}
+        position="left"
+        className="explore-filters-sidebar w-full max-w-sm lg:hidden"
+      >
         {filterPanel}
       </Sidebar>
 
       <MerchantDetailDrawer
         merchant={selectedMerchant}
         visible={showDetail}
+        searchMode={mode}
         onHide={() => setShowDetail(false)}
-        onBook={() => selectedMerchant && void handleBookMerchant(selectedMerchant.merchantId)}
+        onContinueBooking={handleContinueFromDrawer}
+      />
+
+      <BookingConfirmDialog
+        visible={bookingDialogOpen}
+        onHide={() => {
+          if (!bookingSubmitting) {
+            setBookingDialogOpen(false);
+            setBookingFlow(null);
+          }
+        }}
+        merchant={bookingFlow?.merchant ?? null}
+        user={user}
+        vehicles={vehicles}
+        slots={bookingFlow?.slots ?? []}
+        submitting={bookingSubmitting}
+        onConfirm={submitBooking}
       />
     </div>
   );

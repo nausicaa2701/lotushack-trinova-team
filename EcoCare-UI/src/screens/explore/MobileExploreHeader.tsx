@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'primereact/button';
 import { Locate, SlidersHorizontal, MapPinned } from 'lucide-react';
 import type { SearchMode } from './types';
 
@@ -21,52 +22,58 @@ export const MobileExploreHeader: React.FC<MobileExploreHeaderProps> = ({
 }) => {
   return (
     <div className="lg:hidden">
-      {/* Sticky Header */}
       <div className="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-outline-variant/20">
-        {/* Search Mode Toggle */}
         <div className="flex items-center justify-between p-3">
           <div className="flex gap-2">
-            <button
+            <Button
+              type="button"
+              text={mode !== 'nearby'}
+              label="Nearby"
               onClick={() => onModeChange('nearby')}
-              className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
+              className={`px-4 py-2 rounded-full text-sm font-semibold transition-all border-none shadow-none ${
                 mode === 'nearby'
                   ? 'bg-primary text-on-primary shadow-md'
                   : 'bg-surface-container-low text-slate-600'
               }`}
-            >
-              Nearby
-            </button>
-            <button
+            />
+            <Button
+              type="button"
+              text={mode !== 'on-route'}
+              label="On Route"
               onClick={() => onModeChange('on-route')}
-              className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
+              className={`px-4 py-2 rounded-full text-sm font-semibold transition-all border-none shadow-none ${
                 mode === 'on-route'
                   ? 'bg-primary text-on-primary shadow-md'
                   : 'bg-surface-container-low text-slate-600'
               }`}
-            >
-              On Route
-            </button>
+            />
           </div>
-          
+
           <div className="flex gap-2">
-            <button
+            <Button
+              type="button"
+              text
+              rounded
               onClick={onLocationClick}
-              className="p-2 rounded-full bg-surface-container-low text-slate-600 active:bg-surface-container-high"
+              title="Use current location"
+              className="p-2 rounded-full bg-surface-container-low text-slate-600 transition-colors hover:bg-surface-container-high border-none shadow-none"
               aria-label="Use current location"
             >
               <Locate size={20} />
-            </button>
-            <button
+            </Button>
+            <Button
+              type="button"
+              text
+              rounded
               onClick={onFiltersClick}
-              className="p-2 rounded-full bg-surface-container-low text-slate-600 active:bg-surface-container-high"
+              className="p-2 rounded-full bg-surface-container-low text-slate-600 active:bg-surface-container-high border-none shadow-none"
               aria-label="Filters"
             >
               <SlidersHorizontal size={20} />
-            </button>
+            </Button>
           </div>
         </div>
-        
-        {/* Results Bar */}
+
         <div className="px-4 pb-3">
           <div className="flex items-center justify-between text-sm">
             <span className="text-slate-600">
