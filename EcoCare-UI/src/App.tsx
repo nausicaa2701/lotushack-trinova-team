@@ -23,7 +23,6 @@ import { AdminMerchants } from './screens/admin/AdminMerchants';
 import { AdminCampaigns } from './screens/admin/AdminCampaigns';
 import { AdminDisputes } from './screens/admin/AdminDisputes';
 import { AdminAIRollout } from './screens/admin/AdminAIRollout';
-import { PitchDeck } from './screens/PitchDeck';
 
 // PrimeReact Styles
 import "primereact/resources/themes/lara-light-blue/theme.css";
@@ -42,7 +41,6 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/pitch-deck" element={<PitchDeck />} />
 
           <Route
             element={
