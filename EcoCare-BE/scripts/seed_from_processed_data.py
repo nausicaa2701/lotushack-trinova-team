@@ -173,13 +173,10 @@ def run(truncate_first: bool = False) -> None:
             if (row.get("user_id") or "").strip()
         }
 
-        provider_user_by_merchant: dict[str, str] = {}
-        for booking in booking_rows:
-            source_mid = (booking.get("merchant_id") or "").strip()
-            if not source_mid:
-                continue
-            db_mid = source_to_db_merchant_id.get(source_mid, _safe_merchant_id(source_mid))
-            provider_user_by_merchant.setdefault(db_mid, _hashed_id("provider_", db_mid, max_len=64))
+        # Every merchant must have a provider account, even if it has no booking events.
+        provider_user_by_merchant: dict[str, str] = {
+            db_mid: _hashed_id("provider_", db_mid, max_len=64) for db_mid in merchant_name_by_id
+        }
 
         for uid in sorted(owner_user_ids):
             db.merge(
