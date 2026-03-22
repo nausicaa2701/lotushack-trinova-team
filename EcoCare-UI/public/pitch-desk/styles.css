@@ -449,6 +449,10 @@ a {
   border: 1px solid var(--surface-light-border);
 }
 
+.arch-diagram-wrap + .arch-diagram-wrap {
+  margin-top: 24px;
+}
+
 .problem-card h3,
 .feature-tile h3,
 .layer-card h3,
