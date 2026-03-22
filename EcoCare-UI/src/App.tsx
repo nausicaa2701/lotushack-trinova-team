@@ -9,6 +9,7 @@ import { Layout } from './components/Layout';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import { AuthProvider } from './auth/AuthContext';
 import Landing from './screens/Landing';
+import Partners from './screens/Partners';
 import Login from './screens/Login';
 import { Dashboard } from './screens/Dashboard';
 import { Bookings } from './screens/Bookings';
@@ -48,6 +49,7 @@ export default function App() {
         <div className="pb-20 lg:pb-0">
         <Routes>
           <Route path="/" element={<Landing />} />
+          <Route path="/partners" element={<Partners />} />
           <Route path="/login" element={<Login />} />
 
           <Route

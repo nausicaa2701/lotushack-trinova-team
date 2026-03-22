@@ -36,7 +36,7 @@ export default function Landing() {
                 className="power-gradient text-white px-10 py-4 rounded-full font-headline font-bold text-lg hover:opacity-90 transition-all shadow-xl shadow-primary/20 border-none"
                 onClick={() => navigate('/login')}
               />
-              <Link to="/login">
+              <Link to="/partners">
                 <Button
                   label="Partner with Us"
                   className="bg-surface-container-lowest text-primary border border-outline-variant/15 px-10 py-4 rounded-full font-headline font-bold text-lg hover:bg-surface-container-low transition-all"

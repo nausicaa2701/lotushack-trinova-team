@@ -18,9 +18,16 @@ export default function Navbar() {
       </Link>
 
       <div className="hidden md:flex items-center space-x-8">
-        <a href="#features" className="text-primary font-semibold border-b-2 border-primary pb-1 text-sm">Features</a>
-        <a href="#partners" className="text-on-surface-variant hover:text-on-surface transition-colors text-sm">Partners</a>
-        <a href="#about" className="text-on-surface-variant hover:text-on-surface transition-colors text-sm">About</a>
+        <a href="/#features" className="text-primary font-semibold border-b-2 border-primary pb-1 text-sm">Features</a>
+        <Link to="/partners" className="text-on-surface-variant hover:text-on-surface transition-colors text-sm">Partners</Link>
+        <a
+          href="https://trinova.it.com/pitch-desk/index.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-on-surface-variant hover:text-on-surface transition-colors text-sm"
+        >
+          About
+        </a>
       </div>
 
       <div className="hidden md:block">
@@ -46,9 +53,17 @@ export default function Navbar() {
       {menuOpen && (
         <div className="border-t border-outline-variant/20 bg-surface-container-lowest px-4 py-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] md:hidden">
           <div className="flex flex-col gap-4 text-sm font-semibold">
-            <a href="#features" className="text-on-surface-variant hover:text-on-surface" onClick={() => setMenuOpen(false)}>Features</a>
-            <a href="#partners" className="text-on-surface-variant hover:text-on-surface" onClick={() => setMenuOpen(false)}>Partners</a>
-            <a href="#about" className="text-on-surface-variant hover:text-on-surface" onClick={() => setMenuOpen(false)}>About</a>
+            <a href="/#features" className="text-on-surface-variant hover:text-on-surface" onClick={() => setMenuOpen(false)}>Features</a>
+            <Link to="/partners" className="text-on-surface-variant hover:text-on-surface" onClick={() => setMenuOpen(false)}>Partners</Link>
+            <a
+              href="https://trinova.it.com/pitch-desk/index.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-on-surface-variant hover:text-on-surface"
+              onClick={() => setMenuOpen(false)}
+            >
+              About
+            </a>
             <Link to="/login" onClick={() => setMenuOpen(false)}>
               <Button
                 label="Get Started"
